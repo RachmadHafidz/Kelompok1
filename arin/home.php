@@ -12,7 +12,8 @@
     session_start();
      ob_end_clean();
     if(isset($_SESSION["email"])){
-    echo "<h2>Selamat Anda Berhasil Login</h2> <h3>Klik Logout Dibawah Ini";
+        //<button onclick="alert('Berhasil Login!!')">Klik Saya
+    echo "<h2>Selamat Anda Berhasil Login </h2> <h3>Klik Logout Dibawah Ini";
     echo "<a href='logout.php'><h4>Logout</h4></a>";
     }else{
         echo header("location:login.php");
