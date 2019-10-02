@@ -4,7 +4,9 @@
   <title>Login </title>
 </head>
 <body>
-        
+<script>
+     alert("duar");
+    </script>
     <?php 
         if(isset($_GET["login_error"])){
             echo "<h1 style='color:red';>Salah Bro</h1>";
