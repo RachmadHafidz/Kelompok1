@@ -52,7 +52,7 @@ h2{
 	-moz-animation-play-state:paused; 
 	-o-animation-play-state:paused; 
 	animation-play-state:paused; }
-}
+
  
 .isi-slider img { 
 	float: right; 
@@ -71,6 +71,9 @@ h2{
  
 .malasngoding-slider:hover:after { 
 	color: rgba(255,255,255, 0.6);  
+}
+.navbar{
+	position: sticky;
 }
  
  
