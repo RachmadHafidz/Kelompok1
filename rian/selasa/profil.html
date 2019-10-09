@@ -10,22 +10,67 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-</head>
+  <style type="text/css">
+
+    *{
+     margin: 0;
+     padding: 0;
+     font-family: sans-serif;
+    }
+    
+    #sidebar{
+     position: fixed;
+     width: 200px;
+     height: 100%;
+     background: #151719;
+     left: -200px;
+     transition: all 500ms linear;
+    }
+    
+    #sidebar.active{
+     left:0px;
+    }
+    
+    #sidebar ul li{
+     color: rgba(230,230,230,0.9);
+     list-style: none;
+     padding: 15px 10px;
+     border-bottom: 1px solid rgba(100,100,100,0.3);
+    }
+    
+    #sidebar .toggle-btn{
+     position: absolute;
+     left: 230px;
+     top: 20px;
+    }
+    
+    #sidebar .toggle-btn span{
+     display: block;
+     width: 30px;
+     height: 5px;
+     background: #151719;
+     margin: 5px 0px;
+    }
+    
+    
+    
+    </style>
+    <script type="text/javascript">
+    function toggleSidebar(){
+     document.getElementById("sidebar").classList.toggle('active');
+    }
+    </script>
+    
+    
+    </head>
 <body>
 
   
-	<div class="container">
+	<div class="container-float">
 		
-        <div class="row">
-            <div class="col-md-12">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-      <nav class="navbar navbar-light bg-light justify-content-between"> <p><a class="navbar-brand">S.I.D</a></p>
-        <p>Jl. watu ulo no 1, Desa Sabrang, Kec. Ambulu, Kab. Jember , Kode Pos 68172</p>
+      
+      <nav class="navbar navbar-dark bg-dark justify-content-between"> <p><a><font class="navbar-brand" color="white">S.I.D</font></a></p>
+        <p><font color="white">Jl. watu ulo no 1, Desa Sabrang, Kec. Ambulu, Kab. Jember , Kode Pos 68172</font></p>
         <form class="form-inline">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -35,13 +80,27 @@
                   <li><a href="loginrin.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
               </ul>
       </nav>
+      <div id="sidebar">
+        <div class="toggle-btn" onclick="toggleSidebar()"><a>
+         <span></span>
+         <span></span>
+         <span></span>
+        </a>
+        </div>
+        <ul>
+         <li><a href="profil.html">Profil Desa</a></li>
+         <li>Sell</li>
+         <li>Buy</li>
+       
+       </div>
       <div class=malasngoding-slider>
           <div class=isi-slider>
             <img src="sabrang.jpg" alt="Gambar 1" height="100" width="100">
             <img src="desa.jpg" alt="Gambar 2" height="100" width="100">
                  
-          </div>
-		</div>
+            
+    </div>
+    
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">				
 				<li class="active"><a href="nyoba.html">Home <span class="sr-only">(current)</span></a></li>
