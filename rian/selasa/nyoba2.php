@@ -4,7 +4,7 @@
 <script src="pop.js"></script>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    
-<title>S.I.D Sabrang</title>
+<title>Sistem Informasi Desa Sabrang</title>
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
   <script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
@@ -63,7 +63,7 @@
 		
         
 			</button>
-      <nav class="navbar navbar-dark bg-dark justify-content-between"> <p><a><font class="navbar-brand" color="white">S.I.D</font></a></p>
+      <nav class="navbar navbar-dark bg-dark justify-content-between"> <p><a><font class="navbar-brand" color="white">Sistem Informasi Desa Sabrang</font></a></p>
         <p><font color="white">Jl. watu ulo no 1, Desa Sabrang, Kec. Ambulu, Kab. Jember , Kode Pos 68172</font></p>
        
  
@@ -79,7 +79,7 @@
           <a href="profil.html">Profil Desa</a>
           <a href="#">Visi & Misi</a>
           <a href="#">Motto</a>
-          <a href="http://localhost/Kelompok1/rian/selasa/crud/index1.php">Perangkat Desa</a>
+          <a href="http://localhost/Kelompok1/rian/selasa/crud/index.php">Perangkat Desa</a>
          
         </div>
       </div> 
@@ -197,7 +197,7 @@
                 <br />
                 <blockquote class="card-blockquote">
                         <p><a href="summon.html">1. Daftar Wisata Desa</a></p>
-                        <p><a href="summon.html">2. Daftar Warga</a></p>
+                        <p><a href="http://localhost/Kelompok1/rian/selasa/crudwarga/index.php">2. Daftar Warga</a></p>
                        <p> <a href="summon.html">3. DUAR</a></p>
                 </blockquote>
               </div>
