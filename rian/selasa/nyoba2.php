@@ -13,7 +13,7 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
  <style>
   .dropbtn {
-  background-color: rgb(255, 255, 255);
+  background: none;
   color: rgb(0, 0, 0);
   padding: 16px;
   font-size: 16px;
@@ -62,30 +62,48 @@
 	<div class="container-float">
 		
         
-			</button>
       <nav class="navbar navbar-dark bg-dark justify-content-between"> <p><a><font class="navbar-brand" color="white">Sistem Informasi Desa Sabrang</font></a></p>
         <p><font color="white">Jl. watu ulo no 1, Desa Sabrang, Kec. Ambulu, Kab. Jember , Kode Pos 68172</font></p>
        
  
       </nav>
 </div>
+<nav class="navbar navbar-dark bg-dark justify-content-between"> 
       <div class="topnav" id="myTopnav">
-      <a href="#home" class="active">Beranda</a>
+       
+        <div class="dropdown">
+          <button class="dropbtn" > <a href="nyoba.html">Beranda</a>
+            <i class="fa fa-caret-down"></i>
+          </button>
+      </div>
+
       <div class="dropdown">
-        <button class="dropbtn">Profil Desa
+        <button class="dropbtn" > <a href="profil.html">Profil Desa</a>
           <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
           <a href="profil.html">Profil Desa</a>
           <a href="#">Visi & Misi</a>
           <a href="#">Motto</a>
-          <a href="http://localhost/Kelompok1/rian/selasa/crud/index.php">Perangkat Desa</a>
-         
+          <a href="http://localhost/Kelompok1/rian/selasa/crud/index1.php">Perangkat Desa</a>
+          
         </div>
       </div> 
-      <a href="#news">Berita</a>
+  
       <div class="dropdown">
-        <button class="dropbtn">Pelayanan 
+        <button class="dropbtn" > <a href="profil.html">Berita</a>
+          <i class="fa fa-caret-down"></i>
+        </button>
+    </div>
+  
+    <div class="dropdown">
+      <button class="dropbtn" > <a href="#">Petunjuk</a>
+        <i class="fa fa-caret-down"></i>
+      </button>
+  </div>
+  
+  <div class="dropdown">
+        <button class="dropbtn"><a href="#">Pelayanan</a>
           <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
@@ -98,28 +116,32 @@
           <a href="#">Surat Pengantar-Surat Keterangan Catatan Kepolisian</a>
         </div>
       </div> 
-      <a href="#about">Petunjuk</a>
-    
-  
-        <?php
-   ob_start();
-    session_start();
-     ob_end_clean();
-    if(isset($_SESSION["username"])){
-        echo  $_SESSION ['username'];
-   
-    echo "<a href='nyoba.html'>Logout</a>";
-    }else{
-        echo header("location:nyoba2.php");
-    }
-                ?> 
-              </ul>
-              </form>
+     
  
-         
-        </ul>
-  
+ 
+      <?php 
+include 'config.php';
+ 
+// mengaktifkan session
+session_start();
+ 
+// cek apakah user telah login, jika belum login maka di alihkan ke halaman login
+
+ 
+// menampilkan pesan selamat datang
+echo "Hai, selamat datang ". $_SESSION['username'];
+ 
+?>
+<br/>
+<br/>
+<a href="logout.php">LOGOUT</a>
     
+  
+     
+         
+    
+  
+        </nav>  
      <!--Carousel Wrapper-->
 <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
   <!--Indicators-->
