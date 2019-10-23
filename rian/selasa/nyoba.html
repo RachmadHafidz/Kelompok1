@@ -3,7 +3,7 @@
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    
 <title>S.I.D Sabrang</title>
-  
+<link href="http://cdn.phpoll.com/css/animate.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="style.css">
   <script type="text/javascript" src="js/jquery.js"></script>
@@ -22,7 +22,8 @@
         border: none;
         cursor: pointer;
         }
-
+    
+      
         .dropdown 
         {
         position: relative;
@@ -57,6 +58,25 @@
         .right {text-align:right;}
 
         body {background: rgb(255, 255, 255);}
+
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css');
+/* Fixed navbar */
+
+/* General sizing */
+ul.dropdown-lr {
+  width: 300px;
+}
+
+/* mobile fix */
+@media (max-width: 768px) {
+	.dropdown-lr h3 {
+		color: #eee;
+	}
+	.dropdown-lr label {
+		color: #eee;
+	}
+}
+
     </style>   
 </head>
   
@@ -72,13 +92,19 @@
         
       </nav>  
 		
-	</div>
-        
+  </div>
+
+  <nav class="navbar navbar-dark bg-dark justify-content-between"> 
       <div class="topnav" id="myTopnav">
        
-      <a href="#home" class="active">Beranda</a>
+        <div class="dropdown">
+          <button class="dropbtn" > <a href="nyoba.html">Beranda</a>
+            <i class="fa fa-caret-down"></i>
+          </button>
+      </div>
+
       <div class="dropdown">
-        <button class="dropbtn" >Profil Desa
+        <button class="dropbtn" > <a href="profil.html">Profil Desa</a>
           <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
@@ -89,32 +115,29 @@
           
         </div>
       </div> 
-      <a href="#news">Berita</a>
+  
       <div class="dropdown">
-        <button class="dropbtn">Pelayanan 
+        <button class="dropbtn" > <a href="profil.html">Berita</a>
           <i class="fa fa-caret-down"></i>
         </button>
-        <div class="dropdown-content">
-          <a href="#">Persyaratan</a>
-          <a href="#">Surat Pengantar-Akta Kelehiran</a>
-          <a href="#">Surat Pengantar-Kartu Keluarga</a>
-          <a href="#">Surat Pengantar-Kartu Tanda Penduduk</a>
-          <a href="#">Surat Pengantar-Surat Nikah</a>
-          <a href="#">Surat Pengantar-Pindah Tempat</a>
-          <a href="#">Surat Pengantar-Surat Keterangan Catatan Kepolisian</a>
-         
-        </div>
-      </div> 
-      <a href="#about">Petunjuk</a>
-      
+    </div>
+  
+    <div class="dropdown">
+      <button class="dropbtn" > <a href="#">Petunjuk</a>
+        <i class="fa fa-caret-down"></i>
+      </button>
+  </div>
 
-    <a href="loginrin.php" > Login </a> 
+  <div class="dropdown">
+    <button class="dropbtn" > <a href="#">Login</a>
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="loginrin.php">Admin</a>
+      <a href="loginrin1.php">Warga</a>
      
     
-        
-  
-  </div>
- 
+   
 </nav>
 <!--Carousel Wrapper-->
 <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
