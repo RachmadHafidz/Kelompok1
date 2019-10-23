@@ -55,9 +55,10 @@
 		
 		<div class="bottom-grid">
 			<div class="logo">
-				<h1> <a href="index.html"><span class="fa fa-key"></span> SILAHKAN LOGIN!</a></h1>
+				<h1> <a href="#"><span class="fa fa-key"></span> SILAHKAN LOGIN!</a></h1>
 			</div>
-		</div>
+        </div>
+        
 		<?php 
         if(isset($_GET["login_error"])){
             echo "<script>alert('Username atau Password salah ');history.go(-1);</script>";
@@ -72,7 +73,7 @@
 			</div>
 			
 			<div class="content-bottom">
-				<form action="cek_login.php" method="post">
+				<form action="cek_login1.php" method="post">
 					<div class="field-group">
 						<span class="fa fa-user" aria-hidden="true"></span>
 						<div class="wthree-field">
@@ -89,7 +90,11 @@
 					</div>
 					<div class="wthree-field">
 						<button type="submit" class="btn">login</button>
+                    </div>
+                    <div class="wthree-field">
+						<button type="button" class="btn"><a href="http://localhost/Kelompok1/rian/selasa/nyoba.html">Beranda</a></button>
 					</div>
+                    
 				</form>
 			</div>
 		</div>

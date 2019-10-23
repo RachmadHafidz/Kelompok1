@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>LOGIN</title>
+	<title>LOGIN ADMIN</title>
 	<link rel="stylesheet" type="text/css" href="stylerin.css">
 </head>
 <body>
 
 
-	<h1>S.I.D <br/>SI Desa Sabrang</h1>
+<h1>Login Admin</h1>
 
 	<div class="kotak_login">
 		<p class="tulisan_login">Silahkan login</p>
@@ -20,7 +20,7 @@
 	<br/>
 	<br/>
 
-		<form method="post" action="logina.php">
+		<form method="post" action="login.php">
 			<label>Username</label>
 			<input type="text" name="username" class="form_login" placeholder="Username atau Email">
 

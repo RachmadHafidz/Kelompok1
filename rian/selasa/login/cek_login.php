@@ -30,20 +30,14 @@ if($cek > 0){
 		header("location:http://localhost/Kelompok1/rian/selasa/nyoba2.php");
  
 	// cek jika user login sebagai pegawai
-	}else if($data['level']=="pegawai"){
+	}else if($data['level']=="warga"){
 		// buat session login dan username
 		$_SESSION['username'] = $username;
-		$_SESSION['level'] = "pegawai";
+		$_SESSION['level'] = "warga";
 		// alihkan ke halaman dashboard pegawai
-		header("location:halaman_pegawai.php");
+		header("location:http://localhost/Kelompok1/rian/selasa/nyoba2.php");
  
-	// cek jika user login sebagai pengurus
-	}else if($data['level']=="pengurus"){
-		// buat session login dan username
-		$_SESSION['username'] = $username;
-		$_SESSION['level'] = "pengurus";
-		// alihkan ke halaman dashboard pengurus
-		header("location:halaman_pengurus.php");
+	
  
 	}else{
  

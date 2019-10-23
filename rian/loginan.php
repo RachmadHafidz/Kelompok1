@@ -7,7 +7,7 @@
     $username=$_POST["username"];
     $password=$_POST["password"];
     
-    if($username=="iya" AND $password=="iya")
+    if($username=="admin" AND $password=="iya")
     {
         $_SESSION["username"]=$username;
         header("location:home.php");

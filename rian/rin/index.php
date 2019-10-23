@@ -55,7 +55,7 @@
 		
 		<div class="bottom-grid">
 			<div class="logo">
-				<h1> <a href="index.html"><span class="fa fa-key"></span> SILAHKAN LOGIN!</a></h1>
+				<h1> <a href="#"><span class="fa fa-key"></span> SILAHKAN LOGIN!</a></h1>
 			</div>
 		</div>
 		<?php 
@@ -89,6 +89,9 @@
 					</div>
 					<div class="wthree-field">
 						<button type="submit" class="btn">login</button>
+					</div>
+					<div class="wthree-field">
+						<button type="submit" class="btn"><a href="http://localhost/Kelompok1/rian/selasa/nyoba.html">Beranda</a></button>
 					</div>
 				</form>
 			</div>
