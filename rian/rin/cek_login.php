@@ -27,23 +27,9 @@ if($cek > 0){
 		$_SESSION['username'] = $username;
 		$_SESSION['level'] = "admin";
 		// alihkan ke halaman dashboard admin
-		header("location:http://localhost/Kelompok1/rian/selasa/nyoba2.php");
+		header("location:http://localhost/Kelompok1/rian/rin/home/index.php");
  
-	// cek jika user login sebagai pegawai
-	}else if($data['level']=="warga"){
-		// buat session login dan username
-		$_SESSION['username'] = $username;
-		$_SESSION['level'] = "warga";
-		// alihkan ke halaman dashboard pegawai
-		header("location:http://localhost/Kelompok1/rian/selasa/nyoba2.php");
- 
-	// cek jika user login sebagai pengurus
-	}else if($data['level']=="pengurus"){
-		// buat session login dan username
-		$_SESSION['username'] = $username;
-		$_SESSION['level'] = "pengurus";
-		// alihkan ke halaman dashboard pengurus
-		header("location:halaman_pengurus.php");
+	
  
 	}else{
  
