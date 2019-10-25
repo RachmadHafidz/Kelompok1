@@ -111,7 +111,7 @@
           <a class="dropdown-item" href="#">Admin</a>
           <div class="dropdown-divider"></div>
           <h6 class="dropdown-header">Data:</h6>
-          <a class="dropdown-item" href="dtpenduduk.php">Data Penduduk</a>
+          <a class="dropdown-item" href="dtpenduduk.php">Perangkat Desa</a>
           <a class="dropdown-item" href="dtkeluarga.php">Data Keluarga</a>
           <a class="dropdown-item" href="dtadmin.php">Data Admin</a>
         </div>

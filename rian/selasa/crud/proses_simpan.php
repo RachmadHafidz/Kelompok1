@@ -24,7 +24,7 @@ if(move_uploaded_file($tmp, $path)){ // Cek apakah gambar berhasil diupload atau
 
 	if($sql){ // Cek jika proses simpan ke database sukses atau tidak
 		// Jika Sukses, Lakukan :
-		header("location: index.php"); // Redirect ke halaman index.php
+		header("location: http://localhost/Kelompok1/rian/rin/home/dtpenduduk.php"); // Redirect ke halaman index.php
 	}else{
 		// Jika Gagal, Lakukan :
 		echo "Maaf, Terjadi kesalahan saat mencoba untuk menyimpan data ke database.";
