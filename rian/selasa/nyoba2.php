@@ -85,7 +85,7 @@
         <div class="dropdown-content">
           <a href="profil.html">Profil Desa</a>
           <a href="visi&misi">Visi & Misi</a>
-          <a href="#">Motto</a>
+          <a href="motto">Motto</a>
           <a href="http://localhost/Kelompok1/rian/selasa/crud/index1.php">Perangkat Desa</a>
           
         </div>
