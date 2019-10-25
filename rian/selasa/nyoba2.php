@@ -84,7 +84,7 @@
         </button>
         <div class="dropdown-content">
           <a href="profil.html">Profil Desa</a>
-          <a href="#">Visi & Misi</a>
+          <a href="visi&misi">Visi & Misi</a>
           <a href="#">Motto</a>
           <a href="http://localhost/Kelompok1/rian/selasa/crud/index1.php">Perangkat Desa</a>
           
@@ -288,7 +288,7 @@ echo "Hai, selamat datang ". $_SESSION['username'];
                 <div class="container">
                   <div class="row">
                     <div class="col-md-12">
-                      <p class="text-md-center">&copy; ini copyrught</p>
+                      <p class="text-md-center">&copy; @copyright</p>
                     </div>
                   </div>
                 </div>
