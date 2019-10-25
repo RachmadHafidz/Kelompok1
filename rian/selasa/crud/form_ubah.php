@@ -44,7 +44,7 @@
 	
 	<hr>
 	<input type="submit" value="Ubah">
-	<a href="index.php"><input type="button" value="Batal"></a>
+	<a href="http://localhost/Kelompok1/rian/rin/home/dtpenduduk.php"><input type="button" value="Batal"></a>
 	</form>
 </body>
 </html>

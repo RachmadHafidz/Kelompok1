@@ -20,7 +20,7 @@ $sql2 = mysqli_query($connect, $query2); // Eksekusi/Jalankan query dari variabe
 
 if($sql2){ // Cek jika proses simpan ke database sukses atau tidak
 	// Jika Sukses, Lakukan :
-	header("location: index.php"); // Redirect ke halaman index.php
+	header("location: http://localhost/Kelompok1/rian/rin/home/dtpenduduk.php"); // Redirect ke halaman index.php
 }else{
 	// Jika Gagal, Lakukan :
 	echo "Data gagal dihapus. <a href='index.php'>Kembali</a>";

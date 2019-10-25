@@ -35,10 +35,10 @@ if($cek > 0){
 	}else{
  
 		// alihkan ke halaman login kembali
-		header("location:index.php?pesan=gagal");
+		header("location:index1.php?pesan=gagal");
 	}	
 }else{
-	header("location:index.php?pesan=gagal");
+	header("location:index1.php?pesan=gagal");
 }
  
 ?>
