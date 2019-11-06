@@ -27,7 +27,7 @@ $PASSWORD = $_POST['PASSWORD'];
 $TGL_DAFTAR = $_POST['TGL_DAFTAR'];
 $LEVEL = $_POST['LEVEL'];
 $STATUS = $_POST['STATUS'];
-$FOTO = $_POST['FOTO'];
+
 
 // Cek apakah user ingin mengubah fotonya atau tidak
 if(isset($_POST['ubah_foto'])){ // Jika user menceklis checkbox yang ada di form ubah, lakukan :

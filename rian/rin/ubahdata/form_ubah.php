@@ -41,7 +41,7 @@
 	</tr>
 	<tr>
 		<td>Tanggal Lahir</td>
-		<td><input type="text" name="TGL_LHR" value="<?php echo $data['TGL_LHR']; ?>"></td>
+		<td><input type="date" name="TGL_LHR" value="<?php echo $data['TGL_LHR']; ?>"></td>
     </tr>
     <tr>
 		<td>Agama</td>
@@ -97,7 +97,7 @@
     </tr>
     <tr>
 		<td>Tanggal Daftar</td>
-		<td><input type="text" name="TGL_DAFTAR" value="<?php echo $data['TGL_DAFTAR']; ?>"></td>
+		<td><input type="date" name="TGL_DAFTAR" value="<?php echo $data['TGL_DAFTAR']; ?>"></td>
     </tr>
     <tr>
 		<td>Level</td>
