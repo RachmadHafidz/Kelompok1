@@ -184,7 +184,7 @@ include 'koneksi.php';
 ?>
          <div style="overflow-x:auto;">
               <table>
-              <a href="http://localhost/Kelompok1/rian/selasa/crud/form_simpan.php">Tambah Data</a><br><br>
+              <a href="http://localhost/Kelompok1/rian/rin/ubahdata/form_simpan.php">Tambah Data</a><br><br>
               <form method="post" action="dtwarga.php">
  <input type="text" name="search" placeholder="cari disini">
  <input type="submit" name="submit" value="search">
@@ -230,7 +230,7 @@ include 'koneksi.php';
 	
 	while($data = mysqli_fetch_array($sql)){ // Ambil semua data dari hasil eksekusi $sql
         echo "<tr>";
-        echo "<td><img src='images/".$data['FOTO']."' width='100' height='100'></td>";
+        echo "<td><img src='../ubahdata/images/".$data['FOTO']."' width='100' height='100'></td>";
 		echo "<td>".$data['NIK']."</td>";
 		echo "<td>".$data['NO_KK']."</td>";
         echo "<td>".$data['NAMA']."</td>";
@@ -255,7 +255,7 @@ include 'koneksi.php';
         echo "<td>".$data['STATUS']."</td>";
       
 	    echo "<td><a href=http://localhost/Kelompok1/rian/rin/ubahdata/form_ubah.php?NIK=".$data['NIK']."'>Ubah</a></td>";
-		echo "<td><a href='http://localhost/Kelompok1/rian/selasa/crud/proses_hapus.php?NIK=".$data['NIK']."'>Hapus</a></td>";
+		echo "<td><a href='http://localhost/Kelompok1/rian/rin/ubahdata/proses_hapus.php?NIK=".$data['NIK']."'>Hapus</a></td>";
 		echo "</tr>";
 	}
 	?>
