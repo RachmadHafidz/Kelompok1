@@ -1,3 +1,3 @@
 <?php 
-mysqli_connect('localhost','root','','akademik');
+mysqli_connect('localhost','root','','desafix');
 ?>
