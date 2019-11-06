@@ -6,12 +6,12 @@ session_start();
 include 'koneksi.php';
  
 // menangkap data yang dikirim dari form login
-$username = $_POST['username'];
-$password = $_POST['password'];
+$USERNAME = $_POST['USERNAME'];
+$PASSWORD = $_POST['PASSWORD'];
  
  
 // menyeleksi data user dengan username dan password yang sesuai
-$login = mysqli_query($koneksi,"select * from admin where username='$username' and password='$password'");
+$login = mysqli_query($koneksi,"select * from warga where USERNAME='$USERNAME' and PASSWORD='$PASSWORD'");
 // menghitung jumlah data yang ditemukan
 $cek = mysqli_num_rows($login);
  
@@ -21,11 +21,11 @@ if($cek > 0){
 	$data = mysqli_fetch_assoc($login);
  
 	// cek jika user login sebagai admin
-	if($data['level']=="admin"){
+	if($data['LEVEL']=="admin"){
  
 		// buat session login dan username
-		$_SESSION['username'] = $username;
-		$_SESSION['level'] = "admin";
+		$_SESSION['USERNAME'] = $USERNAME;
+		$_SESSION['LEVEL'] = "admin";
 		// alihkan ke halaman dashboard admin
 		header("location:http://localhost/Kelompok1/rian/rin/home/index.php");
  

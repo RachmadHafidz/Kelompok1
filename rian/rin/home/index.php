@@ -78,7 +78,7 @@
         <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
           <li class="user-profile-data">
           <span class="userpicture"><i title="Profile icon" class=" fa fa-user-circle-o"></i></span>
-          <div <a class="dropdown-item" href="profil.php"><?php session_start(); echo $_SESSION['username']; ?></a></div>
+          <div <a class="dropdown-item" href="profil.php"><?php session_start(); echo $_SESSION['USERNAME']; ?></a></div>
           </li>
           <div class="dropdown-divider"></div>
           <li> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a></li>
@@ -106,7 +106,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
           <h6 class="dropdown-header">Pendaftaran:</h6>
-          <a class="dropdown-item" href="#">Penduduk</a>
+          <a class="dropdown-item" href="dtwarga.php">Penduduk</a>
           <a class="dropdown-item" href="#">Keluarga</a>
           <a class="dropdown-item" href="#">Admin</a>
           <div class="dropdown-divider"></div>

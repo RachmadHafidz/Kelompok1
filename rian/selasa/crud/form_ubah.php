@@ -3,7 +3,7 @@
 	<title>Ubah Data</title>
 </head>
 <body>
-	<h1>Ubah Data Perangakt Desa</h1>
+	<h1>Ubah Data </h1>
 	
 	<?php
 	// Load file koneksi.php

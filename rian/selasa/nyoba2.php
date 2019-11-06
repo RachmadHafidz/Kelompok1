@@ -131,7 +131,7 @@ session_start();
 
  
 // menampilkan pesan selamat datang
-echo "Hai, selamat datang ". $_SESSION['username'];
+echo "Hai, selamat datang ". $_SESSION['NIK'];
  
 ?>
 <br/>

@@ -77,13 +77,13 @@
 					<div class="field-group">
 						<span class="fa fa-user" aria-hidden="true"></span>
 						<div class="wthree-field">
-							<input name="username" id="text1" type="text" value="" placeholder="Username" required>
+							<input name="NIK" id="text1" type="text" value="" placeholder="NIK" required>
 						</div>
 					</div>
 					<div class="field-group">
 						<span class="fa fa-lock" aria-hidden="true"></span>
 						<div class="wthree-field-pass">
-							<input name="password" id="pass" class="password" type="password" placeholder="Password">
+							<input name="PASSWORD" id="pass" class="password" type="PASSWORD" placeholder="Password">
 							<span class="field-icon"><i id="icon" class="fa fa-eye-slash"></i></span>
 
 						</div>
