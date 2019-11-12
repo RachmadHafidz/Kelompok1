@@ -227,7 +227,6 @@ include 'koneksi.php';
     $search = $_POST['search'];
 	$query = "SELECT * FROM warga WHERE NAMA LIKE '%$search%'"; // Query untuk menampilkan semua data siswa
 	$sql = mysqli_query($connect, $query); // Eksekusi/Jalankan query dari variabel $query
-	
 	while($data = mysqli_fetch_array($sql)){ // Ambil semua data dari hasil eksekusi $sql
         echo "<tr>";
         echo "<td><img src='../ubahdata/images/".$data['FOTO']."' width='100' height='100'></td>";

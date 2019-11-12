@@ -193,18 +193,18 @@
                   $host = "localhost";
                   $username = "root";
                   $password ="";
-                  $database = "db_desa";
+                  $database = "ddesa";
                   
                   $connect = mysqli_connect($host,$username,$password,$database);
-                  $query = "select * from admin";
+                  $query = "select * from warga where LEVEL='admin'";
                   $sql = mysqli_query($connect, $query);
                   while ($row=mysqli_fetch_array($sql)){
                     echo "<tr>";
-                    echo "<td>".$row['NIKADMIN']."</td>";
-                    echo "<td>".$row['NAMAADMIN']."</td>";
+                    echo "<td>".$row['NIK']."</td>";
+                    echo "<td>".$row['NAMA']."</td>";
                     echo "<td>".$row['JENIS_KELAMIN']."</td>";
                     echo "<td>".$row['LEVEL']."</td>";
-                    echo "<td>".$row['status_akun']."</td>";
+                    echo "<td>".$row['STATUS']."</td>";
                     echo "<td>".$row['USERNAME']."</td>";
                     
                     
