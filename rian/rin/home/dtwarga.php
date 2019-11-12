@@ -175,7 +175,7 @@ tr:hover {background-color:#f5f5f5;}
             <a href="index.php">Beranda</a>
           </li>
           <li class="breadcrumb-item active">Data Anggota</li>
-          <li class="breadcrumb-item active">Perangkat Desa</li>
+          <li class="breadcrumb-item active">Penduduk</li>
         </ol>
 
         <!-- DataTables Example -->

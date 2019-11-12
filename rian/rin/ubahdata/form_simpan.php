@@ -18,10 +18,19 @@
 		<td>Nama</td>
 		<td><input type="text" name="NAMA"></td>
     </tr> 
-    <tr>
+	<tr>
 		<td>Jenis Kelamin</td>
-		<td><input type="text" name="JENIS_KELAMIN"></td>
-	</tr>
+		<td>
+		<?php
+		if($data['JENIS_KELAMIN'] == "Laki-laki"){
+			echo "<input type='radio' name='JENIS_KELAMIN' value='laki-laki' checked='checked'> Laki-laki";
+			echo "<input type='radio' name='JENIS_KELAMIN' value='perempuan'> Perempuan";
+		}else{
+			echo "<input type='radio' name='JENIS_KELAMIN' value='laki-laki'> Laki-laki";
+			echo "<input type='radio' name='JENIS_KELAMIN' value='perempuan' checked='checked'> Perempuan";
+		}
+		?>
+		</td>
     <tr>
 		<td>Tempat Lahir</td>
 		<td><input type="type" name="TMP_LHR"></td>
