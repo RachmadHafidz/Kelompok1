@@ -18,11 +18,11 @@
 		<td>Nama</td>
 		<td><input type="text" name="NAMA"></td>
     </tr> 
-	<tr>
+    <tr>
 		<td>Jenis Kelamin</td>
 		<td>
 		<?php
-		if($data['JENIS_KELAMIN'] == "Laki-laki"){
+		if(['JENIS_KELAMIN'] == "Laki-laki"){
 			echo "<input type='radio' name='JENIS_KELAMIN' value='laki-laki' checked='checked'> Laki-laki";
 			echo "<input type='radio' name='JENIS_KELAMIN' value='perempuan'> Perempuan";
 		}else{
@@ -31,6 +31,7 @@
 		}
 		?>
 		</td>
+	</tr>
     <tr>
 		<td>Tempat Lahir</td>
 		<td><input type="type" name="TMP_LHR"></td>
@@ -95,18 +96,38 @@
 		<td>Tanggal Daftar</td>
 		<td><input type="date" name="TGL_DAFTAR"></td>
 	</tr>
-    <tr>
+	<tr>
 		<td>Level</td>
-		<td><input type="text" name="LEVEL"></td>
-	</tr>
+		<td>
+		<?php
+		if(['LEVEL'] == "Level"){
+			echo "<input type='radio' name='LEVEL' value='admin' checked='checked'> Admin";
+			echo "<input type='radio' name='LEVEL' value='admin'> Warga";
+		}else{
+			echo "<input type='radio' name='LEVEL' value='admin'> Admin";
+			echo "<input type='radio' name='LEVEL' value='admin' checked='checked'> Warga";
+		}
+		?>
+		</td>
+	</tr> 
 	<tr>
 		<td>Foto</td>
 		<td><input type="file" name="FOTO"></td>
 	</tr>
-    <tr>
+	<tr>
 		<td>Status</td>
-		<td><input type="text" name="STATUS"></td>
-	</tr>
+		<td>
+		<?php
+		if(['STATUS'] == "Aktif"){
+			echo "<input type='radio' name='STATUS' value='aktif' checked='checked'> Aktif";
+			echo "<input type='radio' name='STATUS' value='aktif'> Nonaktif";
+		}else{
+			echo "<input type='radio' name='STATUS' value='aktif'> Aktif";
+			echo "<input type='radio' name='STATUS' value='aktif' checked='checked'> Nonaktif";
+		}
+		?>
+		</td>
+	</tr> 
 	</table>
 	
 	<hr>
