@@ -112,7 +112,7 @@ ul.dropdown-lr {
         <div class="dropdown-content">
           <a href="profillogin.php">Profil Desa</a>
           <a href="visimisilogin.php">Visi & Misi</a>
-          <a href="motto.html">Motto</a>
+          <a href="mottologin.php">Motto</a>
           <a href="http://localhost/Kelompok1/rian/selasa/crud/index1.php">Perangkat Desa</a>
           
         </div>
