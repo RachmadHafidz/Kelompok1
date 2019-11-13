@@ -87,7 +87,7 @@
     
     </head>
 <body>
-
+<?php session_start();?>
   
 	<div class="container-float">
 		
@@ -112,7 +112,7 @@
             <i class="fa fa-caret-down"></i>
           </button>
           <div class="dropdown-content">
-            <a href="profil.html">Profil Desa</a>
+            <a href="profillogin.php">Profil Desa</a>
             <a href="visi&misi.html">Visi & Misi</a>
             <a href="motto.html">Motto</a>
             <a href="http://localhost/Kelompok1/rian/selasa/crud/index1.php">Perangkat Desa</a>
@@ -150,7 +150,7 @@
 include 'config.php';
  
 // mengaktifkan session
-session_start();
+
  
 // cek apakah user telah login, jika belum login maka di alihkan ke halaman login
 
