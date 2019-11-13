@@ -94,7 +94,7 @@
       
       <nav class="navbar navbar-dark bg-dark justify-content-between"> <p><a><font class="navbar-brand" color="white"></a>Sistem Informasi Desa Sabrang</font></a></p>
         <p><font color="white">Jl. watu ulo no 1, Desa Sabrang, Kec. Ambulu, Kab. Jember , Kode Pos 68172</font></p>
-
+        <a href="nyoba.html">Logout</a>
         
        </div>
       
@@ -102,13 +102,13 @@
         <div class="topnav" id="myTopnav">
          
           <div class="dropdown">
-            <button class="dropbtn" > <a href="nyoba.html">Beranda</a>
+            <button class="dropbtn" > <a href="beranda.php">Beranda</a>
               <i class="fa fa-caret-down"></i>
             </button>
         </div>
   
         <div class="dropdown">
-          <button class="dropbtn" > <a href="profil.html">Profil Desa</a>
+          <button class="dropbtn" > <a href="profillogin.php">Profil Desa</a>
             <i class="fa fa-caret-down"></i>
           </button>
           <div class="dropdown-content">
