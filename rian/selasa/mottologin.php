@@ -93,7 +93,7 @@
       
       <nav class="navbar navbar-dark bg-dark justify-content-between"> <p><a><font class="navbar-brand" color="white"></a>Sistem Informasi Desa Sabrang</font></a></p>
         <p><font color="white">Jl. watu ulo no 1, Desa Sabrang, Kec. Ambulu, Kab. Jember , Kode Pos 68172</font></p>
-
+        <a href="nyoba.html">Logout</a>
         
        </div>
       
@@ -101,26 +101,26 @@
         <div class="topnav" id="myTopnav">
          
           <div class="dropdown">
-            <button class="dropbtn" > <a href="nyoba.html">Beranda</a>
+            <button class="dropbtn" > <a href="beranda.php">Beranda</a>
               <i class="fa fa-caret-down"></i>
             </button>
         </div>
   
         <div class="dropdown">
-          <button class="dropbtn" > <a href="profil.html">Profil Desa</a>
+          <button class="dropbtn" > <a href="profillogin.php">Profil Desa</a>
             <i class="fa fa-caret-down"></i>
           </button>
           <div class="dropdown-content">
-            <a href="profil.html">Profil Desa</a>
-            <a href="visi&misi.html">Visi & Misi</a>
-            <a href="motto.html">Motto</a>
+            <a href="profillogin,php">Profil Desa</a>
+            <a href="visimisilogin.php">Visi & Misi</a>
+            <a href="mottologin.php">Motto</a>
             <a href="http://localhost/Kelompok1/rian/selasa/crud/index1.php">Perangkat Desa</a>
             
           </div>
         </div> 
     
         <div class="dropdown">
-          <button class="dropbtn" > <a href="profil.html">Berita</a>
+          <button class="dropbtn" > <a href="profillogin.php">Berita</a>
             <i class="fa fa-caret-down"></i>
           </button>
       </div>
@@ -130,8 +130,12 @@
           <i class="fa fa-caret-down"></i>
         </button>
     </div>
-  
-    <div class="dropdown-content">
+    
+    <div class="dropdown">
+        <button class="dropbtn"><a href="#">Pelayanan</a>
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
           <a href="#">Persyaratan</a>
           <a href="#">Surat Pengantar-Akta Kelehiran</a>
           <a href="#">Surat Pengantar-Kartu Keluarga</a>
