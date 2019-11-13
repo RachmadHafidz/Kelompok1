@@ -79,7 +79,7 @@
       </div>
 
       <div class="dropdown">
-        <button class="dropbtn" > <a href="profil.html">Profil Desa</a>
+        <button class="dropbtn" > Profil Desa
           <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
