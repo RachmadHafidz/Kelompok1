@@ -113,7 +113,7 @@
           <div class="dropdown-content">
             <a href="profillogin.php">Profil Desa</a>
             <a href="visimisilogin.php">Visi & Misi</a>
-            <a href="motto.html">Motto</a>
+            <a href="mottologin.php">Motto</a>
             <a href="http://localhost/Kelompok1/rian/selasa/crud/index1.php">Perangkat Desa</a>
             
           </div>
@@ -131,21 +131,7 @@
         </button>
     </div>
   
-    <div class="dropdown">
-        <button class="dropbtn"><a href="#">Pelayanan</a>
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="#">Persyaratan</a>
-          <a href="#">Surat Pengantar-Akta Kelehiran</a>
-          <a href="#">Surat Pengantar-Kartu Keluarga</a>
-          <a href="#">Surat Pengantar-Kartu Tanda Penduduk</a>
-          <a href="#">Surat Pengantar-Surat Nikah</a>
-          <a href="#">Surat Pengantar-Pindah Tempat</a>
-          <a href="#">Surat Pengantar-Surat Keterangan Catatan Kepolisian</a>
-        </div>
-      </div> 
-
+   
       <?php 
 include 'config.php';
  
