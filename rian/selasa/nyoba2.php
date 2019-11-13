@@ -73,7 +73,7 @@
       <div class="topnav" id="myTopnav">
        
         <div class="dropdown">
-          <button class="dropbtn" > <a href="nyoba.html">Beranda</a>
+          <button class="dropbtn" > <a href="beranda.php">Beranda</a>
             <i class="fa fa-caret-down"></i>
           </button>
       </div>
