@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    
 <title>S.I.D Sabrang</title>
 <link href="http://cdn.phpoll.com/css/animate.css" rel="stylesheet">
@@ -89,7 +90,7 @@ ul.dropdown-lr {
       
       <nav class="navbar navbar-dark bg-dark justify-content-between"> <p><a><font class="navbar-brand" color="white">Sistem Informasi Desa Sabrang</font></a></p>
         <p><font color="white ">Jl. watu ulo no 1, Desa Sabrang, Kec. Ambulu, Kab. Jember , Kode Pos 68172</font></p>
-        
+      <a href="nyoba.html">Logout</a>  
         
       </nav>  
 		
@@ -99,7 +100,7 @@ ul.dropdown-lr {
       <div class="topnav" id="myTopnav">
        
         <div class="dropdown">
-          <button class="dropbtn" > <a href="nyoba.html">Beranda</a>
+          <button class="dropbtn" > <a href="beranda.php">Beranda</a>
             <i class="fa fa-caret-down"></i>
           </button>
       </div>
@@ -109,7 +110,7 @@ ul.dropdown-lr {
           <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-          <a href="profil.html">Profil Desa</a>
+          <a href="profillogin.php">Profil Desa</a>
           <a href="visi&misi.html">Visi & Misi</a>
           <a href="motto.html">Motto</a>
           <a href="http://localhost/Kelompok1/rian/selasa/crud/index1.php">Perangkat Desa</a>
