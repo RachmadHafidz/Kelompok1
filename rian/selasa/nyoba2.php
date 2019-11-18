@@ -73,19 +73,19 @@
       <div class="topnav" id="myTopnav">
        
         <div class="dropdown">
-          <button class="dropbtn" > <a href="nyoba.html">Beranda</a>
+          <button class="dropbtn" > <a href="beranda.php">Beranda</a>
             <i class="fa fa-caret-down"></i>
           </button>
       </div>
 
       <div class="dropdown">
-        <button class="dropbtn" > <a href="profil.html">Profil Desa</a>
+        <button class="dropbtn" > Profil Desa
           <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
           <a href="profillogin.php">Profil Desa</a>
-          <a href="visi&misi">Visi & Misi</a>
-          <a href="motto">Motto</a>
+          <a href="visimisilogin.php">Visi & Misi</a>
+          <a href="mottologin.php">Motto</a>
           <a href="http://localhost/Kelompok1/rian/selasa/crud/index1.php">Perangkat Desa</a>
           
         </div>
@@ -136,8 +136,9 @@ echo "Hai, selamat datang ". $_SESSION['NIK'];
 ?>
 <br/>
 <br/>
-        </nav>  
-     <!--Carousel Wrapper-->
+
+</nav>
+<!--Carousel Wrapper-->
 <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
   <!--Indicators-->
   <ol class="carousel-indicators">
@@ -150,7 +151,7 @@ echo "Hai, selamat datang ". $_SESSION['NIK'];
   <div class="carousel-inner" role="listbox">
     <div class="carousel-item active">
       <div class="view">
-        <img class="d-block w-100" src="hhh.jpg"
+        <img class="d-block w-100" src="461523-damai-di-desa-1-23.jpg" style="height: 600px;"
           alt="First slide">
         <div class="mask rgba-black-light"></div>
       </div>
@@ -162,7 +163,7 @@ echo "Hai, selamat datang ". $_SESSION['NIK'];
     <div class="carousel-item">
       <!--Mask color-->
       <div class="view">
-        <img class="d-block w-100" src="desa.jpg"
+        <img class="d-block w-100" src="desa.jpg" style="height: 600px;"
           alt="Second slide">
         <div class="mask rgba-black-strong"></div>
       </div>
@@ -174,7 +175,7 @@ echo "Hai, selamat datang ". $_SESSION['NIK'];
     <div class="carousel-item">
       <!--Mask color-->
       <div class="view">
-        <img class="d-block w-100" src="Webp.net-compress-image (1).jpg"
+        <img class="d-block w-100" src="sabrang.jpg" style="height: 600px;"
           alt="Third slide">
         <div class="mask rgba-black-slight"></div>
       </div>
@@ -197,10 +198,7 @@ echo "Hai, selamat datang ". $_SESSION['NIK'];
   <!--/.Controls-->
 </div>
 <!--/.Carousel Wrapper-->
-        
-	<!-- /.navbar-collapse -->
-	</div>
-</nav>
+
 <div class="container mt-3">
         <div class="row">
           <!-- Sidebar -->
@@ -213,29 +211,32 @@ echo "Hai, selamat datang ". $_SESSION['NIK'];
               
                 <br />
                 <blockquote class="card-blockquote">
-                        <p><a href="summon.html">1. Daftar Wisata Desa</a></p>
-                        <p><a href="http://localhost/Kelompok1/rian/selasa/crudwarga/index.php">2. Daftar Warga</a></p>
-                       <p> <a href="summon.html">3. DUAR</a></p>
-                </blockquote>
+                        <p><a href="http://localhost/Kelompok1/rian/selasa/crud/index1.php">1. Daftar Perangkat Desa</a></p>
+                        <p><a href="http://localhost/Kelompok1/rian/selasa/crudwarga/index1.php">2. Daftar Warga </a></p>
+                        <p><a href="http://localhost/Kelompok1/rian/selasa/crudwarga/index1.php">3. laporan Warga </a></p>
+                       
+                      </blockquote>
               </div>
             </div>
             <div class="card mb-3">
-                  <div class="card-header">
-                    <h4 class="text-mono text-center">PETA SABRANG</h4>
-                  </div>
-                 
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63151.28001653562!2d113.5569547719641!3d-8.406080534825929!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd69d3c69bb5e09%3A0xa99f72fcbbce8000!2sSabrang%2C%20Ambulu%2C%20Jember%20Regency%2C%20East%20Java!5e0!3m2!1sen!2sid!4v1572019975063!5m2!1sen!2sid" width="350" height="320" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-
+                <div class="card-header">
+                    
+                  <h4 class="text-mono text-center">PETA SABRANG</h4>
+                </div>
+               
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63151.28001653562!2d113.5569547719641!3d-8.406080534825929!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd69d3c69bb5e09%3A0xa99f72fcbbce8000!2sSabrang%2C%20Ambulu%2C%20Jember%20Regency%2C%20East%20Java!5e0!3m2!1sen!2sid!4v1572019975063!5m2!1sen!2sid" width="350" height="320" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+              </div>          
+                  
+                    <div class="card mb-3">
+                      <div class="card-header">
+                        <h4 class="text-mono text-center">Kalender</h4>
+                      </div>
                       <div class="card-body">
-                        <img src="deluge.png" style="height: 110px;" class="mx-auto d-block">
-                        <br />
-                        <blockquote class="card-blockquote">
-                          <p class="text-center">KALO MAU PAKE GAMBAR</p>
-                        </blockquote>
+                        <a href="fullcalendar.html"><img src="kalender.png" style="height: 350px;width: 320px;" class="mx-auto d-block"></a>
                         </div>
                       </div>
-                  </div>
-                </div>
+</div>              
+                
                 <!-- Isi Content -->
                 <div class="col-md-8 mb-3">
                   <div class="card">
