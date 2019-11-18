@@ -6,6 +6,7 @@
 <link href="http://cdn.phpoll.com/css/animate.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src="js/sticky.js"></script>
   <script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -74,7 +75,17 @@ ul.dropdown-lr {
 	}
 	.dropdown-lr label {
 		color: #eee;
-	}
+  }
+  .sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+
 }
 
     </style>   
@@ -96,13 +107,13 @@ ul.dropdown-lr {
 
   <nav class="navbar navbar-dark bg-dark justify-content-between"> 
       <div class="topnav" id="myTopnav">
-       
+        <div id="navbar">
         <div class="dropdown">
           <button class="dropbtn" > <a href="nyoba.html">Beranda</a>
             <i class="fa fa-caret-down"></i>
           </button>
       </div>
-
+      
       <div class="dropdown">
         <button class="dropbtn" > <a href="profil.html">Profil Desa</a>
           <i class="fa fa-caret-down"></i>
@@ -136,7 +147,7 @@ ul.dropdown-lr {
       <a href="http://localhost/Kelompok1/rian/rin/index.php">Admin</a>
       <a href="http://localhost/Kelompok1/rian/rin/index1.php">Warga</a>
      
-    
+    </div>
    
 </nav>
 <!--Carousel Wrapper-->

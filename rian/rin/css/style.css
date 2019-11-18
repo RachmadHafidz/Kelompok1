@@ -424,9 +424,9 @@ form .field-group .wthree-field-pass {
 }
 
 .wthree-field button.btn {
-    background: #fc636b;
+    background: #67ff59;
     border: none;
-    color: #fff;
+    color: rgb(0, 0, 0);
     padding: 11px 15px;
     text-transform: uppercase;
 	font-family: 'Mukta', sans-serif;

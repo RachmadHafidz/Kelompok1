@@ -136,14 +136,6 @@ echo "Hai, selamat datang ". $_SESSION['NIK'];
 ?>
 <br/>
 <br/>
-
-
-    
-  
-     
-         
-    
-  
         </nav>  
      <!--Carousel Wrapper-->
 <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">

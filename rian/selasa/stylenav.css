@@ -17,4 +17,27 @@
         padding: 15px;
         text-decoration: none;
         }
-  
+    #navbar {
+        overflow: hidden;
+    }
+
+    #navbar a {
+        float: left;
+        display: block;
+        text-align: center;
+        text-decoration: none;
+    }
+    
+    .content {
+        padding: 15px;
+    }
+
+    .sticky {
+        position: sticky;
+        top: 0px;
+        width: auto;
+    }
+
+    .sticky + .content {
+        padding: 20px;
+    }
