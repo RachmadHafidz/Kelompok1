@@ -84,7 +84,7 @@
 					<div class="field-group">
 						<span class="fa fa-lock" aria-hidden="true"></span>
 						<div class="wthree-field-pass">
-							<input name="PASSWORD" id="PASSWORD" class="PASSWORD" type="PASSWORD" placeholder="PASSWORD">
+							<input name="PASSWORD" id="pass" class="PASSWORD" type="password" placeholder="PASSWORD">
 							<span class="field-icon"><i id="icon" class="fa fa-eye-slash"></i></span>
 
 						</div>
