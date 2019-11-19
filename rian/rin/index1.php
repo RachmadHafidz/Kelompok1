@@ -77,7 +77,7 @@
 					<div class="field-group">
 						<span class="fa fa-user" aria-hidden="true"></span>
 						<div class="wthree-field">
-							<input name="NIK" id="text1" type="text" value="" placeholder="NIK" required>
+							<input name="NIKADMIN" id="text1" type="text" value="" placeholder="NIK" required>
 						</div>
 					</div>
 					<div class="field-group">
