@@ -6,12 +6,12 @@ session_start();
 include 'koneksi.php';
  
 // menangkap data yang dikirim dari form login
-$NIK = $_POST['NIK'];
+$NIK = $_POST['NIKADMIN'];
 $PASSWORD= $_POST['PASSWORD'];
  
  
 // menyeleksi data user dengan username dan password yang sesuai
-$login = mysqli_query($koneksi,"select * from warga where NIK='$NIK' and PASSWORD='$PASSWORD'");
+$login = mysqli_query($koneksi,"select * from admin where NIKADMIN='$NIK' and PASSWORD='$PASSWORD'");
 // menghitung jumlah data yang ditemukan
 $cek = mysqli_num_rows($login);
  
