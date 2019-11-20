@@ -232,14 +232,15 @@ echo "Hai, selamat datang ". $_SESSION['NIK'];
   <!--/.Controls-->
 </div>
 
-  <div class="container mt-3">
+<div class="container mt-3">
         <div class="row">
           <!-- Sidebar -->
           
                 <!-- Isi Content -->
 
-              
+                
                 <div class="col-md-15 mb-3">
+                  <div class="card">
                   <div id="card">
                     <div class="card-header">
                       <h4 class="text-mono text-center">Profil Desa Sabrang</h4>
@@ -308,6 +309,7 @@ echo "Hai, selamat datang ". $_SESSION['NIK'];
                                     <p>2.      Diusulkan untuk mendapat bantuan sarana dan prasarana yang akan dibutuhkan dalam kegiatan / programnya</p>
                       </div>
                     </div>
+                  </div>
                   </div>
   </div>
 
