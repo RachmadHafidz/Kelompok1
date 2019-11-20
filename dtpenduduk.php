@@ -78,7 +78,7 @@
         <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
           <li class="user-profile-data">
           <span class="userpicture"><i title="Profile icon" class=" fa fa-user-circle-o"></i></span>
-          <div <a class="dropdown-item" cursor= "pointer" href="#"><?php session_start(); echo $_SESSION['NIKADMIN']; ?></a></div>
+          <div <a class="dropdown-item" cursor= "pointer" href="#"><?php session_start(); echo $_SESSION['username']; ?></a></div>
           </li>
           <div class="dropdown-divider"></div>
           <li> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a></li>
@@ -181,7 +181,7 @@
 	// Load file koneksi.php
 	include "koneksi.php";
 	
-	$query = "SELECT * FROM penduduk"; // Query untuk menampilkan semua data siswa
+	$query = "SELECT * FROM p_desa"; // Query untuk menampilkan semua data siswa
 	$sql = mysqli_query($connect, $query); // Eksekusi/Jalankan query dari variabel $query
 	
 	while($data = mysqli_fetch_array($sql)){ // Ambil semua data dari hasil eksekusi $sql
