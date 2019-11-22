@@ -173,7 +173,7 @@
                         echo '<h6 class="up">'.$institusi.'</h6>';
                         echo '<h5 class="up" id="nama">'.$nama.'</h5><br/>';
                         echo '<h6 class="status">'.$status.'</h6>';
-                        echo '<span id="alamat">Jalan Raya Kediri Gg. Kwagean No. 04 Loceret Telp/Fax. (0358) 329806 Nganjuk 64471</span>';
+                        echo '<span id="alamat">Jl. Watu Ulo No.1, Desa Sabrang, Kecamatan Ambulu, Kab. Jember, Kode Pos 68172</span>';
 
                     echo '
                 </div>
@@ -255,7 +255,7 @@
                 <p>Kepala Sekolah</p>
                 <div style="height: 50px;"></div>';
                 $query = mysqli_query($config, "SELECT kepsek, nip FROM tbl_instansi");
-                list($kepsek,$nip) = mysqli_fetch_array($query);
+                list($kepseks,$nip) = mysqli_fetch_array($query);
                 if(!empty($kepsek)){
                     echo '<p class="lead">'.$kepsek.'</p>';
                 } else {
