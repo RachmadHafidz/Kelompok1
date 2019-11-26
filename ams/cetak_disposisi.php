@@ -255,7 +255,7 @@
                 <p>Kepala Sekolah</p>
                 <div style="height: 50px;"></div>';
                 $query = mysqli_query($config, "SELECT kepsek, nip FROM tbl_instansi");
-                list($kepsek,$nip) = mysqli_fetch_array($query);
+                list($kepseks,$nip) = mysqli_fetch_array($query);
                 if(!empty($kepsek)){
                     echo '<p class="lead">'.$kepsek.'</p>';
                 } else {
