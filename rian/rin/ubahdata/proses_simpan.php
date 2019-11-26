@@ -3,6 +3,7 @@
 include "koneksi.php";
 
 // Ambil Data yang Dikirim dari Form
+$ID = $_POST['id'];
 $NIK = $_POST['NIK'];
 $NO_KK = $_POST['NO_KK'];
 $NAMA = $_POST['NAMA'];
@@ -38,7 +39,7 @@ $path = "images/".$fotobaru;
 // Proses upload
 if(move_uploaded_file($tmp, $path)){ // Cek apakah gambar berhasil diupload atau tidak
 	// Proses simpan ke Database
-	$query = "INSERT INTO warga VALUES('".$NIK."', '".$NO_KK."', '".$NAMA."', '".$JENIS_KELAMIN."',  '".$TMP_LHR."','".$TGL_LHR."', '".$AGAMA."', '".$PENDIDIKAN."', '".$PEKERJAAN."', '".$ALAMAT."', '".$RWRT."', '".$DESA."', '".$KECAMATAN."', '".$KAB_KOTA."', '".$KODE_POS."', '".$PROVINSI."', '".$KEWARGANEGARAAN."', '".$USERNAME."', '".$PASSWORD."', '".$TGL_DAFTAR."', '".$LEVEL."','".$fotobaru."', '".$STATUS."')";
+	$query = "INSERT INTO warga VALUES('".$ID."','".$NIK."', '".$NO_KK."', '".$NAMA."', '".$JENIS_KELAMIN."',  '".$TMP_LHR."','".$TGL_LHR."', '".$AGAMA."', '".$PENDIDIKAN."', '".$PEKERJAAN."', '".$ALAMAT."', '".$RWRT."', '".$DESA."', '".$KECAMATAN."', '".$KAB_KOTA."', '".$KODE_POS."', '".$PROVINSI."', '".$KEWARGANEGARAAN."', '".$USERNAME."', '".$PASSWORD."', '".$TGL_DAFTAR."', '".$LEVEL."','".$fotobaru."', '".$STATUS."')";
 	$sql = mysqli_query($connect, $query); // Eksekusi/ Jalankan query dari variabel $query
 
 	if($sql){ // Cek jika proses simpan ke database sukses atau tidak

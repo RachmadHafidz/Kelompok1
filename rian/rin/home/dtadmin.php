@@ -76,10 +76,12 @@
         </a>
         <div>
         <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-          <li class="user-profile-data">
-          <span class="userpicture"><i title="Profile icon" class=" fa fa-user-circle-o"></i></span>
-          <div <a class="dropdown-item" cursor= "pointer" href="#"><?php session_start(); echo $_SESSION['username']; ?></a></div>
+        <li class="user-profile-data">
+          <div class="dropdown-item" href="profil.php">Hello <?php session_start(); echo $_SESSION['username']; ?></div>
           </li>
+          <div class="dropdown-divider"></div>
+          <li> <a class="dropdown-item" href="profil.php">Profil</a></li>
+
           <div class="dropdown-divider"></div>
           <li> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a></li>
         </ul>
@@ -105,15 +107,17 @@
           <span>Data Anggota</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-          <h6 class="dropdown-header">Pendaftaran:</h6>
-          <a class="dropdown-item" href="#">Penduduk</a>
-          <a class="dropdown-item" href="#">Keluarga</a>
-          <a class="dropdown-item" href="#">Admin</a>
+        <h6 class="dropdown-header">Pendaftaran:</h6>
+          <a class="dropdown-item" href="pdpenduduk.php">Penduduk</a>
+          <a class="dropdown-item" href="pdkeluarga.php">Keluarga</a>
+          <a class="dropdown-item" href="pdadmin.php">Admin</a>
+          <a class="dropdown-item" href="pdpdesa.php">Perangkat Desa</a>
           <div class="dropdown-divider"></div>
           <h6 class="dropdown-header">Data:</h6>
           <a class="dropdown-item" href="dtpenduduk.php">Data Penduduk</a>
           <a class="dropdown-item" href="dtkeluarga.php">Data Keluarga</a>
           <a class="dropdown-item" href="dtadmin.php">Data Admin</a>
+          <a class="dropdown-item" href="dtpdesa.php">Data Perangkat Desa</a>
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -161,58 +165,64 @@
 
 
         <!-- DataTables Example -->
-        <div class="card mb-3">
+          <div class="card mb-3">
           <div class="card-header">
             <i class="fas fa-table"></i>
             Data Admin</div>
           <div class="card-body">
+          <a href="pdadmin.php"><input type="button" value="Tambah Data"></a>
+          <hr>
             <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr>
+                    <th>ID</th>
                     <th>NIK</th>
                     <th>Nama</th>
                     <th>Jenis Kelamin</th>
+                    <th>Username</th>
+                    <th>Password</th>
                     <th>Level</th>
                     <th>Status Akun</th>
-                    <th>Username</th>
+                    <th>Foto</th>
+                    <th>Aksi</th>
                   </tr>
                 </thead>
                 <tfoot>
                   <tr>
-                  <th>NIK</th>
+                    <th>ID</th>
+                    <th>NIK</th>
                     <th>Nama</th>
                     <th>Jenis Kelamin</th>
+                    <th>Username</th>
+                    <th>Password</th>
                     <th>Level</th>
                     <th>Status Akun</th>
-                    <th>Username</th>
+                    <th>Foto</th>
+                    <th>Aksi</th>
                   </tr>
                 </tfoot>
                 <tbody>
                 <?php
-                  $host = "localhost";
-                  $username = "root";
-                  $password ="";
-                  $database = "ddesa";
-                  
-                  $connect = mysqli_connect($host,$username,$password,$database);
-                  $query = "select * from warga where LEVEL='admin'";
-                  $sql = mysqli_query($connect, $query);
+                  include 'koneksi.php';
+                  $query = "select * from admin";
+                  $sql = mysqli_query($koneksi, $query);
                   while ($row=mysqli_fetch_array($sql)){
                     echo "<tr>";
-                    echo "<td>".$row['NIK']."</td>";
-                    echo "<td>".$row['NAMA']."</td>";
-                    echo "<td>".$row['JENIS_KELAMIN']."</td>";
-                    echo "<td>".$row['LEVEL']."</td>";
-                    echo "<td>".$row['STATUS']."</td>";
+                    echo "<td>".$row['ID_ADMIN']."</td>";
+                    echo "<td>".$row['NIKADMIN']."</td>";
+                    echo "<td>".$row['NAMAADMIN']."</td>";
+                    echo "<td>".$row['JENIS_KELAMIN']."</td>";                  
                     echo "<td>".$row['USERNAME']."</td>";
-                    
-                    
+                    echo "<td>".$row['PASSWORD']."</td>";
+                    echo "<td>".$row['LEVEL']."</td>";
+                    echo "<td>".$row['STATUS_AKUN']."</td>";
+                    echo "<td><img src='images/".$row['FOTO']."' width='50' height='50'></td>";
+                    echo "<td><a class='fas fa-few fa-edit' href='ubahadmin.php'".$row['ID_ADMIN']."'></a> 
+                              <a class='fas fa-few fa-trash' href='pdadmin.php?aksi=hapus&id='".$row['ID_ADMIN']."'></a></td>";
                     echo "</tr>";
                   }
-                  ?>
-                  
-                  
+                  ?> 
                 </tbody>
               </table>
             </div>

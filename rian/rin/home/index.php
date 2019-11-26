@@ -27,7 +27,7 @@
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
     <a class="navbar-brand mr-1" href="index.php">S.I.D. Sabrang</a>
-    
+
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
       <i class="fas fa-bars"></i>
     </button>
@@ -77,9 +77,13 @@
         <div>
         <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
           <li class="user-profile-data">
-          <span class="userpicture"><i title="Profile icon" class=" fa fa-user-circle-o"></i></span>
-          <div <a class="dropdown-item" href="profil.php"><?php session_start(); echo $_SESSION['USERNAME']; ?></a></div>
+          <div class="dropdown-item" href="profil.php">Hello 
+            <?php 
+                  session_start();
+                  echo $_SESSION['namaadmin']; ?></div>
           </li>
+          <div class="dropdown-divider"></div>
+          <li> <a class="dropdown-item" href="profil.php">Profil</a></li>
           <div class="dropdown-divider"></div>
           <li> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a></li>
         </ul>
@@ -106,13 +110,16 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
           <h6 class="dropdown-header">Pendaftaran:</h6>
-          <a class="dropdown-item" href="dtwarga.php">Penduduk</a>
-         
+          <a class="dropdown-item" href="pdpenduduk.php">Penduduk</a>
+          <a class="dropdown-item" href="pdkeluarga.php">Keluarga</a>
+          <a class="dropdown-item" href="pdadmin.php">Admin</a>
+          <a class="dropdown-item" href="pdpdesa.php">Perangkat Desa</a>
           <div class="dropdown-divider"></div>
           <h6 class="dropdown-header">Data:</h6>
-          <a class="dropdown-item" href="dtpenduduk.php">Perangkat Desa</a>
+          <a class="dropdown-item" href="dtpenduduk.php">Data Penduduk</a>
           <a class="dropdown-item" href="dtkeluarga.php">Data Keluarga</a>
           <a class="dropdown-item" href="dtadmin.php">Data Admin</a>
+          <a class="dropdown-item" href="dtpdesa.php">Data Perangkat Desa</a>
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -165,9 +172,23 @@
                 <div class="card-body-icon">
                   <i class="fas fa-fw fa-comments"></i>
                 </div>
-                <div class="mr-5">Warga</div>
+                <div class="mr-5">
+                <?php
+                  include 'koneksi.php';
+                  // Cara 3
+                  $query = "SELECT * FROM penduduk";
+                  $sql = mysqli_query($koneksi, $query);
+                  $data = array();
+                  while(($row = mysqli_fetch_array($sql)) != null){
+                    $data[] = $row;
+                  }
+                  $count = count($data);
+                  echo "$count Penduduk";
+
+                  ?>
+                </div>
               </div>
-              <a class="card-footer text-white clearfix small z-1" href="dtwarga.php">
+              <a class="card-footer text-white clearfix small z-1" href="dtpenduduk.php">
                 <span class="float-left">View Details</span>
                 <span class="float-right">
                   <i class="fas fa-angle-right"></i>
@@ -181,7 +202,22 @@
                 <div class="card-body-icon">
                   <i class="fas fa-fw fa-list"></i>
                 </div>
-                <div class="mr-5">212 Keluarga</div>
+                <div class="mr-5">
+                <?php
+                  include 'koneksi.php';
+                  // Cara 3
+                  $query = "SELECT * FROM keluarga";
+                  $sql = mysqli_query($koneksi, $query);
+                  $data = array();
+                  while(($row = mysqli_fetch_array($sql)) != null){
+                    $data[] = $row;
+                  }
+                  $count = count($data);
+                  echo "$count Keluarga";
+
+                  ?>
+
+                </div>
               </div>
               <a class="card-footer text-white clearfix small z-1" href="dtkeluarga.php">
                 <span class="float-left">View Details</span>
@@ -197,9 +233,23 @@
                 <div class="card-body-icon">
                   <i class="fas fa-fw fa-shopping-cart"></i>
                 </div>
-                <div class="mr-5">251 Surat</div>
+                <div class="mr-5">
+                <?php
+                  include 'koneksi.php';
+                  // Cara 3
+                  $query = "SELECT * FROM admin";
+                  $sql = mysqli_query($koneksi, $query);
+                  $data = array();
+                  while(($row = mysqli_fetch_array($sql)) != null){
+                    $data[] = $row;
+                  }
+                  $count = count($data);
+                  echo "$count Admin";
+
+                  ?>
+                </div>
               </div>
-              <a class="card-footer text-white clearfix small z-1" href="#">
+              <a class="card-footer text-white clearfix small z-1" href="dtadmin.php">
                 <span class="float-left">View Details</span>
                 <span class="float-right">
                   <i class="fas fa-angle-right"></i>
@@ -213,7 +263,7 @@
                 <div class="card-body-icon">
                   <i class="fas fa-fw fa-life-ring"></i>
                 </div>
-                <div class="mr-5">12 Suara Warga</div>
+                <div class="mr-5">12 Perangkat Desa</div>
               </div>
               <a class="card-footer text-white clearfix small z-1" href="#">
                 <span class="float-left">View Details</span>
@@ -236,7 +286,75 @@
           <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
         </div>
 
-      
+        <!-- DataTables Example -->
+        <div class="card mb-3">
+          <div class="card-header">
+            <i class="fas fa-table"></i>
+            Data Table Example</div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Office</th>
+                    <th>Age</th>
+                    <th>Start date</th>
+                    <th>Salary</th>
+                  </tr>
+                </thead>
+                <tfoot>
+                  <tr>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Office</th>
+                    <th>Age</th>
+                    <th>Start date</th>
+                    <th>Salary</th>
+                  </tr>
+                </tfoot>
+                <tbody>
+                  <tr>
+                    <td>Tiger Nixon</td>
+                    <td>System Architect</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011/04/25</td>
+                    <td>$320,800</td>
+                  </tr>
+                  <tr>
+                    <td>Garrett Winters</td>
+                    <td>Accountant</td>
+                    <td>Tokyo</td>
+                    <td>63</td>
+                    <td>2011/07/25</td>
+                    <td>$170,750</td>
+                  </tr>
+                  <tr>
+                    <td>Ashton Cox</td>
+                    <td>Junior Technical Author</td>
+                    <td>San Francisco</td>
+                    <td>66</td>
+                    <td>2009/01/12</td>
+                    <td>$86,000</td>
+                  </tr>
+                  <tr>
+                    <td>Cedric Kelly</td>
+                    <td>Senior Javascript Developer</td>
+                    <td>Edinburgh</td>
+                    <td>22</td>
+                    <td>2012/03/29</td>
+                    <td>$433,060</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+        </div>
+
+      </div>
       <!-- /.container-fluid -->
 
       <!-- Sticky Footer -->

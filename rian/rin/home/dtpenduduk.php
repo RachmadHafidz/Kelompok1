@@ -77,9 +77,11 @@
         <div>
         <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
           <li class="user-profile-data">
-          <span class="userpicture"><i title="Profile icon" class=" fa fa-user-circle-o"></i></span>
-          <div <a class="dropdown-item" cursor= "pointer" href="#"><?php session_start(); echo $_SESSION['username']; ?></a></div>
+          <div class="dropdown-item" href="profil.php">Hello <?php session_start(); echo $_SESSION['username']; ?></div>
           </li>
+          <div class="dropdown-divider"></div>
+          <li> <a class="dropdown-item" href="profil.php">Profil</a></li>
+  
           <div class="dropdown-divider"></div>
           <li> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a></li>
         </ul>
@@ -105,15 +107,17 @@
           <span>Data Anggota</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-          <h6 class="dropdown-header">Pendaftaran:</h6>
-          <a class="dropdown-item" href="#">Penduduk</a>
-          <a class="dropdown-item" href="#">Keluarga</a>
-          <a class="dropdown-item" href="#">Admin</a>
+        <h6 class="dropdown-header">Pendaftaran:</h6>
+          <a class="dropdown-item" href="pdpenduduk.php">Penduduk</a>
+          <a class="dropdown-item" href="pdkeluarga.php">Keluarga</a>
+          <a class="dropdown-item" href="pdadmin.php">Admin</a>
+          <a class="dropdown-item" href="pdpdesa.php">Perangkat Desa</a>
           <div class="dropdown-divider"></div>
           <h6 class="dropdown-header">Data:</h6>
-          <a class="dropdown-item" href="dtpenduduk.php">Perangkat Desa</a>
+          <a class="dropdown-item" href="dtpenduduk.php">Data Penduduk</a>
           <a class="dropdown-item" href="dtkeluarga.php">Data Keluarga</a>
           <a class="dropdown-item" href="dtadmin.php">Data Admin</a>
+          <a class="dropdown-item" href="dtpdesa.php">Data Perangkat Desa</a>
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -156,47 +160,86 @@
             <a href="index.php">Beranda</a>
           </li>
           <li class="breadcrumb-item active">Data Anggota</li>
-          <li class="breadcrumb-item active">Perangkat Desa</li>
+          <li class="breadcrumb-item active">Data Penduduk</li>
         </ol>
 
         <!-- DataTables Example -->
         <div class="card mb-3">
           <div class="card-header">
             <i class="fas fa-table"></i>
-            Data Table Example</div>
+            Data Penduduk</div>
           <div class="card-body">
+          <a href="pdpenduduk.php"><input type="button" value="Tambah Data"></a>
+          <hr>
             <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-              <a href="http://localhost/Kelompok1/rian/selasa/crud/form_simpan.php">Tambah Data</a><br><br>
                 <thead>
                   <tr>
-                    <th>Foto</th>
                     <th>NIK</th>
+                    <th>ID Admin</th>
+                    <th>No KK</th>
+                    <th>Tanggal Daftar</th>
                     <th>Nama</th>
-                    <th>Alamat</th>
-                    <th>Jabatan</th>
-                    <th colspan="2">Aksi</th>
+                    <th>Tempat Lahir</th>
+                    <th>Tanggal Lahir</th>
+                    <th>Jenis Kelamin</th>
+                    <th>Agama</th>
+                    <th>Status</th>
+                    <th>Pekerjaan</th>
+                    <th>Pendidikan</th>
+                    <th>Kewarganegaraan</th>
+                    <th>Status Akun</th>
+                    <th>Hidup</th>
+                    <th>Aksi</th>
                   </tr>
-                  <?php
-	// Load file koneksi.php
-	include "koneksi.php";
-	
-	$query = "SELECT * FROM p_desa"; // Query untuk menampilkan semua data siswa
-	$sql = mysqli_query($connect, $query); // Eksekusi/Jalankan query dari variabel $query
-	
-	while($data = mysqli_fetch_array($sql)){ // Ambil semua data dari hasil eksekusi $sql
-        echo "<tr>";
-        echo "<td><img src='http://localhost/Kelompok1/rian/selasa/crud/images/".$data['foto']."' width='100' height='100'></td>";
-		echo "<td>".$data['NIK']."</td>";
-		echo "<td>".$data['nama']."</td>";
-		echo "<td>".$data['alamat']."</td>";
-		echo "<td>".$data['jabatan']."</td>";
-      
-		echo "<td><a href='http://localhost/Kelompok1/rian/selasa/crud/form_ubah.php?NIK=".$data['NIK']."'>Ubah</a></td>";
-		echo "<td><a href='http://localhost/Kelompok1/rian/selasa/crud/proses_hapus.php?NIK=".$data['NIK']."'>Hapus</a></td>";
-		echo "</tr>";
-	}
-	?>
+                </thead>
+                <tfoot>
+                  <tr>
+                  <th>NIK</th>
+                    <th>ID Admin</th>
+                    <th>No KK</th>
+                    <th>Tanggal Daftar</th>
+                    <th>Nama</th>
+                    <th>Tempat Lahir</th>
+                    <th>Tanggal Lahir</th>
+                    <th>Jenis Kelamin</th>
+                    <th>Agama</th>
+                    <th>Status</th>
+                    <th>Pekerjaan</th>
+                    <th>Pendidikan</th>
+                    <th>Kewarganegaraan</th>
+                    <th>Status Akun</th>
+                    <th>Hidup</th>
+                    <th>Aksi</th>
+                  </tr>
+                </tfoot>
+                <tbody>
+                <?php
+                  include 'koneksi.php';
+                  $query = "select * from penduduk";
+                  $sql = mysqli_query($koneksi, $query);
+                  while ($row=mysqli_fetch_array($sql)){
+                    echo "<tr>";
+                    echo "<td>".$row['NIK_PENDUDUK']."</td>";
+                    echo "<td>".$row['ID_ADMIN']."</td>";
+                    echo "<td>".$row['NO_KK']."</td>";
+                    echo "<td>".$row['TGL_DAFTARPEN']."</td>";
+                    echo "<td>".$row['NAMAPENDUDUK']."</td>";
+                    echo "<td>".$row['TMP_LAHIRPEN']."</td>";
+                    echo "<td>".$row['TGL_LAHIRPEN']."</td>";
+                    echo "<td>".$row['JENIS_KELAMINPEN']."</td>";
+                    echo "<td>".$row['AGAMAPEN']."</td>";
+                    echo "<td>".$row['STATUSPEN']."</td>";
+                    echo "<td>".$row['PEKERJAANPEN']."</td>";
+                    echo "<td>".$row['PENDIDIKANPEN']."</td>";
+                    echo "<td>".$row['KEWARGANEGARAANPEN']."</td>";
+                    echo "<td>".$row['FOTOPEN']."</td>";
+                    echo "<td>".$row['PASS']."</td>";
+                    echo "<td><a class='fas fa-few fa-edit'href='#'".$row['NIK_PENDUDUK']."'>
+                    </a> <a class='fas fa-few fa-trash'href='#'".$row['NIK_PENDUDUK']."'></a></td>";
+                    echo "</tr>";
+                  }
+                  ?> 
                 </tbody>
               </table>
             </div>
