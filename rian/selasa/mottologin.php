@@ -137,14 +137,12 @@
         </button>
         <div class="dropdown-content">
           <a href="#">Persyaratan</a>
-          <a href="#">Surat Pengantar-Akta Kelehiran</a>
-          <a href="#">Surat Pengantar-Kartu Keluarga</a>
-          <a href="#">Surat Pengantar-Kartu Tanda Penduduk</a>
-          <a href="#">Surat Pengantar-Surat Nikah</a>
-          <a href="#">Surat Pengantar-Pindah Tempat</a>
-          <a href="#">Surat Pengantar-Surat Keterangan Catatan Kepolisian</a>
+          <a href="#">Pelayanan Surat Domisili</a>
+          <a href="#">Pelayanan Surat SKCK</a>
+          <a href="#">Pelyanan Surat Belum Menikah</a>
+          <a href="#">Pelayanan Surat Tempat Usaha</a>
         </div>
-      </div> 
+      </div>
 
       <?php 
 include 'config.php';
