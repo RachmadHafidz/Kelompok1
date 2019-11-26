@@ -1,102 +1,75 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="pop.js"></script>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    
-<title>S.I.D Sabrang</title>
-<link href="http://cdn.phpoll.com/css/animate.css" rel="stylesheet">
+<title>Sistem Informasi Desa Sabrang</title>
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-  <link rel="stylesheet" type="text/css" href="style.css">
   <script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-    <style>
-        .dropbtn 
-        {
-        background:none;
-        color: rgb(0, 0, 0);
-        padding: 16px;
-        font-size: 16px;
-        border: none;
-        cursor: pointer;
-        }
-    
-      
-        .dropdown 
-        {
-        position: relative;
-        display: inline-block;
-        z-index:9999;
-        }
-
-        .dropdown-content 
-        {
-        display: none;
-        position: absolute;
-        background-color: #f9f9f9;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 1;
-        }
-
-        .dropdown-content a 
-        {
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        }
-
-        .dropdown-content a:hover {background-color: #f1f1f1}
-
-        .dropdown:hover .dropdown-content { display: block; }
-
-        .dropdown:hover .dropbtn {background-color: #ffffff;}
-
-        .right {text-align:right;}
-
-        body {background: rgb(255, 255, 255);}
-
-@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css');
-/* Fixed navbar */
-
-/* General sizing */
-ul.dropdown-lr {
-  width: 300px;
+ <style>
+   
+  .dropbtn {
+  background: none;
+  color: rgb(0, 0, 0);
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
 }
 
-/* mobile fix */
-@media (max-width: 768px) {
-	.dropdown-lr h3 {
-		color: #eee;
-	}
-	.dropdown-lr label {
-		color: #eee;
-	}
+.dropdown {
+  position: relative;
+  display: inline-block;
+  z-index:9999;
 }
 
-    </style>   
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+
+</style>
 </head>
-  
-
 <body>
-    <?php session_start(); ?>
 
+  
 	<div class="container-float">
 		
-      
-      <nav class="navbar navbar-dark bg-dark justify-content-between"> <p><a><font class="navbar-brand" color="white">Sistem Informasi Desa Sabrang</font></a></p>
-        <p><font color="white ">Jl. watu ulo no 1, Desa Sabrang, Kec. Ambulu, Kab. Jember , Kode Pos 68172</font></p>
-      <a href="nyoba.html">Logout</a>  
         
-      </nav>  
-		
-  </div>
-
-  <nav class="navbar navbar-dark bg-dark justify-content-between"> 
+      <nav class="navbar navbar-dark bg-dark justify-content-between"> <p><a><font class="navbar-brand" color="white">Sistem Informasi Desa Sabrang</font></a></p>
+        <p><font color="white">Jl. watu ulo no 1, Desa Sabrang, Kec. Ambulu, Kab. Jember , Kode Pos 68172</font></p>
+        <a href="nyoba.html">Logout</a>
+ 
+      </nav>
+</div>
+<nav class="navbar navbar-dark bg-dark justify-content-between"> 
       <div class="topnav" id="myTopnav">
        
         <div class="dropdown">
@@ -106,7 +79,7 @@ ul.dropdown-lr {
       </div>
 
       <div class="dropdown">
-        <button class="dropbtn" > <a href="profillogin.php">Profil Desa</a>
+        <button class="dropbtn" > Profil Desa
           <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
@@ -125,11 +98,12 @@ ul.dropdown-lr {
     </div>
   
     <div class="dropdown">
-      <button class="dropbtn" > <a href="petunjuk.html">Petunjuk</a>
+      <button class="dropbtn" > <a href="#">Petunjuk</a>
         <i class="fa fa-caret-down"></i>
       </button>
   </div>
-
+ 
+  
   <div class="dropdown">
         <button class="dropbtn"><a href="#">Pelayanan</a>
           <i class="fa fa-caret-down"></i>
@@ -141,14 +115,15 @@ ul.dropdown-lr {
           <a href="#">Pelyanan Surat Belum Menikah</a>
           <a href="#">Pelayanan Surat Tempat Usaha</a>
         </div>
-      </div>
+      </div> 
      
-  
-  <?php 
+ 
+ 
+      <?php 
 include 'config.php';
  
 // mengaktifkan session
-
+session_start();
  
 // cek apakah user telah login, jika belum login maka di alihkan ke halaman login
 
@@ -157,7 +132,9 @@ include 'config.php';
 echo "Hai, selamat datang ". $_SESSION['NIK'];
  
 ?>
-   
+<br/>
+<br/>
+
 </nav>
 <!--Carousel Wrapper-->
 <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
