@@ -110,7 +110,7 @@
         </button>
         <div class="dropdown-content">
           <a href="#">Persyaratan</a>
-          <a href="formindex.php">Pelayanan Surat Domisili</a>
+          <a href="http://localhost/Kelompok1/rian/selasa/form/formindex.php">Pelayanan Surat Domisili</a>
           <a href="#">Pelayanan Surat SKCK</a>
           <a href="#">Pelyanan Surat Belum Menikah</a>
           <a href="#">Pelayanan Surat Tempat Usaha</a>
