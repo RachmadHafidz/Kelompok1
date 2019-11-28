@@ -15,7 +15,7 @@
                 <div class="form-group">
                     <label for="NO_SURATDOM" class="col-sm-3 control-label"> no surat</label>
                     <div class="col-sm-9">
-                        <input type="text"  placeholder="NO_SURATDOM" class="form-control" name= "NO_SURATDOM">
+                        <input type="text"  placeholder="No Surat Domisili" class="form-control" name= "NO_SURATDOM">
                     </div>
                 </div>
                 <div class="form-group">
