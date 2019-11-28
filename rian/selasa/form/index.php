@@ -4,7 +4,7 @@
 </head>
 <body>
 	<h1>Data Surat Domisili</h1>
-	<a href="form_simpan.php">Tambah Data</a><br><br>
+	<a href="formindex.php">Tambah Data</a><br><br>
 	<table border="1" width="100%">
 	<tr>
 		<th>No surat</th>
