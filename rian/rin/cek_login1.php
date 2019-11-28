@@ -7,7 +7,7 @@ include 'koneksi.php';
  
 // menangkap data yang dikirim dari form login
 $NIK = $_POST['NIKADMIN'];
-$PASSWORD= $_POST['PASSWORD'];
+$PASSWORD= md5($_POST['PASSWORD']);
  
  
 // menyeleksi data user dengan username dan password yang sesuai
