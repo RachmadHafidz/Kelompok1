@@ -139,9 +139,12 @@ echo "Hai, selamat datang ". $_SESSION['NIK'];
  
 ?>
  <?php
+ 
+ $nik= $_SESSION['NIK'];
+$nilai = mysqli_query($koneksi,"select * from penduduk  where NIK_PENDUDUK= $nik");
 
- $nilai = mysqli_query($koneksi,"select * from penduduk where NIK_PENDUDUK= 1");
- while ($show = mysqli_fetch_array ($nilai)) {
+$data =  mysqli_fetch_array ($nilai) ;
+ 
  ?>
    
 </nav>
@@ -170,44 +173,39 @@ echo "Hai, selamat datang ". $_SESSION['NIK'];
                 <div class="form-group">
                     <label for="NIK_PENDUDUK" class="col-sm-3 control-label"> NIk</label>
                     <div class="col-sm-9">
-                        <input type="number"  placeholder="NIK" class="form-control" name = "NIK_PENDUDUK">
+                        <input type="number" value="<?php echo $data['NIK_PENDUDUK']; ?>" placeholder="NIK" class="form-control" name = "NIK_PENDUDUK">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="NAMAPENDUDUK" class="col-sm-3 control-label"> Nama</label>
                     <div class="col-sm-9">  
-                        <input type="text" value="<?php echo $show['NAMAPENDUDUK']; ?>"  placeholder="Nama" class="form-control" name= "NAMAPENDUDUK" >
+                        <input type="text" value="<?php echo $data['NAMAPENDUDUK']; ?>"  placeholder="Nama" class="form-control" name= "NAMAPENDUDUK" >
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="TMP_LAHIRPEN" class="col-sm-3 control-label"> Tempat Lahir</label>
                     <div class="col-sm-9">
-                        <input type="text"  placeholder="Tempat Lahir" class="form-control" name= "TMP_LAHIRPEN">
+                        <input type="text" value="<?php echo $data['TMP_LAHIRPEN']; ?>"" placeholder="Tempat Lahir" class="form-control" name= "TMP_LAHIRPEN">
                     </div>
                 </div>
                 
                 <div class="form-group">
                     <label for="TGL_LAHIRPEN" class="col-sm-3 control-label"> Tanggal Lahir</label>
                     <div class="col-sm-9">
-                        <input type="text"  placeholder="Tanggal Lahir" class="form-control" name= "TGL_LAHIRPEN">
+                        <input type="text" value="<?php echo $data['TGL_LAHIRPEN']; ?>" placeholder="Tanggal Lahir" class="form-control" name= "TGL_LAHIRPEN">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="JENIS_KELAMINPEN" class="col-sm-3 control-label"> Tempat Lahir</label>
+                    <label for="JENIS_KELAMINPEN" class="col-sm-3 control-label"> Jenis Kelamin</label>
                     <div class="col-sm-9">
-                        <input type="text"  placeholder="Tempat Lahir" class="form-control" name= "">
+                        <input type="text" value="<?php echo $data['JENIS_KELAMINPEN']; ?>" placeholder="Jenis Kelamin" class="form-control" name= "">
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="JENIS_KELAMINPEN" class="col-sm-3 control-label"> Tempat Lahir</label>
-                    <div class="col-sm-9">
-                        <input type="text"  placeholder="Tempat Lahir" class="form-control" name= "TMP_LAHIRPEN">
-                    </div>
-                </div>
+                
 
                 <div class="form-group">
                     <label for="NAMA_PENGAJU" class="col-sm-3 control-label"> nama pengaju</label>
@@ -217,7 +215,12 @@ echo "Hai, selamat datang ". $_SESSION['NIK'];
                 </div>
 
                
-                
+                <div class="form-group">
+                    <label for="JENIS_KELAMINPEN" class="col-sm-3 control-label"> Tempat Lahir</label>
+                    <div class="col-sm-9">
+                        <input type="text"  placeholder="Tempat Lahir" class="form-control" name= "TMP_LAHIRPEN">
+                    </div>
+                </div>
                 
                 <div class="form-group">
                     <label for="AGAMA_PENGAJU" class="col-sm-3 control-label">Agama pengaju </label>
@@ -292,7 +295,7 @@ echo "Hai, selamat datang ". $_SESSION['NIK'];
                         <span class="help-block">*Required fields</span>
                     </div>
                 </div>
-<?php }?>                
+            
                 <input type="submit" value="Simpan">
 	            <a href="http://localhost/Kelompok1/rian/selasa/form/formindex.php"><input type="button" value="Batal"></a>
             </form>
