@@ -123,11 +123,11 @@ session_start();
  
  
       <?php 
-      include 'config.php'
+      include 'config.php';
 // menampilkan pesan selamat datang
-echo "Hai, selamat datang ". $_SESSION['NIK_PENDUDUK'];
+      echo "Hai, selamat datang ". $_SESSION['NIK_PENDUDUK'];
  
-?>
+    ?>
 <br/>
 <br/>
 
