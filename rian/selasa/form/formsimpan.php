@@ -14,7 +14,9 @@ $TMPLHRAJU = $_POST['TMPLHRAJU'];
 $TGLHRAJU = $_POST['TGLHRAJU'];
 $PEKERJAAN_AJU = $_POST['PEKERJAAN_AJU'];
 $ALAMATAJU = $_POST['ALAMATAJU'];
+
 $KETERANGANAJU = $_POST['KETERANGANAJU'];
+$TUJUANJU = $_POST['TUJUANJU'];
 $JENIS_SURATAJU = $_POST['JENIS_SURATAJU'];
 
 
@@ -24,7 +26,7 @@ $JENIS_SURATAJU = $_POST['JENIS_SURATAJU'];
 // Proses upload
 
 	// Proses simpan ke Database
-	$query = "INSERT INTO sk_domisili VALUES('".$NO_DOMISILI."','".$NIK_PENDUDUK."', '".$TGLSURATJU."','".$NAMAAJU."','".$JKAJU."','".$AGAMAAJU."','".$NIKPENGAJU."','".$TMPLHRAJU."','".$TGLHRAJU."','".$PEKERJAAN_AJU."','".$ALAMATAJU."', '".$KETERANGANAJU."','".$JENIS_SURATAJU."')";
+	$query = "INSERT INTO sk_domisili VALUES('".$NO_DOMISILI."','".$NIK_PENDUDUK."', '".$TGLSURATJU."','".$NAMAAJU."','".$JKAJU."','".$AGAMAAJU."','".$NIKPENGAJU."','".$TMPLHRAJU."','".$TGLHRAJU."','".$PEKERJAAN_AJU."','".$ALAMATAJU."', '".$KETERANGANAJU."', ".$TUJUANJU."','".$JENIS_SURATAJU."')";
 	
 	$sql = mysqli_query($connect, $query); // Eksekusi/ Jalankan query dari variabel $query
 	
