@@ -7,18 +7,148 @@
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
+<?php include 'C:\xampp\htdocs\Kelompok1\rian\rin\koneksi.php'; 
 
-<?php
-	// Load file koneksi.php
-	include "koneksi1.php";
+
+
+?>
+<style>
+        .dropbtn 
+        {
+        background:none;
+        color: rgb(0, 0, 0);
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        }
+    
+      
+        .dropdown 
+        {
+        position: relative;
+        display: inline-block;
+        z-index:9999;
+        }
+
+        .dropdown-content 
+        {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        }
+
+        .dropdown-content a 
+        {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        }
+
+        .dropdown-content a:hover {background-color: #f1f1f1}
+
+        .dropdown:hover .dropdown-content { display: block; }
+
+        .dropdown:hover .dropbtn {background-color: #ffffff;}
+
+        .right {text-align:right;}
+
+        body {background: rgb(255, 255, 255);}
+
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css');
+/* Fixed navbar */
+
+/* General sizing */
+ul.dropdown-lr {
+  width: 300px;
+}
+
+/* mobile fix */
+@media (max-width: 768px) {
+	.dropdown-lr h3 {
+		color: #eee;
+	}
+	.dropdown-lr label {
+		color: #eee;
+	}
+}
+
+    </style>  
+<body>
+ 
+<?php session_start(); 
 ?>
 
-<?php
-session_start();
-$NIK_PENDUDUK =$_SESSION['NIK_PENDUDUK'];
-$query = "SELECT * FROM penduduk inner join keluarga on penduduk.NO_KK=keluarga.NO_KK where NIK_PENDUDUK='$NIK_PENDUDUK'"; // Query untuk menampilkan semua data siswa
-$sql = mysqli_query($connect, $query); // Eksekusi/Jalankan query dari variabel $query
-	?>
+  <nav class="navbar navbar-dark bg-dark justify-content-between"> 
+      <div class="topnav" id="myTopnav">
+       
+        <div class="dropdown">
+          <button class="dropbtn" > <a href="beranda.php">Beranda</a>
+            <i class="fa fa-caret-down"></i>
+          </button>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" > <a href="profillogin.php">Profil Desa</a>
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="profillogin.php">Profil Desa</a>
+          <a href="visimisilogin.php">Visi & Misi</a>
+          <a href="mottologin.php">Motto</a>
+          <a href="http://localhost/Kelompok1/rian/selasa/crud/index1.php">Perangkat Desa</a>
+          
+        </div>
+      </div> 
+  
+      <div class="dropdown">
+        <button class="dropbtn" > <a href="profil.html">Berita</a>
+          <i class="fa fa-caret-down"></i>
+        </button>
+    </div>
+  
+    <div class="dropdown">
+      <button class="dropbtn" > <a href="petunjuk.html">Petunjuk</a>
+        <i class="fa fa-caret-down"></i>
+      </button>
+  </div>
+
+  <div class="dropdown">
+        <button class="dropbtn"><a href="#">Pelayanan</a>
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">Persyaratan</a>
+          <a href="http://localhost/KELOMPOK1/rian/selasa/form/tesform.php">Pelayanan Surat Domisili</a>
+          <a href="#">Pelayanan Surat SKCK</a>
+          <a href="#">Pelyanan Surat Belum Menikah</a>
+          <a href="#">Pelayanan Surat Tempat Usaha</a>
+        </div>
+      </div>
+    
+      <?php 
+
+ 
+
+// menampilkan pesan selamat datang
+echo "Hai, selamat datang ". $_SESSION['NIK'];
+ 
+?>
+ <?php
+ 
+ $nik= $_SESSION['NIK'];
+$nilai = mysqli_query($koneksi,"select * from penduduk  where NIK_PENDUDUK= $nik");
+
+$data =  mysqli_fetch_array ($nilai) ;
+ 
+ ?>
+   
+</nav>
+
 <div class="container">
 
             <form class="form-horizontal" role="form" method= "post" action="formsimpan.php">
@@ -41,47 +171,79 @@ $sql = mysqli_query($connect, $query); // Eksekusi/Jalankan query dari variabel 
                 </div>
 
                 <div class="form-group">
+                    <label for="NO_SURATDOM" class="col-sm-3 control-label"> Data Diri</label>
+                </div>
+
+                <div class="form-group">
                     <label for="NIK_PENDUDUK" class="col-sm-3 control-label"> NIk</label>
                     <div class="col-sm-9">
-                        <input type="number"  placeholder="NIK" class="form-control" value="<?php echo $sql['NIK_PENDUDUK'];?> ">
+                        <input type="number" readonly value="<?php echo $data['NIK_PENDUDUK']; ?>" placeholder="NIK" class="form-control" name = "NIK_PENDUDUK">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="NAMAPENDUDUK" class="col-sm-3 control-label"> Nama</label>
-                    <div class="col-sm-9">
-                        <input type="text"  placeholder="Nama" class="form-control" name= "NAMAPENDUDUK">
+                    <div class="col-sm-9">  
+                        <input type="text" readonly value="<?php echo $data['NAMAPENDUDUK']; ?>"  placeholder="Nama" class="form-control" name= "NAMAPENDUDUK" >
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="TMP_LAHIRPEN" class="col-sm-3 control-label"> Tempat Lahir</label>
                     <div class="col-sm-9">
-                        <input type="text"  placeholder="Tempat Lahir" class="form-control" name= "TMP_LAHIRPEN">
+                        <input type="text" readonly value="<?php echo $data['TMP_LAHIRPEN']; ?>"" placeholder="Tempat Lahir" class="form-control" name= "TMP_LAHIRPEN">
                     </div>
                 </div>
                 
                 <div class="form-group">
                     <label for="TGL_LAHIRPEN" class="col-sm-3 control-label"> Tanggal Lahir</label>
                     <div class="col-sm-9">
-                        <input type="text"  placeholder="Tanggal Lahir" class="form-control" name= "TGL_LAHIRPEN">
+                        <input type="text" readonly value="<?php echo $data['TGL_LAHIRPEN']; ?>" placeholder="Tanggal Lahir" class="form-control" name= "TGL_LAHIRPEN">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="JENIS_KELAMINPEN" class="col-sm-3 control-label"> Tempat Lahir</label>
+                    <label for="JENIS_KELAMINPEN" class="col-sm-3 control-label"> Jenis Kelamin</label>
                     <div class="col-sm-9">
-                        <input type="text"  placeholder="Tempat Lahir" class="form-control" name= "">
+                        <input type="text" readonly value="<?php echo $data['JENIS_KELAMINPEN']; ?>" placeholder="Jenis Kelamin" class="form-control" name= "">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="JENIS_KELAMINPEN" class="col-sm-3 control-label"> Tempat Lahir</label>
+                    <label for="STATUSPEN" class="col-sm-3 control-label"> Status Pernikahan</label>
                     <div class="col-sm-9">
-                        <input type="text"  placeholder="Tempat Lahir" class="form-control" name= "TMP_LAHIRPEN">
+                        <input type="text" readonly value="<?php echo $data['STATUSPEN']; ?>" placeholder="Status" class="form-control" name= "">
                     </div>
                 </div>
 
+                <div class="form-group">
+                    <label for="AGAMAPEN" class="col-sm-3 control-label">Agama </label>
+                    <div class="col-sm-9">
+                        <input type="text" readonly value="<?php echo $data['AGAMAPEN']; ?>" placeholder="Agama pengaju" class="form-control" name= "AGAMAPEN">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="PEKERJAANPEN" class="col-sm-3 control-label">Pekerjaan </label>
+                    <div class="col-sm-9">
+                        <input type="text" readonly value="<?php echo $data['PEKERJAANPEN']; ?>" placeholder="Agama pengaju" class="form-control" name= "PEKERJAANPEN">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="KEWARGANEGARAANPEN" class="col-sm-3 control-label">Kewarganegaraan </label>
+                    <div class="col-sm-9">
+                        <input type="text" readonly value="<?php echo $data['KEWARGANEGARAANPEN']; ?>" placeholder="Kewarganegaraan" class="form-control" name= "KEWARGANEGARAANPEN">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="ALAMATPEN" class="col-sm-3 control-label">Alamat </label>
+                    <div class="col-sm-9">
+                        <input type="text" readonly value="<?php echo $data['ALAMATPEN']; ?>" placeholder="Alamat" class="form-control" name= "ALAMATPEN">
+                    </div>
+                </div>
+       
                 <div class="form-group">
                     <label for="NAMA_PENGAJU" class="col-sm-3 control-label"> nama pengaju</label>
                     <div class="col-sm-9">
@@ -90,7 +252,12 @@ $sql = mysqli_query($connect, $query); // Eksekusi/Jalankan query dari variabel 
                 </div>
 
                
-                
+                <div class="form-group">
+                    <label for="JENIS_KELAMINPEN" class="col-sm-3 control-label"> Tempat Lahir</label>
+                    <div class="col-sm-9">
+                        <input type="text"  placeholder="Tempat Lahir" class="form-control" name= "TMP_LAHIRPEN">
+                    </div>
+                </div>
                 
                 <div class="form-group">
                     <label for="AGAMA_PENGAJU" class="col-sm-3 control-label">Agama pengaju </label>
@@ -160,15 +327,24 @@ $sql = mysqli_query($connect, $query); // Eksekusi/Jalankan query dari variabel 
                         </div>
                     </div>
                 </div> <!-- /.form-group -->
+
+        
+      
+        
+        
                 <div class="form-group">
                     <div class="col-sm-9 col-sm-offset-3">
                         <span class="help-block">*Required fields</span>
                     </div>
                 </div>
-                
-                <input type="submit" value="Simpan">
-	            <a href="http://localhost/Kelompok1/rian/selasa/form/formindex.php"><input type="button" value="Batal"></a>
+            
+                <input type="submit" class="btn btn-primary btn-block" value="Simpan">
+</br>
+	            <a href="http://localhost/Kelompok1/rian/selasa/form/formindex.php"><input class="btn btn-primary btn-block" type="button" value="Batal"></a>
             </form>
-              <!-- /form -->
-    </form>
+            </form>   <!-- /form -->
+    
 </div> <!-- ./container -->
+
+
+</body>
