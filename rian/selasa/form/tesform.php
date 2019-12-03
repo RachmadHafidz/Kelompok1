@@ -7,7 +7,7 @@
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
-<?php include 'C:\xampp\htdocs\Kelompok1\rian\rin\koneksi.php'; 
+<?php include 'koneksi.php'; 
 
 
 
@@ -135,12 +135,12 @@ ul.dropdown-lr {
  
 
 // menampilkan pesan selamat datang
-echo "Hai, selamat datang ". $_SESSION['NIK'];
+echo "Hai, selamat datang ". $_SESSION['NIK_PENDUDUK'];
  
 ?>
  <?php
  
- $nik= $_SESSION['NIK'];
+ $nik= $_SESSION['NIK_PEDUDUK'];
 $nilai = mysqli_query($koneksi,"select * from penduduk  where NIK_PENDUDUK= $nik");
 
 $data =  mysqli_fetch_array ($nilai) ;
