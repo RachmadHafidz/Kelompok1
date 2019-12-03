@@ -37,7 +37,7 @@ echo $_SESSION['NIK_PENDUDUK'];
 	
 	
 	$nik= $_SESSION['NIK_PENDUDUK'];
-$nilai = mysqli_query($connect,"select * from sk_domisili inner join penduduk on sp_domisili.NIK_PENDUDUK = penduduk.NIK_PENDUDUK where NIK_PENDUDUK= $nik");
+$nilai = mysqli_query($connect,"select * from sk_domisili where NIK_PENDUDUK= $nik");
 
 
 	while($data = mysqli_fetch_array($nilai)){ // Ambil semua data dari hasil eksekusi $sql
