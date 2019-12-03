@@ -27,7 +27,7 @@ echo $_SESSION['NIK_PENDUDUK'];
         <th>tgl lahir peng</th>
         <th>Pekerjaan peng</th>
         <th>alamat peng</th>
-		<th>tujuan peng</th>
+		
 		<th>KETERANGAN</th>
 		<th>JENIS SURAT</th>
 		<th colspan="2">Aksi</th>
@@ -53,7 +53,7 @@ $nilai = mysqli_query($connect,"select * from sk_domisili where NIK_PENDUDUK= $n
         echo "<td>".$data['TGLHRAJU']."</td>";
         echo "<td>".$data['PEKERJAAN_AJU']."</td>";
 		echo "<td>".$data['ALAMATAJU']."</td>";
-		echo "<td>".$data['TUJUANAJU']."</td>";
+		
 		echo "<td>".$data['KETERANGANAJU']."</td>";
 		echo "<td>".$data['JENIS_SURATAJU']."</td>";
 		echo "<td><a href='form_ubah.php?NIK=".$data['NIK_PENDUDUK']."'>Ubah</a></td>";
