@@ -139,8 +139,7 @@ echo "Hai, selamat datang ". $_SESSION['NIK_PENDUDUK'];
  
 ?>
  <?php
- 
- $nik= $_SESSION['NIK_PEDUDUK'];
+ $nik= $_SESSION['NIK_PENDUDUK'];
 $nilai = mysqli_query($koneksi,"select * from penduduk  where NIK_PENDUDUK= $nik");
 
 $data =  mysqli_fetch_array ($nilai) ;
