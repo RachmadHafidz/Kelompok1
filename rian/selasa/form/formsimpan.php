@@ -5,7 +5,7 @@ include "koneksi1.php";
 // Ambil Data yang Dikirim dari Form
 $NO_DOMISILI = $_POST['NO_DOMISILI'];
 $NIK_PENDUDUK = $_POST['NIK_PENDUDUK'];
-$TGLSURATJU = $_POST['TGLSURATJU'];
+$TGLSURATJU = $_POST['TGLSURATAJU'];
 $NAMAAJU = $_POST['NAMAAJU'];
 $JKAJU = $_POST['JKAJU'];
 $AGAMAAJU = $_POST['AGAMAAJU'];
@@ -14,7 +14,6 @@ $TMPLHRAJU = $_POST['TMPLHRAJU'];
 $TGLHRAJU = $_POST['TGLHRAJU'];
 $PEKERJAAN_AJU = $_POST['PEKERJAAN_AJU'];
 $ALAMATAJU = $_POST['ALAMATAJU'];
-$TUJUAN = $_POST['TUJUANJU'];
 $KETERANGANAJU = $_POST['KETERANGANAJU'];
 $JENIS_SURATAJU = $_POST['JENIS_SURATAJU'];
 
@@ -25,7 +24,7 @@ $JENIS_SURATAJU = $_POST['JENIS_SURATAJU'];
 // Proses upload
 
 	// Proses simpan ke Database
-	$query = "INSERT INTO sk_domisili VALUES('".$NO_DOMISILI."','".$NIK_PENDUDUK."', '".$TGLSURATJU."','".$NAMAAJU."','".$JKAJU."','".$AGAMAAJU."','".$NIKPENGAJU."','".$TMPLHRAJU."','".$PEKERJAAN_AJU."','".$ALAMATAJU."','".$JKAJU."', '".$TUJUAN."','".$KETRANGANAJU."','".$JENIS_SURATAJU."')";
+	$query = "INSERT INTO sk_domisili VALUES('".$NO_DOMISILI."','".$NIK_PENDUDUK."', '".$TGLSURATJU."','".$NAMAAJU."','".$JKAJU."','".$AGAMAAJU."','".$NIKPENGAJU."','".$TMPLHRAJU."','".$TGLHRAJU."','".$PEKERJAAN_AJU."','".$ALAMATAJU."', '".$KETERANGANAJU."','".$JENIS_SURATAJU."')";
 	
 	$sql = mysqli_query($connect, $query); // Eksekusi/ Jalankan query dari variabel $query
 	
