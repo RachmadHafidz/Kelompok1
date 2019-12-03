@@ -140,7 +140,7 @@ echo "Hai, selamat datang ". $_SESSION['NIK_PENDUDUK'];
 ?>
  <?php
  $nik= $_SESSION['NIK_PENDUDUK'];
-$nilai = mysqli_query($koneksi,"select * from penduduk  where NIK_PENDUDUK= $nik");
+$nilai = mysqli_query($koneksi,"select * from penduduk inner join keluarga on penduduk.NO_KK = keluarga.NO_KK where NIK_PENDUDUK= $nik");
 
 $data =  mysqli_fetch_array ($nilai) ;
  
@@ -158,14 +158,14 @@ $data =  mysqli_fetch_array ($nilai) ;
                 <div class="form-group">
                     <label for="TANGGAL_SURAT" class="col-sm-3 control-label">Tanggal surat</label>
                     <div class="col-sm-9">
-                        <input type="date"  class="form-control" name= "TANGGAL_SURAT">
+                        <input type="date"  class="form-control" name= "TGLSURATJU">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="NO_SURATDOM" class="col-sm-3 control-label"> no surat</label>
                     <div class="col-sm-9">
-                        <input type="text"  placeholder="No Surat Domisili" class="form-control" name= "NO_SURATDOM">
+                        <input type="text"  placeholder="No Surat Domisili" class="form-control" name= "NO_DOMISILI">
                     </div>
                 </div>
 
@@ -183,28 +183,28 @@ $data =  mysqli_fetch_array ($nilai) ;
                 <div class="form-group">
                     <label for="NAMAPENDUDUK" class="col-sm-3 control-label"> Nama</label>
                     <div class="col-sm-9">  
-                        <input type="text" readonly value="<?php echo $data['NAMAPENDUDUK']; ?>"  placeholder="Nama" class="form-control" name= "NAMAPENDUDUK" >
+                        <input type="text" readonly value="<?php echo $data['NAMAPEN']; ?>"  placeholder="Nama" class="form-control" name= "NAMAPENDUDUK" >
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="TMP_LAHIRPEN" class="col-sm-3 control-label"> Tempat Lahir</label>
-                    <div class="col-sm-9">
-                        <input type="text" readonly value="<?php echo $data['TMP_LAHIRPEN']; ?>"" placeholder="Tempat Lahir" class="form-control" name= "TMP_LAHIRPEN">
+                    <label for="TEMPATLHR" class="col-sm-3 control-label"> Tempat lahir</label>
+                    <div class="col-sm-9">  
+                        <input type="text" readonly value="<?php echo $data['TEMPATLHR']; ?>"  placeholder="Nama" class="form-control" name= "TEMPATLHR" >
                     </div>
                 </div>
                 
                 <div class="form-group">
                     <label for="TGL_LAHIRPEN" class="col-sm-3 control-label"> Tanggal Lahir</label>
                     <div class="col-sm-9">
-                        <input type="text" readonly value="<?php echo $data['TGL_LAHIRPEN']; ?>" placeholder="Tanggal Lahir" class="form-control" name= "TGL_LAHIRPEN">
+                        <input type="text" readonly value="<?php echo $data['TANGGALHR']; ?>" placeholder="Tanggal Lahir" class="form-control" name= "TGL_LAHIRPEN">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="JENIS_KELAMINPEN" class="col-sm-3 control-label"> Jenis Kelamin</label>
                     <div class="col-sm-9">
-                        <input type="text" readonly value="<?php echo $data['JENIS_KELAMINPEN']; ?>" placeholder="Jenis Kelamin" class="form-control" name= "">
+                        <input type="text" readonly value="<?php echo $data['JK_PEN']; ?>" placeholder="Jenis Kelamin" class="form-control" name= "">
                     </div>
                 </div>
 
@@ -232,14 +232,14 @@ $data =  mysqli_fetch_array ($nilai) ;
                 <div class="form-group">
                     <label for="KEWARGANEGARAANPEN" class="col-sm-3 control-label">Kewarganegaraan </label>
                     <div class="col-sm-9">
-                        <input type="text" readonly value="<?php echo $data['KEWARGANEGARAANPEN']; ?>" placeholder="Kewarganegaraan" class="form-control" name= "KEWARGANEGARAANPEN">
+                        <input type="text" readonly value="<?php echo $data['KWNPEN']; ?>" placeholder="Kewarganegaraan" class="form-control" name= "KEWARGANEGARAANPEN">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="ALAMATPEN" class="col-sm-3 control-label">Alamat </label>
                     <div class="col-sm-9">
-                        <input type="text" readonly value="<?php echo $data['ALAMATPEN']; ?>" placeholder="Alamat" class="form-control" name= "ALAMATPEN">
+                        <input type="text" readonly value="<?php echo $data['ALAMAT']; ?>" placeholder="Alamat" class="form-control" name= "ALAMATPEN">
                     </div>
                 </div>
        
@@ -303,7 +303,7 @@ $data =  mysqli_fetch_array ($nilai) ;
                 <div class="form-group">
                     <label for="TUJUAN" class="col-sm-3 control-label"> TUJUAN</label>
                     <div class="col-sm-9">
-                        <input type="text"  placeholder="TUJUAN" class="form-control" name= "TUJUAN">
+                        <input type="text"  placeholder="TUJUAN" class="form-control" name= "TUJUANJU">
                     </div>
                 </div>
 
@@ -315,12 +315,12 @@ $data =  mysqli_fetch_array ($nilai) ;
                         <div class="row">
                             <div class="col-sm-4">
                                 <label class="radio-inline">
-                                    <input type="radio" name="JK_PENGAJU"  value="Perempuaan">perempuan
+                                    <input type="radio" name="JKAJU"  value="Perempuaan">perempuan
                                 </label>
                             </div>
                             <div class="col-sm-4">
                                 <label class="radio-inline">
-                                    <input type="radio" name="JK_PENGAJU"  value="Laki-laki">laki-laki
+                                    <input type="radio" name="JKAJU"  value="Laki-laki">laki-laki
                                 </label>
                             </div>
                         </div>
