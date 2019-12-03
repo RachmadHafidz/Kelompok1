@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php 
+session_start();
+?>
 <html>
 <head>
 <script src="pop.js"></script>
@@ -120,16 +123,9 @@
  
  
       <?php 
-include 'config.php';
- 
-// mengaktifkan session
-session_start();
- 
-// cek apakah user telah login, jika belum login maka di alihkan ke halaman login
-
- 
+      include 'config.php'
 // menampilkan pesan selamat datang
-echo "Hai, selamat datang ". $_SESSION['NIK'];
+echo "Hai, selamat datang ". $_SESSION['NIK_PENDUDUK'];
  
 ?>
 <br/>
