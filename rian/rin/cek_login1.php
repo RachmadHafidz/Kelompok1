@@ -7,11 +7,11 @@ include 'koneksi.php';
  
 // menangkap data yang dikirim dari form login
 $NIK = $_POST['NIK_PENDUDUK'];
-$PASSWORD= md5($_POST['PASS']);
+$PASSWORD= md5($_POST['PASSPEN']);
  
  
 // menyeleksi data user dengan username dan password yang sesuai
-$login = mysqli_query($koneksi,"select * from penduduk where NIK_PENDUDUK='$NIK' and PASS='$PASSWORD'");
+$login = mysqli_query($koneksi,"select * from penduduk where NIK_PENDUDUK='$NIK' and PASSPEN='$PASSWORD'");
 
 
 // menghitung jumlah data yang ditemukan
