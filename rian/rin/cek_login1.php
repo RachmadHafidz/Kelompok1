@@ -19,11 +19,8 @@ $cek = mysqli_num_rows($login);
  
 // cek apakah username dan password di temukan pada database
 if($cek > 0)
-{
- 
-	$data = mysqli_fetch_assoc($login);
-	
-            
+{	
+	$_SESSION['NIK_PENDUDUK'] = $NIK;    
 
 	header("location:http://localhost/Kelompok1/rian/selasa/nyoba2.php");
 	// cek jika user login sebagai admin
