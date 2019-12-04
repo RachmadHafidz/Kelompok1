@@ -1,11 +1,11 @@
 <?php
 // Load file koneksi.php
-include "koneksi1.php";
+include "koneksi.php";
 
 // Ambil Data yang Dikirim dari Form
 $NO_DOMISILI = $_POST['NO_DOMISILI'];
 $NIK_PENDUDUK = $_POST['NIK_PENDUDUK'];
-$TGLSURATJU = $_POST['TGLSURATAJU'];
+$TGLSURATJU = $_POST['TGLSURATJU'];
 $NAMAAJU = $_POST['NAMAAJU'];
 $JKAJU = $_POST['JKAJU'];
 $AGAMAAJU = $_POST['AGAMAAJU'];
@@ -14,7 +14,6 @@ $TMPLHRAJU = $_POST['TMPLHRAJU'];
 $TGLHRAJU = $_POST['TGLHRAJU'];
 $PEKERJAAN_AJU = $_POST['PEKERJAAN_AJU'];
 $ALAMATAJU = $_POST['ALAMATAJU'];
-
 $KETERANGANAJU = $_POST['KETERANGANAJU'];
 $TUJUANJU = $_POST['TUJUANJU'];
 $JENIS_SURATAJU = $_POST['JENIS_SURATAJU'];
@@ -26,12 +25,13 @@ $JENIS_SURATAJU = $_POST['JENIS_SURATAJU'];
 // Proses upload
 
 	// Proses simpan ke Database
-	$query = "INSERT INTO sk_domisili VALUES('".$NO_DOMISILI."','".$NIK_PENDUDUK."', '".$TGLSURATJU."','".$NAMAAJU."','".$JKAJU."','".$AGAMAAJU."','".$NIKPENGAJU."','".$TMPLHRAJU."','".$TGLHRAJU."','".$PEKERJAAN_AJU."','".$ALAMATAJU."', '".$KETERANGANAJU."', ".$TUJUANJU."','".$JENIS_SURATAJU."')";
+	$query = "INSERT INTO sk_domisili VALUES('".$NO_DOMISILI."','".$NIK_PENDUDUK."', '".$TGLSURATJU."','".$NAMAAJU."','".$JKAJU."','".$AGAMAAJU."','".$NIKPENGAJU."','".$TMPLHRAJU."','".$TGLHRAJU."','".$PEKERJAAN_AJU."','".$ALAMATAJU."','".$KETRANGANAJU."','".$TUJUANJU."','".$JENIS_SURATAJU."')";
 	
-	$sql = mysqli_query($connect, $query); // Eksekusi/ Jalankan query dari variabel $query
+	$sql = mysqli_query($koneksi, $query); // Eksekusi/ Jalankan query dari variabel $query
 	
 	if($sql){ // Cek jika proses simpan ke database sukses atau tidak
 		// Jika Sukses, Lakukan :
+		$tampil = $_POST ['TUJUANJU'];
 		header("location: index.php"); // Redirect ke halaman index.php
 	}else{
 		// Jika Gagal, Lakukan :
