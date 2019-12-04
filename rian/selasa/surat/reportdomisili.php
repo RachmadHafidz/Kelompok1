@@ -20,15 +20,26 @@ $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
 ?>
 
 <style>
-		#wrap {background:white ;width:800px ; height:600;}
-		body {background: white; width:800px;height:600;}
+
+	
+		#wrap 	{	background:yellow ;
+					width:800px; 
+					height:600;
+					float: right;
+					
+				}
+		body {background: red; width:1075px; height:600; }
 	</style>
 <head>
 
 	<title>Print Surat Pengantar Domisili</title>
 	
 </head>
-<center>
+
+<body>
+
+	<div id="wrap" >
+	
 <div align="center">
 	<table width="100%" border="0" align="center" cellspacing="0" >
 		<tr>
@@ -54,8 +65,6 @@ $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
 	</table>
 </div>
 
-<body>
-	<div id="wrap">
   	<div class="row">
  		<div class="col-3"></div>
  		<div class="col-6" align="center">
@@ -65,15 +74,16 @@ $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
 					<font size="3">
 						Nomor : 474 /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/35.09.12.2002/&nbsp;&nbsp;&nbsp;
 					</font>
-		 		</b><br><br><br>
+		 		</b><br><br>
 				 <div class="col" align="left" margin="15px">
 				 <a href="cetakdomisili.php" target="_blank">CETAK</a>
-
-				 
+ 
 				 <br>
-				<font size="4" align="left">
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yang  bertanda tangan dibawah ini Saya Kepala Desa Sabrang,Kecamatan Ambulu, Kabupaten Jember , menerangkan dengan sebenarnya bahwa :
-				</font>
+				<div align="left">
+			</br> 
+			<td> </td>
+				Yang  bertanda tangan dibawah ini Saya Kepala Desa Sabrang,Kecamatan Ambulu, Kabupaten Jember , menerangkan dengan sebenarnya bahwa :
+			</div>
 				<br><br>
 				<table border="0" >
 				<tbody>
@@ -92,12 +102,12 @@ $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
 				</tbody></table>
 				<br>
 				</font>
-				<font size="3" face="Tahoma">
+				<font size="4" >
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Orang tersebut diatas benar benar penduduk Desa Sabrang Kecamatan 
 				Ambulu, Kabupaten Jember, <br>yang bersangkutan sampai saat ini masih berdomisili pada alamat tersebut diatas dan surat keterangan ini<br>akan dipergunakan untuk persyaratan administrasi
 				<?php echo $data['TUJUANJU']; ?>
 				<br>
-				<font size="3" face="Tahoma">
+				<font size="4" >
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Demikian surat keterangan ini saya buat dengan sebenarnya dan dapatnya dipergunakan sebagai mana<br> mestinya dan selanjutnya untuk menjadikan periksa.
 				
 				</font>
@@ -132,7 +142,7 @@ $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
 		</tr>
 	</table>
 </div>
-</center>
 
+</div>
 </body>
 </html>
