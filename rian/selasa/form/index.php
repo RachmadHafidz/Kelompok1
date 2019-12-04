@@ -5,7 +5,7 @@
 <body>
 	<?php include "koneksi1.php";?>
 	<h1>Data Surat Domisili</h1>
-	<a href="formindex.php">Tambah Data</a><br><br>
+	<a href="tesform.php">Tambah Data</a><br><br>
 	<?php session_start (); 
 	
 echo $_SESSION['NIK_PENDUDUK'];
@@ -29,6 +29,7 @@ echo $_SESSION['NIK_PENDUDUK'];
         <th>alamat peng</th>
 		
 		<th>KETERANGAN</th>
+		<th>TUJUAN</th>
 		<th>JENIS SURAT</th>
 		<th colspan="2">Aksi</th>
 	</tr>
@@ -55,6 +56,7 @@ $nilai = mysqli_query($connect,"select * from sk_domisili where NIK_PENDUDUK= $n
 		echo "<td>".$data['ALAMATAJU']."</td>";
 		
 		echo "<td>".$data['KETERANGANAJU']."</td>";
+		echo "<td>".$data['TUJUANJU']."</td>";
 		echo "<td>".$data['JENIS_SURATAJU']."</td>";
 		echo "<td><a href='form_ubah.php?NIK=".$data['NIK_PENDUDUK']."'>Ubah</a></td>";
 		echo "<td><a href='proses_hapus.php?NIK=".$data['NIK_PENDUDUK']."'>Hapus</a></td>";
