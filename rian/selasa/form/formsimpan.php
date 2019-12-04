@@ -32,7 +32,7 @@ $JENIS_SURATAJU = $_POST['JENIS_SURATAJU'];
 	if($sql){ // Cek jika proses simpan ke database sukses atau tidak
 		// Jika Sukses, Lakukan :
 		$tampil = $_POST ['TUJUANJU'];
-		header("location: index.php"); // Redirect ke halaman index.php
+		header("location: http://localhost/Kelompok1/hafidz/sp/reportdomisili.php"); // Redirect ke halaman index.php
 	}else{
 		// Jika Gagal, Lakukan :
 		echo "Maaf, Terjadi kesalahan saat mencoba untuk menyimpan data ke database.";
