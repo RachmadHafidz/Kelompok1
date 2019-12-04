@@ -93,7 +93,7 @@ $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
 				<br>
 				<font size="3" face="Tahoma">
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yang bersangkutan selama menjadi penduduk Desa Sabrang tidak pernah tersangkut dalam perkara tindak<br> pidana atau tindak pidana kejahatan lainya baik secara langsung ataupun tidak langsung. Adapun surat keterangan ini akan dipergunakan untuk melengkapi persyaratan  <br>
-				<?php echo $data['TUJUAN']; ?>
+				<?php echo $data['TUJUANJU']; ?>
 				<font size="3" face="Tahoma">
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Demikian surat keterangan ini kami buat dengan sebenarnya dan dapatnya dipergunakan sebagaimana mestinya.  
 				

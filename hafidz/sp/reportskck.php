@@ -25,7 +25,7 @@ $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
 	</style>
 <head>
 
-	<title>Print Surat Pengantar Domisili</title>
+	<title>SP SKCK</title>
 	
 </head>
 <center>
@@ -93,8 +93,8 @@ $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Orang tersebut di atas benar-benar penduduk Desa Sabrang dan sampai saat ini masih tinggal di alamat<br> tersebut di atas.
 				<br>
 				<font size="3" face="Tahoma">
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yang bersangkutan selama menjadi penduduk Desa Sabrang tidak pernah tersangkut dalam perkara tindak<br> pidana atau tindak pidana kejahatan lainya baik secara langsung ataupun tidak langsung. Adapun surat keterangan ini akan dipergunakan untuk melengkapi persyaratan  <br>
-				<?php echo $data['TUJUAN']; ?>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yang bersangkutan selama menjadi penduduk Desa Sabrang tidak pernah tersangkut dalam perkara tindak<br> pidana atau tindak pidana kejahatan lainya baik secara langsung ataupun tidak langsung. Adapun surat keterangan ini akan dipergunakan untuk melengkapi persyaratan 
+				<?php echo $data['TUJUANJU']; ?><br>
 				<font size="3" face="Tahoma">
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Demikian surat keterangan ini kami buat dengan sebenarnya dan dapatnya dipergunakan sebagaimana mestinya.  
 				

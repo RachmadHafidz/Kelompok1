@@ -20,12 +20,12 @@ $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
 ?>
 
 <style>
-		#wrap {background:white ;width:800px ; height:600;}
-		body {background: white; width:800px;height:600;}
+		#wrap {background:white ;width:800px ; height:800;}
+		body {background: white; width:800px;height:800;}
 	</style>
 <head>
 
-	<title>Print Surat Pengantar Domisili</title>
+	<title>SP BEDA NAMA</title>
 	
 </head>
 <center>
@@ -61,11 +61,13 @@ $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
  		<div class="col-6" align="center">
 				<br><b>
 					<font size="4.5">
-						<u>SURAT KETERANGAN DOMISILI</u></font><br>
+						<u>SURAT KETERANGAN CACATAN KEPOLISIAN</u></font><br>
 					<font size="3">
-						Nomor : 474 /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/35.09.12.2002/2019&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		 		</b><br><br><br>
+						Nomor : 474 /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/35.09.12.2002/&nbsp;&nbsp;&nbsp;
+					</font>
+		 		</b><br>
 				 <div class="col" align="left" margin="15px">
+				 <a href="cetakskck.php" target="_blank">CETAK</a>
 				 <br>
 				<font size="4" align="left">
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yang  bertanda tangan dibawah ini Saya Kepala Desa Sabrang,Kecamatan Ambulu, Kabupaten Jember , menerangkan dengan sebenarnya bahwa :
@@ -86,28 +88,54 @@ $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
 				<tr><td>Desa Sabrang, Kec Ambulu Kab Jember</td></tr>
 				</center>
 				</tbody></table>
-				<br>
 				</font>
 				<font size="3" face="Tahoma">
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Yang bersangkutan benar-benar penduduk Desa Sabrang Kecamatan Ambulu Kabupaten Jember,  yang  sampai  saat  ini  masih  berdomisili  pada  alamat  tersebut di  atas.     
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bahwa yang bersangkutan benar-benar  penduduk Desa Sabrang yang sampai saat ini masih berdomisili dialamat tersebut diatas dan keliru  penulisan nama pada&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dengan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tersebut di bawah ini :
+				<br>
+                <table border="2" width="800"  >
+                <thead>
+                <tr>
+                <td>NAMA/NOMOR MENURUT <br>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td>NAMA/NOMOR TERTULIS PADA KARTU<br>&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                </tr>
+                <tr>
+                
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                </tr>
+                </tbody>
+                </table>
+                <br>
+                <font size="3" face="Tahoma">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dari kedua nama tersebut adalah satu orang yang sama sedangkan surat keterangan ini akan di pergunakan untuk persyaratan administrasi berobat di <?php echo $data['TUJUANJU']; ?> Jember.
 				<br>
 				<font size="3" face="Tahoma">
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Yang bersangkutan mempunyai usaha ________________ , yang sampai saat ini masih berjalan dengan baik dan lancar, surat keterangan ini akan dipergunakan untuk melengkapi persyaratan <?php echo $data['TUJUANJU']; ?>.    
-				<br>
-				<font size="3" face="Tahoma">
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Demikian keterangan ini di buat dengan sebenarnya kepada yang berkepentingan untuk menjadikan periksa.
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Demikian surat keterangan ini di buat agar dapat di pergunakan sebagai mana mestinya.  
 				
 				</font>
 				</div>
  		</div><br>
  	</div>
 
-<div align="center">
+	 <div align="center">
 	<table>
 		<tr>
+        <td width="245" align="right">
+				<div align="center"><font size="3">
+					<u>CAMAT AMBULU</u>
+				</font></div>
+			</td>
 			<td width="300"><br></td>	
 			<td width="245" align="right">
-				<div align="center" class="time"><font size="4">
+			<div align="center" class="time"><font size="3">
+					<br>
 					Sabrang,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -115,23 +143,33 @@ $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
 					<br>
 					KEPALA DESA SABRANG
 				</font></div>
+				</font></div>
 			</td>
 		</tr>
-		
+        <tr>
+			<td width="245" height="70"></td>
+			<td width="300" height="70" align="CENTER"><p>Mengetahui</p></td>
+			<td width="245" height="70"></td>
+		</tr>
 		<tr>
+			<td width="245" align="right">
+				<div align="center"><font size="3">
+				
+					<u>.....................</u>
+				</font></div>
+			</td>
 			<td width="300"></td>
 			<td width="245" align="right"><b>
 				<div align="center"><font size="3">
-					<br><br><br><br><br>
+				
 					<u>ZUBAERI LUTFI</u>
 				</font></div></b>
 			</td>
 		</tr>
+		
 	</table>
 </div>
 </center>
-<script>
-		window.print();
-</script>
+
 </body>
 </html>
