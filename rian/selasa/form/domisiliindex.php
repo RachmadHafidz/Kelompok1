@@ -7,7 +7,7 @@
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
-<?php include 'koneksi1.php'; 
+<?php include 'koneksi.php'; 
 
 
 
@@ -139,8 +139,9 @@ echo "Hai, selamat datang ". $_SESSION['NIK_PENDUDUK'];
  
 ?>
  <?php
+
  $nik= $_SESSION['NIK_PENDUDUK'];
-$nilai = mysqli_query($connect,"select * from penduduk inner join keluarga on penduduk.NO_KK = keluarga.NO_KK where NIK_PENDUDUK= $nik");
+$nilai = mysqli_query($koneksi,"select * from penduduk inner join keluarga on penduduk.NO_KK = keluarga.NO_KK where NIK_PENDUDUK= $nik");
 
 $data =  mysqli_fetch_array ($nilai) ;
  
@@ -158,7 +159,7 @@ $data =  mysqli_fetch_array ($nilai) ;
                 <div class="form-group">
                     <label for="TANGGAL_SURAT" class="col-sm-3 control-label">Tanggal surat</label>
                     <div class="col-sm-9">
-                        <input type="date"  class="form-control" name= "TGLSURATAJU">
+                        <input type="date"  class="form-control" name= "TGLSURATJU">
                     </div>
                 </div>
 
@@ -268,7 +269,7 @@ $data =  mysqli_fetch_array ($nilai) ;
                 <div class="form-group">
                     <label for="NIK_PENGAJU" class="col-sm-3 control-label"> NIk</label>
                     <div class="col-sm-9">
-                        <input type="number"  placeholder="NIK PENGAJU" class="form-control" name= "NIKPENGAJU">
+                        <input type="number"  placeholder="NIK PENGAJU" class="form-control" name= "NIK_PENGAJU">
                     </div>
                 </div>
                 
@@ -299,11 +300,11 @@ $data =  mysqli_fetch_array ($nilai) ;
                         <input type="text"  placeholder="ALAMAT PENGAJU" class="form-control" name= "ALAMATPENGAJU">
                     </div>
                 </div>
-
+              
                 <div class="form-group">
                     <label for="TUJUAN" class="col-sm-3 control-label"> TUJUAN</label>
                     <div class="col-sm-9">
-                        <input type="text"  placeholder="TUJUAN" class="form-control" name= "TUJUANJU">
+                        <input type="text" method= "get" placeholder="TUJUAN" class="form-control" name= "TUJUANJU">
                     </div>
                 </div>
 
