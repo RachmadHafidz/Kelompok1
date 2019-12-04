@@ -251,7 +251,7 @@ include 'koneksi.php';
         echo "<td>".$data['PASSWORD']."</td>";
         echo "<td>".$data['TGL_DAFTAR']."</td>";
         echo "<td>".$data['LEVEL']."</td>"; 
-        echo "<td>".$data['STATUS']."</td>";
+        //echo "<td>".$data['STATUS']."</td>";
       
 	    echo "<td><a href=http://localhost/Kelompok1/rian/rin/ubahdata/form_ubah.php?NIK=".$data['NIK']."'>Ubah</a></td>";
 		echo "<td><a href='http://localhost/Kelompok1/rian/rin/ubahdata/proses_hapus.php?NIK=".$data['NIK']."'>Hapus</a></td>";
