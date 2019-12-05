@@ -269,7 +269,51 @@ $('#batal').click(function(){ $('#utama').slideUp(); $('#tampil').show(); $('#ru
 //$('#batal2').click(function(){ $('#utama').slideUp(); $('#tampil').show(); }); 
 }); </script>
 
-       
+        <!-- DataTables Example -->
+        <input type="submit" name="penambahan" id="tampil" value="Tambah Data">
+        <!-- Tambah Data -->
+        <div class="card mb-3" id="utama">
+          <div class="card-header">
+            <i class="fas fa-edit"></i>
+            Pendaftaran Admin</div>
+          <div class="card-body">
+        <form method="" action="" enctype="multipart/form-data">
+            <table cellpadding="8">
+            <tr><td>NIK</td><td><input type="text" name="NIK"></td>
+            <td>LEVEL</td><td>
+                        <select name="LEVEL">
+                            <option>Administrator</option>
+                            <option>Petugas</option>
+                        </select>
+                    </td> 
+            
+            <td>USERNAME</td><td><input type="text" name="USER"></td></tr>
+            <tr><td>NAMA</td><td><input type="text" name="NAMA"></td>
+            <td>FOTO</td><td><input type="file" name="FOTO"></td>
+            <td>PASSWORD</td><td><input type="password" name="PASS"></td></tr>
+                <tr><td>JENIS KELAMIN</td><td>
+                        <select name="JK">
+                            <option>Laki-Laki</option>
+                            <option >Perempuan</option>
+                        </select>
+                <td>STATUS AKUN</td><td>
+                        <select name="SA">
+                            <option>Nonaktif</option>
+                            <option>Aktif</option>
+                        </select>
+                    </td></tr>
+            </table>
+          
+            <hr>
+            <input type="submit" name="Tambah" value="Tambah" id="Tambah">
+            <input type="submit" name="Edit" value="Edit" disabled>
+            <input type="submit" name="Hapus" value="Hapus" disabled>
+            <input type="submit" name="batal" id="Batal" value="Batal">
+        </form>
+
+
+          </div>
+          </div>
 <!-- Edit Data -->
 <?php if(isset($_GET['id'])){
   include 'koneksi.php';
@@ -389,10 +433,21 @@ $('#batal').click(function(){ $('#utama').slideUp(); $('#tampil').show(); $('#ru
                     <th>Level</th>
                     <th>Status Akun</th>
                     <th>Foto</th>
-               
+                    <th>Aksi</th>
                   </tr>
                 </thead>
-
+                <tfoot>
+                  <tr>
+                    <th>ID</th>
+                    <th>NIK</th>
+                    <th>Nama</th>
+                    <th>Jenis Kelamin</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>Level</th>
+                    <th>Status Akun</th>
+                    <th>Foto</th>
+                    <th>Aksi</th>
                   </tr>
                 </tfoot>
                 <tbody>
@@ -411,7 +466,9 @@ $('#batal').click(function(){ $('#utama').slideUp(); $('#tampil').show(); $('#ru
                     echo "<td>".$row['LEVEL']."</td>";
                     echo "<td>".$row['STATUS_AKUN']."</td>";
                     echo "<td><img src='images/".$row['FOTO']."' width='50' height='50'></td>";
-         ?>
+                    echo "<td>"?><a class="fas fa-few fa-edit" id= "ubah" href="ubahadmin.php?id=<?php echo $row['ID_ADMIN']; ?>"></a> 
+                              <a class="fas fa-few fa-trash" id= "Hapus" href="pdadmin.php?Hapus=delete&id=<?php echo $row['ID_ADMIN']; ?>" onClick = "return confirm(Apakah Anda ingin mengapus <?php echo $row['NAMAADMIN']; ?>)"></a></td>
+                    </tr>
                     <?php   
                   }
                   ?> 

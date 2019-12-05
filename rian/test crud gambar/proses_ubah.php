@@ -3,19 +3,22 @@
 include "koneksi.php";
 
 // Ambil data NIS yang dikirim oleh form_ubah.php melalui URL
-$NO_KK = $_GET['NO_KK'];
+$ID_ADMIN = $_GET['ID_ADMIN'];
 
 // Ambil Data yang Dikirim dari Form
-$nama = $_POST['nama'];
-$jenis_kelamin = $_POST['jenis_kelamin'];
-$telp = $_POST['telp'];
-$alamat = $_POST['alamat'];
+$NIKADMIN = $_POST['NIKADMIN'];
+$NAMAADMIN = $_POST['NAMAADMIN'];
+$JENIS_KELAMIN = $_POST['JENIS_KELAMIN'];
+$USERNAME = $_POST['USERNAME'];
+$PASSWORD = $_POST['PASSWORD'];
+$LEVEL = $_POST['LEVEL'];
+$STATUS_AKUN = $_POST['STATUS_AKUN'];
 
 // Cek apakah user ingin mengubah fotonya atau tidak
 if(isset($_POST['ubah_foto'])){ // Jika user menceklis checkbox yang ada di form ubah, lakukan :
 	// Ambil data foto yang dipilih dari form
-	$foto = $_FILES['foto']['name'];
-	$tmp = $_FILES['foto']['tmp_name'];
+	$foto = $_FILES['FOTO']['name'];
+	$tmp = $_FILES['FOTO']['tmp_name'];
 	
 	// Rename nama fotonya dengan menambahkan tanggal dan jam upload
 	$fotobaru = date('dmYHis').$foto;
@@ -26,16 +29,16 @@ if(isset($_POST['ubah_foto'])){ // Jika user menceklis checkbox yang ada di form
 	// Proses upload
 	if(move_uploaded_file($tmp, $path)){ // Cek apakah gambar berhasil diupload atau tidak
 		// Query untuk menampilkan data siswa berdasarkan NIS yang dikirim
-		$query = "SELECT * FROM siswa WHERE nis='".$nis."'";
+		$query = "SELECT * FROM admin WHERE ID_ADMIN='".$ID_ADMIN."'";
 		$sql = mysqli_query($connect, $query); // Eksekusi/Jalankan query dari variabel $query
 		$data = mysqli_fetch_array($sql); // Ambil data dari hasil eksekusi $sql
 
 		// Cek apakah file foto sebelumnya ada di folder images
-		if(is_file("images/".$data['foto'])) // Jika foto ada
-			unlink("images/".$data['foto']); // Hapus file foto sebelumnya yang ada di folder images
+		if(is_file("images/".$data['FOTO'])) // Jika foto ada
+			unlink("images/".$data['FOTO']); // Hapus file foto sebelumnya yang ada di folder images
 		
 		// Proses ubah data ke Database
-		$query = "UPDATE siswa SET nama='".$nama."', jenis_kelamin='".$jenis_kelamin."', telp='".$telp."', alamat='".$alamat."', foto='".$fotobaru."' WHERE nis='".$nis."'";
+		$query = "UPDATE admin SET NIKADMIN='".$NIKADMIN."', NAMAADMIN='".$NAMAADMIN."', JENIS_KELAMIN='".$JENIS_KELAMIN."', USERNAME='".$USERNAME."', PASSWORD='".$PASSWORD."',LEVEL='".$LEVEL."', FOTO='".$fotobaru."', STATUS_AKUN='".$STATUS_AKUN."' WHERE ID_ADMIN='".$ID_ADMIN."'";
 		$sql = mysqli_query($connect, $query); // Eksekusi/ Jalankan query dari variabel $query
 
 		if($sql){ // Cek jika proses simpan ke database sukses atau tidak
@@ -53,7 +56,7 @@ if(isset($_POST['ubah_foto'])){ // Jika user menceklis checkbox yang ada di form
 	}
 }else{ // Jika user tidak menceklis checkbox yang ada di form ubah, lakukan :
 	// Proses ubah data ke Database
-	$query = "UPDATE siswa SET nama='".$nama."', jenis_kelamin='".$jenis_kelamin."', telp='".$telp."', alamat='".$alamat."' WHERE nis='".$nis."'";
+	$query = "UPDATE admin SET NIKADMIN='".$NIKADMIN."', NAMAADMIN='".$NAMAADMIN."', JENIS_KELAMIN='".$JENIS_KELAMIN."', USERNAME='".$USERNAME."', PASSWORD='".$PASSWORD."',LEVEL='".$LEVEL."', FOTO='".$fotobaru."', STATUS_AKUN='".$STATUS_AKUN."' WHERE ID_ADMIN='".$ID_ADMIN."'";
 	$sql = mysqli_query($connect, $query); // Eksekusi/ Jalankan query dari variabel $query
 
 	if($sql){ // Cek jika proses simpan ke database sukses atau tidak

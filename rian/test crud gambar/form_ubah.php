@@ -13,7 +13,7 @@
 	$ID_ADMIN = $_GET['ID_ADMIN'];
 	
 	// Query untuk menampilkan data siswa berdasarkan NIS yang dikirim
-	$query = "SELECT * FROM 'admin' WHERE ID_ADMIN='".$ID_ADMIN."'";
+	$query = "SELECT * FROM admin WHERE ID_ADMIN='".$ID_ADMIN."'";
 	$sql = mysqli_query($connect, $query);  // Eksekusi/Jalankan query dari variabel $query
 	$data = mysqli_fetch_array($sql); // Ambil data dari hasil eksekusi $sql
 	?>
@@ -45,8 +45,11 @@
 		<td><input type="text" name="LEVEL" value="<?php echo $data['LEVEL']; ?>"></td>
 	</tr>
 	<tr>
-		<td>FOTO</td>
-		<td><input type="text" name="FOTO" value="<?php echo $data['FOTO']; ?>"></td>
+		<td>Foto</td>
+		<td>
+			<input type="checkbox" name="ubah_foto" value="true"> Ceklis jika ingin mengubah foto<br>
+			<input type="file" name="FOTO">
+		</td>
 	</tr>
 	<tr>
 		<td>STASTUS AKUN</td>

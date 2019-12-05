@@ -1,5 +1,5 @@
 <?php
-include "koneksi.php";
+
 
 function hapus_data($koneksi){
  if(isset($_GET['no_kk']) && isset($_GET['aksi'])){
@@ -432,7 +432,21 @@ function tambah_data($koneksi){
                     <th>Aksi</th>
                   </tr>
                 </thead>
-               
+                <tfoot>
+                  <tr>
+                  <th>No KK</th>
+                    <th>Tanggal Buat</th>
+                    <th>Kepala Keluarga</th>
+                    <th>Alamat</th>
+                    <th>RT/RW</th>
+                    <th>Desa</th>
+                    <th>Kecamatan</th>
+                    <th>Kab/Kota</th>
+                    <th>Kode Pos</th>
+                    <th>Provinsi</th>
+                    <th>Aksi</th>
+                  </tr>
+                </tfoot>
                 <tbody>
                 <?php
                   include 'koneksi.php';

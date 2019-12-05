@@ -49,7 +49,7 @@
 		<td><input type="text" name="KEC" value="<?php echo $data['KEC']; ?>"></td>
 	</tr>
 	<tr>
-		<td>KABUPATEK</td>
+		<td>KABUPATEn</td>
 		<td><input type="text" name="KAB_KOTA" value="<?php echo $data['KAB_KOTA']; ?>"></td>
 	</tr>
 	<tr>

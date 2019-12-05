@@ -160,68 +160,22 @@
             <a href="index.php">Beranda</a>
           </li>
           <li class="breadcrumb-item active">Data Anggota</li>
-          <li class="breadcrumb-item active">Perangkat Desa</li>
+          <li class="breadcrumb-item active">Pendaftaran Penduduk</li>
         </ol>
 
         <!-- DataTables Example -->
         <div class="card mb-3">
           <div class="card-header">
             <i class="fas fa-edit"></i>
-            Pereangkat Desa</div>
+            Pendaftaran Penduduk</div>
           <div class="card-body">
-            <!-- tabelnya disini -->
-
-            <div class="table-responsive">
-              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead>
-                  <tr>
-                    <th>ID Perangkat</th>
-                    <th>ID Admin</th>
-                    <th>Nama Perangkat</th>
-                    <th>Jenis Kelamin</th>
-                    <th>Alamat</th>
-                    <th>Jabatan</th>
-                    <th>Tahun Jabatan</th>
-                    <th>Berakhir Jabatan</th>
-                    <th>Password</th>
-                    <th>Foto</th>
-                   
-                  </tr>
-                </thead>
-               
-                <tbody>
-                <?php
-                  include 'koneksi.php';
-                  $query = "select * from perangkat_desa";
-                  $sql = mysqli_query($koneksi, $query);
-                  while ($row=mysqli_fetch_array($sql)){
-                    echo "<tr>";
-                    echo "<td>".$row['ID_PERANGKAT']."</td>";
-                    echo "<td>".$row['ID_ADMIN']."</td>";
-                    echo "<td>".$row['NAMA_PERANGKAT']."</td>";
-                    echo "<td>".$row['JENIS_KELAMIN']."</td>";
-                    echo "<td>".$row['ALAMAT_PD']."</td>";
-                    echo "<td>".$row['JABATAN']."</td>";
-                    echo "<td>".$row['TAHUN_JABATAN']."</td>";
-                    echo "<td>".$row['BERAKHIR_JABATAN']."</td>";
-                    echo "<td>".$row['PASSW']."</td>";
-                    echo "<td>".$row['FOTO_PERANGKAT']."</td>";
-                  
-                    echo "<td><a class='fas fa-few fa-ban' href='#'".$row['ID_PERANGKAT']."'> </a>
-                    <a class='fas fa-few fa-edit'href='#'".$row['ID_PERANGKAT']."'></a> 
-                    <a class='fas fa-few fa-trash'href='#'".$row['ID_PERANGKAT']."'></a></td>";
-                    echo "</tr>";
-                  }
-                  ?> 
-                </tbody>
-              </table>
-            </div>
+            
           </div>
           <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
         </div>
 
         <p class="small text-center text-muted my-5">
-          
+          <em>More table examples coming soon...</em>
         </p>
 
       </div>

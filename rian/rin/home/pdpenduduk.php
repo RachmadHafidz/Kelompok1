@@ -282,11 +282,30 @@
                     <th>Pendidikan</th>
                     <th>Kewarganegaraan</th>
                     <th>Status Akun</th>
-                    <th>Password</th>
+                    <th>Hidup</th>
                     <th>Aksi</th>
                   </tr>
                 </thead>
-               
+                <tfoot>
+                  <tr>
+                  <th>NIK</th>
+                    <th>ID Admin</th>
+                    <th>No KK</th>
+                    <th>Tanggal Daftar</th>
+                    <th>Nama</th>
+                    <th>Tempat Lahir</th>
+                    <th>Tanggal Lahir</th>
+                    <th>Jenis Kelamin</th>
+                    <th>Agama</th>
+                    <th>Status</th>
+                    <th>Pekerjaan</th>
+                    <th>Pendidikan</th>
+                    <th>Kewarganegaraan</th>
+                    <th>Status Akun</th>
+                    <th>Hidup</th>
+                    <th>Aksi</th>
+                  </tr>
+                </tfoot>
                 <tbody>
                 <?php
                   include 'koneksi.php';
