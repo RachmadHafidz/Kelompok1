@@ -243,6 +243,8 @@ $data =  mysqli_fetch_array ($nilai) ;
                         <input type="text" readonly value="<?php echo $data['ALAMAT']; ?>" placeholder="Alamat" class="form-control" name= "ALAMATPEN">
                     </div>
                 </div>
+
+                
        
                 <div class="form-group">
                     <label for="NAMA_PENGAJU" class="col-sm-3 control-label"> nama pengaju</label>
