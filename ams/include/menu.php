@@ -25,7 +25,7 @@
                             if(!empty($data['alamat'])){
                                 echo '<p class="description-side">'.$data['alamat'].'</p>';
                             } else {
-                                echo '<p class="description-side">Jalan Raya Kediri Gg. Kwagean No. 04 Loceret Telp/Fax. (0358) 329806 Nganjuk 64471</p>';
+                                echo '<p class="description-side">Jl. Watu Ulo No.1, Desa Sabrang, Kecamatan Ambulu, Kab. Jember, Kode Pos 68172</p>';
                             }
                         }
                     ?>
