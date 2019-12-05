@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php 
+session_start();
+?>
 <html>
 <head>
 <script src="pop.js"></script>
@@ -110,28 +113,21 @@
         </button>
         <div class="dropdown-content">
           <a href="#">Persyaratan</a>
-          <a href="#">Pelayanan Surat Domisili</a>
-          <a href="#">Pelayanan Surat SKCK</a>
+          <a href="http://localhost/Kelompok1/hafidz/suratfix/formdomisili.php">Pelayanan Surat Domisili</a>
+          <a href="http://localhost/Kelompok1/hafidz/suratfix/formskck.php">Pelayanan Surat SKCK</a>
           <a href="#">Pelyanan Surat Belum Menikah</a>
           <a href="#">Pelayanan Surat Tempat Usaha</a>
         </div>
-      </div> 
+  </div> 
      
  
  
       <?php 
-include 'config.php';
- 
-// mengaktifkan session
-session_start();
- 
-// cek apakah user telah login, jika belum login maka di alihkan ke halaman login
-
- 
+      include 'config.php';
 // menampilkan pesan selamat datang
-echo "Hai, selamat datang ". $_SESSION['NIK'];
+      echo "Hai, selamat datang ". $_SESSION['NIK_PENDUDUK'];
  
-?>
+    ?>
 <br/>
 <br/>
 

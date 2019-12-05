@@ -105,15 +105,15 @@
  
   
   <div class="dropdown">
-        <button class="dropbtn"><a href="#">Pelayanan</a>
+        <button class="dropbtn">Pelayanan</a>
           <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-          <a href="#">Persyaratan</a>
-          <a href="#">Pelayanan Surat Domisili</a>
-          <a href="#">Pelayanan Surat SKCK</a>
-          <a href="#">Pelyanan Surat Belum Menikah</a>
-          <a href="#">Pelayanan Surat Tempat Usaha</a>
+          <a href="">Persyaratan</a>
+          <a href="formindex.php">Pelayanan Surat Domisili</a>
+          <a href="">Pelayanan Surat SKCK</a>
+          <a href="">Pelyanan Surat Belum Menikah</a>
+          <a href="">Pelayanan Surat Tempat Usaha</a>
         </div>
       </div> 
      
