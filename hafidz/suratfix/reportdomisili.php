@@ -33,7 +33,7 @@ $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
 	<table width="100%" border="0" align="center" cellspacing="0" >
 		<tr>
 			<td width="50"></td>
-			<td  align="left"><img src="Jember.png" width="150" height="120"></td>
+			<td  align="left"><img src="http://localhost/Kelompok1/hafidz/SP/Jember.png" width="150" height="120"></td>
 			<td width="600" >
 				<div align="center" >
 					<b>
