@@ -242,7 +242,20 @@ $data =  mysqli_fetch_array ($nilai) ;
                         <input type="text" readonly value="<?php echo $data['ALAMAT']; ?>" placeholder="Alamat" class="form-control" name= "ALAMATPEN">
                     </div>
                 </div>
-       
+
+                <div class="form-group">
+                    <label for="TUJUAN" class="col-sm-3 control-label"> TUJUAN</label>
+                    <div class="col-sm-9">
+                        <input type="text"  placeholder="TUJUAN" class="form-control" name= "TUJUANJU">
+                    </div>
+                </div>
+
+                <a href ="#collapseExample2" class = "btn btn-primary" data-toggle="collapse" > button </a>
+        <div class="collapse" id = "collapseExample2">
+        <div class = "collapse-content " >
+        <p  id = "collapseExample1">   
+             
+         <form method= "post" action="formsimpan.php">
                 <div class="form-group">
                     <label for="NAMA_PENGAJU" class="col-sm-3 control-label"> nama pengaju</label>
                     <div class="col-sm-9">
@@ -306,6 +319,12 @@ $data =  mysqli_fetch_array ($nilai) ;
                         <input type="text"  placeholder="TUJUAN" class="form-control" name= "TUJUANJU">
                     </div>
                 </div>
+</p>
+            </div>
+</div>
+
+                           
+               
 
                 
                
