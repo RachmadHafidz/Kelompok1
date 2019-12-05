@@ -154,7 +154,7 @@ include 'config.php';
 
  
 // menampilkan pesan selamat datang
-echo "Hai, selamat datang ". $_SESSION['NIK'];
+echo "Hai, selamat datang ". $_SESSION['NIK_PENDUDUK'];
  
 ?>
    
