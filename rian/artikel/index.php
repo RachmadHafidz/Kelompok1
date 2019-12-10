@@ -18,6 +18,8 @@
 		<hr>
 		<?php $data = tampilArtikel(); foreach($data as $row): ?>
 			<div class="well">
+
+			<?php echo "<td><img src='images/".$row['foto']."' width='70' height='70'></td>"?> 
 				<a href="detail.php?id=<?= $row['id'] ?>">
 					<?= $row['judul'] ?>
 				</a>

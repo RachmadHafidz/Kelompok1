@@ -14,7 +14,8 @@ $rowKomentar = tampilKomentar($_GET['id']);
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 </head>
 <body>
-<div class="col-md-8 mb-3">
+
+<div class="container">
                   <div class="card">
                     <div class="card-header">
                       <h4 class="text-mono text-center"><?= $rowArtikel['judul'] ?></h4>
@@ -26,11 +27,12 @@ $rowKomentar = tampilKomentar($_GET['id']);
                       </p>
 	</div>
 	</div>
-
+</div>
 	</br>
 	</br>
 	</br>
-	</br>	
+	</br>
+	<div class = "container">	
 		<form method="post">
 			<div class="form-group">
 				<label>Nama</label>
@@ -44,7 +46,11 @@ $rowKomentar = tampilKomentar($_GET['id']);
 				Masukkan Komentar
 			</button>
 		</form>
-		<hr>
+		</div>
+
+		</br>
+		</br>
+		</br>
 		<?php
 			if (isset($_POST['btnkomen'])) {
 				postKomentar($_POST, $_GET['id']);
@@ -54,19 +60,20 @@ $rowKomentar = tampilKomentar($_GET['id']);
 		?>
 		<!-- <div class="alert alert-success">asdasd</div> -->
 		<?php foreach ($rowKomentar as $row): ?>
-			
+			<div class = "container">
 			<div class="well">
 				<b><?= $row['nama'] ?></b> <br>
 				<p><?= $row['isi'] ?></p>
 			</div>
+			</div>
 		<?php endforeach ?>
-		<hr>
+		<div class = "container">	
 		<a href="index.php">
 			<button class="btn btn-default">
 				Kembali
 			</button>
 		</a>
-		<hr>
+		</div>
 	</div>
 
 	<script src="assets/js/jquery.min.js"></script>
