@@ -20,16 +20,21 @@ $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
 ?>
 
 <style>
-		#wrap {background:white ;width:800px ; height:600;}
-		body {background: white; width:800px;height:600;}
+		#wrap {background:white; width:800px ; height:600; }
+		body {background: yellow; width:1075px;height:600; float : right;}
 	</style>
 <head>
 
 	<title>SP Tempat Usaha</title>
 	
 </head>
-<center>
-<div align="center">
+
+
+
+<body>
+	<div id="wrap">
+
+	<div align="center">
 	<table width="100%" border="0" align="center" cellspacing="0" >
 		<tr>
 			<td width="50"></td>
@@ -54,8 +59,6 @@ $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
 	</table>
 </div>
 
-<body>
-	<div id="wrap">
   	<div class="row">
  		<div class="col-3"></div>
  		<div class="col-6" align="center">
