@@ -1,136 +1,161 @@
 <!DOCTYPE html>
-<?php 
-session_start();
-?>
 <html>
 <head>
-<script src="pop.js"></script>
-<?php include 'artikel/fungsi/config.php'; ?>
+<?php include 'fungsi/config.php'; ?>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    
-<title>Sistem Informasi Desa Sabrang</title>
+<title>S.I.D Sabrang</title>
+<
+	
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+<link href="http://cdn.phpoll.com/css/animate.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src="js/sticky.js"></script>
   <script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
- <style>
-   
-  .dropbtn {
-  background: none;
-  color: rgb(0, 0, 0);
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
+  <script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+    <style>
+        .dropbtn 
+        {
+        background:none;
+        color: rgb(0, 0, 0);
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        }
+    
+      
+        .dropdown 
+        {
+        position: relative;
+        display: inline-block;
+        z-index:9999;
+        }
+
+        .dropdown-content 
+        {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        }
+
+        .dropdown-content a 
+        {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        }
+
+        .dropdown-content a:hover {background-color: #f1f1f1}
+
+        .dropdown:hover .dropdown-content { display: block; }
+
+        .dropdown:hover .dropbtn {background-color: #ffffff;}
+
+        .right {text-align:right;}
+
+        body {background: rgb(255, 255, 255);}
+
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css');
+/* Fixed navbar */
+
+/* General sizing */
+ul.dropdown-lr {
+  width: 300px;
 }
 
-.dropdown {
-  position: relative;
-  display: inline-block;
-  z-index:9999;
+/* mobile fix */
+@media (max-width: 768px) {
+	.dropdown-lr h3 {
+		color: #eee;
+	}
+	.dropdown-lr label {
+		color: #eee;
+  }
+  .sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+.sticky + .content {
+  padding-top: 60px;
 }
 
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
 }
 
-.dropdown-content a:hover {background-color: #f1f1f1}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.dropdown:hover .dropbtn {
-  background-color: #3e8e41;
-}
-
-
-</style>
+    </style>   
 </head>
+  
+
 <body>
 
-  
 	<div class="container-float">
 		
-        
+      
       <nav class="navbar navbar-dark bg-dark justify-content-between"> <p><a><font class="navbar-brand" color="white">Sistem Informasi Desa Sabrang</font></a></p>
-        <p><font color="white">Jl. watu ulo no 1, Desa Sabrang, Kec. Ambulu, Kab. Jember , Kode Pos 68172</font></p>
-        <a href="nyoba.html">Logout</a>
- 
-      </nav>
-</div>
-<nav class="navbar navbar-dark bg-dark justify-content-between"> 
+        <p><font color="white ">Jl. watu ulo no 1, Desa Sabrang, Kec. Ambulu, Kab. Jember , Kode Pos 68172</font></p>
+        
+        
+      </nav>  
+		
+  </div>
+
+  <nav class="navbar navbar-dark bg-dark justify-content-between"> 
       <div class="topnav" id="myTopnav">
-       
+        <div id="navbar">
         <div class="dropdown">
-          <button class="dropbtn" > <a href="beranda.php">Beranda</a>
+          <button class="dropbtn" > <a href="http://localhost/Kelompok1/S.I.D/nyoba.html">Beranda</a>
             <i class="fa fa-caret-down"></i>
           </button>
       </div>
-
+      
       <div class="dropdown">
-        <button class="dropbtn" > Profil Desa
+        <button class="dropbtn" > <a href="http://localhost/Kelompok1/S.I.D/profil.html">Profil Desa</a>
           <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-          <a href="profillogin.php">Profil Desa</a>
-          <a href="visimisilogin.php">Visi & Misi</a>
-          <a href="mottologin.php">Motto</a>
+          <a href="http://localhost/Kelompok1/S.I.D/profil.html">Profil Desa</a>
+          <a href="http://localhost/Kelompok1/S.I.D/visi&misi.html">Visi & Misi</a>
+          <a href="http://localhost/Kelompok1/S.I.D/motto.html">Motto</a>
           <a href="http://localhost/Kelompok1/S.I.D/crud/index1.php">Perangkat Desa</a>
           
         </div>
       </div> 
   
       <div class="dropdown">
-        <button class="dropbtn" > <a href="profillogin.php">Berita</a>
+        <button class="dropbtn" > <a href="http://localhost/Kelompok1/S.I.D/profil.html">Berita</a>
           <i class="fa fa-caret-down"></i>
         </button>
     </div>
   
     <div class="dropdown">
-      <button class="dropbtn" > <a href="petunjuklogin.php">Petunjuk</a>
+      <button class="dropbtn" > <a href="http://localhost/Kelompok1/S.I.D/petunjuk.html">Petunjuk</a>
         <i class="fa fa-caret-down"></i>
       </button>
   </div>
- 
-  
-  <div class="dropdown">
-        <button class="dropbtn"><a href="#">Pelayanan</a>
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="#">Persyaratan</a>
-          <a href="http://localhost/Kelompok1/S.I.D/suratfix/formdomisili.php">Pelayanan Surat Domisili</a>
-          <a href="http://localhost/Kelompok1/S.I.D/suratfix/formskck.php">Pelayanan Surat SKCK</a>
-          <a href="#">Pelyanan Surat Belum Menikah</a>
-          <a href="#">Pelayanan Surat Tempat Usaha</a>
-        </div>
-      </div> 
-     
- 
- 
-      <?php 
-      include 'koneksi.php';
-// menampilkan pesan selamat datang
-      echo "Hai, selamat datang ". $_SESSION['NAMAPEN'];
- 
-    ?>
-<br/>
-<br/>
 
+  <div class="dropdown">
+    <button class="dropbtn" > <a href="#">Login</a>
+      <i class="fa fa-caret-down"></i>
+    </button>
+  
+    <div class="dropdown-content">
+      <a href="http://localhost/Kelompok1/S.I.D/index.php">Perangkat Desa</a>
+      <a href="http://localhost/Kelompok1/S.I.D/index1.php">Warga</a>
+  </div> 
+    
+   
 </nav>
 <!--Carousel Wrapper-->
 <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
@@ -226,7 +251,7 @@ session_start();
                         <h4 class="text-mono text-center">Kalender</h4>
                       </div>
                       <div class="card-body">
-                        <a href="http://localhost/Kelompok1/S.I.D/kalender/fullcalendar.html"><img src="kalender.png" style="height: 350px;width: 320px;" class="mx-auto d-block"></a>
+                        <a href="http://localhost/Kelompok1/S.I.D/kalender/fullcalendar.htmls"><img src="kalender.png" style="height: 350px;width: 320px;" class="mx-auto d-block"></a>
                         </div>
                       </div>
 </div>              
@@ -237,22 +262,17 @@ session_start();
                     <div class="card-header">
                       <h4 class="text-mono text-center">Artikel</h4>
                     </div>
-           
                     <div class="well">
                       <?php $data = tampilArtikel(); foreach($data as $row): ?>
 			<div class="well">
-      <div class ="card-header">
-			<?php echo "<td><img src='artikel/images/".$row['foto']."' width='70' height='70'></td>"?> 
-				<a href="artikel/detailwargalogin.php?id=<?= $row['id'] ?>">
+
+			<?php echo "<td><img src='images/".$row['foto']."' width='70' height='70'></td>"?> 
+				<a href="detail.php?id=<?= $row['id'] ?>">
 					<?= $row['judul'] ?>
 				</a>
-				</div>
-
-				<div class ="card-footer">
+				
+				
 				<div class="pull-right"><?= jumlahKomentar($row['id']) ?> Komentar</div>
-        </div>
-        </br> 
-       
 			</div>
 			
 		<?php endforeach ?>
