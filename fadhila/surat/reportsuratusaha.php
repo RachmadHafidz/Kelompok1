@@ -20,8 +20,9 @@ $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
 ?>
 
 <style>
-		#wrap {background:white; width:800px ; height:600; }
-		body {background: yellow; width:1075px;height:600; float : right;}
+		#wrap {background:white; width:800px ; height:600;  }
+		body {background: yellow; width:800px;height:600; }
+		
 	</style>
 <head>
 
@@ -32,7 +33,7 @@ $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
 
 
 <body>
-	<div id="wrap">
+	<div id="wrap" >
 
 	<div align="center">
 	<table width="100%" border="0" align="center" cellspacing="0" >
