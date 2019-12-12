@@ -23,8 +23,7 @@ $KETERANGAN = $_POST['KETERANGAN'];
 	
 	if($sql){ // Cek jika proses simpan ke database sukses atau tidak
 		// Jika Sukses, Lakukan :
-		$tampil = $_POST ['TUJUANJU'];
-		header("location: reportsuratusaha.php"); // Redirect ke halaman index.php
+		header("location: reportsuratusaha.php?id=$NO_TUSAHA"); // Redirect ke halaman index.php
 	}else{
 		// Jika Gagal, Lakukan :
 		echo "Maaf, Terjadi kesalahan saat mencoba untuk menyimpan data ke database.";

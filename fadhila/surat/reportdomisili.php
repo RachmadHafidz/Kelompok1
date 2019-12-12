@@ -10,12 +10,11 @@ session_start();
 
 // cek apakah user telah login, jika belum login maka di alihkan ke halaman login
 $nik = $_SESSION['NIK_PENDUDUK'];
-
-$query = "SELECT sk_domisili.NO_DOMISILI, sk_domisili.TGLSURATAJU, sk_domisili.TUJUANJU, penduduk.NIK_PENDUDUK, penduduk.NAMAPEN, penduduk.TEMPATLHR, penduduk.TANGGALHR, penduduk.JK_PEN, penduduk.STATUSPEN, penduduk.AGAMAPEN, penduduk.PEKERJAANPEN, penduduk.KWNPEN, penduduk.NIK_PENDUDUK, keluarga.RT_RW, keluarga.ALAMAT FROM sk_domisili, penduduk, keluarga where sk_domisili.NIK_PENDUDUK='$nik' AND sk_domisili.NIK_PENDUDUK=penduduk.NIK_PENDUDUK AND penduduk.NO_KK=keluarga.NO_KK"; // Query untuk menampilkan semua data siswa
-$sql = mysqli_query($koneksi, $query); // Eksekusi/Jalankan query dari variabel $query
+$a = $_GET ['nosur'];
+$ku = "SELECT penduduk.NIK_PENDUDUK, penduduk.NAMAPEN, penduduk.TEMPATLHR, penduduk.TANGGALHR, penduduk.JK_PEN, penduduk.STATUSPEN, penduduk.AGAMAPEN, penduduk.PEKERJAANPEN, penduduk.KWNPEN, keluarga.ALAMAT, keluarga.RT_RW, sk_domisili.TUJUANAJU FROM penduduk, keluarga, sk_domisili WHERE sk_domisili.NIK_PENDUDUK = '$nik' and sk_domisili.NO_DOMISILI = '$a'"; // Query untuk menampilkan semua data siswa
+$sql = mysqli_query($koneksi, $ku); // Eksekusi/Jalankan query dari variabel $query
 
 $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
-
 
 ?>
 
@@ -96,7 +95,7 @@ $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
 				<font size="3" face="Tahoma">
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Orang tersebut diatas benar benar penduduk Desa Sabrang Kecamatan 
 				Ambulu, Kabupaten Jember, <br>yang bersangkutan sampai saat ini masih berdomisili pada alamat tersebut diatas dan surat keterangan ini<br>akan dipergunakan untuk persyaratan administrasi
-				<?php echo $data['TUJUANJU']; ?>
+				<?php echo $data['TUJUANAJU']; ?>
 				<br>
 				<font size="3" face="Tahoma">
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Demikian surat keterangan ini saya buat dengan sebenarnya dan dapatnya dipergunakan sebagai mana<br> mestinya dan selanjutnya untuk menjadikan periksa.
