@@ -151,8 +151,21 @@ $data =  mysqli_fetch_array ($nilai) ;
 
 <div class="container">
 
+
             <form class="form-horizontal" role="form" method= "post" action="simpansuratusaha.php">
             
+            <?php
+            $kuery1 = "SELECT max(NO_TUSAHA) as maxKode from sk_tempatusaha";
+            $hasil1 = mysqli_query ($koneksi, $kuery1);
+            $tabel1 = mysqli_fetch_array($hasil1);
+            $no_surat1 = $tabel1['maxKode'];
+
+            $nourut = (int) substr ($no_surat1, 2, 5);
+            $nourut++;
+
+            $char = "ST";
+            $no_surat1 = $char . sprintf ("%05s", $nourut); ?>
+
            
                 <center><h2>Surat Keterangan Usaha</h2></center>
               
@@ -166,7 +179,7 @@ $data =  mysqli_fetch_array ($nilai) ;
                 <div class="form-group">
                     <label for="NO_SURATDOM" class="col-sm-3 control-label"> no surat</label>
                     <div class="col-sm-9">
-                        <input type="text"  placeholder="No Surat Domisili" class="form-control" name= "NO_TUSAHA">
+                        <input type="text"  placeholder="No Surat Domisili" value = "<?php echo $no_surat1;?>" class="form-control" name= "NO_TUSAHA">
                     </div>
                 </div>
 
