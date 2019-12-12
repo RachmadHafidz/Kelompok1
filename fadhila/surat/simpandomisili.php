@@ -31,7 +31,11 @@ $JENIS_SURATAJU = $_POST['JENIS_SURATAJU'];
 	
 	if($sql){ // Cek jika proses simpan ke database sukses atau tidak
 		// Jika Sukses, Lakukan :
-		$tampil = $_POST ['TUJUANJU'];
+		$data=mysqli_query($koneksi, "SELECT * FROM sk_domisili where NO_DOMISILI='$NO_DOMISILI'");
+		$hasil=mysqli_fetch_assoc($data);
+		?>
+		<input hidden method="post" name="nosur" value="<?php echo $hasil['NO_DOMISILI']?>"
+		<?php
 		header("location: reportdomisili.php"); // Redirect ke halaman index.php
 	}else{
 		// Jika Gagal, Lakukan :
