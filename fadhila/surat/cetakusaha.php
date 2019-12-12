@@ -10,11 +10,11 @@ session_start();
 
 // cek apakah user telah login, jika belum login maka di alihkan ke halaman login
 $nik = $_SESSION['NIK_PENDUDUK'];
-
+$a = $_GET ['id'];
 $query = $query = "SELECT sk_tempatusaha.TUJUANTU, sk_tempatusaha.KETERANGAN, penduduk.NIK_PENDUDUK, penduduk.NAMAPEN, 
 penduduk.TEMPATLHR, penduduk.TANGGALHR, penduduk.JK_PEN, penduduk.STATUSPEN, penduduk.AGAMAPEN, penduduk.PEKERJAANPEN, 
 penduduk.KWNPEN, keluarga.ALAMAT, keluarga.RT_RW from sk_tempatusaha, penduduk, keluarga 
-WHERE sk_tempatusaha.NIK_PENDUDUK = '$nik' AND sk_tempatusaha.NIK_PENDUDUK = penduduk.NIK_PENDUDUK AND 
+WHERE  sk_tempatusaha.NO_TUSAHA = '$a' AND sk_tempatusaha.NIK_PENDUDUK = '$nik' AND sk_tempatusaha.NIK_PENDUDUK = penduduk.NIK_PENDUDUK AND 
 penduduk.NO_KK = keluarga.NO_KK";  // Query untuk menampilkan semua data siswa
 $sql = mysqli_query($koneksi, $query); // Eksekusi/Jalankan query dari variabel $query
 
