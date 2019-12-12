@@ -21,7 +21,7 @@ $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
 
 <style>
 		#wrap {background:white; width:800px ; height:600; }
-		body {background: yellow; width:1075px;height:600; float : right;}
+		body {background: yellow; width:1075px;height:600; }
 	</style>
 <head>
 
@@ -31,7 +31,8 @@ $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
 
 
 
-<body>
+<body >
+
 	<div id="wrap">
 
 	<div align="center">

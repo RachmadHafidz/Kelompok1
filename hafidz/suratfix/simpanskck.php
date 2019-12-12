@@ -10,7 +10,7 @@ $NAMA_AJU = $_POST['NAMA_AJU'];
 $NIK_AJU = $_POST['NIK_AJU'];
 $JK_AJU = $_POST['JK_AJU'];
 $STATUS_AJU = $_POST['STATUS_AJU'];
-$KWNAJU = $_POST['KWNAJU'];
+$KWNAJU = $_POST['KWN_AJU'];
 $TMPLHR_AJU = $_POST['TMPLHR_AJU'];
 $TGLHR_AJU= $_POST['TGLHR_AJU'];
 $AGAMA_AJU = $_POST['AGAMA_AJU'];
@@ -35,11 +35,11 @@ $JENISURAT_AJU = $_POST['JENISURAT_AJU'];
 	if($sql){ // Cek jika proses simpan ke database sukses atau tidak
 		// Jika Sukses, Lakukan :
 		$tampil = $_POST ['TUJUAN_AJU'];
-		header("location: http://localhost/Kelompok1/hafidz/sp/reportdomisili.php"); // Redirect ke halaman index.php
+		header("location: reportskck.php"); // Redirect ke halaman index.php
 	}else{
 		// Jika Gagal, Lakukan :
 		echo "Maaf, Terjadi kesalahan saat mencoba untuk menyimpan data ke database.";
-		echo "<br><a href='form_simpan.php'>Kembali Ke Form</a>";
+		echo "<br><a href=http://localhost/Kelompok1/hafidz/suratfix/formskck.php>Kembali Ke Form</a>";
 	}
 	
 

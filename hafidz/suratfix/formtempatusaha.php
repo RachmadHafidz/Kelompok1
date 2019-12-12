@@ -151,22 +151,22 @@ $data =  mysqli_fetch_array ($nilai) ;
 
 <div class="container">
 
-            <form class="form-horizontal" role="form" method= "post" action="simpandomisili.php">
+            <form class="form-horizontal" role="form" method= "post" action="simpansuratusaha.php">
             
            
-                <center><h2>Surat Domisili</h2></center>
+                <center><h2>Surat Keterangan Usaha</h2></center>
               
                 <div class="form-group">
                     <label for="TANGGAL_SURAT" class="col-sm-3 control-label">Tanggal surat</label>
                     <div class="col-sm-9">
-                        <input type="date"  class="form-control" name= "TGLSURATJU">
+                        <input type="date"  class="form-control" name= "TGLSURAT">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="NO_SURATDOM" class="col-sm-3 control-label"> no surat</label>
                     <div class="col-sm-9">
-                        <input type="text"  placeholder="No Surat Domisili" class="form-control" name= "NO_DOMISILI">
+                        <input type="text"  placeholder="No Surat Domisili" class="form-control" name= "NO_TUSAHA">
                     </div>
                 </div>
 
@@ -300,11 +300,18 @@ $data =  mysqli_fetch_array ($nilai) ;
                         <input type="text"  placeholder="ALAMAT PENGAJU" class="form-control" name= "ALAMATPENGAJU">
                     </div>
                 </div>
+
+                <div class="form-group">
+                    <label for="TUJUAN" class="col-sm-3 control-label"> KETERANGAN</label>
+                    <div class="col-sm-9">
+                        <input type="text" method= "get" placeholder="KETERANGAN" class="form-control" name= "KETERANGAN">
+                    </div>
+                </div>
               
                 <div class="form-group">
                     <label for="TUJUAN" class="col-sm-3 control-label"> TUJUAN</label>
                     <div class="col-sm-9">
-                        <input type="text" method= "get" placeholder="TUJUAN" class="form-control" name= "TUJUANJU">
+                        <input type="text" method= "get" placeholder="TUJUAN" class="form-control" name= "TUJUANTU">
                     </div>
                 </div>
 
