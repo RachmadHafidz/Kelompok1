@@ -12,7 +12,7 @@ session_start();
 $nik = $_SESSION['NIK_PENDUDUK'];
 $a = $_GET['id'];
 
-$query = "SELECT sk_tempatusaha.TUJUANTU, sk_tempatusaha.KETERANGAN, penduduk.NIK_PENDUDUK, penduduk.NAMAPEN, penduduk.TEMPATLHR, penduduk.TANGGALHR, penduduk.JK_PEN, penduduk.STATUSPEN, penduduk.AGAMAPEN, penduduk.PEKERJAANPEN, penduduk.KWNPEN, keluarga.ALAMAT, keluarga.RT_RW from sk_tempatusaha, penduduk, keluarga WHERE sk_tempatusaha.NO_TUSAHA = '$a' AND sk_tempatusaha.NIK_PENDUDUK = '$nik' AND sk_tempatusaha.NIK_PENDUDUK = penduduk.NIK_PENDUDUK AND penduduk.NO_KK = keluarga.NO_KK"; // Query untuk menampilkan semua data siswa
+$query = "SELECT sk_tempatusaha.TUJUANTU, sk_tempatusaha.KETERANGAN, penduduk.NIK_PENDUDUK, penduduk.NAMAPEN, penduduk.TEMPATLHR, penduduk.TANGGALHR, penduduk.JK_PEN, penduduk.STATUSPEN, penduduk.AGAMAPEN, penduduk.PEKERJAANPEN, penduduk.KWNPEN, keluarga.ALAMAT, keluarga.RT_RW from sk_tempatusaha, penduduk, keluarga WHERE sk_tempatusaha.NO_TUSAHA = '$a' AND sk_tempatusaha.NIK_PENDUDUK = '$nik' "; // Query untuk menampilkan semua data siswa
 $sql = mysqli_query($koneksi, $query); // Eksekusi/Jalankan query dari variabel $query
 
 $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
@@ -72,7 +72,7 @@ $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
 					</font>
 		 		</b><br><br><br>
 				 <div class="col" align="left" margin="15px">
-				 <a href="cetakusaha.php?" target="_blank">CETAK </a>
+				 <a href="cetakusaha.php?id=<?php echo $a; ?>" target="_blank">CETAK </a>
 		
 				 
 				 <br>
