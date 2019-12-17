@@ -115,7 +115,7 @@ $data =  mysqli_fetch_array($nilai);
 ?>
 <div class="container">
 
-            <form class="form-horizontal" role="form" method= "post" action="">
+            <form class="form-horizontal" role="form" method= "post" action="simpandomisili.php">
             
            
                 <center><h2>Surat Domisili</h2></center>

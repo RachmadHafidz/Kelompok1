@@ -76,10 +76,12 @@
         </a>
         <div>
         <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-          <li class="user-profile-data">
-          <span class="userpicture"><i title="Profile icon" class=" fa fa-user-circle-o"></i></span>
-          <div <a class="dropdown-item" cursor= "pointer" href="#"><?php session_start(); echo $_SESSION['NIKADMIN']; ?></a></div>
+        <li class="user-profile-data">
+          <div class="dropdown-item" href="profil.php">Hello <?php session_start(); echo $_SESSION['username']; ?></div>
           </li>
+          <div class="dropdown-divider"></div>
+          <li> <a class="dropdown-item" href="profil.php">Profil</a></li>
+      
           <div class="dropdown-divider"></div>
           <li> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a></li>
         </ul>
@@ -105,15 +107,17 @@
           <span>Data Anggota</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-          <h6 class="dropdown-header">Pendaftaran:</h6>
-          <a class="dropdown-item" href="#">Penduduk</a>
-          <a class="dropdown-item" href="#">Keluarga</a>
-          <a class="dropdown-item" href="#">Admin</a>
+        <h6 class="dropdown-header">Pendaftaran:</h6>
+          <a class="dropdown-item" href="pdpenduduk.php">Penduduk</a>
+          <a class="dropdown-item" href="pdkeluarga.php">Keluarga</a>
+          <a class="dropdown-item" href="pdadmin.php">Admin</a>
+          <a class="dropdown-item" href="pdpdesa.php">Perangkat Desa</a>
           <div class="dropdown-divider"></div>
           <h6 class="dropdown-header">Data:</h6>
           <a class="dropdown-item" href="dtpenduduk.php">Data Penduduk</a>
           <a class="dropdown-item" href="dtkeluarga.php">Data Keluarga</a>
           <a class="dropdown-item" href="dtadmin.php">Data Admin</a>
+          <a class="dropdown-item" href="dtpdesa.php">Data Perangkat Desa</a>
         </div>
       </li>
       <li class="nav-item dropdown">

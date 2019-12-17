@@ -9,13 +9,13 @@
 	<tr>
 		<td>NIK</td>
 		<td><input type="text" name="NIK"></td>
-	</tr>
-	<tr>
+	
+	
 		<td>Nama</td>
 		<td><input type="text" name="nama"></td>
-    </tr>
     
-	<tr>
+    
+	
 		<td>Alamat</td>
 		<td><textarea name="alamat"></textarea></td>
     </tr>

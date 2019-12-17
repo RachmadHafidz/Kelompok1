@@ -5,7 +5,7 @@ session_start();
 <html>
 <head>
 <script src="pop.js"></script>
-
+<?php include 'artikel/fungsi/config.php'; ?>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    
 <title>Sistem Informasi Desa Sabrang</title>
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
@@ -237,27 +237,27 @@ session_start();
                     <div class="card-header">
                       <h4 class="text-mono text-center">Artikel</h4>
                     </div>
-                    <div class="card-body">
-                      <img style="float:left;" src="deluge.png" class="img mr-3" height="42" width="42" />
-                      <h5 class="card-title">artikel 1</h5>
-                      <small><p>20 oktober 2019</p></small>
-                      <p class="card-text">desa sabrang adalah <a href="summon.html">lanjut baca</a>
-                      </p>
+           
+                    <div class="well">
+                      <?php $data = tampilArtikel(); foreach($data as $row): ?>
+			<div class="well">
+      <div class ="card-header">
+			<?php echo "<td><img src='artikel/images/".$row['foto']."' width='70' height='70'></td>"?> 
+				<a href="artikel/detailwargalogin.php?id=<?= $row['id'] ?>">
+					<?= $row['judul'] ?>
+				</a>
+				</div>
+
+				<div class ="card-footer">
+				<div class="pull-right"><?= jumlahKomentar($row['id']) ?> Komentar</div>
+        </div>
+        </br> 
+       
+			</div>
+			
+		<?php endforeach ?>
                     </div>
-                    <div class="card-body">
-                      <img style="float:left;" src="deluge.png" class="img mr-3" height="42" width="42"/>
-                      <h5 class="card-title">artikel 2</h5>
-                      <small><p>20 oktober 2019</p></small>
-                      <p class="card-text">wisata desa sabrang ada banyak. <a href="summon.html">lanjut baca</a>
-                      </p>
-                  </div>
-                  <div class="card-body">
-                      <img style="float:left;" src="deluge.png" class="img mr-3" height="42" width="42"/>
-                      <h5 class="card-title">artikel 3</h5>
-                      <small><p>20 oktober 2019</p></small>
-                      <p class="card-text">papuma merupakan bla bla <a href="summon.html">lanjut baca</a>
-                      </p>
-                    </div>
+                   
                   </div>
                 </div>
               </div>
