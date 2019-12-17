@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <?php 
 session_start();
-if(!isset($_SESSION['NAMAPEN'])){
-header('Location:index1.php');
-}
+
 ?>
 <html>
 <head>
