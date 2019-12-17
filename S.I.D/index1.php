@@ -4,7 +4,6 @@ session_start();
 ?>
 <html>
 <head>
-<script src="pop.js"></script>
 <?php include 'artikel/fungsi/config.php'; ?>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    
 <title>Sistem Informasi Desa Sabrang</title>
@@ -17,46 +16,60 @@ session_start();
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
  <style>
    
-  .dropbtn {
-  background: none;
-  color: rgb(0, 0, 0);
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
+   .dropbtn 
+        {
+        background:none;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        }
+        .dropbtn a{
+          color: #f1f1f1;
+          text-decoration: none;
+        }
+        .dropdown :hover{
+          color:rgb(41, 41, 41);
+          text-decoration: none;
+        }
+      
+        .dropdown 
+        {
+        color:rgb(41, 41, 41);
+        position: relative;
+        display: inline-block;
+        z-index:9999;
+        }
 
-.dropdown {
-  position: relative;
-  display: inline-block;
-  z-index:9999;
-}
+        .dropdown-content 
+        {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
+        .dropdown-content a 
+        {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        }
 
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
+        .dropdown-content a:hover {
+          background-color: #f1f1f1;
+          color:rgb(41, 41, 41);
+          text-decoration: none;
+        }
 
-.dropdown-content a:hover {background-color: #f1f1f1}
+        .dropdown:hover .dropdown-content { display: block; }
 
-.dropdown:hover .dropdown-content {
-  display: block;
-}
+        .dropdown:hover .dropbtn {background-color: #ffffff;}
 
-.dropdown:hover .dropbtn {
-  background-color: #3e8e41;
-}
+        .right {text-align:right;}
 
 
 </style>
@@ -69,7 +82,6 @@ session_start();
         
       <nav class="navbar navbar-dark bg-dark justify-content-between"> <p><a><font class="navbar-brand" color="white">Sistem Informasi Desa Sabrang</font></a></p>
         <p><font color="white">Jl. watu ulo no 1, Desa Sabrang, Kec. Ambulu, Kab. Jember , Kode Pos 68172</font></p>
-        <a href="index.php">Logout</a>
  
       </nav>
 </div>
@@ -83,20 +95,20 @@ session_start();
       </div>
 
       <div class="dropdown">
-        <button class="dropbtn" > Profil Desa
+        <button class="dropbtn" > <a href="profillogin.php">Profil Desa
           <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
           <a href="profillogin.php">Profil Desa</a>
           <a href="visimisilogin.php">Visi & Misi</a>
           <a href="mottologin.php">Motto</a>
-          <a href="http://localhost/Kelompok1/S.I.D/crud/index.php">Perangkat Desa</a>
+          <a href="http://localhost/Kelompok1/S.I.D/crud/index1.php">Perangkat Desa</a>
           
         </div>
       </div> 
   
       <div class="dropdown">
-        <button class="dropbtn" > <a href="berita1.php">Berita</a>
+        <button class="dropbtn" > <a href="profillogin.php">Berita</a>
           <i class="fa fa-caret-down"></i>
         </button>
     </div>
@@ -105,7 +117,7 @@ session_start();
       <button class="dropbtn" > <a href="petunjuklogin.php">Petunjuk</a>
         <i class="fa fa-caret-down"></i>
       </button>
-  </div>
+    </div>
  
   
   <div class="dropdown">
@@ -119,16 +131,28 @@ session_start();
           <a href="#">Pelyanan Surat Belum Menikah</a>
           <a href="#">Pelayanan Surat Tempat Usaha</a>
         </div>
-      </div> 
-     
- 
- 
-      <?php 
-      include 'koneksi.php';
-// menampilkan pesan selamat datang
-      echo "Hai, selamat datang ". $_SESSION['NAMAPEN'];
- 
-    ?>
+  </div> 
+  <div class="dropdown">
+        <button class="dropbtn"><a href="#"><?php 
+      echo "Hai, selamat datang ". $_SESSION['nama'];
+    ?></a>
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+        <?php
+      if($_SESSION['levelad'] == "Super Admin"){
+        echo "<a href='homeadmin/index.php'>Halaman Admin</a>";
+        }else if($_SESSION['levelad'] == "Admin"){
+          echo "<a href='homeadmin/index.php'>Halaman Admin</a>";
+        }else if($_SESSION['levelad'] == "Perangkat Desa"){
+          echo "<a href='homeadmin/index.php'>Halaman Admin</a>";
+        }else if($_SESSION['levelad'] == "Warga"){
+          echo "<a href='#'>Profil</a>";
+        }
+        ?>
+          <a href="logout.php" onclick="return confirm('Apakah Anda Yakin Ingin Keluar Dari Website?')">Logout</a>
+        </div>
+  </div>  
 <br/>
 <br/>
 
