@@ -116,21 +116,32 @@ $data =  mysqli_fetch_array($nilai);
 <div class="container">
 
             <form class="form-horizontal" role="form" method= "post" action="simpandomisili.php">
-            
+                
+            <?php
+            $kuery1 = "SELECT max(NO_DOMISILI) as maxKode from sk_domisili";
+            $hasil1 = mysqli_query ($koneksi, $kuery1);
+            $tabel1 = mysqli_fetch_array($hasil1);
+            $no_surat1 = $tabel1['maxKode'];
+
+            $nourut = (int) substr ($no_surat1, 2, 5);
+            $nourut++;
+
+            $char = "D";
+            $no_surat1 = $char . sprintf ("%05s", $nourut); ?>
            
                 <center><h2>Surat Domisili</h2></center>
               
                 <div class="form-group">
                     <label for="TANGGAL_SURAT" class="col-sm-3 control-label">Tanggal surat</label>
                     <div class="col-sm-9">
-                        <input type="date"  class="form-control" name= "TGLSURATJU">
+                        <input type="date"  class="form-control" name= "TGLSURATAJU">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="NO_SURATDOM" class="col-sm-3 control-label"> no surat</label>
                     <div class="col-sm-9">
-                        <input type="text"  placeholder="No Surat Domisili" class="form-control" name= "NO_DOMISILI">
+                    <input type="text"  placeholder="No Surat Domisili" value = "<?php echo $no_surat1;?>" class="form-control" name= "NO_DOMISILI">
                     </div>
                 </div>
 

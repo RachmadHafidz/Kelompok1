@@ -11,9 +11,7 @@ session_start();
 // cek apakah user telah login, jika belum login maka di alihkan ke halaman login
 $nik = $_SESSION['NIK_PENDUDUK'];
 
-$nosur= $_POST['NO_DOMISILI'];
-
-$query = "SELECT sk_domisili.NO_DOMISILI, sk_domisili.TGLSURATAJU, sk_domisili.TUJUANJU, penduduk.NIK_PENDUDUK, penduduk.NAMAPEN, penduduk.TEMPATLHR, penduduk.TANGGALHR, penduduk.JK_PEN, penduduk.STATUSPEN, penduduk.AGAMAPEN, penduduk.PEKERJAANPEN, penduduk.KWNPEN, penduduk.NIK_PENDUDUK, keluarga.RT_RW, keluarga.ALAMAT FROM sk_domisili, penduduk, keluarga where sk_domisili.NIK_PENDUDUK='$nik' AND sk_domisili.NIK_PENDUDUK=penduduk.NIK_PENDUDUK AND penduduk.NO_KK=keluarga.NO_KK AND sk_domisili.NO_DOMISILI='".$nosur."'"; // Query untuk menampilkan semua data siswa
+$query = "SELECT sk_domisili.NO_DOMISILI, sk_domisili.TGLSURATAJU, sk_domisili.TUJUANAJU, penduduk.NIK_PENDUDUK, penduduk.NAMAPEN, penduduk.TEMPATLHR, penduduk.TANGGALHR, penduduk.JK_PEN, penduduk.STATUSPEN, penduduk.AGAMAPEN, penduduk.PEKERJAANPEN, penduduk.KWNPEN, penduduk.NIK_PENDUDUK, keluarga.RT_RW, keluarga.ALAMAT FROM sk_domisili, penduduk, keluarga where sk_domisili.NIK_PENDUDUK='$nik' AND sk_domisili.NIK_PENDUDUK=penduduk.NIK_PENDUDUK AND penduduk.NO_KK=keluarga.NO_KK"; // Query untuk menampilkan semua data siswa
 $sql = mysqli_query($koneksi, $query); // Eksekusi/Jalankan query dari variabel $query
 
 $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
@@ -35,7 +33,7 @@ $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
 	<table width="100%" border="0" align="center" cellspacing="0" >
 		<tr>
 			<td width="50"></td>
-			<td  align="left"><img src="Jember.png" width="150" height="120"></td>
+			<td  align="left"><img src="http://localhost/Kelompok1/S.I.D/suratfix/Jember.png" width="150" height="120"></td>
 			<td width="600" >
 				<div align="center" >
 					<b>
@@ -65,7 +63,7 @@ $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
 					<font size="4.5">
 						<u>SURAT KETERANGAN DOMISILI</u></font><br>
 					<font size="3">
-						Nomor : 474 /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/35.09.12.2002/&nbsp;&nbsp;&nbsp;
+						Nomor : 474 /<?php echo $data['NO_DOMISILI'];?>/35.09.12.2002/&nbsp;&nbsp;&nbsp;
 					</font>
 		 		</b><br><br><br>
 				 <div class="col" align="left" margin="15px">
@@ -98,7 +96,7 @@ $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
 				<font size="3" face="Tahoma">
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Orang tersebut diatas benar benar penduduk Desa Sabrang Kecamatan 
 				Ambulu, Kabupaten Jember, <br>yang bersangkutan sampai saat ini masih berdomisili pada alamat tersebut diatas dan surat keterangan ini<br>akan dipergunakan untuk persyaratan administrasi
-				<?php echo $data['TUJUANJU']; ?>
+				<?php echo $data['TUJUANAJU']; ?>
 				<br>
 				<font size="3" face="Tahoma">
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Demikian surat keterangan ini saya buat dengan sebenarnya dan dapatnya dipergunakan sebagai mana<br> mestinya dan selanjutnya untuk menjadikan periksa.
@@ -114,9 +112,7 @@ $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
 			<td width="300"><br></td>	
 			<td width="245" align="right">
 				<div align="center" class="time"><font size="4">
-					Sabrang,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					Sabrang,<?php echo $data['TGLSURATAJU'];?>
 								
 					<br>
 					KEPALA DESA SABRANG

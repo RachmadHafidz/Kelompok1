@@ -14,7 +14,139 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
+<style>
+        .dropbtn 
+        {
+        background:none;
+        color: rgb(0, 0, 0);
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        }
+    
+      
+        .dropdown 
+        {
+        position: relative;
+        display: inline-block;
+        z-index:9999;
+        }
+
+        .dropdown-content 
+        {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        }
+
+        .dropdown-content a 
+        {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        }
+
+        .dropdown-content a:hover {background-color: #f1f1f1}
+
+        .dropdown:hover .dropdown-content { display: block; }
+
+        .dropdown:hover .dropbtn {background-color: #ffffff;}
+
+        .right {text-align:right;}
+
+        body {background: rgb(255, 255, 255);}
+
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css');
+/* Fixed navbar */
+
+/* General sizing */
+ul.dropdown-lr {
+  width: 300px;
+}
+
+/* mobile fix */
+@media (max-width: 768px) {
+	.dropdown-lr h3 {
+		color: #eee;
+	}
+	.dropdown-lr label {
+		color: #eee;
+  }
+  .sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+
+}
+
+    </style>   
 <body>
+<div class="container-float">
+		
+      
+      <nav class="navbar sticky-top navbar-dark bg-dark justify-content-between"> <p><a><font class="navbar-brand" color="white">Sistem Informasi Desa Sabrang</font></a></p>
+        <p><font color="white ">Jl. watu ulo no 1, Desa Sabrang, Kec. Ambulu, Kab. Jember , Kode Pos 68172</font></p>
+        
+        
+      </nav>  
+		
+  </div>
+
+
+  <nav class="navbar navbar-dark bg-dark justify-content-between"> 
+      <div class="topnav" id="myTopnav">
+        <div id="navbar">
+        <div class="dropdown">
+          <button class="dropbtn" > <a href="http://localhost/Kelompok1/S.I.D/nyoba.html">Beranda</a>
+            <i class="fa fa-caret-down"></i>
+          </button>
+      </div>
+      
+      <div class="dropdown">
+        <button class="dropbtn" > <a href="http://localhost/Kelompok1/S.I.D/profil.html">Profil Desa</a>
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="http://localhost/Kelompok1/S.I.D/profil.html">Profil Desa</a>
+          <a href="http://localhost/Kelompok1/S.I.D/visi&misi.html">Visi & Misi</a>
+          <a href="http://localhost/Kelompok1/S.I.D/motto.html">Motto</a>
+          <a href="http://localhost/Kelompok1/S.I.D/crud/index1.php">Perangkat Desa</a>
+          
+        </div>
+      </div> 
+  
+      <div class="dropdown">
+        <button class="dropbtn" > <a href="berita.php">Berita</a>
+          <i class="fa fa-caret-down"></i>
+        </button>
+    </div>
+  
+    <div class="dropdown">
+      <button class="dropbtn" > <a href="http://localhost/Kelompok1/S.I.D/petunjuk.html">Petunjuk</a>
+        <i class="fa fa-caret-down"></i>
+      </button>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropbtn" > <a href="#">Login</a>
+      <i class="fa fa-caret-down"></i>
+    </button>
+  
+    <div class="dropdown-content">
+      <a href="http://localhost/Kelompok1/S.I.D/index.php">Perangkat Desa</a>
+      <a href="http://localhost/Kelompok1/S.I.D/index1.php">Warga</a>
+  </div> 
+  </nav>
 <div class="container mt-3">
         <div class="row">
           <!-- Sidebar -->

@@ -1,0 +1,5 @@
+#menu {background: white);width: 500px;height: 60px;}
+#menu ul {padding:o;margin:0}
+#menu ul li {display: inline-block;margin-left: 10px;line-height: 50px;font-size: 20px;border: 2px solid #FFD966;padding: 3px 15px;border-radius: 10px;background:white;}
+#menu ul li :hover {background:#FFD966;}
+#menu ul li a {color: rgb(0, 0, 0);}
