@@ -253,7 +253,7 @@ session_start();
                     </div>
            
                     
-                      <?php $data = tampilArtikel(); foreach($data as $row): ?>
+                      <?php  $data = tampilArtikel(); foreach($data as $row): ?>
 			                  <div class="well">
       <div class ="card-body">
       <a href="artikel/detailwargalogin.php?id=<?= $row['id'] ?>">
