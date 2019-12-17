@@ -120,7 +120,7 @@ ul.dropdown-lr {
           <a href="http://localhost/Kelompok1/S.I.D/profillogin.php">Profil Desa</a>
           <a href="http://localhost/Kelompok1/S.I.D/visimisilogin.php">Visi & Misi</a>
           <a href="http://localhost/Kelompok1/S.I.D/mottologin.php">Motto</a>
-          <a href="http://localhost/Kelompok1/S.I.D/crud/index1.php">Perangkat Desa</a>
+          <a href="http://localhost/Kelompok1/S.I.D/crud/index2.php">Perangkat Desa</a>
           
         </div>
       </div> 

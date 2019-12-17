@@ -67,7 +67,7 @@
 	?>
     </table>
     </div>
-    <a class="btn btn-outline-info" href="http://localhost/Kelompok1/S.I.D/nyoba.php" role="button">Kembali</a>
+    <a class="btn btn-outline-info" href="http://localhost/Kelompok1/S.I.D/index1.php" role="button">Kembali</a>
     
 </body>
 </html>

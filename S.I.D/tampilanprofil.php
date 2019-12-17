@@ -100,19 +100,19 @@ ul.dropdown-lr {
           <a href="http://localhost/Kelompok1/S.I.D/profillogin.php">Profil Desa</a>
           <a href="http://localhost/Kelompok1/S.I.D/visimisilogin.php">Visi & Misi</a>
           <a href="http://localhost/Kelompok1/S.I.D/mottologin.php">Motto</a>
-          <a href="http://localhost/Kelompok1/S.I.D/crud/index1.php">Perangkat Desa</a>
+          <a href="http://localhost/Kelompok1/S.I.D/crud/index2.php">Perangkat Desa</a>
           
         </div>
       </div> 
   
       <div class="dropdown">
-        <button class="dropbtn" > <a href="profil.html">Berita</a>
+        <button class="dropbtn" > <a href="berita1.php">Berita</a>
           <i class="fa fa-caret-down"></i>
         </button>
     </div>
   
     <div class="dropdown">
-      <button class="dropbtn" > <a href="petunjuk.html">Petunjuk</a>
+      <button class="dropbtn" > <a href="petunjuklogin.php">Petunjuk</a>
         <i class="fa fa-caret-down"></i>
       </button>
   </div>
@@ -121,14 +121,48 @@ ul.dropdown-lr {
         <button class="dropbtn"><a href="#">Pelayanan</a>
           <i class="fa fa-caret-down"></i>
         </button>
+        
+        
         <div class="dropdown-content">
           <a href="#">Persyaratan</a>
-          <a href="http://localhost/Kelompok1/S.I.D/suratfix/formdomisili.php">Pelayanan Surat Domisili</a>
-          <a href="http://localhost/Kelompok1/S.I.D/suratfix/formskck.php">Pelayanan Surat SKCK</a>
-          <a href="http://localhost/Kelompok1/S.I.D/suratfix/formbelumnikah.php">Pelyanan Surat Belum Menikah</a>
-          <a href="http://localhost/Kelompok1/S.I.D/suratfix/formtempatusaha.php">Pelayanan Surat Tempat Usaha</a>
+          <div class="btn-group dropright">
+              <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Pelayanan Surat Domisili
+              </button>
+              <div class="dropdown-menu">
+              <a href="http://localhost/Kelompok1/S.I.D/suratfix/formdomisili.php">Pribadi</a>
+              <a href="#">Pengaju</a>
+           </div>
+           </div>
+           <div class="btn-group dropright">
+              <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Pelayanan Surat Domisili
+              </button>
+              <div class="dropdown-menu">
+              <a href="http://localhost/Kelompok1/S.I.D/suratfix/formskck.php">Pribadi</a>
+              <a href="#">Pengaju</a>
+           </div>
+           </div>
+           <div class="btn-group dropright">
+              <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Pelayanan Surat Domisili
+              </button>
+              <div class="dropdown-menu">
+              <a href="http://localhost/Kelompok1/S.I.D/suratfix/formbelumnikah.php">Pribadi</a>
+              <a href="#">Pengaju</a>
+           </div>
+           </div>
+           <div class="btn-group dropright">
+              <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Pelayanan Surat Domisili
+              </button>
+              <div class="dropdown-menu">
+              <a href="http://localhost/Kelompok1/S.I.D/suratfix/formtempatusaha.php">Pribadi</a>
+              <a href="#">Pengaju</a>
+           </div>
+           </div>
         </div>
-  </div> 
+  </div>
     
       <?php 
 
