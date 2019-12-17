@@ -11,7 +11,7 @@ session_start();
 // cek apakah user telah login, jika belum login maka di alihkan ke halaman login
 $nik = $_SESSION['NIK_PENDUDUK'];
 
-$query = $query = "SELECT sk_domisili.NO_DOMISILI, sk_domisili.TGLSURATAJU, sk_domisili.TUJUANJU, penduduk.NIK_PENDUDUK, penduduk.NAMAPEN, penduduk.TEMPATLHR, penduduk.TANGGALHR, penduduk.JK_PEN, penduduk.STATUSPEN, penduduk.AGAMAPEN, penduduk.PEKERJAANPEN, penduduk.KWNPEN, penduduk.NIK_PENDUDUK, keluarga.RT_RW, keluarga.ALAMAT FROM sk_domisili, penduduk, keluarga where sk_domisili.NIK_PENDUDUK='$nik' AND sk_domisili.NIK_PENDUDUK=penduduk.NIK_PENDUDUK AND penduduk.NO_KK=keluarga.NO_KK"; // Query untuk menampilkan semua data siswa
+$query = $query = "SELECT sk_tempatusaha.NO_TUSAHA, sk_tempatusaha.TGLSURAT, sk_tempatusaha.TUJUANTU, penduduk.NIK_PENDUDUK, penduduk.NAMAPEN, penduduk.TEMPATLHR, penduduk.TANGGALHR, penduduk.JK_PEN, penduduk.STATUSPEN, penduduk.AGAMAPEN, penduduk.PEKERJAANPEN, penduduk.KWNPEN, penduduk.NIK_PENDUDUK, keluarga.RT_RW, keluarga.ALAMAT FROM sk_tempatusaha, penduduk, keluarga where sk_tempatusaha.NIK_PENDUDUK='$nik' AND sk_tempatusaha.NIK_PENDUDUK=penduduk.NIK_PENDUDUK AND penduduk.NO_KK=keluarga.NO_KK"; // Query untuk menampilkan semua data siswa
 $sql = mysqli_query($koneksi, $query); // Eksekusi/Jalankan query dari variabel $query
 
 $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
@@ -33,7 +33,7 @@ $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
 	<table width="100%" border="0" align="center" cellspacing="0" >
 		<tr>
 			<td width="50"></td>
-			<td  align="left"><img src="Jember.png" width="150" height="120"></td>
+			<td  align="left"><img src="http://localhost/Kelompok1/S.I.D/suratfix/Jember.png" width="150" height="120"></td>
 			<td width="600" >
 				<div align="center" >
 					<b>
@@ -63,7 +63,7 @@ $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
 					<font size="4.5">
 						<u>SURAT KETERANGAN USAHA</u></font><br>
 					<font size="3">
-						Nomor : 581 /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/35.09.12.2002/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						Nomor : 581 /<?php echo $data['NO_TUSAHA'];?>/35.09.12.2002/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					</font>
 		 		</b><br><br><br>
 				 <div class="col" align="left" margin="15px">
@@ -96,7 +96,7 @@ $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Yang bersangkutan benar-benar penduduk Desa Sabrang Kecamatan Ambulu Kabupaten Jember,  yang  sampai  saat  ini  masih  berdomisili  pada  alamat  tersebut di  atas.     
 				<br>
 				<font size="3" face="Tahoma">
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Yang bersangkutan mempunyai usaha  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;, yang sampai saat ini masih berjalan dengan baik dan lancar, surat keterangan ini akan dipergunakan untuk melengkapi persyaratan <?php echo $data['TUJUANJU']; ?>.    
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Yang bersangkutan mempunyai usaha  <?php echo $data['KETERANGAN'];?>, yang sampai saat ini masih berjalan dengan baik dan lancar, surat keterangan ini akan dipergunakan untuk melengkapi persyaratan <?php echo $data['TUJUANTU']; ?>.    
 				<br>
 				<font size="3" face="Tahoma">
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Demikian keterangan ini di buat dengan sebenarnya kepada yang berkepentingan untuk menjadikan periksa.
@@ -112,9 +112,7 @@ $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
 			<td width="300"><br></td>	
 			<td width="245" align="right">
 				<div align="center" class="time"><font size="4">
-					Sabrang,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					Sabrang,<?php echo $data['TGLSURAT'];?>
 								
 					<br>
 					KEPALA DESA SABRANG

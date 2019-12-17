@@ -25,7 +25,7 @@ $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
 	</style>
 <head>
 
-	<title>SP SKCK</title>
+	<title>Print</title>
 	
 </head>
 <center>
@@ -67,8 +67,7 @@ $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
 					</font>
 		 		</b><br>
 				 <div class="col" align="left" margin="15px">
-				 
-
+				 <a href="cetakskck.php" target="_blank">CETAK</a>
 				 <br>
 				<font size="4" align="left">
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yang  bertanda tangan dibawah ini Saya Kepala Desa Sabrang,Kecamatan Ambulu, Kabupaten Jember , menerangkan dengan sebenarnya bahwa :

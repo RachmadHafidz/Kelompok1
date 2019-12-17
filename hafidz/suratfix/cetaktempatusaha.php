@@ -25,7 +25,7 @@ $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
 	</style>
 <head>
 
-	<title>SP Tempat Usaha</title>
+	<title>Print</title>
 	
 </head>
 <center>
@@ -67,7 +67,7 @@ $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
 					</font>
 		 		</b><br><br><br>
 				 <div class="col" align="left" margin="15px">
-				 
+				 <a href="cetaktempatusaha.php" target="_blank">CETAK</a>
 
 				 
 				 <br>

@@ -1,43 +1,67 @@
 <?php 
-// mengaktifkan session pada php
+// mengaktifkan session php
 session_start();
- 
-// menghubungkan php dengan koneksi database
+
+// menghubungkan dengan koneksi
 include 'koneksi.php';
- 
-// menangkap data yang dikirim dari form login
-$USERNAME = $_POST['USERNAME'];
-$PASSWORD = md5($_POST['PASSWORD']);
- 
- 
-// menyeleksi data user dengan username dan password yang sesuai
-$login = mysqli_query($koneksi,"select * from admin where USERNAME='$USERNAME' and PASSWORD='$PASSWORD'");
+
+// menangkap data yang dikirim dari form
+$username = $_POST['username'];
+$password = md5($_POST['password']);
+
+// menyeleksi data admin dengan username dan password yang sesuai
+$data = mysqli_query($koneksi,"select * from admin where username='$username' and password='$password'");
+
 // menghitung jumlah data yang ditemukan
-$cek = mysqli_num_rows($login);
- 
-// cek apakah username dan password di temukan pada database
+$cek = mysqli_num_rows($data);
+
 if($cek > 0){
- 
-	$data = mysqli_fetch_assoc($login);
- 
-	// cek jika user login sebagai admin
-	if($data['LEVEL']=="Administrator"){
- 
-		// buat session login dan username
-		$_SESSION['USERNAME'] = $USERNAME;
-		$_SESSION['LEVEL'] = "Administrator";
-		// alihkan ke halaman dashboard admin
-		header("location:http://localhost/Kelompok1/S.I.D/home/index.php");
- 
+	$login = mysqli_fetch_assoc($data);
 	
- 
+	if($login['STATUS_AKUN']== "Aktif"){
+		if($login['LEVEL']=="Super Admin"){
+			$_SESSION['username'] = $username;
+			$_SESSION['password'] = $password;
+			$_SESSION['status'] = "login";
+			$_SESSION['levelad'] = "Super Admin";
+			$_SESSION['idadmin'] = $login['ID_ADMIN'];
+			$_SESSION['nama'] = $login['NAMAADMIN'];
+			$_SESSION['nikad'] = $login['NIKADMIN'];
+			$_SESSION['jkad'] = $login['JENIS_KELAMIN'];
+			$_SESSION['fotoad'] = $login['FOTO'];
+			
+			header("location:index1.php");
+		}else if($login['LEVEL']=="Admin"){
+			$_SESSION['username'] = $username;
+			$_SESSION['status'] = "login";
+			$_SESSION['levelad'] = "Admin";
+			$_SESSION['idadmin'] = $login['ID_ADMIN'];
+			$_SESSION['nama'] = $login['NAMAADMIN'];
+			$_SESSION['nikad'] = $login['NIKADMIN'];
+			$_SESSION['jkad'] = $login['JENIS_KELAMIN'];
+			$_SESSION['fotoad'] = $login['FOTO'];
+			header("location:index1.php");
+
+		}else if($login['LEVEL']=="Perangkat Desa"){
+			$_SESSION['username'] = $username;
+			$_SESSION['status'] = "login";
+			$_SESSION['levelad'] = "Perangkat Desa";
+			$_SESSION['idadmin'] = $login['ID_ADMIN'];
+			$_SESSION['nama'] = $login['NAMAADMIN'];
+			$_SESSION['nikad'] = $login['NIKADMIN'];
+			$_SESSION['jkad'] = $login['JENIS_KELAMIN'];
+			$_SESSION['fotoad'] = $login['FOTO'];
+			header("location:index1.php");
+		}
+		else{
+			header("location:login.php?akses_gagal");
+		}
+	}else if($login['STATUS_AKUN']== "Nonaktif"){
+			header("location:login.php?tidak_valid");
 	}else{
- 
-		// alihkan ke halaman login kembali
-		header("location:index.php?pesan=gagal");
-	}	
+		header("location:login.php?tidak_valid");
+	}
 }else{
-	header("location:index.php?pesan=gagal");
+	header("location:login.php?login_error");
 }
- 
 ?>

@@ -136,10 +136,10 @@ ul.dropdown-lr {
         </button>
         <div class="dropdown-content">
           <a href="#">Persyaratan</a>
-          <a href="http://localhost/KELOMPOK1/rian/selasa/form/tesform.php">Pelayanan Surat Domisili</a>
-          <a href="#">Pelayanan Surat SKCK</a>
-          <a href="#">Pelyanan Surat Belum Menikah</a>
-          <a href="#">Pelayanan Surat Tempat Usaha</a>
+          <a href="http://localhost/Kelompok1/hafidz/suratfix/formdomisili.php">Pelayanan Surat Domisili</a>
+          <a href="http://localhost/Kelompok1/hafidz/suratfix/formskck.php">Pelayanan Surat SKCK</a>
+          <a href="http://localhost/Kelompok1/hafidz/suratfix/formbelumnikah.php">Pelyanan Surat Belum Menikah</a>
+          <a href="http://localhost/Kelompok1/hafidz/suratfix/formtempatusaha.php">Pelayanan Surat Tempat Usaha</a>
         </div>
       </div>
     

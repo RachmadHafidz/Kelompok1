@@ -6,18 +6,10 @@ include "koneksi.php";
 $NO_DOMISILI = $_POST['NO_DOMISILI'];
 $NIK_PENDUDUK = $_POST['NIK_PENDUDUK'];
 $TGLSURATJU = $_POST['TGLSURATAJU'];
-$NAMAAJU = $_POST['NAMAAJU'];
-$JKAJU = $_POST['JKAJU'];
-$AGAMAAJU = $_POST['AGAMAAJU'];
-$NIKPENGAJU = $_POST['NIKPENGAJU'];
-$TMPLHRAJU = $_POST['TMPLHRAJU'];
-$TGLHRAJU = $_POST['TGLHRAJU'];
-$PEKERJAAN_AJU = $_POST['PEKERJAAN_AJU'];
-$ALAMATAJU = $_POST['ALAMATAJU'];
 $KETERANGANAJU = $_POST['KETERANGANAJU'];
-$TUJUANJU = $_POST['TUJUANAJU'];
+$TUJUANAJU = $_POST['TUJUANAJU'];
 $JENIS_SURATAJU = $_POST['JENIS_SURATAJU'];
-
+$ARSIP = $_POST['ARSIP'];
 
 	
 // Rename nama fotonya dengan menambahkan tanggal dan jam upload
@@ -25,14 +17,14 @@ $JENIS_SURATAJU = $_POST['JENIS_SURATAJU'];
 // Proses upload
 
 	// Proses simpan ke Database
-	$query = "INSERT INTO sk_domisili VALUES('".$NO_DOMISILI."','".$NIK_PENDUDUK."', '".$TGLSURATJU."','".$NAMAAJU."','".$JKAJU."','".$AGAMAAJU."','".$NIKPENGAJU."','".$TMPLHRAJU."','".$TGLHRAJU."','".$PEKERJAAN_AJU."','".$ALAMATAJU."','".$KETRANGANAJU."','".$TUJUANJU."','".$JENIS_SURATAJU."')";
+	$query = "INSERT INTO sk_domisili VALUES('".$NO_DOMISILI."','".$NIK_PENDUDUK."', '".$TGLSURATJU."','".$TUJUANAJU."','".$KETERANGANAJU."','".$JENIS_SURATAJU."','".$ARSIP."')";
 	
 	$sql = mysqli_query($koneksi, $query); // Eksekusi/ Jalankan query dari variabel $query
 	
 	if($sql){ // Cek jika proses simpan ke database sukses atau tidak
 		// Jika Sukses, Lakukan :
 		$tampil = $_POST ['TUJUANAJU'];
-		header("location: reportdomisili.php"); // Redirect ke halaman index.php
+		header("location: reportdomisili.php?nosur=$NO_DOMISILI"); // Redirect ke halaman index.php
 	}else{
 		// Jika Gagal, Lakukan :
 		echo "Maaf, Terjadi kesalahan saat mencoba untuk menyimpan data ke database.";
