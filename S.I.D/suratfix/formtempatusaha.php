@@ -136,7 +136,7 @@ ul.dropdown-lr {
            </div>
            <div class="btn-group dropright">
               <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Pelayanan Surat Domisili
+              Pelayanan Surat Keterangan Catatan Kepolisian
               </button>
               <div class="dropdown-menu">
               <a href="http://localhost/Kelompok1/S.I.D/suratfix/formskck.php">Pribadi</a>
@@ -145,7 +145,7 @@ ul.dropdown-lr {
            </div>
            <div class="btn-group dropright">
               <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Pelayanan Surat Domisili
+              Pelayanan Surat Belum Nikah
               </button>
               <div class="dropdown-menu">
               <a href="http://localhost/Kelompok1/S.I.D/suratfix/formbelumnikah.php">Pribadi</a>
@@ -154,7 +154,7 @@ ul.dropdown-lr {
            </div>
            <div class="btn-group dropright">
               <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Pelayanan Surat Domisili
+              Pelayanan Surat Tempat Usaha
               </button>
               <div class="dropdown-menu">
               <a href="http://localhost/Kelompok1/S.I.D/suratfix/formtempatusaha.php">Pribadi</a>
@@ -162,7 +162,7 @@ ul.dropdown-lr {
            </div>
            </div>
         </div>
-  </div>
+  </div> 
     
       <?php 
 
@@ -292,63 +292,6 @@ $data =  mysqli_fetch_array ($nilai) ;
                 </div>
        
                 <div class="form-group">
-                    <label for="NAMA_PENGAJU" class="col-sm-3 control-label"> nama pengaju</label>
-                    <div class="col-sm-9">
-                        <input type="text"  placeholder="NAMA PENGAJU" class="form-control" name= "NAMA_PENGAJU">
-                    </div>
-                </div>
-
-               
-                <div class="form-group">
-                    <label for="JENIS_KELAMINPEN" class="col-sm-3 control-label"> Tempat Lahir</label>
-                    <div class="col-sm-9">
-                        <input type="text"  placeholder="Tempat Lahir" class="form-control" name= "TMP_LAHIRPEN">
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="AGAMA_PENGAJU" class="col-sm-3 control-label">Agama pengaju </label>
-                    <div class="col-sm-9">
-                        <input type="text"  placeholder="Agama pengaju" class="form-control" name= "AGAMA_PENGAJU">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="NIK_PENGAJU" class="col-sm-3 control-label"> NIk</label>
-                    <div class="col-sm-9">
-                        <input type="number"  placeholder="NIK PENGAJU" class="form-control" name= "NIK_PENGAJU">
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="TMP_LAHIRPENGAJU" class="col-sm-3 control-label"> TMP LAHIR</label>
-                    <div class="col-sm-9">
-                        <input type="text"  placeholder="TMPT LAHIR" class="form-control" name= "TMP_LAHIRPENGAJU">
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="TGL_LAHIRPENGAJU" class="col-sm-3 control-label">Tanggal Lahir pengaju</label>
-                    <div class="col-sm-9">
-                        <input type="date"  class="form-control" name= "TGL_LAHIRPENGAJU">
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="PEKERJAANPENGAJU" class="col-sm-3 control-label"> PEKERJAAN PENGAJU</label>
-                    <div class="col-sm-9">
-                        <input type="text"  placeholder="PEKERJAAN PENGAJU" class="form-control" name= "PEKERJAANPENGAJU">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="ALAMATPENGAJU" class="col-sm-3 control-label"> ALAMAT PENGAJU</label>
-                    <div class="col-sm-9">
-                        <input type="text"  placeholder="ALAMAT PENGAJU" class="form-control" name= "ALAMATPENGAJU">
-                    </div>
-                </div>
-
-                <div class="form-group">
                     <label for="TUJUAN" class="col-sm-3 control-label"> KET</label>
                     <div class="col-sm-9">
                         <input type="text" method= "get" placeholder="KETERANGAN" class="form-control" name= "KETERANGAN">
@@ -362,29 +305,7 @@ $data =  mysqli_fetch_array ($nilai) ;
                     </div>
                 </div>
 
-                
-               
-                <div class="form-group">
-                    <label class="control-label col-sm-3">Gender</label>
-                    <div class="col-sm-6">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <label class="radio-inline">
-                                    <input type="radio" name="JKAJU"  value="Perempuaan">perempuan
-                                </label>
-                            </div>
-                            <div class="col-sm-4">
-                                <label class="radio-inline">
-                                    <input type="radio" name="JKAJU"  value="Laki-laki">laki-laki
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div> <!-- /.form-group -->
 
-        
-      
-        
         
                 <div class="form-group">
                     <div class="col-sm-9 col-sm-offset-3">

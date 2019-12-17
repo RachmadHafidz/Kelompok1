@@ -136,7 +136,7 @@ ul.dropdown-lr {
            </div>
            <div class="btn-group dropright">
               <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Pelayanan Surat Domisili
+              Pelayanan SKCK
               </button>
               <div class="dropdown-menu">
               <a href="http://localhost/Kelompok1/S.I.D/suratfix/formskck.php">Pribadi</a>
@@ -145,7 +145,7 @@ ul.dropdown-lr {
            </div>
            <div class="btn-group dropright">
               <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Pelayanan Surat Domisili
+              Pelayanan Surat Belum Nikah
               </button>
               <div class="dropdown-menu">
               <a href="http://localhost/Kelompok1/S.I.D/suratfix/formbelumnikah.php">Pribadi</a>
@@ -154,7 +154,7 @@ ul.dropdown-lr {
            </div>
            <div class="btn-group dropright">
               <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Pelayanan Surat Domisili
+              Pelayanan Surat Tempat Usaha
               </button>
               <div class="dropdown-menu">
               <a href="http://localhost/Kelompok1/S.I.D/suratfix/formtempatusaha.php">Pribadi</a>
@@ -162,7 +162,7 @@ ul.dropdown-lr {
            </div>
            </div>
         </div>
-  </div>
+  </div> 
     
       <?php 
 
