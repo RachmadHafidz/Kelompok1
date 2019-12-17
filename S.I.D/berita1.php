@@ -107,32 +107,32 @@ ul.dropdown-lr {
       <div class="topnav" id="myTopnav">
         <div id="navbar">
         <div class="dropdown">
-          <button class="dropbtn" > <a href="http://localhost/Kelompok1/S.I.D/nyoba.html">Beranda</a>
+          <button class="dropbtn" > <a href="http://localhost/Kelompok1/S.I.D/index1.php">Beranda</a>
             <i class="fa fa-caret-down"></i>
           </button>
       </div>
       
       <div class="dropdown">
-        <button class="dropbtn" > <a href="http://localhost/Kelompok1/S.I.D/profil.html">Profil Desa</a>
+        <button class="dropbtn" > <a href="http://localhost/Kelompok1/S.I.D/profillogin.php">Profil Desa</a>
           <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-          <a href="http://localhost/Kelompok1/S.I.D/profil.html">Profil Desa</a>
-          <a href="http://localhost/Kelompok1/S.I.D/visi&misi.html">Visi & Misi</a>
-          <a href="http://localhost/Kelompok1/S.I.D/motto.html">Motto</a>
+          <a href="http://localhost/Kelompok1/S.I.D/profillogin.php">Profil Desa</a>
+          <a href="http://localhost/Kelompok1/S.I.D/visimisilogin.php">Visi & Misi</a>
+          <a href="http://localhost/Kelompok1/S.I.D/mottologin.php">Motto</a>
           <a href="http://localhost/Kelompok1/S.I.D/crud/index1.php">Perangkat Desa</a>
           
         </div>
       </div> 
   
       <div class="dropdown">
-        <button class="dropbtn" > <a href="berita.php">Berita</a>
+        <button class="dropbtn" > <a href="berita1.php">Berita</a>
           <i class="fa fa-caret-down"></i>
         </button>
     </div>
   
     <div class="dropdown">
-      <button class="dropbtn" > <a href="http://localhost/Kelompok1/S.I.D/petunjuk.html">Petunjuk</a>
+      <button class="dropbtn" > <a href="http://localhost/Kelompok1/S.I.D/petunjuklogin.php">Petunjuk</a>
         <i class="fa fa-caret-down"></i>
       </button>
   </div>

@@ -107,7 +107,7 @@ ul.dropdown-lr {
       <div class="topnav" id="myTopnav">
         <div id="navbar">
         <div class="dropdown">
-          <button class="dropbtn" > <a href="http://localhost/Kelompok1/S.I.D/nyoba.html">Beranda</a>
+          <button class="dropbtn" > <a href="http://localhost/Kelompok1/S.I.D/index.php">Beranda</a>
             <i class="fa fa-caret-down"></i>
           </button>
       </div>
