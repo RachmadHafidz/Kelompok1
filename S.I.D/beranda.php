@@ -90,7 +90,7 @@ ul.dropdown-lr {
       
       <nav class="navbar navbar-dark bg-dark justify-content-between"> <p><a><font class="navbar-brand" color="white">Sistem Informasi Desa Sabrang</font></a></p>
         <p><font color="white ">Jl. watu ulo no 1, Desa Sabrang, Kec. Ambulu, Kab. Jember , Kode Pos 68172</font></p>
-      <a href="nyoba.html">Logout</a>  
+      
         
       </nav>  
 		
