@@ -20,13 +20,14 @@
 				<label>Tanggal</label>
 				<input type="date" name="tanggal" class="form-control">
 			</div>
+			
 			<div class="form-group">
 				<label>Foto</label>
 				<input type="file" name="foto" class="form-control">
 			</div>
 			<div class="form-group">
 				<label>Kategori</label>
-				<input type="text" name="kategori" class="form-control">
+				<input type="text" name="nama_kategory" class="form-control">
 			</div>
 			<div class="kotak">
 				<label>Isi</label>
@@ -39,8 +40,13 @@
 		<hr>
 		<?php if (isset($_POST['btnsimpan'])) {
 			postArtikel($_POST);
+			postArtikel1($_POST);
+			
+			
+			
 			echo "<meta http-equiv='refresh' content='1;url=index.php'>";
 		} ?>
+	
 		<hr>
 		<a href="index.php">
 			<button class="btn btn-default">Kembali</button>

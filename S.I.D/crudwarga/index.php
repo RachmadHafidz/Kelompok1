@@ -1,47 +1,64 @@
 <html>
 <head>
-	<title>Aplikasi CRUD Plus Upload Gambar dengan PHP</title>
+	<title>Penduduk</title>
 </head>
 <body>
 	<h1>Data Warga</h1>
 	<a href="form_simpan.php">Tambah Data</a><br><br>
 	<table border="1" width="100%">
 	<tr>
-		<th>NIK</th>
-		<th>Nama</th>
-		<th>Jenis Kelamin</th>
-        <th>Alamat</th>
-        <th>RT/RW</th>
-        <th>Desa</th>
-        <th>Kecamatan</th>
+	<th>NIK</th>
+		<th>ID admin</th>
+		<th>No KK</th>
+        <th>Tanggal Daftar</th>
+        <th>Nama Penduduk</th>
+        <th>Tempat Lahir</th>
+        <th>Tanggal Lahir</th>
+        <th>Jenis Kelamin</th>
         <th>Agama</th>
         <th>Status</th>
         <th>Pekerjaan</th>
-        <th>Kewarganegaraan</th>
+		<th>Pendidikan</th>
+		<th>Kewarganegaraan</th>
+		<th>Status</th>
+		<th>Keterangan Hidup</th>
+		<th>Username</th>
+		<th>Password</th>
+		<th>No Telepon</th>
+		<th>Email</th>
 		<th colspan="2">Aksi</th>
 	</tr>
 	<?php
 	// Load file koneksi.php
 	include "koneksi.php";
 	
-	$query = "SELECT * FROM warga"; // Query untuk menampilkan semua data siswa
+	$query = "SELECT * FROM penduduk"; // Query untuk menampilkan semua data siswa
 	$sql = mysqli_query($connect, $query); // Eksekusi/Jalankan query dari variabel $query
 	
 	while($data = mysqli_fetch_array($sql)){ // Ambil semua data dari hasil eksekusi $sql
 		echo "<tr>";
-		echo "<td>".$data['NIK']."</td>";
-		echo "<td>".$data['nama']."</td>";
-		echo "<td>".$data['jeniskelamin']."</td>";
-        echo "<td>".$data['alamat']."</td>";
-        echo "<td>".$data['rt/rw']."</td>";
-        echo "<td>".$data['desa']."</td>";
-        echo "<td>".$data['kecamatan']."</td>";
-        echo "<td>".$data['agama']."</td>";
-        echo "<td>".$data['status']."</td>";
-        echo "<td>".$data['pekerjaan']."</td>";
-        echo "<td>".$data['kewarganegaraan']."</td>";
-		echo "<td><a href='form_ubah.php?NIK=".$data['NIK']."'>Ubah</a></td>";
-		echo "<td><a href='proses_hapus.php?NIK=".$data['NIK']."'>Hapus</a></td>";
+		echo "<td>".$data['NIK_PENDUDUK']."</td>";
+		echo "<td>".$data['ID_ADMIN']."</td>";
+		echo "<td>".$data['NO_KK']."</td>";
+        echo "<td>".$data['TGLDAFTAR']."</td>";
+        echo "<td>".$data['NAMAPEN']."</td>";
+        echo "<td>".$data['TEMPATLHR']."</td>";
+        echo "<td>".$data['TANGGALHR']."</td>";
+        echo "<td>".$data['JK_PEN']."</td>";
+        echo "<td>".$data['AGAMAPEN']."</td>";
+        echo "<td>".$data['STATUSPEN']."</td>";
+		echo "<td>".$data['PEKERJAANPEN']."</td>";
+		echo "<td>".$data['PENDIDIKANPEN']."</td>";
+		echo "<td>".$data['KWNPEN']."</td>";
+		echo "<td>".$data['STATUSAKUN']."</td>";
+		echo "<td>".$data['KET_HIDUP']."</td>";
+		echo "<td>".$data['USERPEN']."</td>";
+		echo "<td>".$data['PASSPEN']."</td>";
+		echo "<td>".$data['NOTELPEN']."</td>";
+		echo "<td>".$data['EMAILPEN']."</td>";
+		
+		echo "<td><a href='form_ubah.php?NIK_PENDUDUK=".$data['NIK_PENDUDUK']."'>Ubah</a></td>";
+		echo "<td><a href='proses_hapus.php?NIK_PENDUDUK=".$data['NIK_PENDUDUK']."'>Hapus</a></td>";
 		echo "</tr>";
 	}
 	?>

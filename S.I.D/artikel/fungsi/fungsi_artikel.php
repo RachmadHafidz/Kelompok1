@@ -16,6 +16,22 @@ function tampilArtikel()
 	return $row;
 }
 
+function tampilArtikelLimit()
+{
+	global $conn;
+
+	$query = "SELECT * FROM artikel LIMIT 4";
+	$res   = mysqli_query($conn, $query);
+
+	$row   = [];
+
+	while ($rows = mysqli_fetch_assoc($res)) {
+		$row[] = $rows;
+	}
+
+	return $row;
+}
+
 function detailArtikel($idArtikel)
 {
 	global $conn;
@@ -27,6 +43,18 @@ function detailArtikel($idArtikel)
 
 	return $row;
 }
+function kategori($nkategori)
+{
+	global $conn;
+
+	$query = "SELECT * FROM artikel WHERE id = '$nkategori' ";
+	$res   = mysqli_query($conn, $query);
+
+	$row   = mysqli_fetch_assoc($res);
+
+	return $row;
+}
+
 
 function postArtikel($data)
 {
@@ -35,14 +63,14 @@ function postArtikel($data)
 	$judul = $data['judul'];
 	$isi   = $data['isi'];
 	$tanggal   = $data['tanggal'];
-	$kategori   = $data['kategori'];
+
 	$foto = $_FILES['foto']['name'];
 	$tmp = $_FILES['foto']['tmp_name'];
 	$fotobaru = date('dmYHis').$foto;
 	$path = "images/".$fotobaru;
 	
 	if(move_uploaded_file($tmp, $path)){
-	$query = "INSERT INTO artikel VALUES ('', '$judul', '$isi', '$fotobaru','$tanggal','$kategori') ";
+	$query = "INSERT INTO artikel VALUES ('', '$judul', '$isi', '$fotobaru','$tanggal') ";
 	$sql = mysqli_query($conn, $query);
 	
 	if($sql){ // Cek jika proses simpan ke database sukses atau tidak
@@ -58,6 +86,22 @@ function postArtikel($data)
 	echo "Maaf, Gambar gagal untuk diupload.";
 	echo "<br><a href='form_simpan.php'>Kembali Ke Form</a>";
 }
+}
+function postArtikel1($data)
+{
+	global $conn;
+
+	
+	$nama_kategory   = $data['nama_kategory'];
+	
+	
+
+	$query1 = "INSERT INTO kategori VALUES ('', '$nama_kategory' ) ";
+	$sql = mysqli_query($conn, $query1);
+	
+	if($sql){ // Cek jika proses simpan ke database sukses atau tidak
+		// Jika Sukses, Lakukan :
+	}
 }
 
 function editArtikel($data, $idArtikel)
@@ -141,6 +185,18 @@ function hapusArtikelKomen($idArtikel)
 		echo "Sukses";
 	}
 }
+
+function limit_words($string, $word_limit)
+{
+    $words = explode(" ",$string);
+	return implode(" ",array_splice($words,0,$word_limit));
+	
+	if (mysqli_query($conn, $query)) {
+		echo "Sukses";
+	}
+}
+
+ 
 
 function cekPunyaKomen($idArtikel)
 {

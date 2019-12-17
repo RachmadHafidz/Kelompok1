@@ -1,3 +1,8 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -7,11 +12,6 @@
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
-<?php include 'koneksi.php'; 
-
-
-
-?>
 <style>
         .dropbtn 
         {
@@ -49,7 +49,7 @@
         display: block;
         }
 
-        .dropdown-content a:hover {background-color: #f1f1f1}
+        .dropdown-content a:hover {background-color: #f1f1f1;}
 
         .dropdown:hover .dropdown-content { display: block; }
 
@@ -77,78 +77,42 @@ ul.dropdown-lr {
 	}
 }
 
-    </style>  
-<body>
- 
-<?php session_start(); 
-?>
+ </style>
 
-  <nav class="navbar navbar-dark bg-dark justify-content-between"> 
-      <div class="topnav" id="myTopnav">
-       
-        <div class="dropdown">
-          <button class="dropbtn" > <a href="http://localhost/Kelompok1/rian/selasa/beranda.php">Beranda</a>
-            <i class="fa fa-caret-down"></i>
-          </button>
-      </div>
+ <body>  
 
-      <div class="dropdown">
-        <button class="dropbtn" > <a href="http://localhost/Kelompok1/rian/selasa/profillogin.php">Profil Desa</a>
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="http://localhost/Kelompok1/rian/selasa/profillogin.php">Profil Desa</a>
-          <a href="http://localhost/Kelompok1/rian/selasa/visimisilogin.php">Visi & Misi</a>
-          <a href="http://localhost/Kelompok1/rian/selasa/mottologin.php">Motto</a>
-          <a href="http://localhost/Kelompok1/rian/selasa/crud/index1.php">Perangkat Desa</a>
-          
-        </div>
-      </div> 
-  
-      <div class="dropdown">
-        <button class="dropbtn" > <a href="profil.html">Berita</a>
-          <i class="fa fa-caret-down"></i>
-        </button>
-    </div>
-  
-    <div class="dropdown">
-      <button class="dropbtn" > <a href="petunjuk.html">Petunjuk</a>
-        <i class="fa fa-caret-down"></i>
-      </button>
-  </div>
+<?php
+include 'koneksi.php';
 
-  <div class="dropdown">
-        <button class="dropbtn"><a href="#">Pelayanan</a>
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="#">Persyaratan</a>
-          <a href="http://localhost/Kelompok1/hafidz/suratfix/formdomisili.php">Pelayanan Surat Domisili</a>
-          <a href="http://localhost/Kelompok1/hafidz/suratfix/formskck.php">Pelayanan Surat SKCK</a>
-          <a href="http://localhost/Kelompok1/hafidz/suratfix/formbelumnikah.php">Pelyanan Surat Belum Menikah</a>
-          <a href="http://localhost/Kelompok1/hafidz/suratfix/formtempatusaha.php">Pelayanan Surat Tempat Usaha</a>
-        </div>
-  </div> 
-    
-      <?php 
+if (isset($_POST['btn_simpan'])) {
+$NO_DOMISILI = $_POST['NO_DOMISILI'];
+$NIK_PENDUDUK = $_POST['NIK_PENDUDUK'];
+$TGLSURATJU = $_POST['TGLSURATJU'];
+$TUJUANJU = $_POST['TUJUANJU'];
+$KETERANGANAJU = "Sedang Proses";
+$JENIS_SURATAJU = "Surat Pribadi";
 
- 
 
-// menampilkan pesan selamat datang
-echo "Hai, selamat datang ". $_SESSION['NIK_PENDUDUK'];
- 
-?>
- <?php
+	$query = "INSERT INTO sk_domisili(`NO_DOMISILI`, `NIK_PENDUDUK`, `TGLSURATAJU`, `TUJUANAJU`, `KETERANGANAJU`, `JENIS_SURATAJU`) VALUES('$NO_DOMISILI',$NIK_PENDUDUK, '$TGLSURATJU','$TUJUANJU', '$KETERANGANAJU','$JENIS_SURATAJU')";
+    $sql = mysqli_query($koneksi, $query);
+	
+	if($sql){
+        header('location:reportdomisili.php');
+        
+	}else{
+		echo "Maaf, Terjadi kesalahan saat mencoba untuk menyimpan data ke database.";
+		echo "<br><a href='formdomisili.php'>Kembali Ke Form</a>";
+    }
+}
 
- $nik= $_SESSION['NIK_PENDUDUK'];
+
+session_start();
+$nik= $_SESSION['NIK_PENDUDUK'];
 $nilai = mysqli_query($koneksi,"select * from penduduk inner join keluarga on penduduk.NO_KK = keluarga.NO_KK where NIK_PENDUDUK= $nik");
 
-$data =  mysqli_fetch_array ($nilai) ;
- 
- ?>
-   
-</nav>
-
+$data =  mysqli_fetch_array($nilai);
+	
+?>
 <div class="container">
 
             <form class="form-horizontal" role="form" method= "post" action="simpandomisili.php">
@@ -186,7 +150,7 @@ $data =  mysqli_fetch_array ($nilai) ;
                 </div>
 
                 <div class="form-group">
-                    <label for="NIK_PENDUDUK" class="col-sm-3 control-label"> NIk</label>
+                    <label for="NIK_PENDUDUK" class="col-sm-3 control-label"> NIK</label>
                     <div class="col-sm-9">
                         <input type="number" readonly value="<?php echo $data['NIK_PENDUDUK']; ?>" placeholder="NIK" class="form-control" name = "NIK_PENDUDUK">
                     </div>
@@ -254,104 +218,24 @@ $data =  mysqli_fetch_array ($nilai) ;
                         <input type="text" readonly value="<?php echo $data['ALAMAT']; ?>" placeholder="Alamat" class="form-control" name= "ALAMATPEN">
                     </div>
                 </div>
-       
                 <div class="form-group">
-                    <label for="NAMA_PENGAJU" class="col-sm-3 control-label"> nama pengaju</label>
+                <label for="TUJUANJU" class="col-sm-3 control-label">Tujuan </label>
                     <div class="col-sm-9">
-                        <input type="text"  placeholder="NAMA PENGAJU" class="form-control" name= "NAMA_PENGAJU">
+                    <input type="text" placeholder="Tujuan" class="form-control" name= "TUJUANJU">
                     </div>
                 </div>
 
-               
-                <div class="form-group">
-                    <label for="JENIS_KELAMINPEN" class="col-sm-3 control-label"> Tempat Lahir</label>
-                    <div class="col-sm-9">
-                        <input type="text"  placeholder="Tempat Lahir" class="form-control" name= "TMP_LAHIRPEN">
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="AGAMA_PENGAJU" class="col-sm-3 control-label">Agama pengaju </label>
-                    <div class="col-sm-9">
-                        <input type="text"  placeholder="Agama pengaju" class="form-control" name= "AGAMA_PENGAJU">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="NIK_PENGAJU" class="col-sm-3 control-label"> NIk</label>
-                    <div class="col-sm-9">
-                        <input type="number"  placeholder="NIK PENGAJU" class="form-control" name= "NIK_PENGAJU">
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="TMP_LAHIRPENGAJU" class="col-sm-3 control-label"> TMP LAHIR</label>
-                    <div class="col-sm-9">
-                        <input type="text"  placeholder="TMPT LAHIR" class="form-control" name= "TMP_LAHIRPENGAJU">
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="TGL_LAHIRPENGAJU" class="col-sm-3 control-label">Tanggal Lahir pengaju</label>
-                    <div class="col-sm-9">
-                        <input type="date"  class="form-control" name= "TGL_LAHIRPENGAJU">
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="PEKERJAANPENGAJU" class="col-sm-3 control-label"> PEKERJAAN PENGAJU</label>
-                    <div class="col-sm-9">
-                        <input type="text"  placeholder="PEKERJAAN PENGAJU" class="form-control" name= "PEKERJAANPENGAJU">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="ALAMATPENGAJU" class="col-sm-3 control-label"> ALAMAT PENGAJU</label>
-                    <div class="col-sm-9">
-                        <input type="text"  placeholder="ALAMAT PENGAJU" class="form-control" name= "ALAMATPENGAJU">
-                    </div>
-                </div>
-              
-                <div class="form-group">
-                    <label for="TUJUAN" class="col-sm-3 control-label"> TUJUAN</label>
-                    <div class="col-sm-9">
-                        <input type="text" method= "get" placeholder="TUJUAN" class="form-control" name= "TUJUANAJU">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="TUJUAN" class="col-sm-3 control-label"> JENIS SURAT</label>
-                    <div class="col-sm-9">
-                        <input type="text" method= "get" placeholder="JENIS SURAT" class="form-control" name= "JENIS_SURATAJU">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="TUJUAN" class="col-sm-3 control-label"> KET</label>
-                    <div class="col-sm-9">
-                        <input type="text" method= "get" placeholder="KETERANGAN" class="form-control" name= "KETERANGANAJU">
-                    </div>
-                </div>
-                
-               
-                
-        
-      
-        
-        
-                <div class="form-group">
-                    <div class="col-sm-9 col-sm-offset-3">
-                        <span class="help-block">*Required fields</span>
-                    </div>
-                </div>
+                <hr>
+                <p><?php echo isset($pesan) ? $pesan : "" ?></p>
             
-                <input type="submit" class="btn btn-primary btn-block" value="Simpan">
+                <input type="submit" class="btn btn-primary btn-block" name="btn_simpan" value="Simpan">
 </br>
 	            <a href="http://localhost/Kelompok1/rian/selasa/nyoba2.php"><input class="btn btn-primary btn-block" type="button" value="Batal"></a>
-            </form>
             </form>   <!-- /form -->
     
 </div> <!-- ./container -->
 
-
 </body>
+</html>
+
+
