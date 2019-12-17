@@ -125,8 +125,8 @@ ul.dropdown-lr {
           <a href="#">Persyaratan</a>
           <a href="http://localhost/Kelompok1/hafidz/suratfix/formdomisili.php">Pelayanan Surat Domisili</a>
           <a href="http://localhost/Kelompok1/hafidz/suratfix/formskck.php">Pelayanan Surat SKCK</a>
-          <a href="#">Pelyanan Surat Belum Menikah</a>
-          <a href="#">Pelayanan Surat Tempat Usaha</a>
+          <a href="http://localhost/Kelompok1/S.I.D/suratfix/formbelumnikah.php">Pelyanan Surat Belum Menikah</a>
+          <a href="http://localhost/Kelompok1/S.I.D/suratfix/formtempatusaha.php">Pelayanan Surat Tempat Usaha</a>
         </div>
   </div> 
     
