@@ -151,7 +151,19 @@ $data =  mysqli_fetch_array ($nilai) ;
 
 <div class="container">
 
-            <form class="form-horizontal" role="form" method= "post" action="formsimpan.php">
+            <form class="form-horizontal" role="form" method= "post" action="simpandomisili.php">
+
+            <?php
+            $kuery1 = "SELECT max(NO_DOMISILI) as maxKode from sk_domisili";
+            $hasil1 = mysqli_query ($koneksi, $kuery1);
+            $tabel1 = mysqli_fetch_array($hasil1);
+            $no_surat1 = $tabel1['maxKode'];
+
+            $nourut = (int) substr ($no_surat1, 2, 5);
+            $nourut++;
+
+            $char = "D";
+            $no_surat1 = $char . sprintf ("%05s", $nourut); ?>
             
            
                 <center><h2>Surat Domisili</h2></center>
@@ -159,14 +171,14 @@ $data =  mysqli_fetch_array ($nilai) ;
                 <div class="form-group">
                     <label for="TANGGAL_SURAT" class="col-sm-3 control-label">Tanggal surat</label>
                     <div class="col-sm-9">
-                        <input type="date"  class="form-control" name= "TGLSURATJU">
+                        <input type="date"  class="form-control" name= "TGLSURATAJU">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="NO_SURATDOM" class="col-sm-3 control-label"> no surat</label>
                     <div class="col-sm-9">
-                        <input type="text"  placeholder="No Surat Domisili" class="form-control" name= "NO_DOMISILI">
+                        <input type="text"  placeholder="No Surat Domisili" value = "<?php echo $no_surat1;?>" class="form-control" name= "NO_DOMISILI">
                     </div>
                 </div>
 
@@ -300,33 +312,22 @@ $data =  mysqli_fetch_array ($nilai) ;
                         <input type="text"  placeholder="ALAMAT PENGAJU" class="form-control" name= "ALAMATPENGAJU">
                     </div>
                 </div>
+
+                <div class="form-group">
+                    <label for="TUJUAN" class="col-sm-3 control-label"> KETERANGAN</label>
+                    <div class="col-sm-9">
+                        <input type="text" method= "get" placeholder="KETERANGAN" class="form-control" name= "KETERANGAN">
+                    </div>
+                </div>
               
                 <div class="form-group">
                     <label for="TUJUAN" class="col-sm-3 control-label"> TUJUAN</label>
                     <div class="col-sm-9">
-                        <input type="text" method= "get" placeholder="TUJUAN" class="form-control" name= "TUJUANJU">
+                        <input type="text" method= "get" placeholder="TUJUAN" class="form-control" name= "TUJUANAJU">
                     </div>
                 </div>
 
-                
-               
-                <div class="form-group">
-                    <label class="control-label col-sm-3">Gender</label>
-                    <div class="col-sm-6">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <label class="radio-inline">
-                                    <input type="radio" name="JKAJU"  value="Perempuaan">perempuan
-                                </label>
-                            </div>
-                            <div class="col-sm-4">
-                                <label class="radio-inline">
-                                    <input type="radio" name="JKAJU"  value="Laki-laki">laki-laki
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div> <!-- /.form-group -->
+            
 
         
       

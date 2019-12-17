@@ -11,7 +11,7 @@ session_start();
 // cek apakah user telah login, jika belum login maka di alihkan ke halaman login
 $nik = $_SESSION['NIK_PENDUDUK'];
 
-$query = "SELECT sk_domisili.NO_DOMISILI, sk_domisili.TGLSURATAJU, sk_domisili.TUJUANJU, penduduk.NIK_PENDUDUK, penduduk.NAMAPEN, penduduk.TEMPATLHR, penduduk.TANGGALHR, penduduk.JK_PEN, penduduk.STATUSPEN, penduduk.AGAMAPEN, penduduk.PEKERJAANPEN, penduduk.KWNPEN, penduduk.NIK_PENDUDUK, keluarga.RT_RW, keluarga.ALAMAT FROM sk_domisili, penduduk, keluarga where sk_domisili.NIK_PENDUDUK='$nik' AND sk_domisili.NIK_PENDUDUK=penduduk.NIK_PENDUDUK AND penduduk.NO_KK=keluarga.NO_KK"; // Query untuk menampilkan semua data siswa
+$query = "SELECT sk_belumnikah.NO_BNIKAH, sk_BNIKAH.TGLSURATBN, sk_belumnikah.TUJUANBN, penduduk.NIK_PENDUDUK, penduduk.NAMAPEN, penduduk.TEMPATLHR, penduduk.TANGGALHR, penduduk.JK_PEN, penduduk.STATUSPEN, penduduk.AGAMAPEN, penduduk.PEKERJAANPEN, penduduk.KWNPEN, penduduk.NIK_PENDUDUK, keluarga.RT_RW, keluarga.ALAMAT FROM sk_belumnikah, penduduk, keluarga where sk_belumnikah.NIK_PENDUDUK='$nik' AND sk_belumnikah.NIK_PENDUDUK=penduduk.NIK_PENDUDUK AND penduduk.NO_KK=keluarga.NO_KK"; // Query untuk menampilkan semua data siswa
 $sql = mysqli_query($koneksi, $query); // Eksekusi/Jalankan query dari variabel $query
 
 $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
@@ -33,7 +33,7 @@ $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
 	<table width="100%" border="0" align="center" cellspacing="0" >
 		<tr>
 			<td width="50"></td>
-			<td  align="left"><img src="http://localhost/Kelompok1/hafidz/SP/Jember.png" width="150" height="120"></td>
+			<td  align="left"><img src="http://localhost/Kelompok1/hafidz/suratfix/Jember.png" width="150" height="120"></td>
 			<td width="600" >
 				<div align="center" >
 					<b>
@@ -63,7 +63,7 @@ $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
 					<font size="4.5">
 						<u>SURAT KETERANGAN BELUM NIKAH</u></font><br>
 					<font size="3">
-						Nomor : 474 /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/35.09.12.2002/&nbsp;&nbsp;&nbsp;
+						Nomor : 474 /<?php echo $data['NO_BNIKAH'];?>/35.09.12.2002/&nbsp;&nbsp;&nbsp;
 					</font>
 		 		</b><br><br><br>
 				 <div class="col" align="left" margin="15px">
@@ -101,8 +101,7 @@ $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
 				<tr><td>NIK</td><td>:</td><td><?php echo $data ['NIK_PENDUDUK'] ;?></td></tr>
 				<tr><td>Alamat Dusun</td><td>:</td><td><?php echo  $data['ALAMAT'];?></td></tr>
 				<tr><td>RT/RW</td><td>:</td><td><?php echo $data['RT_RW']; ?></td></tr>
-				<tr><td>Keperluan</td><td>:</td><td><?php echo $data['TUJUANJU']; ?></td></tr>
-				<tr><td>Masa Berlaku</td><td>:</td><td><?php echo $data['RT_RW']; ?></td></tr>
+				<tr><td>Keperluan</td><td>:</td><td><?php echo $data['TUJUANBN']; ?></td></tr>
 				</center>
 				</tbody></table>
 				<br>
@@ -124,9 +123,7 @@ $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
 			<td width="300"><br></td>	
 			<td width="245" align="right">
 				<div align="center" class="time"><font size="4">
-					Sabrang,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					Sabrang,<?php echo $data['TGLSURATBN'];?>
 								
 					<br>
 					KEPALA DESA SABRANG

@@ -5,7 +5,7 @@ include "koneksi.php";
 // Ambil Data yang Dikirim dari Form
 $NO_DOMISILI = $_POST['NO_DOMISILI'];
 $NIK_PENDUDUK = $_POST['NIK_PENDUDUK'];
-$TGLSURATJU = $_POST['TGLSURATJU'];
+$TGLSURATJU = $_POST['TGLSURATAJU'];
 $NAMAAJU = $_POST['NAMAAJU'];
 $JKAJU = $_POST['JKAJU'];
 $AGAMAAJU = $_POST['AGAMAAJU'];
@@ -15,7 +15,7 @@ $TGLHRAJU = $_POST['TGLHRAJU'];
 $PEKERJAAN_AJU = $_POST['PEKERJAAN_AJU'];
 $ALAMATAJU = $_POST['ALAMATAJU'];
 $KETERANGANAJU = $_POST['KETERANGANAJU'];
-$TUJUANJU = $_POST['TUJUANJU'];
+$TUJUANJU = $_POST['TUJUANAJU'];
 $JENIS_SURATAJU = $_POST['JENIS_SURATAJU'];
 
 
@@ -31,12 +31,12 @@ $JENIS_SURATAJU = $_POST['JENIS_SURATAJU'];
 	
 	if($sql){ // Cek jika proses simpan ke database sukses atau tidak
 		// Jika Sukses, Lakukan :
-		$tampil = $_POST ['TUJUANJU'];
+		$tampil = $_POST ['TUJUANAJU'];
 		header("location: reportdomisili.php"); // Redirect ke halaman index.php
 	}else{
 		// Jika Gagal, Lakukan :
 		echo "Maaf, Terjadi kesalahan saat mencoba untuk menyimpan data ke database.";
-		echo "<br><a href='form_simpan.php'>Kembali Ke Form</a>";
+		echo "<br><a href=http://localhost/Kelompok1/hafidz/suratfix/formdomisili.php>Kembali Ke Form</a>";
 	}
 	
 

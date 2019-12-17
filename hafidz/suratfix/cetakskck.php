@@ -11,7 +11,7 @@ session_start();
 // cek apakah user telah login, jika belum login maka di alihkan ke halaman login
 $nik = $_SESSION['NIK_PENDUDUK'];
 
-$query = $query = "SELECT sk_domisili.NO_DOMISILI, sk_domisili.TGLSURATAJU, sk_domisili.TUJUANJU, penduduk.NIK_PENDUDUK, penduduk.NAMAPEN, penduduk.TEMPATLHR, penduduk.TANGGALHR, penduduk.JK_PEN, penduduk.STATUSPEN, penduduk.AGAMAPEN, penduduk.PEKERJAANPEN, penduduk.KWNPEN, penduduk.NIK_PENDUDUK, keluarga.RT_RW, keluarga.ALAMAT FROM sk_domisili, penduduk, keluarga where sk_domisili.NIK_PENDUDUK='$nik' AND sk_domisili.NIK_PENDUDUK=penduduk.NIK_PENDUDUK AND penduduk.NO_KK=keluarga.NO_KK"; // Query untuk menampilkan semua data siswa
+$query = "SELECT sk_skck.NO_SKCK, sk_skck.TGLSURAT_AJU, sk_skck.TUJUAN_AJU, penduduk.NIK_PENDUDUK, penduduk.NAMAPEN, penduduk.TEMPATLHR, penduduk.TANGGALHR, penduduk.JK_PEN, penduduk.STATUSPEN, penduduk.AGAMAPEN, penduduk.PEKERJAANPEN, penduduk.KWNPEN, penduduk.NIK_PENDUDUK, keluarga.RT_RW, keluarga.ALAMAT FROM sk_skck, penduduk, keluarga where sk_skck.NIK_PENDUDUK='$nik' AND sk_skck.NIK_PENDUDUK=penduduk.NIK_PENDUDUK AND penduduk.NO_KK=keluarga.NO_KK"; // Query untuk menampilkan semua data siswa
 $sql = mysqli_query($koneksi, $query); // Eksekusi/Jalankan query dari variabel $query
 
 $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
@@ -25,7 +25,7 @@ $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
 	</style>
 <head>
 
-	<title>Print Surat Pengantar Domisili</title>
+	<title>SP SKCK</title>
 	
 </head>
 <center>
@@ -33,7 +33,7 @@ $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
 	<table width="100%" border="0" align="center" cellspacing="0" >
 		<tr>
 			<td width="50"></td>
-			<td  align="left"><img src="Jember.png" width="150" height="120"></td>
+			<td  align="left"><img src="http://localhost/Kelompok1/hafidz/suratfix/Jember.png" width="150" height="120"></td>
 			<td width="600" >
 				<div align="center" >
 					<b>
@@ -63,10 +63,12 @@ $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
 					<font size="4.5">
 						<u>SURAT KETERANGAN CACATAN KEPOLISIAN</u></font><br>
 					<font size="3">
-						Nomor : 200 /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/35.09.12.2002/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						Nomor : 200 /<?php echo $data['NO_SKCK'];?>/35.09.12.2002/&nbsp;&nbsp;&nbsp;
 					</font>
 		 		</b><br>
 				 <div class="col" align="left" margin="15px">
+				 
+
 				 <br>
 				<font size="4" align="left">
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yang  bertanda tangan dibawah ini Saya Kepala Desa Sabrang,Kecamatan Ambulu, Kabupaten Jember , menerangkan dengan sebenarnya bahwa :
@@ -92,8 +94,8 @@ $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Orang tersebut di atas benar-benar penduduk Desa Sabrang dan sampai saat ini masih tinggal di alamat<br> tersebut di atas.
 				<br>
 				<font size="3" face="Tahoma">
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yang bersangkutan selama menjadi penduduk Desa Sabrang tidak pernah tersangkut dalam perkara tindak<br> pidana atau tindak pidana kejahatan lainya baik secara langsung ataupun tidak langsung. Adapun surat keterangan ini akan dipergunakan untuk melengkapi persyaratan  <br>
-				<?php echo $data['TUJUANJU']; ?>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yang bersangkutan selama menjadi penduduk Desa Sabrang tidak pernah tersangkut dalam perkara tindak<br> pidana atau tindak pidana kejahatan lainya baik secara langsung ataupun tidak langsung. Adapun surat keterangan ini akan dipergunakan untuk melengkapi persyaratan 
+				<?php echo $data['TUJUAN_AJU']; ?><br>
 				<font size="3" face="Tahoma">
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Demikian surat keterangan ini kami buat dengan sebenarnya dan dapatnya dipergunakan sebagaimana mestinya.  
 				
@@ -114,10 +116,7 @@ $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
 			<td width="245" align="right">
 			<div align="center" class="time"><font size="3">
 					<br>
-					Sabrang,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								
+					Sabrang,<?php echo $data['TGLSURAT_AJU'];?>
 					<br>
 					KEPALA DESA SABRANG
 				</font></div>
