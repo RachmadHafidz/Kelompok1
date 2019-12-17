@@ -96,7 +96,7 @@ session_start();
       </div> 
   
       <div class="dropdown">
-        <button class="dropbtn" > <a href="profillogin.php">Berita</a>
+        <button class="dropbtn" > <a href="berita1.php">Berita</a>
           <i class="fa fa-caret-down"></i>
         </button>
     </div>

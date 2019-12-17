@@ -137,10 +137,7 @@ ul.dropdown-lr {
       </button>
   </div>
 
-  <div class="dropdown">
-    <button class="dropbtn" > <a href="#">Login</a>
-      <i class="fa fa-caret-down"></i>
-    </button>
+ 
   
     <div class="dropdown-content">
       <a href="http://localhost/Kelompok1/S.I.D/index.php">Perangkat Desa</a>

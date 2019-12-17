@@ -115,7 +115,7 @@ ul.dropdown-lr {
       <div class="topnav" id="myTopnav">
         <div id="navbar">
         <div class="dropdown">
-          <button class="dropbtn" > <a href="http://localhost/Kelompok1/S.I.D/nyoba.html">Beranda</a>
+          <button class="dropbtn" > <a href="http://localhost/Kelompok1/S.I.D/nyoba.php">Beranda</a>
             <i class="fa fa-caret-down"></i>
           </button>
       </div>
@@ -134,7 +134,7 @@ ul.dropdown-lr {
       </div> 
   
       <div class="dropdown">
-        <button class="dropbtn" > <a href="http://localhost/Kelompok1/S.I.D/profil.html">Berita</a>
+        <button class="dropbtn" > <a href="berita.php">Berita</a>
           <i class="fa fa-caret-down"></i>
         </button>
     </div>
