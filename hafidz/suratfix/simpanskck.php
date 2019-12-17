@@ -6,20 +6,10 @@ include "koneksi.php";
 $NO_SKCK = $_POST['NO_SKCK'];
 $NIK_PENDUDUK = $_POST['NIK_PENDUDUK'];
 $TGLSURAT_AJU = $_POST['TGLSURAT_AJU'];
-$NAMA_AJU = $_POST['NAMA_AJU'];
-$NIK_AJU = $_POST['NIK_AJU'];
-$JK_AJU = $_POST['JK_AJU'];
-$STATUS_AJU = $_POST['STATUS_AJU'];
-$KWNAJU = $_POST['KWN_AJU'];
-$TMPLHR_AJU = $_POST['TMPLHR_AJU'];
-$TGLHR_AJU= $_POST['TGLHR_AJU'];
-$AGAMA_AJU = $_POST['AGAMA_AJU'];
-$PEKERJAAN_AJU = $_POST['PEKERJAAN_AJU'];
-$PENDIDIKAN_AJU = $_POST['PENDIDIKAN_AJU'];
-$ALAMAT_AJU = $_POST['ALAMAT_AJU'];
 $TUJUAN_AJU = $_POST['TUJUAN_AJU'];
 $KETERANGAN_AJU = $_POST['KETERANGAN_AJU'];
 $JENISURAT_AJU = $_POST['JENISURAT_AJU'];
+$ARSIP = $_POST['ARSIP'];
 
 
 	
@@ -28,7 +18,7 @@ $JENISURAT_AJU = $_POST['JENISURAT_AJU'];
 // Proses upload
 
 	// Proses simpan ke Database
-	$query = "INSERT INTO sk_skck VALUES('".$NO_SKCK."','".$NIK_PENDUDUK."', '".$TGLSURAT_AJU."','".$NAMA_AJU."','".$NIK_AJU."','".$JK_AJU."','".$STATUS_AJU."','".$KWNAJU."','".$TMPLHR_AJU."','".$TGLHR_AJU."','".$AGAMA_AJU."','".$PEKERJAAN_AJU."','".$PENDIDIKAN_AJU."','".$ALAMAT_AJU."','".$TUJUAN_AJU."','".$KETERANGAN_AJU."','".$JENISURAT_AJU."')";
+	$query = "INSERT INTO sk_skck VALUES('".$NO_SKCK."','".$NIK_PENDUDUK."', '".$TGLSURAT_AJU."','".$TUJUAN_AJU."','".$KETERANGAN_AJU."','".$JENISURAT_AJU."','".$ARSIP."')";
 	
 	$sql = mysqli_query($koneksi, $query); // Eksekusi/ Jalankan query dari variabel $query
 	

@@ -106,13 +106,13 @@ ul.dropdown-lr {
       </div> 
   
       <div class="dropdown">
-        <button class="dropbtn" > <a href="profillogin.php">Berita</a>
+        <button class="dropbtn" > <a href="profil.html">Berita</a>
           <i class="fa fa-caret-down"></i>
         </button>
     </div>
   
     <div class="dropdown">
-      <button class="dropbtn" > <a href="petunjuklogin.php">Petunjuk</a>
+      <button class="dropbtn" > <a href="petunjuk.html">Petunjuk</a>
         <i class="fa fa-caret-down"></i>
       </button>
   </div>
@@ -126,7 +126,7 @@ ul.dropdown-lr {
           <a href="http://localhost/Kelompok1/S.I.D/suratfix/formdomisili.php">Pelayanan Surat Domisili</a>
           <a href="http://localhost/Kelompok1/S.I.D/suratfix/formskck.php">Pelayanan Surat SKCK</a>
           <a href="#">Pelyanan Surat Belum Menikah</a>
-          <a href="#">Pelayanan Surat Tempat Usaha</a>
+          <a href="http://localhost/Kelompok1/S.I.D/suratfix/formtempatusaha.php">Pelayanan Surat Tempat Usaha</a>
         </div>
   </div> 
     
@@ -152,7 +152,18 @@ $data =  mysqli_fetch_array ($nilai) ;
 <div class="container">
 
             <form class="form-horizontal" role="form" method= "post" action="simpanskck.php">
-            
+
+            <?php
+            $kuery1 = "SELECT max(NO_SKCK) as maxKode from sk_skck";
+            $hasil1 = mysqli_query ($koneksi, $kuery1);
+            $tabel1 = mysqli_fetch_array($hasil1);
+            $no_surat1 = $tabel1['maxKode'];
+
+            $nourut = (int) substr ($no_surat1, 2, 5);
+            $nourut++;
+
+            $char = "D";
+            $no_surat1 = $char . sprintf ("%05s", $nourut); ?>
            
                 <center><h2>Surat Keterangan Catatan Kepolisian (SKCK) </h2></center>
 </br>
@@ -166,7 +177,7 @@ $data =  mysqli_fetch_array ($nilai) ;
                 <div class="form-group">
                     <label for="NO_SURATDOM" class="col-sm-3 control-label"> no surat</label>
                     <div class="col-sm-9">
-                        <input type="text"  placeholder="No Surat Domisili" class="form-control" name= "NO_SKCK">
+                    <input type="text"  placeholder="No Surat SKCK" value = "<?php echo $no_surat1;?>" class="form-control" name= "NO_SKCK">
                     </div>
                 </div>
 
