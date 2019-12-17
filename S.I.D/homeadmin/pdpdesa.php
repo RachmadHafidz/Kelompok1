@@ -171,10 +171,22 @@ if(isset($_GET['aksi'])){
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
         <h6 class="dropdown-header">Data:</h6>
-          <a class="dropdown-item" href="pdpenduduk.php">Data Penduduk</a>
-          <a class="dropdown-item" href="pdkeluarga.php">Data Keluarga</a>
-          <a class="dropdown-item" href="pdadmin.php"> Data Admin</a>
-          <a class="dropdown-item" href="pdpdesa.php">Data Perangkat Desa</a>
+        <?php
+        if($_SESSION['levelad'] == "Super Admin"){
+          echo "<a class='dropdown-item' href='pdpenduduk.php'>Data Penduduk</a>
+          <a class='dropdown-item' href='pdkeluarga.php'>Data Keluarga</a>
+          <a class='dropdown-item' href='pdadmin.php'> Data Admin</a>
+          <a class='dropdown-item' href='pdpdesa.php'>Data Perangkat Desa</a>";
+        }else if($_SESSION['levelad'] == "Admin"){
+          echo "<a class='dropdown-item' href='pdpenduduk.php'>Data Penduduk</a>
+          <a class='dropdown-item' href='pdkeluarga.php'>Data Keluarga</a>
+          <a class='dropdown-item' href='pdpdesa.php'>Data Perangkat Desa</a>";
+        }else if($_SESSION['levelad'] == "Perangkat Desa"){
+          echo "<a class='dropdown-item' href='pdpenduduk.php'>Data Penduduk</a>
+          <a class='dropdown-item' href='pdkeluarga.php'>Data Keluarga</a>";
+        }
+        ?>
+          
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -184,15 +196,10 @@ if(isset($_GET['aksi'])){
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
           <h6 class="dropdown-header">Surat:</h6>
-          <a class="dropdown-item" href="#">Semua</a>
-          <a class="dropdown-item" href="#">SP Kelahiran</a>
-          <a class="dropdown-item" href="#">SP Domisili</a>
-          <a class="dropdown-item" href="#">SP Perubahan KTP</a>
-          <a class="dropdown-item" href="#">SP SKCK</a>
-          <a class="dropdown-item" href="#">SP Perijinan</a>
-          <div class="dropdown-divider"></div>
-          <h6 class="dropdown-header">Suara Warga:</h6>
-          <a class="dropdown-item" href="#">Pesan</a>
+          <a class="dropdown-item" href="#">SK Domisili</a>
+          <a class="dropdown-item" href="#">SK Belum Nikah</a>
+          <a class="dropdown-item" href="#">SK SKCK</a>
+          <a class="dropdown-item" href="#">SK Tempat Usaha</a>
         </div>
       </li>
       <li class="nav-item">

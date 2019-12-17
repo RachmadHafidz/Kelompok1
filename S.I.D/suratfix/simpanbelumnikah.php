@@ -25,7 +25,7 @@ $JNBN = $_POST['JSBN'];
 	if($sql){ // Cek jika proses simpan ke database sukses atau tidak
 		// Jika Sukses, Lakukan :
 		$tampil = $_POST ['TUJUANBN'];
-		header("location: reportbelumnikah.php"); // Redirect ke halaman index.php
+		header("location: reportbelumnikah.php?id=$NO_BNIKAH"); // Redirect ke halaman index.php
 	}else{
 		// Jika Gagal, Lakukan :
 		echo "Maaf, Terjadi kesalahan saat mencoba untuk menyimpan data ke database.";
