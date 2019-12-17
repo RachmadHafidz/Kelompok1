@@ -133,7 +133,7 @@ if(isset($_GET['aksi'])){
       </li>
       <li class="nav-item dropdown no-arrow active">
         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <i>Hello <?php session_start(); echo $_SESSION['namaadmin']; ?></i>
+        <i>Hello <?php session_start(); echo $_SESSION['nama']; ?></i>
           <i class="fas fa-user-circle fa-fw"></i>
         </a>
         <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">

@@ -37,15 +37,23 @@
         .dropbtn 
         {
         background:none;
-        color: rgb(0, 0, 0);
         padding: 16px;
         font-size: 16px;
         border: none;
         cursor: pointer;
         }
-
+        .dropbtn a{
+          color: #f1f1f1;
+          text-decoration: none;
+        }
+        .dropdown :hover{
+          color:rgb(41, 41, 41);
+          text-decoration: none;
+        }
+      
         .dropdown 
         {
+        color:rgb(41, 41, 41);
         position: relative;
         display: inline-block;
         z-index:9999;
@@ -69,7 +77,11 @@
         display: block;
         }
 
-        .dropdown-content a:hover {background-color: #f1f1f1}
+        .dropdown-content a:hover {
+          background-color: #f1f1f1;
+          color:rgb(41, 41, 41);
+          text-decoration: none;
+        }
 
         .dropdown:hover .dropdown-content { display: block; }
 
@@ -101,7 +113,7 @@
         <div class="topnav" id="myTopnav">
          
           <div class="dropdown">
-            <button class="dropbtn" > <a href="nyoba.html">Beranda</a>
+            <button class="dropbtn" > <a href="index.php">Beranda</a>
               <i class="fa fa-caret-down"></i>
             </button>
         </div>
@@ -136,8 +148,9 @@
         <i class="fa fa-caret-down"></i>
       </button>
       <div class="dropdown-content">
-        <a href="http://localhost/Kelompok1/S.I.D/index.php">Admin</a>
-        <a href="http://localhost/Kelompok1/S.I.D/index1.php">Warga</a>
+        <a href="login.php">Perangkat Desa</a>
+      <a href="login1.php">Warga</a>
+      </div>
        
       
      

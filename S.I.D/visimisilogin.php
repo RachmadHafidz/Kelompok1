@@ -37,15 +37,23 @@
         .dropbtn 
         {
         background:none;
-        color: rgb(0, 0, 0);
         padding: 16px;
         font-size: 16px;
         border: none;
         cursor: pointer;
         }
-
+        .dropbtn a{
+          color: #f1f1f1;
+          text-decoration: none;
+        }
+        .dropdown :hover{
+          color:rgb(41, 41, 41);
+          text-decoration: none;
+        }
+      
         .dropdown 
         {
+        color:rgb(41, 41, 41);
         position: relative;
         display: inline-block;
         z-index:9999;
@@ -69,13 +77,19 @@
         display: block;
         }
 
-        .dropdown-content a:hover {background-color: #f1f1f1}
+        .dropdown-content a:hover {
+          background-color: #f1f1f1;
+          color:rgb(41, 41, 41);
+          text-decoration: none;
+        }
 
         .dropdown:hover .dropdown-content { display: block; }
 
         .dropdown:hover .dropbtn {background-color: #ffffff;}
 
         .right {text-align:right;}
+
+        body {background: rgb(255, 255, 255);}
 
         body {background: rgb(255, 255, 255);}
    
@@ -93,7 +107,6 @@
       
       <nav class="navbar navbar-dark bg-dark justify-content-between"> <p><a><font class="navbar-brand" color="white"></a>Sistem Informasi Desa Sabrang</font></a></p>
         <p><font color="white">Jl. watu ulo no 1, Desa Sabrang, Kec. Ambulu, Kab. Jember , Kode Pos 68172</font></p>
-        <a href="nyoba.html">Logout</a>
        
        </div>
       
@@ -144,21 +157,26 @@
       </div>
   
    
-      <?php 
-include 'koneksi.php';
- 
-// mengaktifkan session
-
- 
-// cek apakah user telah login, jika belum login maka di alihkan ke halaman login
-
- 
-// menampilkan pesan selamat datang
-echo "Hai, selamat datang ". $_SESSION['NIK_PENDUDUK'];
- 
-?> 
-       
-      
+      <div class="dropdown">
+        <button class="dropbtn"><a href="#"><?php 
+      echo "Hai, selamat datang ". $_SESSION['nama'];
+    ?></a>
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+        <?php
+      if($_SESSION['levelad'] == "Super Admin"){
+        echo "<a href='homeadmin/index.php'>Halaman Admin</a>";
+        }else if($_SESSION['levelad'] == "Admin"){
+          echo "<a href='homeadmin/index.php'>Halaman Admin</a>";
+        }else if($_SESSION['levelad'] == "Perangkat Desa"){
+          echo "<a href='homeadmin/index.php'>Halaman Admin</a>";
+        }else if($_SESSION['levelad'] == "Warga"){
+          echo "<a href='#'>Profil</a>";
+        }
+        ?>
+          <a href="logout.php" onclick="return confirm('Apakah Anda Yakin Ingin Keluar Dari Website?')">Logout</a>
+        </div>
      
   </nav>
 		</div><!-- /.navbar-collapse -->
