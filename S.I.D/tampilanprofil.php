@@ -100,19 +100,19 @@ ul.dropdown-lr {
           <a href="http://localhost/Kelompok1/S.I.D/profillogin.php">Profil Desa</a>
           <a href="http://localhost/Kelompok1/S.I.D/visimisilogin.php">Visi & Misi</a>
           <a href="http://localhost/Kelompok1/S.I.D/mottologin.php">Motto</a>
-          <a href="http://localhost/Kelompok1/S.I.D/crud/index1.php">Perangkat Desa</a>
+          <a href="http://localhost/Kelompok1/S.I.D/crud/index2.php">Perangkat Desa</a>
           
         </div>
       </div> 
   
       <div class="dropdown">
-        <button class="dropbtn" > <a href="profil.html">Berita</a>
+        <button class="dropbtn" > <a href="berita1.php">Berita</a>
           <i class="fa fa-caret-down"></i>
         </button>
     </div>
   
     <div class="dropdown">
-      <button class="dropbtn" > <a href="petunjuk.html">Petunjuk</a>
+      <button class="dropbtn" > <a href="petunjuklogin.php">Petunjuk</a>
         <i class="fa fa-caret-down"></i>
       </button>
   </div>
@@ -136,7 +136,7 @@ ul.dropdown-lr {
            </div>
            <div class="btn-group dropright">
               <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Pelayanan Surat Keterangan Catatan Kepolisian
+              Pelayanan SKCK
               </button>
               <div class="dropdown-menu">
               <a href="http://localhost/Kelompok1/S.I.D/suratfix/formskck.php">Pribadi</a>
@@ -185,38 +185,17 @@ $data =  mysqli_fetch_array ($nilai) ;
 
 <div class="container">
 
-            <form class="form-horizontal" role="form" method= "post" action="simpandomisili.php">
+            <form class="form-horizontal" role="form" method= "post" >
                 
-            <?php
-            $kuery1 = "SELECT max(NO_DOMISILI) as maxKode from sk_domisili";
-            $hasil1 = mysqli_query ($koneksi, $kuery1);
-            $tabel1 = mysqli_fetch_array($hasil1);
-            $no_surat1 = $tabel1['maxKode'];
+            
+                <center><h2>Profil</h2></center>             
 
-            $nourut = (int) substr ($no_surat1, 2, 5);
-            $nourut++;
 
-            $char = "D";
-            $no_surat1 = $char . sprintf ("%05s", $nourut); ?>
-           
-                <center><h2>Surat Domisili</h2></center>
-              
                 <div class="form-group">
-                    <label for="TANGGAL_SURAT" class="col-sm-3 control-label">Tanggal surat</label>
+                    <label for="No_kk" class="col-sm-3 control-label"> NO Kartu Keluarga</label>
                     <div class="col-sm-9">
-                        <input type="date"  class="form-control" name= "TGLSURATAJU">
+                        <input type="number" readonly value="<?php echo $data['NO_KK']; ?>" placeholder="NIK" class="form-control" name = "NO_KK">
                     </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="NO_SURATDOM" class="col-sm-3 control-label"> no surat</label>
-                    <div class="col-sm-9">
-                    <input type="text"  placeholder="No Surat Domisili" value = "<?php echo $no_surat1;?>" class="form-control" name= "NO_DOMISILI">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="NO_SURATDOM" class="col-sm-3 control-label"> Data Diri</label>
                 </div>
 
                 <div class="form-group">
@@ -229,7 +208,7 @@ $data =  mysqli_fetch_array ($nilai) ;
                 <div class="form-group">
                     <label for="NAMAPENDUDUK" class="col-sm-3 control-label"> Nama</label>
                     <div class="col-sm-9">  
-                        <input type="text" readonly value="<?php echo $data['NAMAPEN']; ?>"  placeholder="Nama" class="form-control" name= "NAMAPENDUDUK" >
+                        <input type="text" readonly  value="<?php echo $data['NAMAPEN']; ?>"  placeholder="Nama" class="form-control" name= "NAMAPENDUDUK" >
                     </div>
                 </div>
 
@@ -250,14 +229,14 @@ $data =  mysqli_fetch_array ($nilai) ;
                 <div class="form-group">
                     <label for="JENIS_KELAMINPEN" class="col-sm-3 control-label"> Jenis Kelamin</label>
                     <div class="col-sm-9">
-                        <input type="text" readonly value="<?php echo $data['JK_PEN']; ?>" placeholder="Jenis Kelamin" class="form-control" name= "">
+                        <input type="text" readonly value="<?php echo $data['JK_PEN']; ?>" placeholder="Jenis Kelamin" class="form-control" name= "JK_PEN">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="STATUSPEN" class="col-sm-3 control-label"> Status Pernikahan</label>
                     <div class="col-sm-9">
-                        <input type="text" readonly value="<?php echo $data['STATUSPEN']; ?>" placeholder="Status" class="form-control" name= "">
+                        <input type="text" readonly value="<?php echo $data['STATUSPEN']; ?>" placeholder="Status" class="form-control" name= "STATUSPEN">
                     </div>
                 </div>
 
@@ -269,9 +248,9 @@ $data =  mysqli_fetch_array ($nilai) ;
                 </div>
 
                 <div class="form-group">
-                    <label for="PEKERJAANPEN" class="col-sm-3 control-label">Pekerjaan </label>
+                    <label for="PEKERJAANPEN" readonly class="col-sm-3 control-label">Pekerjaan </label>
                     <div class="col-sm-9">
-                        <input type="text" readonly value="<?php echo $data['PEKERJAANPEN']; ?>" placeholder="Agama pengaju" class="form-control" name= "PEKERJAANPEN">
+                        <input type="text" readonly  value="<?php echo $data['PEKERJAANPEN']; ?>" placeholder="Agama pengaju" class="form-control" name= "PEKERJAANPEN">
                     </div>
                 </div>
 
@@ -288,29 +267,17 @@ $data =  mysqli_fetch_array ($nilai) ;
                         <input type="text" readonly value="<?php echo $data['ALAMAT']; ?>" placeholder="Alamat" class="form-control" name= "ALAMATPEN">
                     </div>
                 </div>
+
+                
        
-                <div class="form-group">
-                    <label for="TUJUAN" class="col-sm-3 control-label"> TUJUAN</label>
-                    <div class="col-sm-9">
-                        <input type="text" method= "get" placeholder="TUJUAN" class="form-control" name= "TUJUANAJU">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="TUJUAN" class="col-sm-3 control-label"> JENIS SURAT</label>
-                    <div class="col-sm-9">
-                    <input type="text" placeholder="Jenis Surat Domisili" class="form-control" value = "Surat Domisili" name= "JENIS_SURATAJU" readonly>
-                    </div>
-                </div>
-
-
+                
                 <div class="form-group">
                     <div class="col-sm-9 col-sm-offset-3">
                         <span class="help-block">*Required fields</span>
                     </div>
                 </div>
             
-                <input type="submit" class="btn btn-primary btn-block" value="Simpan">
+                <a href="http://localhost/Kelompok1/S.I.D/profilwarga.php"><input class="btn btn-primary btn-block" type="button" value="Edit Profil"></a>
 </br>
 	            <a href="http://localhost/Kelompok1/rian/selasa/nyoba2.php"><input class="btn btn-primary btn-block" type="button" value="Batal"></a>
             </form>

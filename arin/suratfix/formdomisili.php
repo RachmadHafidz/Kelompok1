@@ -87,20 +87,20 @@ ul.dropdown-lr {
       <div class="topnav" id="myTopnav">
        
         <div class="dropdown">
-          <button class="dropbtn" > <a href="http://localhost/Kelompok1/S.I.D/beranda.php">Beranda</a>
+          <button class="dropbtn" > <a href="http://localhost/Kelompok1/rian/selasa/beranda.php">Beranda</a>
             <i class="fa fa-caret-down"></i>
           </button>
       </div>
 
       <div class="dropdown">
-        <button class="dropbtn" > <a href="http://localhost/Kelompok1/S.I.D/profillogin.php">Profil Desa</a>
+        <button class="dropbtn" > <a href="http://localhost/Kelompok1/rian/selasa/profillogin.php">Profil Desa</a>
           <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-          <a href="http://localhost/Kelompok1/S.I.D/profillogin.php">Profil Desa</a>
-          <a href="http://localhost/Kelompok1/S.I.D/visimisilogin.php">Visi & Misi</a>
-          <a href="http://localhost/Kelompok1/S.I.D/mottologin.php">Motto</a>
-          <a href="http://localhost/Kelompok1/S.I.D/crud/index1.php">Perangkat Desa</a>
+          <a href="http://localhost/Kelompok1/rian/selasa/profillogin.php">Profil Desa</a>
+          <a href="http://localhost/Kelompok1/rian/selasa/visimisilogin.php">Visi & Misi</a>
+          <a href="http://localhost/Kelompok1/rian/selasa/mottologin.php">Motto</a>
+          <a href="http://localhost/Kelompok1/rian/selasa/crud/index1.php">Perangkat Desa</a>
           
         </div>
       </div> 
@@ -121,46 +121,12 @@ ul.dropdown-lr {
         <button class="dropbtn"><a href="#">Pelayanan</a>
           <i class="fa fa-caret-down"></i>
         </button>
-        
-        
         <div class="dropdown-content">
           <a href="#">Persyaratan</a>
-          <div class="btn-group dropright">
-              <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Pelayanan Surat Domisili
-              </button>
-              <div class="dropdown-menu">
-              <a href="http://localhost/Kelompok1/S.I.D/suratfix/formdomisili.php">Pribadi</a>
-              <a href="#">Pengaju</a>
-           </div>
-           </div>
-           <div class="btn-group dropright">
-              <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Pelayanan Surat Keterangan Catatan Kepolisian
-              </button>
-              <div class="dropdown-menu">
-              <a href="http://localhost/Kelompok1/S.I.D/suratfix/formskck.php">Pribadi</a>
-              <a href="#">Pengaju</a>
-           </div>
-           </div>
-           <div class="btn-group dropright">
-              <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Pelayanan Surat Belum Nikah
-              </button>
-              <div class="dropdown-menu">
-              <a href="http://localhost/Kelompok1/S.I.D/suratfix/formbelumnikah.php">Pribadi</a>
-              <a href="#">Pengaju</a>
-           </div>
-           </div>
-           <div class="btn-group dropright">
-              <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Pelayanan Surat Tempat Usaha
-              </button>
-              <div class="dropdown-menu">
-              <a href="http://localhost/Kelompok1/S.I.D/suratfix/formtempatusaha.php">Pribadi</a>
-              <a href="#">Pengaju</a>
-           </div>
-           </div>
+          <a href="http://localhost/Kelompok1/hafidz/suratfix/formdomisili.php">Pelayanan Surat Domisili</a>
+          <a href="http://localhost/Kelompok1/hafidz/suratfix/formskck.php">Pelayanan Surat SKCK</a>
+          <a href="#">Pelyanan Surat Belum Menikah</a>
+          <a href="#">Pelayanan Surat Tempat Usaha</a>
         </div>
   </div> 
     
@@ -185,33 +151,22 @@ $data =  mysqli_fetch_array ($nilai) ;
 
 <div class="container">
 
-            <form class="form-horizontal" role="form" method= "post" action="simpandomisili.php">
-                
-            <?php
-            $kuery1 = "SELECT max(NO_DOMISILI) as maxKode from sk_domisili";
-            $hasil1 = mysqli_query ($koneksi, $kuery1);
-            $tabel1 = mysqli_fetch_array($hasil1);
-            $no_surat1 = $tabel1['maxKode'];
-
-            $nourut = (int) substr ($no_surat1, 2, 5);
-            $nourut++;
-
-            $char = "D";
-            $no_surat1 = $char . sprintf ("%05s", $nourut); ?>
+            <form class="form-horizontal" role="form" method= "post" action="formsimpan.php">
+            
            
                 <center><h2>Surat Domisili</h2></center>
               
                 <div class="form-group">
                     <label for="TANGGAL_SURAT" class="col-sm-3 control-label">Tanggal surat</label>
                     <div class="col-sm-9">
-                        <input type="date"  class="form-control" name= "TGLSURATAJU">
+                        <input type="date"  class="form-control" name= "TGLSURATJU">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="NO_SURATDOM" class="col-sm-3 control-label"> no surat</label>
                     <div class="col-sm-9">
-                    <input type="text"  placeholder="No Surat Domisili" value = "<?php echo $no_surat1;?>" class="form-control" name= "NO_DOMISILI">
+                        <input type="text"  placeholder="No Surat Domisili" class="form-control" name= "NO_DOMISILI">
                     </div>
                 </div>
 
@@ -290,20 +245,93 @@ $data =  mysqli_fetch_array ($nilai) ;
                 </div>
        
                 <div class="form-group">
-                    <label for="TUJUAN" class="col-sm-3 control-label"> TUJUAN</label>
+                    <label for="NAMA_PENGAJU" class="col-sm-3 control-label"> nama pengaju</label>
                     <div class="col-sm-9">
-                        <input type="text" method= "get" placeholder="TUJUAN" class="form-control" name= "TUJUANAJU">
+                        <input type="text"  placeholder="NAMA PENGAJU" class="form-control" name= "NAMA_PENGAJU">
+                    </div>
+                </div>
+
+               
+                <div class="form-group">
+                    <label for="JENIS_KELAMINPEN" class="col-sm-3 control-label"> Tempat Lahir</label>
+                    <div class="col-sm-9">
+                        <input type="text"  placeholder="Tempat Lahir" class="form-control" name= "TMP_LAHIRPEN">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="AGAMA_PENGAJU" class="col-sm-3 control-label">Agama pengaju </label>
+                    <div class="col-sm-9">
+                        <input type="text"  placeholder="Agama pengaju" class="form-control" name= "AGAMA_PENGAJU">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="TUJUAN" class="col-sm-3 control-label"> JENIS SURAT</label>
+                    <label for="NIK_PENGAJU" class="col-sm-3 control-label"> NIk</label>
                     <div class="col-sm-9">
-                    <input type="text" placeholder="Jenis Surat Domisili" class="form-control" value = "Surat Domisili" name= "JENIS_SURATAJU" readonly>
+                        <input type="number"  placeholder="NIK PENGAJU" class="form-control" name= "NIK_PENGAJU">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="TMP_LAHIRPENGAJU" class="col-sm-3 control-label"> TMP LAHIR</label>
+                    <div class="col-sm-9">
+                        <input type="text"  placeholder="TMPT LAHIR" class="form-control" name= "TMP_LAHIRPENGAJU">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="TGL_LAHIRPENGAJU" class="col-sm-3 control-label">Tanggal Lahir pengaju</label>
+                    <div class="col-sm-9">
+                        <input type="date"  class="form-control" name= "TGL_LAHIRPENGAJU">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="PEKERJAANPENGAJU" class="col-sm-3 control-label"> PEKERJAAN PENGAJU</label>
+                    <div class="col-sm-9">
+                        <input type="text"  placeholder="PEKERJAAN PENGAJU" class="form-control" name= "PEKERJAANPENGAJU">
                     </div>
                 </div>
 
+                <div class="form-group">
+                    <label for="ALAMATPENGAJU" class="col-sm-3 control-label"> ALAMAT PENGAJU</label>
+                    <div class="col-sm-9">
+                        <input type="text"  placeholder="ALAMAT PENGAJU" class="form-control" name= "ALAMATPENGAJU">
+                    </div>
+                </div>
+              
+                <div class="form-group">
+                    <label for="TUJUAN" class="col-sm-3 control-label"> TUJUAN</label>
+                    <div class="col-sm-9">
+                        <input type="text" method= "get" placeholder="TUJUAN" class="form-control" name= "TUJUANJU">
+                    </div>
+                </div>
 
+                
+               
+                <div class="form-group">
+                    <label class="control-label col-sm-3">Gender</label>
+                    <div class="col-sm-6">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="radio-inline">
+                                    <input type="radio" name="JKAJU"  value="Perempuaan">perempuan
+                                </label>
+                            </div>
+                            <div class="col-sm-4">
+                                <label class="radio-inline">
+                                    <input type="radio" name="JKAJU"  value="Laki-laki">laki-laki
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- /.form-group -->
+
+        
+      
+        
+        
                 <div class="form-group">
                     <div class="col-sm-9 col-sm-offset-3">
                         <span class="help-block">*Required fields</span>

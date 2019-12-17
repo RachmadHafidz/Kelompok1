@@ -113,7 +113,7 @@ ul.dropdown-lr {
           <a href="profillogin.php">Profil Desa</a>
           <a href="visimisilogin.php">Visi & Misi</a>
           <a href="mottologin.php">Motto</a>
-          <a href="http://localhost/Kelompok1/S.I.D/crud/index1.php">Perangkat Desa</a>
+          <a href="http://localhost/Kelompok1/S.I.D/crud/index2.php">Perangkat Desa</a>
           
         </div>
       </div> 
@@ -178,19 +178,27 @@ ul.dropdown-lr {
   </div>
     
   
-  <?php 
-include 'koneksi.php';
- 
-// mengaktifkan session
-
- 
-// cek apakah user telah login, jika belum login maka di alihkan ke halaman login
-
- 
-// menampilkan pesan selamat datang
-echo "Hai, selamat datang ". $_SESSION['NIK_PENDUDUK'];
- 
-?>
+  <div class="dropdown">
+        <button class="dropbtn"><a href="#"><?php 
+      echo "Hai, selamat datang ". $_SESSION['nama'];
+    ?></a>
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+        <?php
+      if($_SESSION['levelad'] == "Super Admin"){
+        echo "<a href='homeadmin/index.php'>Halaman Admin</a>";
+        }else if($_SESSION['levelad'] == "Admin"){
+          echo "<a href='homeadmin/index.php'>Halaman Admin</a>";
+        }else if($_SESSION['levelad'] == "Perangkat Desa"){
+          echo "<a href='homeadmin/index.php'>Halaman Admin</a>";
+        }else if($_SESSION['levelad'] == "Warga"){
+          echo "<a href='http://localhost/Kelompok1/S.I.D/tampilanprofil.php'>Profil</a>";
+        }
+        ?>
+          <a href="logout.php" onclick="return confirm('Apakah Anda Yakin Ingin Keluar Dari Website?')">Logout</a>
+        </div>
+  </div>
    
 </nav>
 <!--Carousel Wrapper-->
