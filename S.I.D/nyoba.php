@@ -16,6 +16,8 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
+
+
     <style>
         .dropbtn 
         {
@@ -100,13 +102,14 @@ ul.dropdown-lr {
 	<div class="container-float">
 		
       
-      <nav class="navbar navbar-dark bg-dark justify-content-between"> <p><a><font class="navbar-brand" color="white">Sistem Informasi Desa Sabrang</font></a></p>
+      <nav class="navbar sticky-top navbar-dark bg-dark justify-content-between"> <p><a><font class="navbar-brand" color="white">Sistem Informasi Desa Sabrang</font></a></p>
         <p><font color="white ">Jl. watu ulo no 1, Desa Sabrang, Kec. Ambulu, Kab. Jember , Kode Pos 68172</font></p>
         
         
       </nav>  
 		
   </div>
+
 
   <nav class="navbar navbar-dark bg-dark justify-content-between"> 
       <div class="topnav" id="myTopnav">
@@ -154,6 +157,18 @@ ul.dropdown-lr {
     
    
 </nav>
+<div class="onoffswitch3">
+    <input type="checkbox" name="onoffswitch3" class="onoffswitch3-checkbox" id="myonoffswitch3" checked>
+    <label class="onoffswitch3-label" for="myonoffswitch3">
+        <span class="onoffswitch3-inner">
+            <span class="onoffswitch3-active">
+                <marquee class="scroll-text">Selamat Kepada Zubaeri Lutfi Telah Menjadi Kepala Desa Sabrang  <span class="glyphicon glyphicon-forward"></span>- Objek Wisata Sabrang Diminati Oleh Seluruh Warga Jember <span class="glyphicon glyphicon-forward"></span>  </marquee>
+                <span class="onoffswitch3-switch">BERITA TERKINI <span class="glyphicon glyphicon-remove"></span></span>
+            </span>
+            <span class="onoffswitch3-inactive"><span class="onoffswitch3-switch">BERITA TERKINI</span></span>
+        </span>
+    </label>
+</div>
 <!--Carousel Wrapper-->
 <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
   <!--Indicators-->
@@ -261,7 +276,7 @@ ul.dropdown-lr {
                     </div>
            
                     
-                      <?php $data = tampilArtikel(); foreach($data as $row): ?>
+                      <?php $data = tampilArtikelLimit(); foreach($data as $row): ?>
 			                  <div class="well">
       <div class ="card-body">
       <a href="artikel/detailwarga.php?id=<?= $row['id'] ?>">
@@ -269,6 +284,18 @@ ul.dropdown-lr {
       <h5 class="card-title"><?= $row['judul'] ?></h5></a>
       <small><p><?= $row['tanggal'] ?></p></small>
 				</div>
+       
+				<?php
+        
+      $long_string = $row['isi'] ;
+     
+       $limited_string = limit_words($long_string, 5);
+      echo $limited_string;
+
+      ?>
+     
+     
+     <a href="artikel/detailwarga.php?id=<?= $row['id'] ?>">Lanjut Baca </a>
 
 				<div class ="card-footer">
 				<div class="pull-right"><?= jumlahKomentar($row['id']) ?> Komentar</div>
@@ -276,8 +303,12 @@ ul.dropdown-lr {
        
 
 			</div>
+      
 			
 		<?php endforeach ?>
+   
+
+
                     </div>
                    
                   </div>

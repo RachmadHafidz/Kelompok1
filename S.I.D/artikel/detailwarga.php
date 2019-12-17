@@ -20,6 +20,7 @@ $rowKomentar = tampilKomentar($_GET['id']);
                     <div class="card-header">
                       <h4 class="text-mono text-center"><?= $rowArtikel['judul'] ?></h4>
                     </div>
+				
                     <div class="card-body">
                     	<?php echo "<td><img src='images/".$rowArtikel['foto']."' width='150' height='150'></td>"?>  
 					       
@@ -55,7 +56,7 @@ $rowKomentar = tampilKomentar($_GET['id']);
 			if (isset($_POST['btnkomen'])) {
 				postKomentar($_POST, $_GET['id']);
 
-				echo "<meta http-equiv='refresh' content='1.5;url=detail.php?id=".$rowArtikel['id']."'>";
+				echo "<meta http-equiv='refresh' content='1.5;url=detailwarga.php?id=".$rowArtikel['id']."'>";
 			}
 		?>
 		<!-- <div class="alert alert-success">asdasd</div> -->

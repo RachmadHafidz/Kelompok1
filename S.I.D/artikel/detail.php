@@ -21,9 +21,7 @@ $rowKomentar = tampilKomentar($_GET['id']);
                       <h4 class="text-mono text-center"><?= $rowArtikel['judul'] ?></h4>
                     </div>
 
-					<div class="card-header">
-					  <h4 class="text-mono text-center"><?= $rowArtikel['kategori'] ?></h4>
-                    </div>
+					
 					
                     <div class="card-body">
                     	<?php echo "<img src='images/".$rowArtikel['foto']."' width='150' height='150'>"?>  

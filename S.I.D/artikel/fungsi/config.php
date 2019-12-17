@@ -4,7 +4,7 @@
 $host = "localhost";
 $user = "root";
 $pass = "";
-$db   = "artikel_komen";
+$db   = "db_desa3";
 
 $conn = mysqli_connect($host, $user, $pass, $db);
 
