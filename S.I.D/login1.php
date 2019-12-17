@@ -139,8 +139,8 @@
 					<div class="field-group">
 						<span class="fa fa-lock" aria-hidden="true"></span>
 						<div class="wthree-field-pass">
-							<input name="PASSPEN" id="pass" class="PASSWORD" type="password" placeholder="PASSWORD">
-							<span class="field-icon"><i id="icon" class="fa fa-eye-slash"></i></span>
+							<input name="PASSPEN" id="pass" class="PASSWORD" type="password" placeholder="Password">
+
 
 						</div>
 					</div>

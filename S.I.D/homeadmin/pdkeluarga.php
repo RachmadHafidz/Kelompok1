@@ -139,6 +139,8 @@ if(isset($_GET['aksi'])){
         <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
           <li> <a class="dropdown-item" href="profil.php">Profil</a></li>
 
+          <li> <a class="dropdown-item" href="http://localhost/Kelompok1/S.I.D/index1.php">Kembali Ke Website</a></li>
+          
           <div class="dropdown-divider"></div>
           <li> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a></li>
         </ul>

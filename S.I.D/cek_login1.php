@@ -27,16 +27,16 @@ if($cek > 0){
 		$_SESSION['nama'] = $login['NAMAPEN'];
 		$_SESSION['levelad'] = "Warga";
 
-		header("index1.php");
+		header("location:index1.php");
 
 	}else if($login['STATUS_AKUN']== "Nonaktif"){
-		header("location:index.php?tidak_valid");
+		header("location:login1.php?tidak_valid");
 	}else{
-		header("location:index.php?tidak_valid");
+		header("location:login1.php?tidak_valid");
 	}
 	// cek jika user login sebagai admin	
 }else{
-	header("location:index.php?login_error");
+	header("location:login1.php?login_error");
 }
  
 	
