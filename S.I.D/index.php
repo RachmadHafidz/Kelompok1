@@ -152,7 +152,7 @@ ul.dropdown-lr {
   
     <div class="dropdown-content">
       <a href="http://localhost/Kelompok1/S.I.D/index.php">Perangkat Desa</a>
-      <a href="http://localhost/Kelompok1/S.I.D/index1.php">Warga</a>
+      <a href="http://localhost/Kelompok1/S.I.D/login1.php">Warga</a>
   </div> 
     
    
