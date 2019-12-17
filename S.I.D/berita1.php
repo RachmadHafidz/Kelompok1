@@ -162,30 +162,7 @@ mysql_connect("localhost", "root", "");
 mysql_select_db("db_desa3");
 ?>
 
-	<?php
-	$sql = mysql_query("SELECT * FROM kategori ORDER BY nama_kategory ASC");
-	if(mysql_num_rows($sql) != 0){
-		echo '<ul>';
-		while($row = mysql_fetch_assoc($sql)){
-      
-      $kat_id = $row['id'];
-   
-			$sql2 = mysql_query("SELECT * FROM artikel WHERE id='$kat_id'");
- 
-			echo '<li>'.$row['nama_kategory'];
-				echo '<ul>';
-					while($row2 = mysql_fetch_assoc($sql2)){
-            ?>
-            <a href="artikel/detailwarga.php?id=<?= $row['id'] ?>">
-            <?php
-						echo '<li>'.$row2['judul'].'</li>';
-					}
-				echo '</ul>';
-			echo '</li>';
-		}
-		echo '</ul>';
-	}
-	?>
+	
  
           
                       </blockquote>
