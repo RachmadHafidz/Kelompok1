@@ -3,7 +3,7 @@
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    
 <title>S.I.D Sabrang</title>
-<?php include 'koneksi.php'; ?>
+<?php include 'artikel/fungsi/config.php'; ?>
 <link href="http://cdn.phpoll.com/css/animate.css" rel="stylesheet">
 
 
@@ -16,27 +16,22 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
+
+
     <style>
         .dropbtn 
         {
         background:none;
+        color: rgb(0, 0, 0);
         padding: 16px;
         font-size: 16px;
         border: none;
         cursor: pointer;
         }
-        .dropbtn a{
-          color: #f1f1f1;
-          text-decoration: none;
-        }
-        .dropdown :hover{
-          color:rgb(41, 41, 41);
-          text-decoration: none;
-        }
+    
       
         .dropdown 
         {
-        color:rgb(41, 41, 41);
         position: relative;
         display: inline-block;
         z-index:9999;
@@ -60,11 +55,7 @@
         display: block;
         }
 
-        .dropdown-content a:hover {
-          background-color: #f1f1f1;
-          color:rgb(41, 41, 41);
-          text-decoration: none;
-        }
+        .dropdown-content a:hover {background-color: #f1f1f1}
 
         .dropdown:hover .dropdown-content { display: block; }
 
@@ -111,42 +102,45 @@ ul.dropdown-lr {
 	<div class="container-float">
 		
       
-      <nav class="navbar navbar-dark bg-dark justify-content-between"> <p><a><font class="navbar-brand" color="white"></a>Sistem Informasi Desa Sabrang</font></a></p>
-        <p><font color="white">Jl. watu ulo no 1, Desa Sabrang, Kec. Ambulu, Kab. Jember , Kode Pos 68172</font></p>
-
+      <nav class="navbar sticky-top navbar-dark bg-dark justify-content-between"> <p><a><font class="navbar-brand" color="white">Sistem Informasi Desa Sabrang</font></a></p>
+        <p><font color="white ">Jl. watu ulo no 1, Desa Sabrang, Kec. Ambulu, Kab. Jember , Kode Pos 68172</font></p>
         
-       </div>
+        
+      </nav>  
+		
+  </div>
+
 
   <nav class="navbar navbar-dark bg-dark justify-content-between"> 
       <div class="topnav" id="myTopnav">
         <div id="navbar">
         <div class="dropdown">
-          <button class="dropbtn" > <a href="index.php">Beranda</a>
+          <button class="dropbtn" > <a href="http://localhost/Kelompok1/S.I.D/index.php">Beranda</a>
             <i class="fa fa-caret-down"></i>
           </button>
       </div>
       
       <div class="dropdown">
-        <button class="dropbtn" > <a href="profil.html">Profil Desa</a>
+        <button class="dropbtn" > <a href="http://localhost/Kelompok1/S.I.D/profil.html">Profil Desa</a>
           <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-          <a href="profil.html">Profil Desa</a>
-          <a href="visi&misi.html">Visi & Misi</a>
-          <a href="motto.html">Motto</a>
+          <a href="http://localhost/Kelompok1/S.I.D/profil.html">Profil Desa</a>
+          <a href="http://localhost/Kelompok1/S.I.D/visi&misi.html">Visi & Misi</a>
+          <a href="http://localhost/Kelompok1/S.I.D/motto.html">Motto</a>
           <a href="http://localhost/Kelompok1/S.I.D/crud/index1.php">Perangkat Desa</a>
           
         </div>
       </div> 
   
       <div class="dropdown">
-        <button class="dropbtn" > <a href="profil.html">Berita</a>
+        <button class="dropbtn" > <a href="berita.php">Berita</a>
           <i class="fa fa-caret-down"></i>
         </button>
     </div>
   
     <div class="dropdown">
-      <button class="dropbtn" > <a href="petunjuk.html">Petunjuk</a>
+      <button class="dropbtn" > <a href="http://localhost/Kelompok1/S.I.D/petunjuk.html">Petunjuk</a>
         <i class="fa fa-caret-down"></i>
       </button>
   </div>
@@ -157,12 +151,24 @@ ul.dropdown-lr {
     </button>
   
     <div class="dropdown-content">
-      <a href="login.php">Perangkat Desa</a>
-      <a href="login1.php">Warga</a>
+      <a href="http://localhost/Kelompok1/S.I.D/index.php">Perangkat Desa</a>
+      <a href="http://localhost/Kelompok1/S.I.D/index1.php">Warga</a>
   </div> 
     
    
 </nav>
+<div class="onoffswitch3">
+    <input type="checkbox" name="onoffswitch3" class="onoffswitch3-checkbox" id="myonoffswitch3" checked>
+    <label class="onoffswitch3-label" for="myonoffswitch3">
+        <span class="onoffswitch3-inner">
+            <span class="onoffswitch3-active">
+                <marquee class="scroll-text">Selamat Kepada Zubaeri Lutfi Telah Menjadi Kepala Desa Sabrang  <span class="glyphicon glyphicon-forward"></span>- Objek Wisata Sabrang Diminati Oleh Seluruh Warga Jember <span class="glyphicon glyphicon-forward"></span>  </marquee>
+                <span class="onoffswitch3-switch">BERITA TERKINI <span class="glyphicon glyphicon-remove"></span></span>
+            </span>
+            <span class="onoffswitch3-inactive"><span class="onoffswitch3-switch">BERITA TERKINI</span></span>
+        </span>
+    </label>
+</div>
 <!--Carousel Wrapper-->
 <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
   <!--Indicators-->
@@ -270,7 +276,7 @@ ul.dropdown-lr {
                     </div>
            
                     
-                      <?php $data = tampilArtikel(); foreach($data as $row): ?>
+                      <?php $data = tampilArtikelLimit(); foreach($data as $row): ?>
 			                  <div class="well">
       <div class ="card-body">
       <a href="artikel/detailwarga.php?id=<?= $row['id'] ?>">
@@ -278,6 +284,18 @@ ul.dropdown-lr {
       <h5 class="card-title"><?= $row['judul'] ?></h5></a>
       <small><p><?= $row['tanggal'] ?></p></small>
 				</div>
+       
+				<?php
+        
+      $long_string = $row['isi'] ;
+     
+       $limited_string = limit_words($long_string, 5);
+      echo $limited_string;
+
+      ?>
+     
+     
+     <a href="artikel/detailwarga.php?id=<?= $row['id'] ?>">Lanjut Baca </a>
 
 				<div class ="card-footer">
 				<div class="pull-right"><?= jumlahKomentar($row['id']) ?> Komentar</div>
@@ -285,8 +303,12 @@ ul.dropdown-lr {
        
 
 			</div>
+      
 			
 		<?php endforeach ?>
+   
+
+
                     </div>
                    
                   </div>
