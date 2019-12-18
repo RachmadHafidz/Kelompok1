@@ -112,7 +112,7 @@ $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
 			<td width="300"><br></td>	
 			<td width="245" align="right">
 				<div align="center" class="time"><font size="4">
-					Sabrang,<?php echo $data['TGLSURAT'];?>
+					Sabrang,<?php echo $data['TGLSURATTU'];?>
 								
 					<br>
 					KEPALA DESA SABRANG
