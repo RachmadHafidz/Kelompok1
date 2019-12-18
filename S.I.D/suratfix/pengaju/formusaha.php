@@ -87,7 +87,7 @@ $tgl=date('d-m-Y');
 ?>
 <?php
             include 'koneksi.php';
-            $kueri="SELECT max(NO_SKCK) as maxKode FROM sk_skck";
+            $kueri="SELECT max(NO_TUSAHA) as maxKode FROM sk_tempatusaha";
             $hasil= mysqli_query($koneksi, $kueri);
             $tabel= mysqli_fetch_array($hasil);
             $nosurat= $tabel['maxKode'];
@@ -95,13 +95,14 @@ $tgl=date('d-m-Y');
             $noUrut = (int) substr($nosurat, 2, 5);
             $noUrut++;
 
-            $char="SK";
+            $char="TU";
             $nosurat= $char . sprintf("%05s", $noUrut);
 
 include 'koneksi.php';
+session_start();
 if(isset($_POST['btn_simpan'])) {
-$NO_SKCK = $_POST['NO_SKCK'];
-$NIK_PENDUDUK = "1234";
+$NO_TUSAHA = $_POST['NO_TUSAHA'];
+$NIK_PENDUDUK = $_SESSION['NIK_PENDUDUK'];
 $NAMAAJU = $_POST['NAMAAJU'];
 $JKAJU = $_POST['JKAJU'];
 $AGAMAAJU = $_POST['AGAMAAJU'];
@@ -110,7 +111,7 @@ $TMPLHRAJU = $_POST['TMPLHRAJU'];
 $TGLHRAJU = $_POST['TGLHRAJU'];
 $STATUSAJU = $_POST['STATUSAJU'];
 $PEKERJAANAJU = $_POST['PEKERJAANAJU'];
-$PENDIDIKANAJU = $_POST['PENDIDIKANAJU'];
+$NAMAUSAHA = $_POST['NAMAUSAHA'];
 $ALAMATAJU = $_POST['ALAMATAJU'];
 $KWNAJU = $_POST['KWNAJU'];
 $TUJUANJU = $_POST['TUJUANJU'];
@@ -121,7 +122,7 @@ $now=date('Y-m-d');
 $then=date('Y-m-d', strtotime('+7 days', strtotime($now)));
 
     if(!empty($TUJUANJU) && !empty($NIKPENGAJU) && !empty($NAMAAJU) && !empty($JKAJU) && !empty($AGAMAAJU) && !empty($TMPLHRAJU) && !empty($TGLHRAJU) && !empty($STATUSAJU) && !empty($PEKERJAANAJU) && !empty($KWNAJU) && !empty($ALAMATAJU)){
-    $query = "INSERT INTO sk_skck VALUES('".$NO_SKCK."', '".$NIK_PENDUDUK."', '".$now."', '".$then."', '".$NAMAAJU."', '".$JKAJU."', '".$TMPLHRAJU."', '".$TGLHRAJU."', '".$NIKPENGAJU."',  '".$KWNAJU."',  '".$AGAMAAJU."', '".$STATUSAJU."', '".$PEKERJAANAJU."', '".$PENDIDIKANAJU."', '".$ALAMATAJU."', '".$TUJUANJU."', '".$KETERANGANAJU."', '".$JENIS_SURATAJU."')";
+    $query = "INSERT INTO sk_skck VALUES('".$NOTUSAHA."', '".$NIK_PENDUDUK."', '".$now."', '".$then."', '".$NAMAAJU."',  '".$TMPLHRAJU."', '".$TGLHRAJU."','".$JKAJU."', '".$STATUSAJU."', '".$PEKERJAANAJU."', '".$AGAMAAJU."',  '".$KWNAJU."',  '".$NIKPENGAJU."','".$ALAMATAJU."',  '".$NAMAUSAHA."', '".$TUJUANJU."', '".$KETERANGANAJU."', '".$JENIS_SURATAJU."')";
                 $sql = mysqli_query($koneksi, $query); // Eksekusi/ Jalankan query dari variabel $query
                   if($sql){ // Cek jika proses simpan ke database sukses atau tidak
                     header("location:reportskck.php?nosur=$NO_SKCK");
@@ -144,7 +145,7 @@ $then=date('Y-m-d', strtotime('+7 days', strtotime($now)));
             <form class="form-horizontal" role="form" method="post" action="">
             
            
-                <center><h2>Surat SKCK</h2></center>
+                <center><h2>Surat Keterangan Tempat Usaha</h2></center>
               
                 <div class="form-group">
                     <label for="TANGGAL_SURAT" class="col-sm-3 control-label">Tanggal surat</label>
@@ -156,7 +157,7 @@ $then=date('Y-m-d', strtotime('+7 days', strtotime($now)));
                 <div class="form-group">
                     <label for="NO_SURATDOM" class="col-sm-3 control-label"> no surat</label>
                     <div class="col-sm-9">
-                        <input type="text" readonly placeholder="No Surat" class="form-control" name= "NO_SKCK" value="<?php echo $nosurat; ?>">
+                        <input type="text" readonly placeholder="No Surat" class="form-control" name= "NO_TUSAHA" value="<?php echo $nosurat; ?>">
                     </div>
                 </div>
 
@@ -229,21 +230,9 @@ $then=date('Y-m-d', strtotime('+7 days', strtotime($now)));
                 </div>
 
                 <div class="form-group">
-                    <label for="PENDIDIKANAJU" class="col-sm-3 control-label">Pekerjaan </label>
+                <label for="PEKERJAANAJU" class="col-sm-3 control-label">Nama Usaha </label>
                     <div class="col-sm-9">
-                        <select type="text" placeholder="Pekerjaan" class="form-control" name= "PENDIDIKANAJU">
-                            <option>-</option>
-                            <option>Tidak/Belum Sekolah</option>
-                            <option>Belum Tamat SD/Sederajat</option>
-                            <option>Tamat SD/Sederajat</option>
-                            <option>SLTP/Sederajat</option> 
-                            <option>SLTA/Sederajat</option>
-                            <option>Diploma I/II</option> 
-                            <option>Akademi/Diploma III/S. Muda</option>
-                            <option>Diploma IV/Strata I</option>
-                            <option>Strata II</option>
-                            <option>Strata III</option> 
-                            </select>
+                        <input type="text" placeholder="Nama Usaha" class="form-control" name= "NAMAUSAHA">
                     </div>
                 </div>
 

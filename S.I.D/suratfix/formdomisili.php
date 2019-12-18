@@ -188,6 +188,8 @@ $data =  mysqli_fetch_array ($nilai) ;
             <form class="form-horizontal" role="form" method= "post" action="simpandomisili.php">
                 
             <?php
+            $tgl=date('d-m-Y');
+
             $kuery1 = "SELECT max(NO_DOMISILI) as maxKode from sk_domisili";
             $hasil1 = mysqli_query ($koneksi, $kuery1);
             $tabel1 = mysqli_fetch_array($hasil1);
@@ -204,14 +206,14 @@ $data =  mysqli_fetch_array ($nilai) ;
                 <div class="form-group">
                     <label for="TANGGAL_SURAT" class="col-sm-3 control-label">Tanggal surat</label>
                     <div class="col-sm-9">
-                        <input type="date"  class="form-control" name= "TGLSURATAJU">
+                        <input type="date(d-m-Y)" readonly class="form-control" name= "TGLSURATAJU" value="<?php echo $tgl;?>">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="NO_SURATDOM" class="col-sm-3 control-label"> no surat</label>
                     <div class="col-sm-9">
-                    <input type="text"  placeholder="No Surat Domisili" value = "<?php echo $no_surat1;?>" class="form-control" name= "NO_DOMISILI">
+                    <input type="text" readonly  placeholder="No Surat Domisili" value = "<?php echo $no_surat1;?>" class="form-control" name= "NO_DOMISILI">
                     </div>
                 </div>
 
@@ -288,63 +290,6 @@ $data =  mysqli_fetch_array ($nilai) ;
                         <input type="text" readonly value="<?php echo $data['ALAMAT']; ?>" placeholder="Alamat" class="form-control" name= "ALAMATPEN">
                     </div>
                 </div>
-       
-                <div class="form-group">
-                    <label for="NAMA_PENGAJU" class="col-sm-3 control-label"> nama pengaju</label>
-                    <div class="col-sm-9">
-                        <input type="text"  placeholder="NAMA PENGAJU" class="form-control" name= "NAMA_PENGAJU">
-                    </div>
-                </div>
-
-               
-                <div class="form-group">
-                    <label for="JENIS_KELAMINPEN" class="col-sm-3 control-label"> Tempat Lahir</label>
-                    <div class="col-sm-9">
-                        <input type="text"  placeholder="Tempat Lahir" class="form-control" name= "TMP_LAHIRPEN">
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="AGAMA_PENGAJU" class="col-sm-3 control-label">Agama pengaju </label>
-                    <div class="col-sm-9">
-                        <input type="text"  placeholder="Agama pengaju" class="form-control" name= "AGAMA_PENGAJU">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="NIK_PENGAJU" class="col-sm-3 control-label"> NIk</label>
-                    <div class="col-sm-9">
-                        <input type="number"  placeholder="NIK PENGAJU" class="form-control" name= "NIK_PENGAJU">
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="TMP_LAHIRPENGAJU" class="col-sm-3 control-label"> TMP LAHIR</label>
-                    <div class="col-sm-9">
-                        <input type="text"  placeholder="TMPT LAHIR" class="form-control" name= "TMP_LAHIRPENGAJU">
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="TGL_LAHIRPENGAJU" class="col-sm-3 control-label">Tanggal Lahir pengaju</label>
-                    <div class="col-sm-9">
-                        <input type="date"  class="form-control" name= "TGL_LAHIRPENGAJU">
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="PEKERJAANPENGAJU" class="col-sm-3 control-label"> PEKERJAAN PENGAJU</label>
-                    <div class="col-sm-9">
-                        <input type="text"  placeholder="PEKERJAAN PENGAJU" class="form-control" name= "PEKERJAANPENGAJU">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="ALAMATPENGAJU" class="col-sm-3 control-label"> ALAMAT PENGAJU</label>
-                    <div class="col-sm-9">
-                        <input type="text"  placeholder="ALAMAT PENGAJU" class="form-control" name= "ALAMATPENGAJU">
-                    </div>
-                </div>
               
                 <div class="form-group">
                     <label for="TUJUAN" class="col-sm-3 control-label"> TUJUAN</label>
@@ -352,26 +297,6 @@ $data =  mysqli_fetch_array ($nilai) ;
                         <input type="text" method= "get" placeholder="TUJUAN" class="form-control" name= "TUJUANAJU">
                     </div>
                 </div>
-
-                <div class="form-group">
-                    <label for="TUJUAN" class="col-sm-3 control-label"> JENIS SURAT</label>
-                    <div class="col-sm-9">
-                        <input type="text" method= "get" placeholder="JENIS SURAT" class="form-control" name= "JENIS_SURATAJU">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="TUJUAN" class="col-sm-3 control-label"> KET</label>
-                    <div class="col-sm-9">
-                        <input type="text" method= "get" placeholder="KETERANGAN" class="form-control" name= "KETERANGANAJU">
-                    </div>
-                </div>
-                
-               
-                
-        
-      
-        
         
                 <div class="form-group">
                     <div class="col-sm-9 col-sm-offset-3">
