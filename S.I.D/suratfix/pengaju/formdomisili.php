@@ -102,9 +102,10 @@ $tgl=date('d-m-Y');
             ?>
             <?php
 include 'koneksi.php';
+session_start();
 if(isset($_POST['btn_simpan'])) {
 $NO_DOMISILI = $_POST['NO_DOMISILI'];
-$NIK_PENDUDUK = "1234";
+$NIK_PENDUDUK = $_SESSION['NIK_PENDUDUK'];
 $NAMAAJU = $_POST['NAMAAJU'];
 $JKAJU = $_POST['JKAJU'];
 $AGAMAAJU = $_POST['AGAMAAJU'];

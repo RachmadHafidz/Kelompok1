@@ -186,7 +186,7 @@ $data =  mysqli_fetch_array ($nilai) ;
 <div class="container">
 
 
-            <form class="form-horizontal" role="form" method= "post" action="simpansuratusaha.php">
+            <form class="form-horizontal" role="form" method= "post" action="simpantempatusaha.php">
             
             <?php
             $kuery1 = "SELECT max(NO_TUSAHA) as maxKode from sk_tempatusaha";

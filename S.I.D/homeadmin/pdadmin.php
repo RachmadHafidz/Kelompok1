@@ -112,30 +112,7 @@ if(isset($_GET['aksi'])){
 
     <!-- Navbar -->
     <ul class="navbar-nav ml-auto ml-md-0">
-      <li class="nav-item dropdown no-arrow mx-1">
-        <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-bell fa-fw"></i>
-          <span class="badge badge-danger">9+</span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="alertsDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown no-arrow mx-1">
-        <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-envelope fa-fw"></i>
-          <span class="badge badge-danger"></span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="messagesDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
+     
       <li class="nav-item dropdown no-arrow active">
         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <i>Hello <?php echo $_SESSION['nama']; ?></i>
@@ -196,16 +173,23 @@ if(isset($_GET['aksi'])){
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
           <h6 class="dropdown-header">Surat:</h6>
-          <a class="dropdown-item" href="#">SK Domisili</a>
-          <a class="dropdown-item" href="#">SK Belum Nikah</a>
-          <a class="dropdown-item" href="#">SK SKCK</a>
-          <a class="dropdown-item" href="#">SK Tempat Usaha</a>
+          <a class="dropdown-item" href="dtdomisili.php">SK Domisili</a>
+          <a class="dropdown-item" href="dtbnikah.php">SK Belum Nikah</a>
+          <a class="dropdown-item" href="dtskck.php">SK SKCK</a>
+          <a class="dropdown-item" href="dtusaha.php">SK Tempat Usaha</a>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="charts.php">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Laporan</span></a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-envelope fa-fw"></i>
+          <span>Artikel</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+          <h6 class="dropdown-header">Artikel:</h6>
+          <a class="dropdown-item" href="artikel.php">Artikel</a>
+          <a class="dropdown-item" href="artikelin.php">Tambah Artikel</a>
+          <a class="dropdown-item" href="dtskck.php">Kategori</a>
+        </div>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="tables.php">
@@ -547,9 +531,9 @@ function tambah_data($koneksi){
                     echo "<td>".$row['LEVEL']."</td>";
                     echo "<td>".$row['STATUS_AKUN']."</td>";
                     echo "<td><img src='images/".$row['FOTO']."' width='50' height='50'></td>";
-                    echo "<td>"?><a class="fas fa-few fa-ban" href="pdadmin.php?aksi=status&ID_ADMIN=<?php echo $row['ID_ADMIN']; ?>"> </a>
-                              <a class="fas fa-few fa-edit" href="pdadmin.php?aksi=update&ID_ADMIN=<?php echo $row['ID_ADMIN']; ?>"></a> 
-                              <a class="fas fa-few fa-trash" href="pdadmin.php?aksi=delete&ID_ADMIN=<?php echo $row['ID_ADMIN']; ?>"></a></td>
+                    echo "<td>"?><a onclick="return confirm('Apakah Anda Ingin Mengubah Akses Akun ini?')" class="fas fa-few fa-ban" href="pdadmin.php?aksi=status&ID_ADMIN=<?php echo $row['ID_ADMIN']; ?>"> </a>
+                              <a onclick="return confirm('Apakah Anda Ingin Mengubah Data ini?')" class="fas fa-few fa-edit" href="pdadmin.php?aksi=update&ID_ADMIN=<?php echo $row['ID_ADMIN']; ?>"></a> 
+                              <a onclick="return confirm('Apakah Anda Ingin Menghapus Akun ini?')" class="fas fa-few fa-trash" href="pdadmin.php?aksi=delete&ID_ADMIN=<?php echo $row['ID_ADMIN']; ?>"></a></td>
                     </tr>
                     <?php   
                   }

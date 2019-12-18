@@ -136,7 +136,7 @@ ul.dropdown-lr {
            </div>
            <div class="btn-group dropright">
               <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Pelayanan Surat Keterangan Catatan Kepolisian
+              Pelayanan Surat Domisili
               </button>
               <div class="dropdown-menu">
               <a href="http://localhost/Kelompok1/S.I.D/suratfix/formskck.php">Pribadi</a>
@@ -145,7 +145,7 @@ ul.dropdown-lr {
            </div>
            <div class="btn-group dropright">
               <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Pelayanan Surat Belum Nikah
+              Pelayanan Surat Domisili
               </button>
               <div class="dropdown-menu">
               <a href="http://localhost/Kelompok1/S.I.D/suratfix/formbelumnikah.php">Pribadi</a>
@@ -154,7 +154,7 @@ ul.dropdown-lr {
            </div>
            <div class="btn-group dropright">
               <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Pelayanan Surat Tempat Usaha
+              Pelayanan Surat Domisili
               </button>
               <div class="dropdown-menu">
               <a href="http://localhost/Kelompok1/S.I.D/suratfix/formtempatusaha.php">Pribadi</a>
@@ -162,7 +162,7 @@ ul.dropdown-lr {
            </div>
            </div>
         </div>
-  </div> 
+  </div>
     
       <?php 
 
@@ -184,12 +184,13 @@ $data =  mysqli_fetch_array ($nilai) ;
 </nav>
 
 <div class="container">
+<?php
+$tgl=date('d-m-Y');
 
-            <form class="form-horizontal" role="form" method= "post" action="simpandomisili.php">
+?>
+            <form class="form-horizontal" role="form" method= "post" action="">
                 
             <?php
-            $tgl=date('d-m-Y');
-
             $kuery1 = "SELECT max(NO_DOMISILI) as maxKode from sk_domisili";
             $hasil1 = mysqli_query ($koneksi, $kuery1);
             $tabel1 = mysqli_fetch_array($hasil1);
@@ -200,102 +201,159 @@ $data =  mysqli_fetch_array ($nilai) ;
 
             $char = "D";
             $no_surat1 = $char . sprintf ("%05s", $nourut); ?>
+
+<?php
+include 'koneksi.php';
+if(isset($_POST['btn_simpan'])) {
+$NO = $_POST['NO_BNIKAH'];
+$NIK_PENDUDUK = "$nik ";
+$NAMAAJU = $_POST['NAMABN'];
+$JKAJU = $_POST['JKBN'];
+$AGAMAAJU = $_POST['AGAMABN'];
+$NIKPENGAJU = $_POST['NIKBN'];
+$TMPLHRAJU = $_POST['TMPLHRBN'];
+$TGLHRAJU = $_POST['TGLHRBN'];
+$STATUSAJU = $_POST['STATUSAJU'];
+$PEKERJAANAJU = $_POST['PEKERJAANBN'];
+$ALAMATAJU = $_POST['ALAMATBN'];
+$KWNAJU = $_POST['KWNBN'];
+$TUJUANJU = $_POST['TUJUANBN'];
+$KETERANGANAJU = "Sedang Proses";
+$JENIS_SURATAJU = "Surat Perwakilan";
+
+$now=date('Y-m-d');
+$then=date('Y-m-d', strtotime('+7 days', strtotime($now)));
+
+    if(!empty($TUJUANJU) && !empty($NIKPENGAJU) && !empty($NAMAAJU) && !empty($JKAJU) && !empty($AGAMAAJU) && !empty($TMPLHRAJU) && !empty($TGLHRAJU) && !empty($STATUSAJU) && !empty($PEKERJAANAJU) && !empty($KWNAJU) && !empty($ALAMATAJU)){
+    $query = "INSERT INTO sk_domisili VALUES('".$NO_DOMISILI."', '".$NIK_PENDUDUK."', '".$now."', '".$then."', '".$NAMAAJU."', '".$JKAJU."', '".$AGAMAAJU."', '".$NIKPENGAJU."', '".$TMPLHRAJU."', '".$TGLHRAJU."', '".$STATUSAJU."', '".$PEKERJAANAJU."', '".$KWNAJU."', '".$ALAMATAJU."', '".$TUJUANJU."', '".$KETERANGANAJU."', '".$JENIS_SURATAJU."')";
+                $sql = mysqli_query($koneksi, $query); // Eksekusi/ Jalankan query dari variabel $query
+                  if($sql){// Cek jika proses simpan ke database sukses atau tidak
+                    header("location:reportdomisili.php?nosur=$NO_DOMISILI");
+                  }else{
+                    header("location:formdomisili.php?gagal_simpan");
+                  }
+                }else{
+                    header("location:formdomisili.php?kurang_lengkap");
+                }
+} 
+
+        if(isset($_GET["gagal_simpan"])){
+            echo "<script>alert('Tidak Dapat Menyimpan Data!!');history.go(-1);</script>";
+        }else if(isset($_GET["kurang_lengkap"])){
+			echo "<script>alert('Silahkan Isi Data dengan Lengkap');history.go(-1);</script>";
+		}else if(isset($_GET["cancel"])){
+			echo "<script>alert('Cancel');history.go(-1);</script>";
+		}
+?>  
            
                 <center><h2>Surat Domisili</h2></center>
               
-                <div class="form-group">
-                    <label for="TANGGAL_SURAT" class="col-sm-3 control-label">Tanggal surat</label>
-                    <div class="col-sm-9">
-                        <input type="date(d-m-Y)" readonly class="form-control" name= "TGLSURATAJU" value="<?php echo $tgl;?>">
-                    </div>
+         
+           
+            
+          
+            <div class="form-group">
+                <label for="TANGGAL_SURAT" class="col-sm-3 control-label">Tanggal surat</label>
+                <div class="col-sm-9">
+                    <input type="date('d-m-Y')" readonly class="form-control" name="TGLSURATBN" value="<?php echo $tgl; ?>">
                 </div>
+            </div>
 
-                <div class="form-group">
-                    <label for="NO_SURATDOM" class="col-sm-3 control-label"> no surat</label>
-                    <div class="col-sm-9">
-                    <input type="text" readonly  placeholder="No Surat Domisili" value = "<?php echo $no_surat1;?>" class="form-control" name= "NO_DOMISILI">
-                    </div>
+            <div class="form-group">
+                <label for="NO_SURATDOM" class="col-sm-3 control-label"> no surat</label>
+                <div class="col-sm-9">
+                    <input type="text" readonly placeholder="No Surat Domisili" class="form-control" name= "NO_DOMISILI" value="<?php echo $no_surat1; ?>">
                 </div>
+            </div>
 
-                <div class="form-group">
-                    <label for="NO_SURATDOM" class="col-sm-3 control-label"> Data Diri</label>
-                </div>
+            <div class="form-group">
+                <label for="NO_SURATDOM" class="col-sm-3 control-label"> Data Diri</label>
+            </div>
 
-                <div class="form-group">
-                    <label for="NIK_PENDUDUK" class="col-sm-3 control-label"> NIk</label>
-                    <div class="col-sm-9">
-                        <input type="number" readonly value="<?php echo $data['NIK_PENDUDUK']; ?>" placeholder="NIK" class="form-control" name = "NIK_PENDUDUK">
-                    </div>
+            <div class="form-group">
+                <label for="NIKAJU" class="col-sm-3 control-label"> NIK</label>
+                <div class="col-sm-9">
+                    <input type="text" placeholder="NIK" class="form-control" name = "NIKAJU">
                 </div>
+            </div>
 
-                <div class="form-group">
-                    <label for="NAMAPENDUDUK" class="col-sm-3 control-label"> Nama</label>
-                    <div class="col-sm-9">  
-                        <input type="text" readonly value="<?php echo $data['NAMAPEN']; ?>"  placeholder="Nama" class="form-control" name= "NAMAPENDUDUK" >
-                    </div>
+            <div class="form-group">
+                <label for="NAMAPENDUDUK" class="col-sm-3 control-label"> Nama</label>
+                <div class="col-sm-9">  
+                    <input type="text"  placeholder="Nama" class="form-control" name= "NAMAAJU" >
                 </div>
+            </div>
 
-                <div class="form-group">
-                    <label for="TEMPATLHR" class="col-sm-3 control-label"> Tempat lahir</label>
-                    <div class="col-sm-9">  
-                        <input type="text" readonly value="<?php echo $data['TEMPATLHR']; ?>"  placeholder="Nama" class="form-control" name= "TEMPATLHR" >
-                    </div>
+            <div class="form-group">
+                <label for="TMPLHRAJU" class="col-sm-3 control-label"> Tempat lahir</label>
+                <div class="col-sm-9">  
+                    <input type="text" placeholder="Tempat Lahir" class="form-control" name= "TMPLHRAJU" >
                 </div>
-                
-                <div class="form-group">
-                    <label for="TGL_LAHIRPEN" class="col-sm-3 control-label"> Tanggal Lahir</label>
-                    <div class="col-sm-9">
-                        <input type="text" readonly value="<?php echo $data['TANGGALHR']; ?>" placeholder="Tanggal Lahir" class="form-control" name= "TGL_LAHIRPEN">
-                    </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="TGL_LAHIRAJU" class="col-sm-3 control-label"> Tanggal Lahir</label>
+                <div class="col-sm-9">
+                    <input type="date" placeholder="Tanggal Lahir" class="form-control" name= "TGLHRAJU">
                 </div>
+            </div>
 
-                <div class="form-group">
-                    <label for="JENIS_KELAMINPEN" class="col-sm-3 control-label"> Jenis Kelamin</label>
-                    <div class="col-sm-9">
-                        <input type="text" readonly value="<?php echo $data['JK_PEN']; ?>" placeholder="Jenis Kelamin" class="form-control" name= "">
-                    </div>
+            <div class="form-group">
+                <label for="JKAJU" class="col-sm-3 control-label"> Jenis Kelamin</label>
+                <div class="col-sm-9">
+                     <select type="text" name="JKAJU" class="form-control" placeholder="Jenis Kelamin">
+                        <option>-</option>
+                        <option>Laki-Laki</option>
+                        <option>Perempuan</option>
+                    </select>
                 </div>
+            </div>
 
-                <div class="form-group">
-                    <label for="STATUSPEN" class="col-sm-3 control-label"> Status Pernikahan</label>
-                    <div class="col-sm-9">
-                        <input type="text" readonly value="<?php echo $data['STATUSPEN']; ?>" placeholder="Status" class="form-control" name= "">
-                    </div>
+            <div class="form-group">
+                <label for="STATUSAJU" class="col-sm-3 control-label"> Status Pernikahan</label>
+                <div class="col-sm-9">
+                    <select type="text" placeholder="Status" class="form-control" name= "STATUSAJU">
+                        <option>-</option>
+                        <option>Kawin</option>
+                        <option>Belum Kawin</option>
+                    </select>
                 </div>
+            </div>
 
-                <div class="form-group">
-                    <label for="AGAMAPEN" class="col-sm-3 control-label">Agama </label>
-                    <div class="col-sm-9">
-                        <input type="text" readonly value="<?php echo $data['AGAMAPEN']; ?>" placeholder="Agama pengaju" class="form-control" name= "AGAMAPEN">
-                    </div>
+            <div class="form-group">
+                <label for="AGAMAAJU" class="col-sm-3 control-label">Agama </label>
+                <div class="col-sm-9">
+                    <input type="text" placeholder="Agama" class="form-control" name= "AGAMAAJU">
                 </div>
+            </div>
 
-                <div class="form-group">
-                    <label for="PEKERJAANPEN" class="col-sm-3 control-label">Pekerjaan </label>
-                    <div class="col-sm-9">
-                        <input type="text" readonly value="<?php echo $data['PEKERJAANPEN']; ?>" placeholder="Agama pengaju" class="form-control" name= "PEKERJAANPEN">
-                    </div>
+            <div class="form-group">
+                <label for="PEKERJAANAJU" class="col-sm-3 control-label">Pekerjaan </label>
+                <div class="col-sm-9">
+                    <input type="text" placeholder="Pekerjaan" class="form-control" name= "PEKERJAANAJU">
                 </div>
+            </div>
 
-                <div class="form-group">
-                    <label for="KEWARGANEGARAANPEN" class="col-sm-3 control-label">Kewarganegaraan </label>
-                    <div class="col-sm-9">
-                        <input type="text" readonly value="<?php echo $data['KWNPEN']; ?>" placeholder="Kewarganegaraan" class="form-control" name= "KEWARGANEGARAANPEN">
-                    </div>
+            <div class="form-group">
+                <label for="KEWARGANEGARAANAJU" class="col-sm-3 control-label">Kewarganegaraan </label>
+                <div class="col-sm-9">
+                    <input type="text" placeholder="Kewarganegaraan" class="form-control" name= "KWNAJU" value="WNI">
                 </div>
+            </div>
 
-                <div class="form-group">
-                    <label for="ALAMATPEN" class="col-sm-3 control-label">Alamat </label>
-                    <div class="col-sm-9">
-                        <input type="text" readonly value="<?php echo $data['ALAMAT']; ?>" placeholder="Alamat" class="form-control" name= "ALAMATPEN">
-                    </div>
+            <div class="form-group">
+                <label for="ALAMATAJU" class="col-sm-3 control-label">Alamat Lengkap</label>
+                <div class="col-sm-9">
+                    <input type="text" placeholder="Alamat Lengkap" class="form-control" name= "ALAMATAJU">
                 </div>
-                <div class="form-group">
-                    <label for="TUJUAN" class="col-sm-3 control-label"> TUJUAN</label>
-                    <div class="col-sm-9">
-                        <input type="text" method= "get" placeholder="TUJUAN" class="form-control" name= "TUJUANAJU">
-                    </div>
+            </div>
+            <div class="form-group">
+            <label for="TUJUANJU" class="col-sm-3 control-label">Tujuan </label>
+                <div class="col-sm-9">
+                <input type="text" placeholder="Persyaratan .... Contoh : Administrasi RSU Jember " class="form-control" name= "TUJUANJU">
                 </div>
+            </div>
+        
                 <div class="form-group">
                     <div class="col-sm-9 col-sm-offset-3">
                         <span class="help-block">*Required fields</span>

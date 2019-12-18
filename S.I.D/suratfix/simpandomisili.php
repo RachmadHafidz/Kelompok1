@@ -6,10 +6,9 @@ include "koneksi.php";
 $NO_DOMISILI = $_POST['NO_DOMISILI'];
 $NIK_PENDUDUK = $_POST['NIK_PENDUDUK'];
 $TGLSURATJU = $_POST['TGLSURATAJU'];
-$KETERANGANAJU = $_POST['KETERANGANAJU'];
+$KETERANGANAJU = "Sedang Proses";
 $TUJUANAJU = $_POST['TUJUANAJU'];
-$JENIS_SURATAJU = $_POST['JENIS_SURATAJU'];
-
+$JENIS_SURATAJU = "Surat Pribadi";
 
 	
 // Rename nama fotonya dengan menambahkan tanggal dan jam upload
@@ -17,7 +16,7 @@ $JENIS_SURATAJU = $_POST['JENIS_SURATAJU'];
 // Proses upload
 
 	// Proses simpan ke Database
-	$query = "INSERT INTO sk_domisili VALUES('".$NO_DOMISILI."','".$NIK_PENDUDUK."', '".$TGLSURATJU."','".$TUJUANAJU."','".$KETERANGANAJU."','".$JENIS_SURATAJU."')";
+	$query = "INSERT INTO sk_domisili VALUES('".$NO_DOMISILI."','".$NIK_PENDUDUK."', '".$TGLSURATJU."','".$TUJUANAJU."','".$KETERANGANAJU."','".$JENIS_SURATAJU."','".$ARSIP."')";
 	
 	$sql = mysqli_query($koneksi, $query); // Eksekusi/ Jalankan query dari variabel $query
 	

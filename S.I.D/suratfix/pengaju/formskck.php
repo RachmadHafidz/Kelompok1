@@ -99,9 +99,10 @@ $tgl=date('d-m-Y');
             $nosurat= $char . sprintf("%05s", $noUrut);
 
 include 'koneksi.php';
+session_start();
 if(isset($_POST['btn_simpan'])) {
 $NO_SKCK = $_POST['NO_SKCK'];
-$NIK_PENDUDUK = "1234";
+$NIK_PENDUDUK = $_SESSION['NIK_PENDUDUK'];
 $NAMAAJU = $_POST['NAMAAJU'];
 $JKAJU = $_POST['JKAJU'];
 $AGAMAAJU = $_POST['AGAMAAJU'];

@@ -87,7 +87,7 @@ $tgl=date('d-m-Y');
 ?>
 <?php
             include 'koneksi.php';
-              $kueri="SELECT max(NO_DOMISILI) as maxKode FROM sk_domisili";
+              $kueri="SELECT max(NO_BNIKAH) as maxKode FROM sk_belumnikah";
               $hasil= mysqli_query($koneksi, $kueri);
               $tabel= mysqli_fetch_array($hasil);
               $nosurat= $tabel['maxKode'];
@@ -95,16 +95,17 @@ $tgl=date('d-m-Y');
               $noUrut = (int) substr($nosurat, 2, 5);
               $noUrut++;
 
-              $char="SD";
+              $char="BN";
               $nosurat= $char . sprintf("%05s", $noUrut);
                                 
 
             ?>
             <?php
 include 'koneksi.php';
+session_start();
 if(isset($_POST['btn_simpan'])) {
-$NO_DOMISILI = $_POST['NO_DOMISILI'];
-$NIK_PENDUDUK = "1234";
+$NO_BNIKAH = $_POST['NO_BNIKAH'];
+$NIK_PENDUDUK = $_SESSION['NIK_PENDUDUK'];
 $NAMAAJU = $_POST['NAMAAJU'];
 $JKAJU = $_POST['JKAJU'];
 $AGAMAAJU = $_POST['AGAMAAJU'];
@@ -123,10 +124,10 @@ $now=date('Y-m-d');
 $then=date('Y-m-d', strtotime('+7 days', strtotime($now)));
 
     if(!empty($TUJUANJU) && !empty($NIKPENGAJU) && !empty($NAMAAJU) && !empty($JKAJU) && !empty($AGAMAAJU) && !empty($TMPLHRAJU) && !empty($TGLHRAJU) && !empty($STATUSAJU) && !empty($PEKERJAANAJU) && !empty($KWNAJU) && !empty($ALAMATAJU)){
-    $query = "INSERT INTO sk_domisili VALUES('".$NO_DOMISILI."', '".$NIK_PENDUDUK."', '".$now."', '".$then."', '".$NAMAAJU."', '".$JKAJU."', '".$AGAMAAJU."', '".$NIKPENGAJU."', '".$TMPLHRAJU."', '".$TGLHRAJU."', '".$STATUSAJU."', '".$PEKERJAANAJU."', '".$KWNAJU."', '".$ALAMATAJU."', '".$TUJUANJU."', '".$KETERANGANAJU."', '".$JENIS_SURATAJU."')";
+    $query = "INSERT INTO sk_belumnikah VALUES('".$NO_BNIKAH."', '".$NIK_PENDUDUK."', '".$now."', '".$then."', '".$NAMAAJU."', '".$NIKPENGAJU."', '".$JKAJU."', '".$TMPLHRAJU."', '".$TGLHRAJU."','".$AGAMAJU."',  '".$PEKERJAANAJU."', '".$KWNAJU."', '".$ALAMATAJU."', '".$TUJUANJU."', '".$KETERANGANAJU."', '".$JENIS_SURATAJU."')";
                 $sql = mysqli_query($koneksi, $query); // Eksekusi/ Jalankan query dari variabel $query
                   if($sql){// Cek jika proses simpan ke database sukses atau tidak
-                    header("location:reportdomisili.php?nosur=$NO_DOMISILI");
+                    header("location:reportdomisili.php?nosur=$NO_BNIKAH");
                   }else{
                     header("location:formdomisili.php?gagal_simpan");
                   }
@@ -148,7 +149,7 @@ $then=date('Y-m-d', strtotime('+7 days', strtotime($now)));
             <form class="form-horizontal" role="form" method="post" action="">
             
            
-                <center><h2>Surat Domisili</h2></center>
+                <center><h2>Surat Keterangan Belum Menikah</h2></center>
               
                 <div class="form-group">
                     <label for="TANGGAL_SURAT" class="col-sm-3 control-label">Tanggal surat</label>
@@ -160,7 +161,7 @@ $then=date('Y-m-d', strtotime('+7 days', strtotime($now)));
                 <div class="form-group">
                     <label for="NO_SURATDOM" class="col-sm-3 control-label"> no surat</label>
                     <div class="col-sm-9">
-                        <input type="text" readonly placeholder="No Surat Domisili" class="form-control" name= "NO_DOMISILI" value="<?php echo $nosurat; ?>">
+                        <input type="text" readonly placeholder="No Surat " class="form-control" name= "NO_BNIKAH" value="<?php echo $nosurat; ?>">
                     </div>
                 </div>
 
