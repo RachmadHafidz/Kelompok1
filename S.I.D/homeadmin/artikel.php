@@ -1,4 +1,4 @@
-<?php include 'fungsi/config.php'; ?>
+<?php include 'fungsi\config.php'; ?>
 <?php
 session_start();
 ?>
@@ -158,7 +158,7 @@ session_start();
 
           <div class="card-body">
           <hr>
-          <td></td><a href="artikelin.php"><button class="btn btn-primary">Tambah Artikel</button>
+          <td></td><a href="artikelin.php"> </a><button class="btn btn-primary">Tambah Artikel</button>
             <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>

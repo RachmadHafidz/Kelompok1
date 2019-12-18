@@ -291,7 +291,7 @@ ul.dropdown-lr {
 			                  <div class="well">
       <div class ="card-body">
       <a href="artikel/detailwarga.php?id=<?= $row['id'] ?>">
-      <img style="float:left;"  class="img mr-3"	<?php echo "<img src='artikel/images/".$row['foto']."' width='70' height='70'>"?> 
+      <img style="float:left;"  class="img mr-3"	<?php echo "<img src='homeadmin/images/".$row['foto']."' width='70' height='70'>"?> 
       <h5 class="card-title"><?= $row['judul'] ?></h5></a>
       <small><p><?= $row['tanggal'] ?></p></small>
 				</div>
