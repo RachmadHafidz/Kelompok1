@@ -34,8 +34,9 @@ function postKomentar($data, $idArtikel)
 
 	$nama  = $data['nama'];
 	$isi   = $data['isi'];
+	
 
-	$query = "INSERT INTO komentar VALUES ('', '$idArtikel', '$nama', '$isi') ";
+	$query = "INSERT INTO komentar(id,artikel,nama,isi) VALUES ('', '$idArtikel', '$nama', '$isi') ";
 
 	if (mysqli_query($conn, $query)) {
 		echo "<div class='alert alert-success'>Sukses</div>";
