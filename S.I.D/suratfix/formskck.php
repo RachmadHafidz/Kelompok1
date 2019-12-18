@@ -300,7 +300,7 @@ $data =  mysqli_fetch_array ($nilai) ;
                 <div class="form-group">
                     <label for="ALAMATPENGAJU" class="col-sm-3 control-label"> JENIS SURAT</label>
                     <div class="col-sm-9">
-                    <input type="text" placeholder="JENISURAT_AJU" class="form-control" value = "SKCK" name= "JENISSURAT_AJU" readonly>
+                    <input type="text" placeholder="JENISURAT_AJU" class="form-control" value = "SKCK" name= "JENISURAT_AJU" readonly>
                     </div>
                 </div>
 
