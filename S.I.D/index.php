@@ -255,7 +255,7 @@ ul.dropdown-lr {
                 <blockquote class="card-blockquote">
                         <p><a href="http://localhost/Kelompok1/S.I.D/crud/index1.php">1. Daftar Perangkat Desa</a></p>
                         <p><a href="http://localhost/Kelompok1/S.I.D/crudwarga/index1.php">2. Daftar Warga </a></p>
-                        <p><a href="http://localhost/Kelompok1/S.I.D/crudwarga/index1.php">3. laporan Warga </a></p>
+                  
                        
                       </blockquote>
               </div>

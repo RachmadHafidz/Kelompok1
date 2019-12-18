@@ -267,7 +267,12 @@ $data =  mysqli_fetch_array ($nilai) ;
                         <input type="text" readonly value="<?php echo $data['ALAMAT']; ?>" placeholder="Alamat" class="form-control" name= "ALAMATPEN">
                     </div>
                 </div>
-
+                <a href="http://localhost/Kelompok1/S.I.D/suratfix/historysurat.php"><input class="btn btn-primary btn-block" type="button" value="History Surat"></a>
+	
+	<hr>
+	<input type="submit" value="Ubah">
+	<a href="index.php"><input type="button" value="Batal"></a>
+	</form>
                 
        
                 
