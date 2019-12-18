@@ -292,16 +292,16 @@ $data =  mysqli_fetch_array ($nilai) ;
                 </div>
        
                 <div class="form-group">
-                    <label for="TUJUAN" class="col-sm-3 control-label"> KET</label>
+                    <label for="TUJUAN" class="col-sm-3 control-label"> Nama Usaha</label>
                     <div class="col-sm-9">
-                        <input type="text" method= "get" placeholder="KETERANGAN" class="form-control" name= "KETERANGAN">
+                        <input type="text" method= "get" placeholder="Nama Usaha" class="form-control" name= "NAMAUSAHA">
                     </div>
                 </div>
               
                 <div class="form-group">
-                    <label for="TUJUAN" class="col-sm-3 control-label"> TUJUAN</label>
+                    <label for="TUJUAN" class="col-sm-3 control-label"> Tujuan</label>
                     <div class="col-sm-9">
-                        <input type="text" method= "get" placeholder="TUJUAN" class="form-control" name= "TUJUANTU">
+                        <input type="text" method= "get" placeholder="Tujuan" class="form-control" name= "TUJUANTU">
                     </div>
                 </div>
 

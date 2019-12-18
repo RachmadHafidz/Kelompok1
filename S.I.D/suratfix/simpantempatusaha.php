@@ -8,7 +8,7 @@ $NIK_PENDUDUK = $_POST['NIK_PENDUDUK'];
 $TGLSURAT = $_POST['TGLSURAT'];
 $KETERANGAN = "Sedang Proses";
 $TUJUANTU = $_POST['TUJUANTU'];
-
+$NAMAUSAHA = $_POST['NAMAUSAHA'];
 $JNSURAT = "Surat pribadi";
 
 
@@ -22,7 +22,7 @@ $JNSURAT = "Surat pribadi";
 
 	// Proses simpan ke Database
 
-	$query = "INSERT INTO sk_tempatusaha (NO_TUSAHA, TGLSURATTU, NIK_PENDUDUK,  TUJUANTU, KETERANGAN, JNSURAT)VALUES('".$NO_TUSAHA."', '".$TGLSURAT."','".$NIK_PENDUDUK."','".$TUJUANTU."','".$KETERANGAN."','".$JNSURAT."')";
+	$query = "INSERT INTO sk_tempatusaha (NO_TUSAHA, TGLSURATTU, NIK_PENDUDUK, NAMAUSAHA, TUJUANTU, KETERANGAN, JNSURAT)VALUES('".$NO_TUSAHA."', '".$TGLSURAT."','".$NIK_PENDUDUK."','".$NAMAUSAHA."','".$TUJUANTU."','".$KETERANGAN."','".$JNSURAT."')";
 
 	
 	$sql = mysqli_query($koneksi, $query); // Eksekusi/ Jalankan query dari variabel $query
