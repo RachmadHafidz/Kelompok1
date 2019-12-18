@@ -196,7 +196,7 @@ $data =  mysqli_fetch_array ($nilai) ;
             $nourut = (int) substr ($no_surat1, 2, 5);
             $nourut++;
 
-            $char = "D";
+            $char = "SK";
             $no_surat1 = $char . sprintf ("%05s", $nourut); ?>
            
                 <center><h2>Surat Keterangan Catatan Kepolisian (SKCK) </h2></center>
