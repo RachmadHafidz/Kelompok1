@@ -143,30 +143,7 @@ if(isset($_GET['aksi'])){
 
     <!-- Navbar -->
     <ul class="navbar-nav ml-auto ml-md-0">
-      <li class="nav-item dropdown no-arrow mx-1">
-        <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-bell fa-fw"></i>
-          <span class="badge badge-danger">9+</span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="alertsDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown no-arrow mx-1">
-        <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-envelope fa-fw"></i>
-          <span class="badge badge-danger"></span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="messagesDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
+      
       <li class="nav-item dropdown no-arrow active">
         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <i>Hello <?php session_start(); echo $_SESSION['nama']; ?></i>
@@ -227,16 +204,23 @@ if(isset($_GET['aksi'])){
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
           <h6 class="dropdown-header">Surat:</h6>
-          <a class="dropdown-item" href="#">SK Domisili</a>
-          <a class="dropdown-item" href="#">SK Belum Nikah</a>
-          <a class="dropdown-item" href="#">SK SKCK</a>
-          <a class="dropdown-item" href="#">SK Tempat Usaha</a>
+          <a class="dropdown-item" href="dtdomisili.php">SK Domisili</a>
+          <a class="dropdown-item" href="dtbnikah.php">SK Belum Nikah</a>
+          <a class="dropdown-item" href="dtskck.php">SK SKCK</a>
+          <a class="dropdown-item" href="dtusaha.php">SK Tempat Usaha</a>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="charts.php">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Laporan</span></a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-envelope fa-fw"></i>
+          <span>Artikel</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+          <h6 class="dropdown-header">Artikel:</h6>
+          <a class="dropdown-item" href="artikel.php">Artikel</a>
+          <a class="dropdown-item" href="artikelin.php">Tambah Artikel</a>
+          <a class="dropdown-item" href="dtskck.php">Kategori</a>
+        </div>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="tables.php">

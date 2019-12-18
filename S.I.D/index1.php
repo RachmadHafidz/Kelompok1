@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <?php 
 session_start();
-if(!isset($_SESSION['NAMAPEN'])){
-header('Location:index1.php');
-}
 ?>
 <html>
 <head>
@@ -137,7 +134,7 @@ header('Location:index1.php');
               </button>
               <div class="dropdown-menu">
               <a href="http://localhost/Kelompok1/S.I.D/suratfix/formdomisili.php">Pribadi</a>
-              <a href="#">Pengaju</a>
+              <a href="http://localhost/Kelompok1/S.I.D/suratfix/pengaju/formdomisili.php">Pengaju</a>
            </div>
            </div>
            <div class="btn-group dropright">
@@ -146,7 +143,7 @@ header('Location:index1.php');
               </button>
               <div class="dropdown-menu">
               <a href="http://localhost/Kelompok1/S.I.D/suratfix/formskck.php">Pribadi</a>
-              <a href="#">Pengaju</a>
+              <a href="http://localhost/Kelompok1/S.I.D/suratfix/pengaju/formskck.php">Pengaju</a>
            </div>
            </div>
            <div class="btn-group dropright">
@@ -155,7 +152,7 @@ header('Location:index1.php');
               </button>
               <div class="dropdown-menu">
               <a href="http://localhost/Kelompok1/S.I.D/suratfix/formbelumnikah.php">Pribadi</a>
-              <a href="#">Pengaju</a>
+              <a href="http://localhost/Kelompok1/S.I.D/suratfix/pengaju/formbelumnikah.php">Pengaju</a>
            </div>
            </div>
            <div class="btn-group dropright">
@@ -164,7 +161,7 @@ header('Location:index1.php');
               </button>
               <div class="dropdown-menu">
               <a href="http://localhost/Kelompok1/S.I.D/suratfix/formtempatusaha.php">Pribadi</a>
-              <a href="#">Pengaju</a>
+              <a href="http://localhost/Kelompok1/S.I.D/suratfix/pengaju/formtempatusaha.php">Pengaju</a>
            </div>
            </div>
         </div>
