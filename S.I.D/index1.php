@@ -185,6 +185,7 @@ session_start();
         }else if($_SESSION['levelad'] == "Warga"){
           echo "<a href='http://localhost/Kelompok1/S.I.D/tampilanprofil.php'>Profil</a>";
         }
+        
         ?>
           <a href="logout.php" onclick="return confirm('Apakah Anda Yakin Ingin Keluar Dari Website?')">Logout</a>
         </div>
@@ -281,8 +282,7 @@ session_start();
                 <blockquote class="card-blockquote">
                         <p><a href="http://localhost/Kelompok1/S.I.D/crud/index2.php">1. Daftar Perangkat Desa</a></p>
                         <p><a href="http://localhost/Kelompok1/S.I.D/crudwarga/index2.php">2. Daftar Warga </a></p>
-                        <p><a href="http://localhost/Kelompok1/S.I.D/crudwarga/index2.php">3. laporan Warga </a></p>
-                       
+                      
                       </blockquote>
               </div>
             </div>

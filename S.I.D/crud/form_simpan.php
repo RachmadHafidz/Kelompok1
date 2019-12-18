@@ -21,7 +21,7 @@
     </tr>
     <tr>
 		<td>Jabatan</td>
-		<td><input type="text" name="jabatan"></td>
+		<td><input type="date" name="jabatan"></td>
 	</tr>
 	<tr>
 		<td>Foto</td>

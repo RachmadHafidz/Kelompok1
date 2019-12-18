@@ -69,7 +69,7 @@ $rowKomentar = tampilKomentar($_GET['id']);
 			</div>
 		<?php endforeach ?>
 		<div class = "container">	
-		<a href="http://localhost/Kelompok1/S.I.D/nyoba2.php">
+		<a href="http://localhost/Kelompok1/S.I.D/index1.php">
 			<button class="btn btn-default">
 				Kembali
 			</button>
