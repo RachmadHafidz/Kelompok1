@@ -136,7 +136,7 @@ ul.dropdown-lr {
            </div>
            <div class="btn-group dropright">
               <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Pelayanan Surat Domisili
+              Pelayanan Surat Keterangan Catatan Kepolisian
               </button>
               <div class="dropdown-menu">
               <a href="http://localhost/Kelompok1/S.I.D/suratfix/formskck.php">Pribadi</a>
@@ -145,7 +145,7 @@ ul.dropdown-lr {
            </div>
            <div class="btn-group dropright">
               <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Pelayanan Surat Domisili
+              Pelayanan Surat Belum Nikah
               </button>
               <div class="dropdown-menu">
               <a href="http://localhost/Kelompok1/S.I.D/suratfix/formbelumnikah.php">Pribadi</a>
@@ -154,7 +154,7 @@ ul.dropdown-lr {
            </div>
            <div class="btn-group dropright">
               <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Pelayanan Surat Domisili
+              Pelayanan Surat Tempat Usaha
               </button>
               <div class="dropdown-menu">
               <a href="http://localhost/Kelompok1/S.I.D/suratfix/formtempatusaha.php">Pribadi</a>
@@ -162,7 +162,7 @@ ul.dropdown-lr {
            </div>
            </div>
         </div>
-  </div>
+  </div> 
     
       <?php 
 
@@ -290,14 +290,12 @@ $data =  mysqli_fetch_array ($nilai) ;
                         <input type="text" readonly value="<?php echo $data['ALAMAT']; ?>" placeholder="Alamat" class="form-control" name= "ALAMATPEN">
                     </div>
                 </div>
-              
                 <div class="form-group">
                     <label for="TUJUAN" class="col-sm-3 control-label"> TUJUAN</label>
                     <div class="col-sm-9">
                         <input type="text" method= "get" placeholder="TUJUAN" class="form-control" name= "TUJUANAJU">
                     </div>
                 </div>
-        
                 <div class="form-group">
                     <div class="col-sm-9 col-sm-offset-3">
                         <span class="help-block">*Required fields</span>

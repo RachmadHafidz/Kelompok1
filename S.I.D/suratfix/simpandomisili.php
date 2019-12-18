@@ -10,14 +10,13 @@ $KETERANGANAJU = "Sedang Proses";
 $TUJUANAJU = $_POST['TUJUANAJU'];
 $JENIS_SURATAJU = "Surat Pribadi";
 
-
 	
 // Rename nama fotonya dengan menambahkan tanggal dan jam upload
 // Set path folder tempat menyimpan fotonya
 // Proses upload
 
 	// Proses simpan ke Database
-	$query = "INSERT INTO sk_domisili VALUES('".$NO_DOMISILI."','".$NIK_PENDUDUK."', '".$TGLSURATJU."','".$TUJUANAJU."','".$KETERANGANAJU."','".$JENIS_SURATAJU."')";
+	$query = "INSERT INTO sk_domisili VALUES('".$NO_DOMISILI."','".$NIK_PENDUDUK."', '".$TGLSURATJU."','".$TUJUANAJU."','".$KETERANGANAJU."','".$JENIS_SURATAJU."','".$ARSIP."')";
 	
 	$sql = mysqli_query($koneksi, $query); // Eksekusi/ Jalankan query dari variabel $query
 	

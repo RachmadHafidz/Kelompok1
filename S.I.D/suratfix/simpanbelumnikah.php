@@ -9,7 +9,7 @@ $TGLSURATBN = $_POST['TGLSURATBN'];
 $KETERANGANABN = $_POST['KETERANGANABN'];
 $TUJUANBN = $_POST['TUJUANBN'];
 $JNBN = $_POST['JSBN'];
-
+$ARSIP = $_POST['ARSIP'];
 
 
 	
@@ -18,7 +18,7 @@ $JNBN = $_POST['JSBN'];
 // Proses upload
 
 	// Proses simpan ke Database
-	$query = "INSERT INTO sk_belumnikah VALUES('".$NO_BNIKAH."','".$TGLSURATBN."','".$NIK_PENDUDUK."','".$TUJUANBN."','".$KETRANGANBN."','".$JSBN."')";
+	$query = "INSERT INTO sk_belumnikah VALUES('".$NO_BNIKAH."','".$TGLSURATBN."','".$NIK_PENDUDUK."','".$TUJUANBN."','".$KETRANGANBN."','".$JSBN."','".$ARSIP."')";
 	
 	$sql = mysqli_query($koneksi, $query); // Eksekusi/ Jalankan query dari variabel $query
 	

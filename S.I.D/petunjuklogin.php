@@ -126,7 +126,7 @@
           <a href="profillogin.php">Profil Desa</a>
           <a href="visimisilogin.php">Visi & Misi</a>
           <a href="mottologin.php">Motto</a>
-          <a href="http://localhost/Kelompok1/S.I.D/crud/index1.php">Perangkat Desa</a>
+          <a href="http://localhost/Kelompok1/S.I.D/crud/index2.php">Perangkat Desa</a>
           
         </div>
       </div> 
@@ -163,7 +163,7 @@
            </div>
            <div class="btn-group dropright">
               <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Pelayanan Surat Domisili
+              Pelayanan SKCK
               </button>
               <div class="dropdown-menu">
               <a href="http://localhost/Kelompok1/S.I.D/suratfix/formskck.php">Pribadi</a>
@@ -172,7 +172,7 @@
            </div>
            <div class="btn-group dropright">
               <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Pelayanan Surat Domisili
+              Pelayanan Surat Belum Nikah
               </button>
               <div class="dropdown-menu">
               <a href="http://localhost/Kelompok1/S.I.D/suratfix/formbelumnikah.php">Pribadi</a>
@@ -181,7 +181,7 @@
            </div>
            <div class="btn-group dropright">
               <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Pelayanan Surat Domisili
+              Pelayanan Surat Tempat Usaha
               </button>
               <div class="dropdown-menu">
               <a href="http://localhost/Kelompok1/S.I.D/suratfix/formtempatusaha.php">Pribadi</a>
@@ -189,7 +189,8 @@
            </div>
            </div>
         </div>
-      </div>
+  
+  </div>
   <div class="dropdown">
         <button class="dropbtn"><a href="#"><?php 
       echo "Hai, selamat datang ". $_SESSION['nama'];
@@ -205,12 +206,12 @@
         }else if($_SESSION['levelad'] == "Perangkat Desa"){
           echo "<a href='homeadmin/index.php'>Halaman Admin</a>";
         }else if($_SESSION['levelad'] == "Warga"){
-          echo "<a href='#'>Profil</a>";
+          echo "<a href='http://localhost/Kelompok1/S.I.D/tampilanprofil.php'>Profil</a>";
         }
         ?>
           <a href="logout.php" onclick="return confirm('Apakah Anda Yakin Ingin Keluar Dari Website?')">Logout</a>
         </div>
-  </div>  
+  </div> 
 <br/>
 <br/>
 
