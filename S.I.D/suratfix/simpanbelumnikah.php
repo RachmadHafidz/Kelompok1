@@ -6,10 +6,10 @@ include "koneksi.php";
 $NO_BNIKAH = $_POST['NO_BNIKAH'];
 $NIK_PENDUDUK = $_POST['NIK_PENDUDUK'];
 $TGLSURATBN = $_POST['TGLSURATBN'];
-$KETERANGANABN = $_POST['KETERANGANABN'];
+$KETERANGANABN = "Sedang Proses";
 $TUJUANBN = $_POST['TUJUANBN'];
-$JNBN = $_POST['JSBN'];
-$ARSIP = $_POST['ARSIP'];
+$JNBN = "Surat Belum Nikah";
+
 
 
 	
@@ -18,7 +18,7 @@ $ARSIP = $_POST['ARSIP'];
 // Proses upload
 
 	// Proses simpan ke Database
-	$query = "INSERT INTO sk_belumnikah VALUES('".$NO_BNIKAH."','".$TGLSURATBN."','".$NIK_PENDUDUK."','".$TUJUANBN."','".$KETRANGANBN."','".$JSBN."','".$ARSIP."')";
+	$query = "INSERT INTO sk_belumnikah (NO_BNIKAH, TGLSURATBN, NIK_PENDUDUK,  TUJUANBN, KETERANGANBN, JSBN) VALUES('".$NO_BNIKAH."','".$TGLSURATBN."','".$NIK_PENDUDUK."','".$TUJUANBN."','".$KETERANGANBN."','".$JSBN."')";
 	
 	$sql = mysqli_query($koneksi, $query); // Eksekusi/ Jalankan query dari variabel $query
 	

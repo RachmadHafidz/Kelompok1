@@ -11,7 +11,7 @@ session_start();
 // cek apakah user telah login, jika belum login maka di alihkan ke halaman login
 $nik = $_SESSION['NIK_PENDUDUK'];
 $a = $_GET['id'];
-$query = "SELECT sk_tempatusaha.TUJUANTU, sk_tempatusaha.KETERANGAN, penduduk.NIK_PENDUDUK, penduduk.NAMAPEN, penduduk.TEMPATLHR, penduduk.TANGGALHR, penduduk.JK_PEN, penduduk.STATUSPEN, penduduk.AGAMAPEN, penduduk.PEKERJAANPEN, penduduk.KWNPEN, keluarga.ALAMAT, keluarga.RT_RW ,sk_tempatusaha.NO_TUSAHA ,sk_tempatusaha.TGLSURAT from sk_tempatusaha, penduduk, keluarga WHERE sk_tempatusaha.NO_TUSAHA = '$a' AND sk_tempatusaha.NIK_PENDUDUK = '$nik' "; // Query untuk menampilkan semua data siswa
+$query = "SELECT sk_tempatusaha.TUJUANTU, sk_tempatusaha.KETERANGAN, penduduk.NIK_PENDUDUK, penduduk.NAMAPEN, penduduk.TEMPATLHR, penduduk.TANGGALHR, penduduk.JK_PEN, penduduk.STATUSPEN, penduduk.AGAMAPEN, penduduk.PEKERJAANPEN, penduduk.KWNPEN, keluarga.ALAMAT, keluarga.RT_RW ,sk_tempatusaha.NO_TUSAHA ,sk_tempatusaha.TGLSURATTU from sk_tempatusaha, penduduk, keluarga WHERE sk_tempatusaha.NO_TUSAHA = '$a' AND sk_tempatusaha.NIK_PENDUDUK = '$nik' "; // Query untuk menampilkan semua data siswa
 $sql = mysqli_query($koneksi, $query); // Eksekusi/Jalankan query dari variabel $query
 
 $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
@@ -112,7 +112,7 @@ $data = mysqli_fetch_array($sql); // Ambil semua data dari hasil eksekusi $sql
 			<td width="300"><br></td>	
 			<td width="245" align="right">
 				<div align="center" class="time"><font size="4">
-					Sabrang,<?php echo $data['TGLSURAT'];?>
+					Sabrang,<?php echo $data['TGLSURATTU'];?>
 								
 					<br>
 					KEPALA DESA SABRANG

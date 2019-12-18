@@ -6,10 +6,13 @@ include "koneksi.php";
 $NO_TUSAHA = $_POST['NO_TUSAHA'];
 $NIK_PENDUDUK = $_POST['NIK_PENDUDUK'];
 $TGLSURAT = $_POST['TGLSURAT'];
-$KETERANGAN = $_POST['KETERANGAN'];
+$KETERANGAN = "Sedang Proses";
 $TUJUANTU = $_POST['TUJUANTU'];
-$JNSURAT = $_POST['JNSURAT'];
-$ARSIP = $_POST['ARSIP'];
+
+$JNSURAT = "Surat pribadi";
+
+
+
 
 
 	
@@ -18,7 +21,9 @@ $ARSIP = $_POST['ARSIP'];
 // Proses upload
 
 	// Proses simpan ke Database
-	$query = "INSERT INTO sk_tempatusaha VALUES('".$NO_TUSAHA."', '".$TGLSURAT."','".$NIK_PENDUDUK."','".$TUJUANTU."','".$KETERANGAN."','".$JNSURAT."','".$ARSIP."')";
+
+	$query = "INSERT INTO sk_tempatusaha (NO_TUSAHA, TGLSURATTU, NIK_PENDUDUK,  TUJUANTU, KETERANGAN, JNSURAT)VALUES('".$NO_TUSAHA."', '".$TGLSURAT."','".$NIK_PENDUDUK."','".$TUJUANTU."','".$KETERANGAN."','".$JNSURAT."')";
+
 	
 	$sql = mysqli_query($koneksi, $query); // Eksekusi/ Jalankan query dari variabel $query
 	
