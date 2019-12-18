@@ -87,22 +87,6 @@ function postArtikel($data)
 	echo "<br><a href='form_simpan.php'>Kembali Ke Form</a>";
 }
 }
-function postArtikel1($data)
-{
-	global $conn;
-
-	
-	$nama_kategory   = $data['nama_kategory'];
-	
-	
-
-	$query1 = "INSERT INTO kategori VALUES ('', '$nama_kategory' ) ";
-	$sql = mysqli_query($conn, $query1);
-	
-	if($sql){ // Cek jika proses simpan ke database sukses atau tidak
-		// Jika Sukses, Lakukan :
-	}
-}
 
 function editArtikel($data, $idArtikel)
 {
