@@ -18,16 +18,23 @@
         .dropbtn 
         {
         background:none;
-        color: rgb(0, 0, 0);
         padding: 16px;
         font-size: 16px;
         border: none;
         cursor: pointer;
         }
-    
+        .dropbtn a{
+          color: #f1f1f1;
+          text-decoration: none;
+        }
+        .dropdown :hover{
+          color:rgb(41, 41, 41);
+          text-decoration: none;
+        }
       
         .dropdown 
         {
+        color:rgb(41, 41, 41);
         position: relative;
         display: inline-block;
         z-index:9999;
@@ -51,7 +58,11 @@
         display: block;
         }
 
-        .dropdown-content a:hover {background-color: #f1f1f1}
+        .dropdown-content a:hover {
+          background-color: #f1f1f1;
+          color:rgb(41, 41, 41);
+          text-decoration: none;
+        }
 
         .dropdown:hover .dropdown-content { display: block; }
 
