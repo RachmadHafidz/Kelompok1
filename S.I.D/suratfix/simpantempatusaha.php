@@ -9,7 +9,7 @@ $TGLSURAT = $_POST['TGLSURAT'];
 $KETERANGAN = $_POST['KETERANGAN'];
 $TUJUANTU = $_POST['TUJUANTU'];
 $JNSURAT = $_POST['JNSURAT'];
-$ARSIP = $_POST['ARSIP'];
+
 
 
 	
@@ -18,7 +18,7 @@ $ARSIP = $_POST['ARSIP'];
 // Proses upload
 
 	// Proses simpan ke Database
-	$query = "INSERT INTO sk_tempatusaha VALUES('".$NO_TUSAHA."', '".$TGLSURAT."','".$NIK_PENDUDUK."','".$TUJUANTU."','".$KETERANGAN."','".$JNSURAT."','".$ARSIP."')";
+	$query = "INSERT INTO sk_tempatusaha(NO_TUSAHA, NIK_PENDUDUK, TGLSURAT, TUJUANTU, KETERANGAN, JNSURAT) VALUES('".$NO_TUSAHA."','".$NIK_PENDUDUK."', '".$TGLSURAT."', '".$TUJUANTU."','".$KETERANGAN."','".$JNSURAT."')";
 	
 	$sql = mysqli_query($koneksi, $query); // Eksekusi/ Jalankan query dari variabel $query
 	

@@ -8,8 +8,10 @@ $NIK_PENDUDUK = $_POST['NIK_PENDUDUK'];
 $TGLSURAT_AJU = $_POST['TGLSURAT_AJU'];
 $TUJUAN_AJU = $_POST['TUJUAN_AJU'];
 $KETERANGAN_AJU = $_POST['KETERANGAN_AJU'];
-$JENISURAT_AJU = $_POST['JENISURAT_AJU'];
-$ARSIP = $_POST['ARSIP'];
+$JENISURAT_AJU = "SKCK";
+
+
+
 
 
 	
@@ -18,7 +20,7 @@ $ARSIP = $_POST['ARSIP'];
 // Proses upload
 
 	// Proses simpan ke Database
-	$query = "INSERT INTO sk_skck VALUES('".$NO_SKCK."','".$NIK_PENDUDUK."', '".$TGLSURAT_AJU."','".$TUJUAN_AJU."','".$KETERANGAN_AJU."','".$JENISURAT_AJU."','".$ARSIP."')";
+	$query = "INSERT INTO sk_skck(NO_SKCK, NIK_PENDUDUK, TGLSURAT_AJU, TUJUAN_AJU, KETERANGAN_AJU, JENISURAT_AJU) VALUES('".$NO_DOMISILI."','".$NIK_PENDUDUK."', '".$TGLSURAT_AJU."', '".$TUJUAN_AJU."','".$KETERANGAN_AJU."','".$JENISURAT_AJU."')";
 	
 	$sql = mysqli_query($koneksi, $query); // Eksekusi/ Jalankan query dari variabel $query
 	
