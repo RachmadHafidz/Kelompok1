@@ -256,6 +256,12 @@ function tgl_indo($tanggal){
                                             </li>
                                         </ul>
                                     </li>
+                                    <li><a href="#">Petunjuk</a>
+                                        <ul class="dropdown">
+                                            <li><a href="petunjukwarga2.php">Petunjuk Website</a></li>
+                                            <li><a href="petunjuksurat2.php">Petunjuk Surat</a></li>
+                                        </ul>
+                                    </li>
                                     <li><a href="tentangdesa.php">Tentang Kami</a></li>
                                 </ul>
 
