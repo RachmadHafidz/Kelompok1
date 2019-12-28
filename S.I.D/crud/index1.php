@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="container-float">
-<nav class="navbar navbar-dark bg-dark"> <p><a><font class="navbar-brand" color="white">Data Warga</font></a></p>
+<nav class="navbar navbar-dark bg-dark"> <p><a><font class="navbar-brand" color="white">Perangkat Desa</font></a></p>
   </nav>
   </br>
 
@@ -18,7 +18,7 @@
 
   <tr class="table-success">
         <th>Foto</th>
-        <th>ID</th>
+      
 		<th>NIK</th>
 		<th>Nama</th>
 		<th>Jenis Kelamin</th>
@@ -30,7 +30,7 @@
       <th>Status Akun</th>
       <th>No Telp</th>
       <th>Email</th>
-      <th>Username</th>
+     
   
 
 	
@@ -45,8 +45,9 @@
 	
 	while($data = mysqli_fetch_array($sql)){ // Ambil semua data dari hasil eksekusi $sql
         echo "<tr>";
-        echo "<td><img src='images/".$data['FOTO']."' width='100' height='100'></td>";
-		echo "<td>".$data['ID_ADMIN']."</td>";
+        echo "<td><img src='homeadmin\images/".$data['FOTO']."' width='100' height='100'></td>";
+     //   C:\xampp\htdocs\Kelompok1\S.I.D\homeadmin\images
+     //S.I.D\homeadmin\images
 		echo "<td>".$data['NIK_NIPADMIN']."</td>";
 		echo "<td>".$data['NAMAADMIN']."</td>";
       echo "<td>".$data['JENIS_KELAMIN']."</td>";
@@ -58,7 +59,7 @@
       echo "<td>".$data['STATUS_AKUN']."</td>";
       echo "<td>".$data['NOTELP']."</td>";      
       echo "<td>".$data['EMAIL']."</td>";
-      echo "<td>".$data['USERNAME']."</td>";
+
       
       
 
@@ -67,7 +68,7 @@
 	?>
     </table>
     </div>
-    <a class="btn btn-outline-info" href="http://localhost/Kelompok1/S.I.D/index1.php" role="button">Kembali</a>
+    <a class="btn btn-outline-info" href="http://localhost/Kelompok1/S.I.D/index.php" role="button">Kembali</a>
     
 </body>
 </html>
