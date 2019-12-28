@@ -1,0 +1,5 @@
+-Import database di folder database db_desa3 ke mysql dengan nama yg sama(saran menghapus database yg sebelumnya, karna ada perubahan tipe data)
+-Coba cek data2 di db_desa3 yg sudah di import ada atau tidak?
+-Kalo ada buka web localhost/Kelompok1/sidsabrang/
+-Login Penduduk
+-Login Admin
