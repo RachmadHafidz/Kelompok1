@@ -3,6 +3,8 @@ include 'koneksi.php';
 session_start();
 if(isset($_GET["gagal"])){
   echo "<script>alert('Gagal Menghapus Komentar!!');history.go(-1);</script>";
+}elseif(isset($_GET["gagal_ubah"])){
+  echo "<script>alert('Gagal Mengubah Keterangan!!');history.go(-1);</script>";
 }
 ?>
 <!DOCTYPE html>
@@ -171,6 +173,8 @@ if(isset($_GET["gagal"])){
                     <th>Tujuan</th>
                     <th>Keterangan</th>
                     <th>Aksi</th>
+                    <th>Validasi</th>
+
                   </tr>
                 </thead>
                 <tfoot>
@@ -181,6 +185,8 @@ if(isset($_GET["gagal"])){
                     <th>Tujuan</th>
                     <th>Keterangan</th>
                     <th>Aksi</th>
+                    <th>Validasi</th>
+
                   </tr>
                 </tfoot>
                 <tbody>
@@ -197,6 +203,24 @@ if(isset($_GET["gagal"])){
                     echo "<td>".$row['KETERANGAN_AJU']."</td>";
                     ?> <td><a onclick="return confirm('Apakah Anda Ingin Mencetak Surat ini?')" class="fas fa-few fa-download" href="reportskck.php?nosur=<?php echo $row['NO_SKCK'];?>&nik=<?php echo $row['NIK_PENDUDUK'];?>"></a> 
                           <a onclick="return confirm('Apakah Anda Ingin Menghapus Surat ini?')" class="fas fa-few fa-trash" href="hapuskck.php?nosur=<?php echo $row['NO_SKCK']?>"></a></td>
+                          <?php if($row['KETERANGAN_AJU']=="Sedang Proses"){?>
+                          <td><a onclick="return confirm('Data Valid?')" class="fas fa-few fa-check-circle" href="vskck.php?nosur=<?php echo $row['NO_SKCK'];?>"></a> 
+                          <a onclick="return confirm('Data Tidak Valid?')" class="fas fa-few fa-times-circle" href="tvskck.php?nosur=<?php echo $row['NO_SKCK']?>"></a></td>
+                          <?php
+                          }else if($row['KETERANGAN_AJU']=="Valid"){
+                          ?> 
+                          <td><a onclick="return confirm('Selesai?')" class="fas fa-few fa-check-double" href="skck.php?nosur=<?php echo $row['NO_SKCK'];?>"></a></td>
+                          <?php
+                          }else if($row['KETERANGAN_AJU']=="Tidak Valid"){
+                          ?>
+                          <td><a class="btn btn-danger" href="#" disabled>Tidak Valid</a></td>
+                          <?php
+                          }else if($row['KETERANGAN_AJU']=="Selesai"){
+                          ?>
+                          <td><a class="btn btn-success" href="#" disabled>Selesai</a></td>
+                          <?php
+                          }
+                          ?>  
                     </tr>
                     <?php
                   }
@@ -230,6 +254,8 @@ if(isset($_GET["gagal"])){
                     <th>Tujuan</th>
                     <th>Keterangan</th>
                     <th>Aksi</th>
+                    <th>Validasi</th>
+
                   </tr>
                 </thead>
                 <tfoot>
@@ -243,6 +269,8 @@ if(isset($_GET["gagal"])){
                     <th>Tujuan</th>
                     <th>Keterangan</th>
                     <th>Aksi</th>
+                    <th>Validasi</th>
+
                   </tr>
                 </tfoot>
                 <tbody>
@@ -262,6 +290,24 @@ if(isset($_GET["gagal"])){
                     echo "<td>".$row['KETERANGAN_AJU']."</td>";
                     ?> <td><a onclick="return confirm('Apakah Anda Ingin Mencetak Surat ini?')" class="fas fa-few fa-download" href="rskck.php?nosur=<?php echo $row['NO_SKCK'];?>&nik=<?php echo $row['NIK_AJU'];?>"></a> 
                           <a onclick="return confirm('Apakah Anda Ingin Menghapus Surat ini?')" class="fas fa-few fa-trash" href="hapuskck.php?nosur=<?php echo $row['NO_SKCK']?>"></a></td>
+                          <?php if($row['KETERANGAN_AJU']=="Sedang Proses"){?>
+                          <td><a onclick="return confirm('Data Valid?')" class="fas fa-few fa-check-circle" href="vskck.php?nosur=<?php echo $row['NO_SKCK'];?>"></a> 
+                          <a onclick="return confirm('Data Tidak Valid?')" class="fas fa-few fa-times-circle" href="tvskck.php?nosur=<?php echo $row['NO_SKCK']?>"></a></td>
+                          <?php
+                          }else if($row['KETERANGAN_AJU']=="Valid"){
+                          ?> 
+                          <td><a onclick="return confirm('Selesai?')" class="fas fa-few fa-check-double" href="skck.php?nosur=<?php echo $row['NO_SKCK'];?>"></a></td>
+                          <?php
+                          }else if($row['KETERANGAN_AJU']=="Tidak Valid"){
+                          ?>
+                          <td><a class="btn btn-danger" href="#" disabled>Tidak Valid</a></td>
+                          <?php
+                          }else if($row['KETERANGAN_AJU']=="Selesai"){
+                          ?>
+                          <td><a class="btn btn-success" href="#" disabled>Selesai</a></td>
+                          <?php
+                          }
+                          ?> 
                     </tr>
                     <?php
                   }

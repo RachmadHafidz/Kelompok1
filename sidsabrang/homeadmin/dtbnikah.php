@@ -3,6 +3,8 @@ include 'koneksi.php';
 session_start();
 if(isset($_GET["gagal"])){
   echo "<script>alert('Gagal Menghapus Komentar!!');history.go(-1);</script>";
+}elseif(isset($_GET["gagal_ubah"])){
+  echo "<script>alert('Gagal Mengubah Keterangan!!');history.go(-1);</script>";
 }
 ?>
 <!DOCTYPE html>
@@ -171,6 +173,7 @@ if(isset($_GET["gagal"])){
                     <th>Tujuan</th>
                     <th>Keterangan</th>
                     <th>Aksi</th>
+                    <th>Validasi</th>
                   </tr>
                 </thead>
                 <tfoot>
@@ -181,6 +184,7 @@ if(isset($_GET["gagal"])){
                     <th>Tujuan</th>
                     <th>Keterangan</th>
                     <th>Aksi</th>
+                    <th>Validasi</th>
                   </tr>
                 </tfoot>
                 <tbody>
@@ -197,6 +201,24 @@ if(isset($_GET["gagal"])){
                     echo "<td>".$row['KETERANGANBN']."</td>";
                     ?> <td><a onclick="return confirm('Apakah Anda Ingin Mencetak Surat ini?')" class="fas fa-few fa-download" href="reportbnikah.php?nosur=<?php echo $row['NO_BNIKAH'];?>&nik=<?php echo $row['NIK_PENDUDUK'];?>"></a> 
                           <a onclick="return confirm('Apakah Anda Ingin Menghapus Surat ini?')" class="fas fa-few fa-trash" href="hapusbnikah.php?nosur=<?php echo $row['NO_BNIKAH']?>"></a></td>
+                          <?php if($row['KETERANGANBN']=="Sedang Proses"){?>
+                          <td><a onclick="return confirm('Data Valid?')" class="fas fa-few fa-check-circle" href="vnik.php?nosur=<?php echo $row['NO_BNIKAH'];?>"></a> 
+                          <a onclick="return confirm('Data Tidak Valid?')" class="fas fa-few fa-times-circle" href="tvnik.php?nosur=<?php echo $row['NO_BNIKAH']?>"></a></td>
+                          <?php
+                          }else if($row['KETERANGANBN']=="Valid"){
+                          ?> 
+                          <td><a onclick="return confirm('Selesai?')" class="fas fa-few fa-check-double" href="snik.php?nosur=<?php echo $row['NO_BNIKAH'];?>"></a></td>
+                          <?php
+                          }else if($row['KETERANGANBN']=="Tidak Valid"){
+                          ?>
+                          <td><a class="btn btn-danger" href="#" disabled>Tidak Valid</a></td>
+                          <?php
+                          }else if($row['KETERANGANBN']=="Selesai"){
+                          ?>
+                          <td><a class="btn btn-success" href="#" disabled>Selesai</a></td>
+                          <?php
+                          }
+                          ?>  
                     </tr>
                     <?php
                   }
@@ -230,6 +252,8 @@ if(isset($_GET["gagal"])){
                     <th>Tujuan</th>
                     <th>Keterangan</th>
                     <th>Aksi</th>
+                    <th>Validasi</th>
+
                   </tr>
                 </thead>
                 <tfoot>
@@ -243,6 +267,8 @@ if(isset($_GET["gagal"])){
                     <th>Tujuan</th>
                     <th>Keterangan</th>
                     <th>Aksi</th>
+                    <th>Validasi</th>
+
                   </tr>
                 </tfoot>
                 <tbody>
@@ -262,6 +288,24 @@ if(isset($_GET["gagal"])){
                     echo "<td>".$row['KETERANGANBN']."</td>";
                     ?> <td><a onclick="return confirm('Apakah Anda Ingin Mencetak Surat ini?')" class="fas fa-few fa-download" href="rbnikah.php?nosur=<?php echo $row['NO_BNIKAH'];?>&nik=<?php echo $row['NIKBN'];?>"></a> 
                           <a onclick="return confirm('Apakah Anda Ingin Menghapus Surat ini?')" class="fas fa-few fa-trash" href="hapusbnikah.php?nosur=<?php echo $row['NO_BNIKAH']?>"></a></td>
+                          <?php if($row['KETERANGANBN']=="Sedang Proses"){?>
+                          <td><a onclick="return confirm('Data Valid?')" class="fas fa-few fa-check-circle" href="vnik.php?nosur=<?php echo $row['NO_BNIKAH'];?>"></a> 
+                          <a onclick="return confirm('Data Tidak Valid?')" class="fas fa-few fa-times-circle" href="tvnik.php?nosur=<?php echo $row['NO_BNIKAH']?>"></a></td>
+                          <?php
+                          }else if($row['KETERANGANBN']=="Valid"){
+                          ?> 
+                          <td><a onclick="return confirm('Selesai?')" class="fas fa-few fa-check-double" href="snik.php?nosur=<?php echo $row['NO_BNIKAH'];?>"></a></td>
+                          <?php
+                          }else if($row['KETERANGANBN']=="Tidak Valid"){
+                          ?>
+                          <td><a class="btn btn-danger" href="#" disabled>Tidak Valid</a></td>
+                          <?php
+                          }else if($row['KETERANGANBN']=="Selesai"){
+                          ?>
+                          <td><a class="btn btn-success" href="#" disabled>Selesai</a></td>
+                          <?php
+                          }
+                          ?>   
                     </tr>
                     <?php
                   }

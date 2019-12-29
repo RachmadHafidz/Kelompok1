@@ -58,7 +58,7 @@ if(isset($_GET['aksi'])){
   switch($_GET['aksi']){
     case "create":
       navbarr($koneksi);
-      tambah_data($koneksi);
+      tambah_data($koneksi); 
       tabel_data($koneksi);
     break;
     case "read":
@@ -628,11 +628,12 @@ function tambah_data($koneksi){
                     echo "<td>".$row['PENDIDIKANPEN']."</td>";
                     echo "<td>".$row['KWNPEN']."</td>";
                     echo "<td>".$row['NOTELPEN']."</td>";
-                    echo "<td>".$row['KET_HIDUP']."</td>";
-                    echo "<td><a class='fas fa-few fa-ban' href='pdpenduduk.php?aksi=status&NIK_PENDUDUK=".$row['NIK_PENDUDUK']."'> </a>
-                              <a class='fas fa-few fa-edit' href='pdpenduduk.php?aksi=update&NIK_PENDUDUK=".$row['NIK_PENDUDUK']."'></a> 
-                              <a class='fas fa-few fa-trash' href='pdpenduduk.php?aksi=delete&NIK_PENDUDUK=".$row['NIK_PENDUDUK']."'></a></td>";
-                    echo "</tr>";
+                    echo "<td>".$row['KET_HIDUP']."</td>";?>
+                    <td><a onclick="return confirm('Apakah Anda Ingin Mengubah Akses Akun ini?')" class="fas fa-few fa-ban" href="pdpenduduk.php?aksi=status&NIK_PENDUDUK=<?php echo $row['NIK_PENDUDUK']; ?>"> </a>
+                              <a onclick="return confirm('Apakah Anda Ingin Mengubah Data ini?')" class="fas fa-few fa-edit" href="pdpenduduk.php?aksi=update&NIK_PENDUDUK=<?php echo $row['NIK_PENDUDUK']; ?>"></a> 
+                              <a onclick="return confirm('Apakah Anda Ingin Menghapus Akun ini?')" class="fas fa-few fa-trash" href="pdpenduduk.php?aksi=delete&NIK_PENDUDUK=<?php echo $row['NIK_PENDUDUK']; ?>"></a></td>
+                    </tr>
+                    <?php
                   }
                   ?> 
                 </tbody>

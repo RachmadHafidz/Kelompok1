@@ -24,6 +24,39 @@ function delete_data($koneksi){
     }
 
 }
+function aktif_nonaktif($koneksi){
+  if(isset($_GET['ID_ADMIN']) && isset($_GET['aksi'])){
+     $ID_ADMIN = $_GET['ID_ADMIN'];
+     $query = "SELECT * FROM admin WHERE ID_ADMIN='".$ID_ADMIN."'";
+     $sql = mysqli_query($koneksi, $query); // Eksekusi/Jalankan query dari variabel $query
+     $data = mysqli_fetch_array($sql);
+
+     if($data['STATUS_AKUN'] == 'Aktif'){
+ 
+        $query_up = "UPDATE admin SET STATUS_AKUN='Nonaktif' WHERE ID_ADMIN='".$ID_ADMIN."'";
+        $sql_up = mysqli_query($koneksi, $query_up);
+   
+        if($sql_up){
+        if($_GET['aksi'] == 'status'){
+          header('location:pdadmin.php');
+        }else{
+         $pesan = "Gagal Aktivasi Akun!";
+       }
+     }
+    }else if($data['STATUS_AKUN']== 'Nonaktif'){
+      $query_up2 = "UPDATE admin SET STATUS_AKUN='Aktif' WHERE ID_ADMIN='".$ID_ADMIN."'";
+     $sql_up2 = mysqli_query($koneksi, $query_up2);
+   
+     if($sql_up2){
+       if($_GET['aksi'] == 'status'){
+         header('location:pdadmin.php');
+       }else{
+         $pesan = "Gagal Mengubah Aktivasi Akun!";
+       }
+     }
+    }
+   }
+ }
 
 if(isset($_GET['aksi'])){
   switch($_GET['aksi']){
@@ -43,6 +76,9 @@ if(isset($_GET['aksi'])){
     break;
     case "delete":
       delete_data($koneksi);
+    break;
+    case "status":
+      aktif_nonaktif($koneksi);
     break;
   }
 }else{
