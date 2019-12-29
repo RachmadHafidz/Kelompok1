@@ -2,6 +2,9 @@
 include 'fungsi/config.php';
 include 'koneksi.php';
 session_start();
+if($_SESSION['status']==""){
+    header('location:index.php?belum_login');
+}
 if(isset($_GET["simpam_error"])){
     echo "<script>alert('Terjadi Kesalahan, Tidak Dapat Menyimpan!!');history.go(-1);</script>";
 }else if(isset($_GET["kosong"])){
@@ -291,8 +294,8 @@ function tgl_indo($tanggal){
                                     </li>
                                     <li><a href="#">Petunjuk</a>
                                         <ul class="dropdown">
-                                            <li><a href="petunjukwarga.php">Petunjuk Website</a></li>
-                                            <li><a href="petunjuksurat.php">Petunjuk Surat</a></li>
+                                            <li><a href="petunjukwarga2.php">Petunjuk Website</a></li>
+                                            <li><a href="petunjuksurat2.php">Petunjuk Surat</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="tentangdesa.php">Tentang Kami</a></li>
