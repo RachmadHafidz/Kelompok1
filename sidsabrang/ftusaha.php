@@ -2,6 +2,9 @@
 include 'fungsi\config.php';
 include 'koneksi.php';
 session_start();
+if($_SESSION['status']==""){
+    header('location:index.php?belum_login');
+}
 
 if(isset($_GET["simpam_error"])){
     echo "<script>alert('Terjadi Kesalahan, Tidak Dapat Menyimpan!!');history.go(-1);</script>";

@@ -1,3 +1,9 @@
+<?php
+session_start();
+if($_SESSION['status']==""){
+    header('location:../index.php?belum_login');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,7 +57,7 @@
       
       <li class="nav-item dropdown no-arrow ">
         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <i>Hello <?php session_start(); echo $_SESSION['nama']; ?></i>
+        <i>Hello <?php echo $_SESSION['nama']; ?></i>
           <i class="fas fa-user-circle fa-fw"></i>
         </a>
         <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">

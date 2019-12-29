@@ -1,6 +1,9 @@
 <?php include 'fungsi\config.php'; ?>
 <?php
 session_start();
+if($_SESSION['status']==""){
+    header('location:../index.php?belum_login');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -168,7 +171,8 @@ session_start();
                 <thead>
                   <tr>
                   <th>ID</th>
-                    <th>ID Admint</th>
+                  <th>Gambar</th>
+                    <th>ID Admin</th>
                     <th>ID Kategori</th>
                     <th>Judul</th>
                     <th>Status</th>
@@ -179,7 +183,8 @@ session_start();
                 <tfoot>
                   <tr>
                   <th>ID</th>
-                    <th>ID Admint</th>
+                  <th>Gambar</th>
+                    <th>ID Admin</th>
                     <th>ID Kategori</th>
                     <th>Judul</th>
                     <th>Status</th>
@@ -192,13 +197,13 @@ session_start();
                    $data = tampilArtikel(); foreach($data as $row):?> 
                     <tr>
                    <td><?php echo $row['ID_ARTIKEL']?></td>
+                   <td><img src="images/<?php echo $row['FOTO_ARTIKEL']?>" width="50" height="50"></td>
                     <td><?php echo $row['ID_ADMIN'];?></td>
                     <td><?php echo $row['ID_KATEGORI'];?></td>
                     <td><?php echo $row['JUDUL_ARTIKEL'];?></td>
                     <td><?php echo $row['STATUS_ARTIKEL'];?></td>
                     <td><?php echo jumlahKomentar($row['ID_ARTIKEL']);?></td>
                     <td><a onclick="return confirm('Apakah Anda Ingin Melihat Artikel?')" class="fas fa-few fa-eye" href="detail.php?id=<?= $row['ID_ARTIKEL'] ?>"> </a>
-                    <a onclick="return confirm('Apakah Anda Ingin Mengubah Status Artikel?')" class="fas fa-few fa-ban" href="detail.php?id=<?= $row['ID_ARTIKEL'] ?>"> </a>
                           <a onclick="return confirm('Apakah Anda Ingin Mengubah Artikel?')" class="fas fa-few fa-edit" href="editArtikel.php?id=<?= $row['ID_ARTIKEL'] ?>"></a> 
                           <a onclick="return confirm('Apakah Anda Ingin Menghapus artikel ini?')" class="fas fa-few fa-trash" href="hapusArtikel.php?id=<?= $row['ID_ARTIKEL'] ?>"></a></td>
                     </tr>

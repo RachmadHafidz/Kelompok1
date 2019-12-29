@@ -1,12 +1,19 @@
 <?php include 'fungsi\config.php'; 
-$row = detailArtikel($_GET['id'])
-
-?>
-
-
-<?php
 session_start();
+if($_SESSION['status']==""){
+    header('location:../index.php?belum_login');
+}
+$row = detailArtikel($_GET['id']);
+
 ?>
+<?php 
+        if(isset($_GET["upload_gagal"])){
+            echo "<script>alert('Tidak Bisa Menyimpan, gagal unggah foto!');history.go(-1);</script>";
+        }else if(isset($_GET["simpan_error"])){
+			echo "<script>alert('Terjadi Kesalahan, tidak dapat menyimpan!');history.go(-1);</script>";
+		    }
+        ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -167,7 +174,7 @@ session_start();
           <hr>
           <div class="container">
 		<h3 class="text-center">Edit <?= $row['JUDUL_ARTIKEL'] ?></h3>
-		<form method="post" enctype="multipart/form-data">
+		<form action="prosesubahart.php?id=<?=$row['ID_ARTIKEL']?>" method="post" enctype="multipart/form-data">
 			<div class="form-group">
 				<label>Judul</label>
 				<input type="text" name="judul" class="form-control" value="<?= $row['JUDUL_ARTIKEL'] ?>">
@@ -194,74 +201,13 @@ session_start();
 			</div>
 			<div class="kotak">
 				<label>Isi</label>
-				<textarea name="isi" class="ckeditor" id="ckedtor" rows="10"><?= $row['ISI_ARTIKEL'] ?></textarea>
+				<textarea name="isi" class="ckeditor" id="isi" rows="10"><?= $row['ISI_ARTIKEL'] ?></textarea>
 			</div>
       <br>
-			<button class="btn btn-primary" type="submit" name="btnedit">
-				Edit
-			</button>
+			<input class="btn btn-primary" type="submit" name="edit" value="Edit">
       <a href="artikel.php"><button type="button" class="btn btn-primary">Kembali</button></a>
 		</form>
-    <?php 
-    include 'koneksi.php';
-    if (isset($_POST['btnedit'])) {
-      $idArtikel =$_GET['id'];
-      $judul = $_POST['judul'];
-      $isi   = $_POST['isi'];
-      $kategori = $_POST['kategori'];
-	
-	if(isset($_POST['ubah_foto'])){ // Jika user menceklis checkbox yang ada di form ubah, lakukan :
-		// Ambil data foto yang dipilih dari form
-		$foto = $_FILES['foto']['name'];
-		$tmp = $_FILES['foto']['tmp_name'];
-		$fotobaru = date('dmYHis').$foto;
-	
-	// Set path folder tempat menyimpan fotonya
-	$path = "images/".$fotobaru;
-
-	// Proses upload
-	if(move_uploaded_file($tmp, $path)){ // Cek apakah gambar berhasil diupload atau tidak
-		// Query untuk menampilkan data siswa berdasarkan NIS yang dikirim
-		$query = "SELECT * FROM artikel WHERE ID_ARTIKEL = '$idArtikel' ";
-		$sql = mysqli_query($conn, $query); // Eksekusi/Jalankan query dari variabel $query
-		$data = mysqli_fetch_array($sql); // Ambil data dari hasil eksekusi $sql
-
-		// Cek apakah file foto sebelumnya ada di folder images
-		if(is_file("images/".$data['FOTO_ARTIKEL'])) // Jika foto ada
-			unlink("images/".$data['FOTO_ARTIKEL']); // Hapus file foto sebelumnya yang ada di folder images
-		
-		// Proses ubah data ke Database
-		$query = "UPDATE artikel SET JUDUL_ARTIKEL = '$judul', ISI_ARTIKEL = '$isi', ID_KATEGORI = '$kategori', FOTO_ARTIKEL='".$fotobaru."' WHERE ID_ARTIKEL = '$idArtikel' ";
-		$sql = mysqli_query($conn, $query); // Eksekusi/ Jalankan query dari variabel $query
-
-		if($sql){ // Cek jika proses simpan ke database sukses atau tidak
-			// Jika Sukses, Lakukan :
-			header("location: artikel.php"); // Redirect ke halaman index.php
-		}else{
-			// Jika Gagal, Lakukan :
-			echo "Maaf, Terjadi kesalahan saat mencoba untuk menyimpan data ke database.";
-			echo "<br><a href='editArtikel.php'>Kembali Ke Form</a>";
-		}
-	}else{
-		// Jika gambar gagal diupload, Lakukan :
-		echo "Maaf, Gambar gagal untuk diupload.";
-		echo "<br><a href='editArtikel.php'>Kembali Ke Form</a>";
-	}
-}else{ // Jika user tidak menceklis checkbox yang ada di form ubah, lakukan :
-	// Proses ubah data ke Database
-	$query = "UPDATE artikel SET JUDUL_ARTIKEL = '$judul', ISI_ARTIKEL = '$isi', ID_KATEGORI='$kategori'  WHERE ID_ARTIKEL = '$idArtikel' ";
-	$sql = mysqli_query($conn, $query); // Eksekusi/ Jalankan query dari variabel $query
-
-	if($sql){ // Cek jika proses simpan ke database sukses atau tidak
-		// Jika Sukses, Lakukan :
-		echo "Sukses"; // Redirect ke halaman index.php
-	}else{
-		// Jika Gagal, Lakukan :
-		echo "Maaf, Terjadi kesalahan saat mencoba untuk menyimpan data ke database.";
-		echo "<br><a href='editArtikel.php'>Kembali Ke Form</a>";
-	}
-}
-		} ?>
+    <br>
 	</div>
           
           <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>

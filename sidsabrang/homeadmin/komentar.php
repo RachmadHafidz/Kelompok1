@@ -1,6 +1,9 @@
 <?php include 'fungsi\config.php'; ?>
 <?php
 session_start();
+if($_SESSION['status']==""){
+    header('location:../index.php?belum_login');
+}
 if(isset($_GET["gagal"])){
     echo "<script>alert('Gagal Menghapus Komentar!!');history.go(-1);</script>";
   }

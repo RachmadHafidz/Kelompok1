@@ -1,6 +1,9 @@
 <?php
 include 'koneksi.php';
 session_start();
+if($_SESSION['status']==""){
+    header('location:../index.php?belum_login');
+}
 
 function delete_data($koneksi){
  if(isset($_GET['ID_ADMIN']) && isset($_GET['aksi'])){

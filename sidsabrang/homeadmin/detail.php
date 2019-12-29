@@ -8,6 +8,9 @@ $rowKomentar = tampilKomentar($_GET['id']);
 
 <?php
 session_start();
+if($_SESSION['status']==""){
+    header('location:../index.php?belum_login');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -188,18 +191,16 @@ session_start();
 	</br>
 	</br>
 	<div class = "container">	
-		<form method="post">
+		<form action="tambahkmn.php?id=<?= $rowArtikel['ID_ARTIKEL'] ?>" method="post">
 			<div class="form-group">
 				<label>Nama</label>
-				<input type="text" name="nama" class="form-control">
+				<input type="text" name="nama" class="form-control" value="<?php echo $_SESSION['nama'];?>">
 			</div>
 			<div class="form-group">
 				<label>Isi Komentar</label>
 				<textarea name="isi" class="form-control" rows="5"></textarea>
 			</div>
-			<button class="btn btn-primary" type="submit" name="btnkomen">
-				Masukkan Komentar
-			</button>
+			<input class="btn btn-primary" type="submit" name="btnkomen" value="Masukkan Komentar">
       <a href="artikel.php"><button type="button" class="btn btn-primary">Kembali</button></a>
 		</form>
 		</div>
@@ -213,27 +214,6 @@ session_start();
         echo "<script>alert('Tidak boleh Kosong!');history.go(-1);</script>";
       }
 
-			if (isset($_POST['btnkomen'])) {
-        $idArtikel= $_GET['id'];
-        $nama  = $_POST['nama'];
-        $isi   = $_POST['isi'];
-        $status ="Aktif";
-        if(!empty($nama) && !empty($isi)){
-            $query = "INSERT INTO komentar VALUES ('', '$idArtikel', '$nama', '$isi', NOW(), '$status') ";
-            $sql = mysqli_query($koneksi, $query);
-            
-            if($sql){ // Cek jika proses simpan ke database sukses atau tidak
-              // Jika Sukses, Lakukan :
-              
-              header("location:detail.php"); // Redirect ke halaman index.php
-            }else{
-              // Jika Gagal, Lakukan :
-              header("location:detail.php?simpan_error");
-            }
-        }else{
-          header("location:detail.php?kosong");
-        }
-			}
 		?>
 		<!-- <div class="alert alert-success">asdasd</div> -->
 		<?php foreach ($rowKomentar as $row): ?>

@@ -1,13 +1,19 @@
 <?php 
 include 'fungsi\config.php';
 include 'koneksi.php';
-        if(isset($_GET["login_error"])){
-            echo "<script>alert('Username atau Password salah ');history.go(-1);</script>";
-        }else if(isset($_GET["tidak_valid"])){
-			echo "<script>alert('Status Akun Tidak Aktif! Silahkan mengaktifkan akun terlebih dahulu pada Admin.');history.go(-1);</script>";
-		}else if(isset($_GET["akses_gagal"])){
-			echo "<script>alert('Akun tidak dapat Mengakses! Level Anda tidak sesuai untuk dapat mengakses.');history.go(-1);</script>";
-		}
+session_start();
+if(isset($_SESSION['nik/id'])){
+    header('location:indexlogin.php');
+}
+if(isset($_GET["login_error"])){
+    echo "<script>alert('Username atau Password salah ');history.go(-1);</script>";
+}else if(isset($_GET["tidak_valid"])){
+    echo "<script>alert('Status Akun Tidak Aktif! Silahkan mengaktifkan akun terlebih dahulu pada Admin.');history.go(-1);</script>";
+}else if(isset($_GET["akses_gagal"])){
+    echo "<script>alert('Akun tidak dapat Mengakses! Level Anda tidak sesuai untuk dapat mengakses.');history.go(-1);</script>";
+}else if(isset($_GET["belum_login"])){
+    echo "<script>alert('Anda belum Login, Silahkan Login Terlebih Dahulu!!');history.go(-1);</script>";
+}
         ?>
 <?php
 

@@ -1,4 +1,9 @@
-<?php include 'fungsi/config.php'; ?>
+<?php include 'fungsi/config.php'; 
+session_start();
+if($_SESSION['status']==""){
+    header('location:../index.php?belum_login');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,7 +55,7 @@
     <ul class="navbar-nav ml-auto ml-md-0">
     <li class="nav-item dropdown no-arrow ">
         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <i>Hello <?php session_start(); echo $_SESSION['nama']; ?></i>
+        <i>Hello <?php echo $_SESSION['nama']; ?></i>
           <i class="fas fa-user-circle fa-fw"></i>
         </a>
         <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
@@ -157,7 +162,7 @@
           <div class="container">
 		<h3 class="text-center">Input Artikel</h3>
 		<hr>
-		<form method="post" enctype="multipart/form-data">
+		<form action="simpanartikel.php" method="post" enctype="multipart/form-data">
 			<div class="form-group">
 				<label>Judul</label>
 				<input type="text" name="judul" class="form-control">
@@ -188,7 +193,10 @@
 				<label>Isi</label>
 				<textarea name="isi" id="ckedtor" class="ckeditor" rows="10"></textarea>
 			</div><hr>
-			<button class="btn btn-primary" type="submit" name="btnsimpan">Simpan</button>
+			<input class="btn btn-primary" type="submit" name="btnsimpan" value="Simpan">
+      <a href="artikel.php">
+			<button class="btn btn-primary">Kembali</button>
+		</a>
 		</form>
 		<hr>
     <?php 
@@ -198,42 +206,11 @@
 			echo "<script>alert('Terjadi Kesalahan, tidak dapat menyimpan!');history.go(-1);</script>";
 		    }
         ?>
-		<?php if (isset($_POST['btnsimpan'])) {
-        include 'koneksi.php';
-        $admin= $_SESSION['nik/id'];
-        $judul = $_POST['judul'];
-        $isi   = $_POST['isi'];
-        $kategori = $_POST['kategori'];
-        $status = "Aktif";
-        $foto = $_FILES['foto']['name'];
-        $tmp = $_FILES['foto']['tmp_name'];
-        $fotobaru = date('dmYHis').$foto;
-        $path = "images/".$fotobaru;
-        
-        if(move_uploaded_file($tmp, $path)){
-        $query = "INSERT INTO artikel VALUES ('', '$admin', '$kategori', '$judul', '$isi', NOW(), '$fotobaru', '$status')";
-        $sql = mysqli_query($koneksi, $query);
-        
-        if($sql){ // Cek jika proses simpan ke database sukses atau tidak
-          // Jika Sukses, Lakukan :
-          
-          header("location:artikel.php"); // Redirect ke halaman index.php
-        }else{
-          // Jika Gagal, Lakukan :
-          header("location:artikelin.php?simpan_error");
-        }
-      }else{
-        // Jika gambar gagal diupload, Lakukan :
-        header("location:artikelin.php?upload_gagal");
-      }
-      } 
-      ?>
+		
 			
 	
 	
-		<a href="artik.php">
-			<button class="btn btn-default">Kembali</button>
-		</a>
+		
     <hr>
 	</div>
           <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
