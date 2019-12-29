@@ -164,6 +164,10 @@ if($_SESSION['status']==""){
         <!-- Icon Cards-->
         <div class="row">
         
+        <?php
+        if($_SESSION['levelad'] == "Super Admin"){
+        
+        ?>
           <div class="col-xl-3 col-sm-6 mb-3">
             <div class="card text-white bg-primary o-hidden h-100">
               <div class="card-body">
@@ -286,6 +290,175 @@ if($_SESSION['status']==""){
               </a>
             </div>
           </div>
+          <?php
+        }
+        ?>
+        <?php
+        if($_SESSION['levelad'] == "Admin"){
+        
+        ?>
+          <div class="col-xl-3 col-sm-6 mb-3">
+            <div class="card text-white bg-primary o-hidden h-100">
+              <div class="card-body">
+                <div class="card-body-icon">
+                  <i class="fas fa-fw fa-comments"></i>
+                </div>
+                <div class="mr-5">
+                <?php
+                  include 'koneksi.php';
+                  // Cara 3
+                  $query = "SELECT * FROM penduduk";
+                  $sql = mysqli_query($koneksi, $query);
+                  $data = array();
+                  while(($row = mysqli_fetch_array($sql)) != null){
+                    $data[] = $row;
+                  }
+                  $count = count($data);
+                  echo "$count Penduduk";
+
+                  ?>
+                </div>
+              </div>
+              <a class="card-footer text-white clearfix small z-1" href="pdpenduduk.php">
+                <span class="float-left">View Details</span>
+                <span class="float-right">
+                  <i class="fas fa-angle-right"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="col-xl-3 col-sm-6 mb-3">
+            <div class="card text-white bg-warning o-hidden h-100">
+              <div class="card-body">
+                <div class="card-body-icon">
+                  <i class="fas fa-fw fa-list"></i>
+                </div>
+                <div class="mr-5">
+                <?php
+                  include 'koneksi.php';
+                  // Cara 3
+                  $query = "SELECT * FROM keluarga";
+                  $sql = mysqli_query($koneksi, $query);
+                  $data = array();
+                  while(($row = mysqli_fetch_array($sql)) != null){
+                    $data[] = $row;
+                  }
+                  $count = count($data);
+                  echo "$count Keluarga";
+
+                  ?>
+
+                </div>
+              </div>
+              <a class="card-footer text-white clearfix small z-1" href="pdkeluarga.php">
+                <span class="float-left">View Details</span>
+                <span class="float-right">
+                  <i class="fas fa-angle-right"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="col-xl-3 col-sm-6 mb-3">
+            <div class="card text-white bg-danger o-hidden h-100">
+              <div class="card-body">
+                <div class="card-body-icon">
+                  <i class="fas fa-fw fa-life-ring"></i>
+                </div>
+                <div class="mr-5">
+                <?php
+                  include 'koneksi.php';
+                  // Cara 3
+                  $query = "SELECT * FROM admin WHERE LEVEL='Perangkat Desa'";
+                  $sql = mysqli_query($koneksi, $query);
+                  $data = array();
+                  while(($row = mysqli_fetch_array($sql)) != null){
+                    $data[] = $row;
+                  }
+                  $count = count($data);
+                  echo "$count Perangkat Desa";
+
+                  ?>
+                
+                </div>
+              </div>
+              <a class="card-footer text-white clearfix small z-1" href="pdpdesa.php">
+                <span class="float-left">View Details</span>
+                <span class="float-right">
+                  <i class="fas fa-angle-right"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+          <?php
+        }
+        ?>
+        <?php
+        if($_SESSION['levelad'] == "Perangkat Desa"){
+        
+        ?>
+          <div class="col-xl-3 col-sm-6 mb-3">
+            <div class="card text-white bg-primary o-hidden h-100">
+              <div class="card-body">
+                <div class="card-body-icon">
+                  <i class="fas fa-fw fa-comments"></i>
+                </div>
+                <div class="mr-5">
+                <?php
+                  include 'koneksi.php';
+                  // Cara 3
+                  $query = "SELECT * FROM penduduk";
+                  $sql = mysqli_query($koneksi, $query);
+                  $data = array();
+                  while(($row = mysqli_fetch_array($sql)) != null){
+                    $data[] = $row;
+                  }
+                  $count = count($data);
+                  echo "$count Penduduk";
+
+                  ?>
+                </div>
+              </div>
+              <a class="card-footer text-white clearfix small z-1" href="pdpenduduk.php">
+                <span class="float-left">View Details</span>
+                <span class="float-right">
+                  <i class="fas fa-angle-right"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="col-xl-3 col-sm-6 mb-3">
+            <div class="card text-white bg-warning o-hidden h-100">
+              <div class="card-body">
+                <div class="card-body-icon">
+                  <i class="fas fa-fw fa-list"></i>
+                </div>
+                <div class="mr-5">
+                <?php
+                  include 'koneksi.php';
+                  // Cara 3
+                  $query = "SELECT * FROM keluarga";
+                  $sql = mysqli_query($koneksi, $query);
+                  $data = array();
+                  while(($row = mysqli_fetch_array($sql)) != null){
+                    $data[] = $row;
+                  }
+                  $count = count($data);
+                  echo "$count Keluarga";
+
+                  ?>
+                </div>
+              </div>
+              <a class="card-footer text-white clearfix small z-1" href="pdkeluarga.php">
+                <span class="float-left">View Details</span>
+                <span class="float-right">
+                  <i class="fas fa-angle-right"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+          <?php
+        }
+        ?>
         </div>
 
         <!-- Area Chart Example-->
