@@ -511,20 +511,7 @@ include 'koneksi.php';
                                 </div>
 
                                 <!-- Nav Start -->
-                                <div class="classynav">
-                                    <ul>
-                                        <li><a href="index.php">Beranda</a></li>
-                                        <li><a href="#">Profil Desa</a>
-                                            <ul class="dropdown">
-                                                <li><a href="profildes.php">Profil Desa</a></li>
-                                                <li><a href="moto.php">Motto</a></li>
-                                                <li><a href="visimisi.php">Visi & Misi</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="about-us.html">Berita</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
-                                    </ul>
-                                </div>
+                                
                                 <!-- Nav End -->
                             </div>
                         </nav>
@@ -544,7 +531,7 @@ include 'koneksi.php';
         </div>
 
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Polije  by <a href="#" target="_blank">Kelompok 1</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 
     </footer>
