@@ -19,6 +19,7 @@
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
+  <script type="text/javascript" src="chartjs/Chart.js"></script>
 
 </head>
 
@@ -278,81 +279,151 @@
         <div class="card mb-3">
           <div class="card-header">
             <i class="fas fa-chart-area"></i>
-            Area Chart Example</div>
+            Diagram Jenis Kelamin Jumlah Penduduk</div>
           <div class="card-body">
-            <canvas id="myAreaChart" width="100%" height="30"></canvas>
+          <div style="width: 800px;margin: 0px auto;">
+		<canvas id="myChart"></canvas>
+	</div>
+	<script>
+		var ctx = document.getElementById("myChart").getContext('2d');
+		var myChart = new Chart(ctx, {
+			type: 'doughnut',
+			data: {
+				labels: ["Laki-Laki", "Perempuan"],
+				datasets: [{
+					label: '',
+					data: [
+					<?php 
+					$jumlah_teknik = mysqli_query($koneksi,"select * from penduduk where JK_PEN='Laki-Laki'");
+					echo mysqli_num_rows($jumlah_teknik);
+					?>, 
+					<?php 
+					$jumlah_ekonomi = mysqli_query($koneksi,"select * from penduduk where JK_PEN='Perempuan'");
+					echo mysqli_num_rows($jumlah_ekonomi);
+					?>
+				
+					
+					],
+					backgroundColor: [
+					'rgba(255, 99, 132, 0.2)',
+					'rgba(54, 162, 235, 0.2)',
+					'rgba(255, 206, 86, 0.2)',
+					'rgba(75, 192, 192, 0.2)'
+					],
+					borderColor: [
+					'rgba(255,99,132,1)',
+					'rgba(54, 162, 235, 1)',
+					'rgba(255, 206, 86, 1)',
+					'rgba(75, 192, 192, 1)'
+					],
+					borderWidth: 1
+				}]
+			},
+			options: {
+				scales: {
+					yAxes: [{
+						ticks: {
+							beginAtZero:true
+						}
+					}]
+				}
+			}
+		});
+	</script>
           </div>
           <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
         </div>
 
         <!-- DataTables Example -->
-        <div class="card mb-3">
+        
+          <!-- Data Tabel -->
+          <div class="card mb-3">
           <div class="card-header">
             <i class="fas fa-table"></i>
-            Data Table Example</div>
+            Data Penduduk</div>
           <div class="card-body">
             <div class="table-responsive">
+            <p><?php echo isset($pesan) ? $pesan : "" ?></p>
+            <hr>
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr>
-                    <th>Name</th>
-                    <th>Position</th>
-                    <th>Office</th>
-                    <th>Age</th>
-                    <th>Start date</th>
-                    <th>Salary</th>
+                    <th>NIK</th>
+                    <th>ID Admin</th>
+                    <th>No KK</th>
+                    <th>Daftar</th>
+                    <th>Status Akun</th>
+                    <th>Nama</th>
+                    <th>Tempat Lahir</th>
+                    <th>Tanggal Lahir</th>
+                    <th>Jenis Kelamin</th>
+                    <th>Agama</th>
+                    <th>Status</th>
+                    <th>Pekerjaan</th>
+                    <th>Pendidikan</th>
+                    <th>Kewarganegaraan</th>
+                    <th>No Telepon</th>
+                    <th>Hidup</th>
+                    <th>Aksi</th>
                   </tr>
                 </thead>
                 <tfoot>
                   <tr>
-                    <th>Name</th>
-                    <th>Position</th>
-                    <th>Office</th>
-                    <th>Age</th>
-                    <th>Start date</th>
-                    <th>Salary</th>
+                  <th>NIK</th>
+                    <th>ID Admin</th>
+                    <th>No KK</th>
+                    <th>Tanggal Daftar</th>
+                    <th>Status Akun</th>
+                    <th>Nama</th>
+                    <th>Tempat Lahir</th>
+                    <th>Tanggal Lahir</th>
+                    <th>Jenis Kelamin</th>
+                    <th>Agama</th>
+                    <th>Status</th>
+                    <th>Pekerjaan</th>
+                    <th>Pendidikan</th>
+                    <th>Kewarganegaraan</th>
+                    <th>No Telepon</th>
+                    <th>Hidup</th>
+                    <th>Aksi</th>
                   </tr>
                 </tfoot>
                 <tbody>
-                  <tr>
-                    <td>Tiger Nixon</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>61</td>
-                    <td>2011/04/25</td>
-                    <td>$320,800</td>
-                  </tr>
-                  <tr>
-                    <td>Garrett Winters</td>
-                    <td>Accountant</td>
-                    <td>Tokyo</td>
-                    <td>63</td>
-                    <td>2011/07/25</td>
-                    <td>$170,750</td>
-                  </tr>
-                  <tr>
-                    <td>Ashton Cox</td>
-                    <td>Junior Technical Author</td>
-                    <td>San Francisco</td>
-                    <td>66</td>
-                    <td>2009/01/12</td>
-                    <td>$86,000</td>
-                  </tr>
-                  <tr>
-                    <td>Cedric Kelly</td>
-                    <td>Senior Javascript Developer</td>
-                    <td>Edinburgh</td>
-                    <td>22</td>
-                    <td>2012/03/29</td>
-                    <td>$433,060</td>
-                  </tr>
+                <?php
+                  include 'koneksi.php';
+                  $query = "select * from penduduk";
+                  $sql = mysqli_query($koneksi, $query);
+                  while ($row=mysqli_fetch_array($sql)){
+                    echo "<tr>";
+                    echo "<td>".$row['NIK_PENDUDUK']."</td>";
+                    echo "<td>".$row['ID_ADMIN']."</td>";
+                    echo "<td>".$row['NO_KK']."</td>";
+                    echo "<td>".$row['TGLDAFTAR']."</td>";
+                    echo "<td>".$row['STATUSAKUN']."</td>";
+                    echo "<td>".$row['NAMAPEN']."</td>";
+                    echo "<td>".$row['TEMPATLHR']."</td>";
+                    echo "<td>".$row['TANGGALHR']."</td>";
+                    echo "<td>".$row['JK_PEN']."</td>";
+                    echo "<td>".$row['AGAMAPEN']."</td>";
+                    echo "<td>".$row['STATUSPEN']."</td>";
+                    echo "<td>".$row['PEKERJAANPEN']."</td>";
+                    echo "<td>".$row['PENDIDIKANPEN']."</td>";
+                    echo "<td>".$row['KWNPEN']."</td>";
+                    echo "<td>".$row['NOTELPEN']."</td>";
+                    echo "<td>".$row['KET_HIDUP']."</td>";
+                    echo "<td><a class='fas fa-few fa-ban' href='pdpenduduk.php?aksi=status&NIK_PENDUDUK=".$row['NIK_PENDUDUK']."'> </a>
+                              <a class='fas fa-few fa-edit' href='pdpenduduk.php?aksi=update&NIK_PENDUDUK=".$row['NIK_PENDUDUK']."'></a> 
+                              <a class='fas fa-few fa-trash' href='pdpenduduk.php?aksi=delete&NIK_PENDUDUK=".$row['NIK_PENDUDUK']."'></a></td>";
+                    echo "</tr>";
+                  }
+                  ?> 
                 </tbody>
               </table>
             </div>
           </div>
           <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
         </div>
-
+         
       </div>
       <!-- /.container-fluid -->
 
