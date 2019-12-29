@@ -135,10 +135,17 @@ if($_SESSION['status']==""){
 
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="tables.php">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Laporan</span></a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-fw fa-file"></i>
+          <span>Laporan</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+          <h6 class="dropdown-header">Data:</h6>
+          <a class="dropdown-item" href="lapenduduk.php">Data Penduduk</a>
+          <a class="dropdown-item" href="lapkeluarga.php">Data Keluarga</a>
+          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#pkModal">Penduduk & Keluarga</a>
+        </div>
       </li>
     </ul>
 
@@ -339,97 +346,6 @@ if($_SESSION['status']==""){
           </div>
           <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
         </div>
-
-        <!-- DataTables Example -->
-        
-          <!-- Data Tabel -->
-          <div class="card mb-3">
-          <div class="card-header">
-            <i class="fas fa-table"></i>
-            Data Penduduk</div>
-          <div class="card-body">
-            <div class="table-responsive">
-            <p><?php echo isset($pesan) ? $pesan : "" ?></p>
-            <hr>
-              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead>
-                  <tr>
-                    <th>NIK</th>
-                    <th>ID Admin</th>
-                    <th>No KK</th>
-                    <th>Daftar</th>
-                    <th>Status Akun</th>
-                    <th>Nama</th>
-                    <th>Tempat Lahir</th>
-                    <th>Tanggal Lahir</th>
-                    <th>Jenis Kelamin</th>
-                    <th>Agama</th>
-                    <th>Status</th>
-                    <th>Pekerjaan</th>
-                    <th>Pendidikan</th>
-                    <th>Kewarganegaraan</th>
-                    <th>No Telepon</th>
-                    <th>Hidup</th>
-                    <th>Aksi</th>
-                  </tr>
-                </thead>
-                <tfoot>
-                  <tr>
-                  <th>NIK</th>
-                    <th>ID Admin</th>
-                    <th>No KK</th>
-                    <th>Tanggal Daftar</th>
-                    <th>Status Akun</th>
-                    <th>Nama</th>
-                    <th>Tempat Lahir</th>
-                    <th>Tanggal Lahir</th>
-                    <th>Jenis Kelamin</th>
-                    <th>Agama</th>
-                    <th>Status</th>
-                    <th>Pekerjaan</th>
-                    <th>Pendidikan</th>
-                    <th>Kewarganegaraan</th>
-                    <th>No Telepon</th>
-                    <th>Hidup</th>
-                    <th>Aksi</th>
-                  </tr>
-                </tfoot>
-                <tbody>
-                <?php
-                  include 'koneksi.php';
-                  $query = "select * from penduduk";
-                  $sql = mysqli_query($koneksi, $query);
-                  while ($row=mysqli_fetch_array($sql)){
-                    echo "<tr>";
-                    echo "<td>".$row['NIK_PENDUDUK']."</td>";
-                    echo "<td>".$row['ID_ADMIN']."</td>";
-                    echo "<td>".$row['NO_KK']."</td>";
-                    echo "<td>".$row['TGLDAFTAR']."</td>";
-                    echo "<td>".$row['STATUSAKUN']."</td>";
-                    echo "<td>".$row['NAMAPEN']."</td>";
-                    echo "<td>".$row['TEMPATLHR']."</td>";
-                    echo "<td>".$row['TANGGALHR']."</td>";
-                    echo "<td>".$row['JK_PEN']."</td>";
-                    echo "<td>".$row['AGAMAPEN']."</td>";
-                    echo "<td>".$row['STATUSPEN']."</td>";
-                    echo "<td>".$row['PEKERJAANPEN']."</td>";
-                    echo "<td>".$row['PENDIDIKANPEN']."</td>";
-                    echo "<td>".$row['KWNPEN']."</td>";
-                    echo "<td>".$row['NOTELPEN']."</td>";
-                    echo "<td>".$row['KET_HIDUP']."</td>";
-                    echo "<td><a class='fas fa-few fa-ban' href='pdpenduduk.php?aksi=status&NIK_PENDUDUK=".$row['NIK_PENDUDUK']."'> </a>
-                              <a class='fas fa-few fa-edit' href='pdpenduduk.php?aksi=update&NIK_PENDUDUK=".$row['NIK_PENDUDUK']."'></a> 
-                              <a class='fas fa-few fa-trash' href='pdpenduduk.php?aksi=delete&NIK_PENDUDUK=".$row['NIK_PENDUDUK']."'></a></td>";
-                    echo "</tr>";
-                  }
-                  ?> 
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-        </div>
-         
       </div>
       <!-- /.container-fluid -->
 
@@ -471,7 +387,40 @@ if($_SESSION['status']==""){
       </div>
     </div>
   </div>
-
+ <!-- Laporan Modal-->
+ <div class="modal fade" id="pkModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Masukkan NO KK</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <form class="modal-body" method="post" action="lapenkel.php">
+          <div class="form-group">
+            <label>NO KK</label>
+            <input type="text" name="nomorkk" id="nomorkk" class="form-control" onkeyup="isi_otomatis()" required>
+          </div>
+          <hr>
+          <input type="submit" name="cetak" value="Cetak" class="btn btn-primary">
+        </form>
+        <script type="text/javascript">
+            function isi_otomatis(){
+                var NO_KK = $("#NO_KK").val();
+                $.ajax({
+                    url: 'prosesajax.php',
+                    data:"NO_KK="+NO_KK ,
+                }).success(function (data) {
+                    var json = data,
+                    obj = JSON.parse(json);
+                    $('#KEPALA').val(obj.KEPALA);
+                });
+            }
+        </script>
+      </div>
+    </div>
+  </div>
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

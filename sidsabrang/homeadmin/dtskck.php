@@ -140,10 +140,17 @@ if(isset($_GET["gagal"])){
 
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="tables.php">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Laporan</span></a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-fw fa-file"></i>
+          <span>Laporan</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+          <h6 class="dropdown-header">Data:</h6>
+          <a class="dropdown-item" href="lapenduduk.php">Data Penduduk</a>
+          <a class="dropdown-item" href="lapkeluarga.php">Data Keluarga</a>
+          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#pkModal">Penduduk & Keluarga</a>
+        </div>
       </li>
     </ul>
 
@@ -369,7 +376,40 @@ if(isset($_GET["gagal"])){
       </div>
     </div>
   </div>
-
+ <!-- Laporan Modal-->
+ <div class="modal fade" id="pkModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Masukkan NO KK</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <form class="modal-body" method="post" action="lapenkel.php">
+          <div class="form-group">
+            <label>NO KK</label>
+            <input type="text" name="nomorkk" id="nomorkk" class="form-control" onkeyup="isi_otomatis()" required>
+          </div>
+          <hr>
+          <input type="submit" name="cetak" value="Cetak" class="btn btn-primary">
+        </form>
+        <script type="text/javascript">
+            function isi_otomatis(){
+                var NO_KK = $("#NO_KK").val();
+                $.ajax({
+                    url: 'prosesajax.php',
+                    data:"NO_KK="+NO_KK ,
+                }).success(function (data) {
+                    var json = data,
+                    obj = JSON.parse(json);
+                    $('#KEPALA').val(obj.KEPALA);
+                });
+            }
+        </script>
+      </div>
+    </div>
+  </div>
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
