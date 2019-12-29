@@ -268,7 +268,7 @@ if(isset($_GET["simpam_error"])){
     <!-- ##### Breadcumb Area End ##### -->
 
     <!-- ##### Blog Wrapper Start ##### -->
-    <div class="blog-wrapper section-padding-100-0 clearfix">
+    <div class="blog-wrapper section-padding-50-0 clearfix">
         <div class="container">
             <div class="row align-items-end">
                 <!-- Single Blog Area -->
@@ -279,7 +279,40 @@ if(isset($_GET["simpam_error"])){
                             <div class="line"></div>
                             <a href="#" class="post-tag">About</a>
                             <h4><a href="#" class="post-headline">VISI & MISI</a></h4>
-                            <p class="mb-3">"Jemput yang tertinggal, rangkul yang tercecer, satukan langkah untuk perubahan Desa Sabrang yang lebih baik dan bermartabat."</p>
+                            <p class="mb-3"><table width="80%" border="0" align="center" cellspacing="1" cellpadding="2">
+<tr>
+    <th>VISI</th>
+</tr>
+<tr> <td>&nbsp;</td> </tr>
+<td>Terciptanya pelayanan dibidang prmerintahan yang kreatif,  inovatif,  guna mewujudkan masyarakat Desa Sabrang yang sejahtera lahir dan batin.</td>
+    </tr>
+    
+<tr>
+<tr> <td>&nbsp;</td> </tr>
+    <th>MISI</th>
+</tr>
+<tr> <td>&nbsp;</td> </tr>
+    <tr>
+      <td>Misi yang diemban dalam mewujudkan visi tersebut adalah :</td>
+    </tr>
+    <tr>
+      <td>1. Meningkatkan kualitas pelayanan masyarakat. </td>
+    </tr>
+    <tr>
+      <td>2. Menggali potensi unggulan desa.</td>
+    </tr>
+    <tr>
+      <td>3. Pembangunan sarana dan prasarana yang memadai. </td>
+    </tr>
+    <tr>
+      <td>4. Pemberdayaan masyarakat, utamanya usaha kecil,  menengah untuk menjadi sumber daya manusia yang mandiri. </td>
+    </tr>
+    <tr>
+      <td>5. Mewujudkan aparatur pemerintahan Desa yang berfungsi melayani masyarakat secara profesional,  efisien,  transparan,  dan produktif dalam menyelenggarakan pemerintahan dan pembangunan desa.</td>
+    </tr>
+<tr> <td>&nbsp;</td> </tr>
+    </table>
+</p>
                         </div>
                     </div>
                 </div>
