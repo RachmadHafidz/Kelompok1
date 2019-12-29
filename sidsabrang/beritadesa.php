@@ -344,7 +344,7 @@ function tgl_indo($tanggal){
                                 <div class="single-blog-thumbnail">
                                     <img src="homeadmin/images/<?php echo $row['FOTO_ARTIKEL'] ?>" alt="">
                                     <div class="post-date">
-                                        <a href="#"><?php echo $row['TANGGAL_ARTIKEL'] ?> <span>march</span></a>
+                                        <a href="#"><?php echo tgl_saja($row['TANGGAL_ARTIKEL']) ?> <span><?php echo bulan_indo($row['TANGGAL_ARTIKEL']) ?></span></a>
                                     </div>
                                 </div>
                             </div>
@@ -405,7 +405,7 @@ function tgl_indo($tanggal){
                                         <a href="#" class="post-tag"><?php echo $row['ID_KATEGORI'] ?></a>
                                         <h4><a href="detailberitadesa.php?id=<?= $row['ID_ARTIKEL']?>" class="post-headline"><?php echo $row['JUDUL_ARTIKEL'] ?></a></h4>
                                         <div class="post-meta">
-                                            <p><a href="#"><?php echo $row['TANGGAL_ARTIKEL'] ?></a></p>
+                                            <p><a href="#"><?php echo tgl_indo($row['TANGGAL_ARTIKEL']) ?></a></p>
                                         </div>
                                     </div>
                                 </div>

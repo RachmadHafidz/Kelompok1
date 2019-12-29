@@ -471,7 +471,7 @@ if(isset($_POST['btn_simpan'])) {
  <input type="submit" class="btn btn-primary" name="btn_simpan" value="Cetak" onclick="return confirm('Apakah Anda Ingin Mencetak Surat?')"></td>
  <input type="reset" class="btn btn-primary" name="reset" value="Reset"></td>
 </form>
-
+<br>
 </div>
 
     <!-- ##### Instagram Feed Area Start ##### -->

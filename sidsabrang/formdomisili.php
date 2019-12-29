@@ -473,7 +473,7 @@ $then=date('Y-m-d', strtotime('+7 days', strtotime($now)));
  <input type="submit" class="btn btn-primary" name="btn_simpan" value="Cetak" onclick="return confirm('Apakah Anda Ingin Mencetak Surat?')"></td>
  <input type="reset" class="btn btn-primary" name="reset" value="Reset"></td>
 </form>
-
+<br>
 </div>
 
     <!-- ##### Instagram Feed Area Start ##### -->

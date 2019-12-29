@@ -273,26 +273,50 @@ function tgl_indo($tanggal){
                                         <ul class="dropdown">
                                             <li><a href="#">SK Domisili</a>
                                                 <ul class="dropdown">
-                                                        <li><a href="formdomisili.php">Pribadi</a></li>
-                                                        <li><a href="fdom.php">Perwakilan</a></li>
+                                                <?php
+                                                if($_SESSION['levelad']=='Penduduk'){
+                                                    echo "<li><a href='formdomisili.php'>Pribadi</a></li>
+                                                    <li><a href='fdom.php'>Perwakilan</a></li>";
+                                                }else{
+                                                    echo "<li><a href='fdom.php'>Perwakilan</a></li>";
+                                                }
+                                                ?>     
                                                 </ul>
                                             </li>
                                             <li><a href="#">SK SKCK</a>
                                                 <ul class="dropdown">
-                                                        <li><a href="formskck.php">Pribadi</a></li>
-                                                        <li><a href="fskck.php">Perwakilan</a></li>
+                                                <?php
+                                                if($_SESSION['levelad']=='Penduduk'){
+                                                    echo "<li><a href='formskck.php'>Pribadi</a></li>
+                                                    <li><a href='fskck.php'>Perwakilan</a></li>";
+                                                }else{
+                                                    echo "<li><a href='fskck.php'>Perwakilan</a></li>";
+                                                }
+                                                ?> 
                                                 </ul>
                                             </li>
                                             <li><a href="#">SK Belum Nikah</a>
                                                 <ul class="dropdown">
-                                                        <li><a href="formbnikah.php">Pribadi</a></li>
-                                                        <li><a href="fbnikah.php">Perwakilan</a></li>
+                                                <?php
+                                                if($_SESSION['levelad']=='Penduduk'){
+                                                    echo "<li><a href='formbnikah.php'>Pribadi</a></li>
+                                                    <li><a href='fbnikah.php'>Perwakilan</a></li>";
+                                                }else{
+                                                    echo "<li><a href='fbnikah.php'>Perwakilan</a></li>";
+                                                }
+                                                ?> 
                                                 </ul>
                                             </li>
                                             <li><a href="#">SK Tempat Usaha</a>
                                                 <ul class="dropdown">
-                                                        <li><a href="formtusaha.php">Pribadi</a></li>
-                                                        <li><a href="ftusaha.php">Perwakilan</a></li>
+                                                <?php
+                                                if($_SESSION['levelad']=='Penduduk'){
+                                                    echo "<li><a href='formtusaha.php'>Pribadi</a></li>
+                                                    <li><a href='ftusaha.php'>Perwakilan</a></li>";
+                                                }else{
+                                                    echo "<li><a href='ftusaha.php'>Perwakilan</a></li>";
+                                                }
+                                                ?> 
                                                 </ul>
                                             </li>
                                         </ul>
@@ -491,6 +515,7 @@ if($_SESSION['levelad']=='Penduduk'){?>
 ?>
  <input type="reset" class="btn btn-primary" name="reset" value="Reset"></td>
 </form>
+<br>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript">
             function isi_otomatis(){
