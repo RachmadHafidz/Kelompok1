@@ -1,19 +1,13 @@
 <?php 
 include 'fungsi\config.php';
 include 'koneksi.php';
-session_start();
-if(isset($_SESSION['nik/id'])){
-    header('location:indexlogin.php');
-}
-if(isset($_GET["login_error"])){
-    echo "<script>alert('Username atau Password salah ');history.go(-1);</script>";
-}else if(isset($_GET["tidak_valid"])){
-    echo "<script>alert('Status Akun Tidak Aktif! Silahkan mengaktifkan akun terlebih dahulu pada Admin.');history.go(-1);</script>";
-}else if(isset($_GET["akses_gagal"])){
-    echo "<script>alert('Akun tidak dapat Mengakses! Level Anda tidak sesuai untuk dapat mengakses.');history.go(-1);</script>";
-}else if(isset($_GET["belum_login"])){
-    echo "<script>alert('Anda belum Login, Silahkan Login Terlebih Dahulu!!');history.go(-1);</script>";
-}
+        if(isset($_GET["login_error"])){
+            echo "<script>alert('Username atau Password salah ');history.go(-1);</script>";
+        }else if(isset($_GET["tidak_valid"])){
+			echo "<script>alert('Status Akun Tidak Aktif! Silahkan mengaktifkan akun terlebih dahulu pada Admin.');history.go(-1);</script>";
+		}else if(isset($_GET["akses_gagal"])){
+			echo "<script>alert('Akun tidak dapat Mengakses! Level Anda tidak sesuai untuk dapat mengakses.');history.go(-1);</script>";
+		}
         ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -212,12 +206,12 @@ if(isset($_GET["login_error"])){
 
 
     <!-- ##### Breadcumb Area Start ##### -->
-    <div class="breadcumb-area bg-img" style="background-image: url(img/surat/surat.jpg);">
+    <div class="breadcumb-area bg-img" style="background-image: url(img/bg-img/sabrang.jpg);">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
                     <div class="breadcumb-content text-center">
-                        <h2>petunjuk surat</h2>
+                        <h2>motto desa</h2>
                     </div>
                 </div>
             </div>
@@ -236,106 +230,8 @@ if(isset($_GET["login_error"])){
                         <div class="single-blog-content" align="center">
                             <div class="line"></div>
                             <a href="#" class="post-tag">About</a>
-                            <h4><a href="#" class="post-headline">PETUNJUK PEMBUATAN SURAT</a></h4>
-                            <p class="mb-3"><img src="http://localhost/Kelompok1/sidsabrang/img/Petunjuk/petunjuksurat.PNG"></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ##### Blog Wrapper End ##### -->
-        <!-- ##### Blog Wrapper Start ##### -->
-        <div class="blog-wrapper section-padding-100-0 clearfix">
-        <div class="container">
-            <div class="row align-items-end">
-                <!-- Single Blog Area -->
-                <div class="col-12 col-lg-12">
-                    <div class="single-blog-area clearfix mb-50">
-                        <!-- Blog Content -->
-                        <div class="single-blog-content" align="center">
-                            <div class="line"></div>
-                            <a href="#" class="post-tag">About</a>
-                            <h4><a href="#" class="post-headline">PERSYARATAN PEMBUATAN SURAT</a></h4>
-                            <p class="mb-3"><table width="80%" border="0" align="center" cellspacing="1" cellpadding="2">
-<tr>
-    <th>Persyaratan SKCK</th>
-</tr>
-<tr> <td>&nbsp;</td> </tr>
-<td>1. Membawa Fotokopi Kartu Tanda Penduduk (KTP) atau Surat Izin Mengemudi (SIM).</td>
-    </tr>
-    <tr>
-      <td>2. Memembawa Fotokopi Kartu Keluarga (KK).</td>
-    </tr>
-    <tr>
-      <td>3. Membawa Fotokopi Akta Kelahiran/Surat Kenal Lahir/Ijazah Terakhir.</td>
-    </tr>
-    <tr>
-      <td>4. Membawa Pas foto 4x6 berlatar/background merah sebanyak 6 lembar.</td>
-    </tr>
-    <tr>
-      <td>5. Memembawa Surat pengantar RT/RW.</td>
-    </tr>
-    <tr>
-      <td>6. Membawa Surat Keterangan SKCK yang telah di cetak. untuk mendapatkan tanda tangan Kepala desa.</td>
-    </tr>
-<tr> <td>&nbsp;</td> </tr>
-<tr>
-    <th>Persyaratan Surat Domisili</th>
-</tr>
-<tr> <td>&nbsp;</td> </tr>
-    <tr>
-      <td>1. Membawa Fotokopi Kartu Tanda Penduduk (KTP) atau Surat Izin Mengemudi (SIM).</td>
-    </tr>
-    <tr>
-      <td>2. Memembawa Fotokopi Kartu Keluarga (KK).</td>
-    </tr>
-    <tr>
-      <td>3. Membawa Fotokopi Akta Kelahiran/Surat Kenal Lahir/Ijazah Terakhir.</td>
-    </tr>
-    <tr>
-      <td>4. Memembawa Surat pengantar RT/RW.</td>
-    </tr>
-    <tr>
-      <td>5. Membawa Surat Keterangan DOMISILI yang telah di cetak. untuk mendapatkan tanda tangan Kepala desa.</td>
-    </tr>
-<tr> <td>&nbsp;</td> </tr>
-<tr>
-    <th>Persyaratan Surat Belum Menikah</th>
-</tr>
-<tr> <td>&nbsp;</td> </tr>
-    <tr>
-      <td>1. Membawa Fotokopi Kartu Tanda Penduduk (KTP) atau Surat Izin Mengemudi (SIM).</td>
-    </tr>
-    <tr>
-      <td>2. Memembawa Fotokopi Kartu Keluarga (KK).</td>
-    </tr>
-    <tr>
-      <td>3. Memembawa Surat pengantar RT/RW.</td>
-    </tr>
-    <tr>
-      <td>4. Membawa Surat Keterangan Belum menikah yang telah di cetak. untuk mendapatkan tanda tangan Kepala desa.</td>
-    </tr>
-
-<tr> <td>&nbsp;</td> </tr>
-<tr>
-    <th>Persyaratan Surat Tempat Usaha</th>
-</tr>
-<tr> <td>&nbsp;</td> </tr>
-    <tr>
-      <td>1. Membawa Fotokopi Kartu Tanda Penduduk (KTP) atau Surat Izin Mengemudi (SIM).</td>
-    </tr>
-    <tr>
-      <td>2. Memembawa Fotokopi Kartu Keluarga (KK).</td>
-    </tr>
-    <tr>
-      <td>3. Memembawa Surat pengantar RT/RW.</td>
-    </tr>
-    <tr>
-      <td>4. Membawa Surat Keterangan Tempat Usaha yang telah di cetak. untuk mendapatkan tanda tangan Kepala desa.</td>
-    </tr>
-    </table>
-</p>
+                            <h4><a href="#" class="post-headline">MOTTO</a></h4>
+                            <p class="mb-3">"Jemput yang tertinggal, rangkul yang tercecer, satukan langkah untuk perubahan Desa Sabrang yang lebih baik dan bermartabat."</p>
                         </div>
                     </div>
                 </div>
@@ -442,6 +338,80 @@ if(isset($_GET["login_error"])){
     </div>
     <!-- ##### Cool Facts Area End ##### -->
 
+    <!-- ##### Blog Wrapper Start ##### -->
+    <div class="blog-wrapper section-padding-100-0 clearfix">
+        <div class="container">
+            <div class="row">
+                <!-- Single Blog Area  -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="single-blog-area blog-style-2 mb-100">
+                        <div class="single-blog-thumbnail">
+                            <img src="img/blog-img/4.jpg" alt="">
+                            <div class="post-date">
+                                <a href="#">10 <span>march</span></a>
+                            </div>
+                        </div>
+                        <!-- Blog Content -->
+                        <div class="single-blog-content mt-50">
+                            <div class="line"></div>
+                            <a href="#" class="post-tag">Lifestyle</a>
+                            <h4><a href="#" class="post-headline">We love colors in 2018</a></h4>
+                            <p>Curabitur venenatis efficitur lorem sed tempor. Integer aliquet tempor cursus. Nullam vestibulum convallis risus vel condimentum. Nullam auctor lorem in libero luctus, vel volutpat quam tincidunt.</p>
+                            <div class="post-meta">
+                                <p>By <a href="#">james smith</a></p>
+                                <p>3 comments</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Blog Area  -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="single-blog-area blog-style-2 mb-100">
+                        <div class="single-blog-thumbnail">
+                            <img src="img/blog-img/5.jpg" alt="">
+                            <div class="post-date">
+                                <a href="#">10 <span>march</span></a>
+                            </div>
+                        </div>
+                        <!-- Blog Content -->
+                        <div class="single-blog-content mt-50">
+                            <div class="line"></div>
+                            <a href="#" class="post-tag">Lifestyle</a>
+                            <h4><a href="#" class="post-headline">Party people in the house</a></h4>
+                            <p>Curabitur venenatis efficitur lorem sed tempor. Integer aliquet tempor cursus. Nullam vestibulum convallis risus vel condimentum. Nullam auctor lorem in libero luctus, vel volutpat quam tincidunt.</p>
+                            <div class="post-meta">
+                                <p>By <a href="#">james smith</a></p>
+                                <p>3 comments</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Blog Area  -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="single-blog-area blog-style-2 mb-100">
+                        <div class="single-blog-thumbnail">
+                            <img src="img/blog-img/6.jpg" alt="">
+                            <div class="post-date">
+                                <a href="#">10 <span>march</span></a>
+                            </div>
+                        </div>
+                        <!-- Blog Content -->
+                        <div class="single-blog-content mt-50">
+                            <div class="line"></div>
+                            <a href="#" class="post-tag">Lifestyle</a>
+                            <h4><a href="#" class="post-headline">We love colors in 2018</a></h4>
+                            <p>Curabitur venenatis efficitur lorem sed tempor. Integer aliquet tempor cursus. Nullam vestibulum convallis risus vel condimentum. Nullam auctor lorem in libero luctus, vel volutpat quam tincidunt.</p>
+                            <div class="post-meta">
+                                <p>By <a href="#">james smith</a></p>
+                                <p>3 comments</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Blog Wrapper End ##### -->
 
     <!-- ##### Instagram Feed Area Start ##### -->
     <div class="instagram-feed-area">
@@ -458,58 +428,58 @@ if(isset($_GET["login_error"])){
         <div class="instagram-slides owl-carousel">
             <!-- Single Insta Feed -->
             <div class="single-insta-feed">
-                <img src="img/instagram-img/1.jpg" style="height: 269px;width: 268px;" alt="">
+                <img src="img/instagram-img/1.png" alt="">
                 <!-- Hover Effects -->
                 <div class="hover-effects">
-                    <a href="https://www.instagram.com/explore/locations/341653129888924/sabrang-ambulu/?hl=id" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
+                    <a href="#" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
                 </div>
             </div>
             <!-- Single Insta Feed -->
             <div class="single-insta-feed">
-                <img src="img/instagram-img/2.jpg" style="height: 269px;width: 268px;"alt="">
+                <img src="img/instagram-img/2.png" alt="">
                 <!-- Hover Effects -->
                 <div class="hover-effects">
-                    <a href="https://www.instagram.com/explore/locations/341653129888924/sabrang-ambulu/?hl=id" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
+                    <a href="#" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
                 </div>
             </div>
             <!-- Single Insta Feed -->
             <div class="single-insta-feed">
-                <img src="img/instagram-img/3.jpg" style="height: 269px;width: 268px;" alt="">
+                <img src="img/instagram-img/3.png" alt="">
                 <!-- Hover Effects -->
                 <div class="hover-effects">
-                    <a href="https://www.instagram.com/explore/locations/341653129888924/sabrang-ambulu/?hl=id" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
+                    <a href="#" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
                 </div>
             </div>
             <!-- Single Insta Feed -->
             <div class="single-insta-feed">
-                <img src="img/instagram-img/4.jpg"style="height: 269px;width: 268px;" alt="">
+                <img src="img/instagram-img/4.png" alt="">
                 <!-- Hover Effects -->
                 <div class="hover-effects">
-                    <a href="https://www.instagram.com/explore/locations/341653129888924/sabrang-ambulu/?hl=id" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
+                    <a href="#" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
                 </div>
             </div>
             <!-- Single Insta Feed -->
             <div class="single-insta-feed">
-                <img src="img/instagram-img/5.jpg" style="height: 269px;width: 268px;"alt="">
+                <img src="img/instagram-img/5.png" alt="">
                 <!-- Hover Effects -->
                 <div class="hover-effects">
-                    <a href="https://www.instagram.com/explore/locations/341653129888924/sabrang-ambulu/?hl=id" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
+                    <a href="#" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
                 </div>
             </div>
             <!-- Single Insta Feed -->
             <div class="single-insta-feed">
-                <img src="img/instagram-img/6.jpg" style="height: 269px;width: 268px;"alt="">
+                <img src="img/instagram-img/6.png" alt="">
                 <!-- Hover Effects -->
                 <div class="hover-effects">
-                    <a href="https://www.instagram.com/explore/locations/341653129888924/sabrang-ambulu/?hl=id" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
+                    <a href="#" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
                 </div>
             </div>
             <!-- Single Insta Feed -->
             <div class="single-insta-feed">
-                <img src="img/instagram-img/7.jpg" style="height: 269px;width: 268px;"alt="">
+                <img src="img/instagram-img/7.png" alt="">
                 <!-- Hover Effects -->
                 <div class="hover-effects">
-                    <a href="https://www.instagram.com/explore/locations/341653129888924/sabrang-ambulu/?hl=id" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
+                    <a href="#" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
                 </div>
             </div>
         </div>
@@ -541,7 +511,20 @@ if(isset($_GET["login_error"])){
                                 </div>
 
                                 <!-- Nav Start -->
-                                
+                                <div class="classynav">
+                                    <ul>
+                                        <li><a href="index.php">Beranda</a></li>
+                                        <li><a href="#">Profil Desa</a>
+                                            <ul class="dropdown">
+                                                <li><a href="profildes.php">Profil Desa</a></li>
+                                                <li><a href="moto.php">Motto</a></li>
+                                                <li><a href="visimisi.php">Visi & Misi</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="about-us.html">Berita</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                </div>
                                 <!-- Nav End -->
                             </div>
                         </nav>
@@ -561,7 +544,7 @@ if(isset($_GET["login_error"])){
         </div>
 
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Polije  by <a href="#" target="_blank">Kelompok 1</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 
     </footer>
