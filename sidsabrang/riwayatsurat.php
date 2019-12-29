@@ -108,7 +108,7 @@
 	?>
 
 	<tr>
-	<td colspan = "8" >  Riwayat Surat SKCK untuk Pribadi </td>	
+	<td colspan = "8" > <b> Riwayat Surat SKCK untuk Pribadi</b> </td>	
 	</tr>
 	<?php
 	while($show1 = mysqli_fetch_array($play2)){
@@ -130,7 +130,7 @@
 	?>
 
 	<tr>
-		<td colspan = "8" >  Riwayat Surat Tempat Usaha untuk Pribadi </td>	
+		<td colspan = "8" > <b> Riwayat Surat Tempat Usaha untuk Pribadi </b> </td>	
 	</tr>
 	<?php
 	while($show2 = mysqli_fetch_array($play3)){
@@ -150,12 +150,16 @@
 	}	
 	?>
 </table>
+</div>
+</div>
+<div class="card-footer small text-muted"></div>
+        </div>
 
 
 
 
-
-
+</br>
+</br>
 	<div class="card mb-3">
     <div class="card-header">
     <h5>Riwayat Surat Perwakilan</h5>
@@ -173,6 +177,9 @@
 		<th>Keterangan Surat</th>
 		<th>Jenis Surat</th>
 		<th>Cetak</th>
+	</tr>
+	<tr>
+	<td colspan = "8" > <b>Riwayat Surat Domisili untuk Perwakilan</b> </td>
 	</tr>
 
 	<?php
@@ -208,7 +215,7 @@
 	?>
 
 	<tr>
-		<td>  Riwayat Surat Belum Nikah untuk Perwakilan </td>	
+	<td colspan = "9" > <b>  Riwayat Surat Belum Nikah untuk Perwakilan </b></td>	
 	</tr>
 	<?php
 	while($show = mysqli_fetch_array($run1)){
@@ -229,7 +236,7 @@
 	?>
 
 	<tr>
-		<td>  Riwayat Surat SKCK untuk Perwakilan </td>	
+	<td colspan = "9" > <b> Riwayat Surat SKCK untuk Perwakilan </b></td>	
 	</tr>
 	<?php
 	while($show1 = mysqli_fetch_array($run2)){
@@ -249,7 +256,7 @@
 	}	
 	?>
 <tr>
-		<td>  Riwayat Surat Tempat Usaha untuk Perwakilan </td>	
+	<td colspan = "9" > <b> Riwayat Surat Tempat Usaha untuk Perwakilan </b></td>	
 	</tr>
 	<?php
 	while($show2 = mysqli_fetch_array($run3)){
@@ -271,7 +278,11 @@
 	?>
  
 	</table>
+	</div>
 </div>
+<div class="card-footer small text-muted"></div>
+        </div>
+
 	
 </body>
 </html>
