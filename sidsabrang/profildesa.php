@@ -551,7 +551,78 @@ if(isset($_GET["simpam_error"])){
     </div>
     <!-- ##### Cool Facts Area End ##### -->
 
-
+    <!-- ##### Instagram Feed Area Start ##### -->
+    <div class="instagram-feed-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="insta-title">
+                        <h5>About us @ Instagram</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Instagram Slides -->
+        <div class="instagram-slides owl-carousel">
+            <!-- Single Insta Feed -->
+            <div class="single-insta-feed">
+                <img src="img/instagram-img/1.jpg" style="height: 269px;width: 268px;" alt="">
+                <!-- Hover Effects -->
+                <div class="hover-effects">
+                    <a href="https://www.instagram.com/explore/locations/341653129888924/sabrang-ambulu/?hl=id" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
+                </div>
+            </div>
+            <!-- Single Insta Feed -->
+            <div class="single-insta-feed">
+                <img src="img/instagram-img/2.jpg" style="height: 269px;width: 268px;"alt="">
+                <!-- Hover Effects -->
+                <div class="hover-effects">
+                    <a href="https://www.instagram.com/explore/locations/341653129888924/sabrang-ambulu/?hl=id" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
+                </div>
+            </div>
+            <!-- Single Insta Feed -->
+            <div class="single-insta-feed">
+                <img src="img/instagram-img/3.jpg" style="height: 269px;width: 268px;" alt="">
+                <!-- Hover Effects -->
+                <div class="hover-effects">
+                    <a href="https://www.instagram.com/explore/locations/341653129888924/sabrang-ambulu/?hl=id" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
+                </div>
+            </div>
+            <!-- Single Insta Feed -->
+            <div class="single-insta-feed">
+                <img src="img/instagram-img/4.jpg" style="height: 269px;width: 268px;" alt="">
+                <!-- Hover Effects -->
+                <div class="hover-effects">
+                    <a href="https://www.instagram.com/explore/locations/341653129888924/sabrang-ambulu/?hl=id" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
+                </div>
+            </div>
+            <!-- Single Insta Feed -->
+            <div class="single-insta-feed">
+                <img src="img/instagram-img/5.jpg" style="height: 269px;width: 268px;"alt="">
+                <!-- Hover Effects -->
+                <div class="hover-effects">
+                    <a href="https://www.instagram.com/explore/locations/341653129888924/sabrang-ambulu/?hl=id" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
+                </div>
+            </div>
+            <!-- Single Insta Feed -->
+            <div class="single-insta-feed">
+                <img src="img/instagram-img/6.jpg" style="height: 269px;width: 268px;"alt="">
+                <!-- Hover Effects -->
+                <div class="hover-effects">
+                    <a href="https://www.instagram.com/explore/locations/341653129888924/sabrang-ambulu/?hl=id" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
+                </div>
+            </div>
+            <!-- Single Insta Feed -->
+            <div class="single-insta-feed">
+                <img src="img/instagram-img/7.jpg" style="height: 269px;width: 268px;"alt="">
+                <!-- Hover Effects -->
+                <div class="hover-effects">
+                    <a href="https://www.instagram.com/explore/locations/341653129888924/sabrang-ambulu/?hl=id" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Instagram Feed Area End ##### -->
 
     <!-- ##### Footer Area Start ##### -->
     <footer class="footer-area text-center">

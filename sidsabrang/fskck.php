@@ -525,118 +525,85 @@ if($_SESSION['levelad']=='Penduduk'){?>
         </script>
 </div>
 
+    <!-- ##### Instagram Feed Area Start ##### -->
+    <div class="instagram-feed-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="insta-title">
+                        <h5>About us @ Instagram</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Instagram Slides -->
+        <div class="instagram-slides owl-carousel">
+            <!-- Single Insta Feed -->
+            <div class="single-insta-feed">
+                <img src="img/instagram-img/1.jpg" style="height: 269px;width: 268px;" alt="">
+                <!-- Hover Effects -->
+                <div class="hover-effects">
+                    <a href="https://www.instagram.com/explore/locations/341653129888924/sabrang-ambulu/?hl=id" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
+                </div>
+            </div>
+            <!-- Single Insta Feed -->
+            <div class="single-insta-feed">
+                <img src="img/instagram-img/2.jpg" style="height: 269px;width: 268px;"alt="">
+                <!-- Hover Effects -->
+                <div class="hover-effects">
+                    <a href="https://www.instagram.com/explore/locations/341653129888924/sabrang-ambulu/?hl=id" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
+                </div>
+            </div>
+            <!-- Single Insta Feed -->
+            <div class="single-insta-feed">
+                <img src="img/instagram-img/3.jpg" style="height: 269px;width: 268px;" alt="">
+                <!-- Hover Effects -->
+                <div class="hover-effects">
+                    <a href="https://www.instagram.com/explore/locations/341653129888924/sabrang-ambulu/?hl=id" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
+                </div>
+            </div>
+            <!-- Single Insta Feed -->
+            <div class="single-insta-feed">
+                <img src="img/instagram-img/4.jpg" style="height: 269px;width: 268px;" alt="">
+                <!-- Hover Effects -->
+                <div class="hover-effects">
+                    <a href="https://www.instagram.com/explore/locations/341653129888924/sabrang-ambulu/?hl=id" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
+                </div>
+            </div>
+            <!-- Single Insta Feed -->
+            <div class="single-insta-feed">
+                <img src="img/instagram-img/5.jpg" style="height: 269px;width: 268px;"alt="">
+                <!-- Hover Effects -->
+                <div class="hover-effects">
+                    <a href="https://www.instagram.com/explore/locations/341653129888924/sabrang-ambulu/?hl=id" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
+                </div>
+            </div>
+            <!-- Single Insta Feed -->
+            <div class="single-insta-feed">
+                <img src="img/instagram-img/6.jpg" style="height: 269px;width: 268px;"alt="">
+                <!-- Hover Effects -->
+                <div class="hover-effects">
+                    <a href="https://www.instagram.com/explore/locations/341653129888924/sabrang-ambulu/?hl=id" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
+                </div>
+            </div>
+            <!-- Single Insta Feed -->
+            <div class="single-insta-feed">
+                <img src="img/instagram-img/7.jpg" style="height: 269px;width: 268px;"alt="">
+                <!-- Hover Effects -->
+                <div class="hover-effects">
+                    <a href="https://www.instagram.com/explore/locations/341653129888924/sabrang-ambulu/?hl=id" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Instagram Feed Area End ##### -->
+
     <!-- ##### Footer Area Start ##### -->
     <footer class="footer-area text-center">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                   
-                    <!-- Footer Nav Area -->
-                    <div class="classy-nav-container breakpoint-off">
-                        <!-- Classy Menu -->
-                        <nav class="classy-navbar justify-content-center">
-
-                            <!-- Navbar Toggler -->
-                            <div class="classy-navbar-toggler">
-                                <span class="navbarToggler"><span></span><span></span><span></span></span>
-                            </div>
-
-                            <!-- Menu -->
-                            <div class="classy-menu">
-
-                                <!-- close btn -->
-                                <div class="classycloseIcon">
-                                    <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-                                </div>
-
-                                <!-- Nav Start -->
-                                <div class="classynav">
-                                <ul>
-                                    <li><a href="#">Hello <?php
-                                            echo $_SESSION['nama']; ?></a>
-                                            <ul class="dropdown">
-                                                <?php
-                                                if($_SESSION['levelad']=='Super Admin'){
-                                                    echo "<li><a href='homeadmin/index.php'>Halaman Admin</a></li>";
-                                                }if($_SESSION['levelad']=='Admin'){
-                                                    echo "<li><a href='homeadmin/index.php'>Halaman Admin</a></li>";
-                                                }if($_SESSION['levelad']=='Perangkat Desa'){
-                                                    echo "<li><a href='homeadmin/index.php'>Halaman Admin</a></li>";
-                                                }if($_SESSION['levelad']=='Penduduk'){
-                                                    echo "<li><a href='profil.php'>Profil</a></li>";
-                                                }
-                                                ?>
-                                            </ul>
-                                    </li>
-                                    <li><a href="indexlogin.php">Beranda</a></li>
-                                    <li><a href="#">Profil Desa</a>
-                                        <ul class="dropdown">
-                                            <li><a href="profildesa.php">Profil Desa</a></li>
-                                            <li><a href="motodesa.php">Motto</a></li>
-                                            <li><a href="visimisidesa.php">Visi & Misi</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="beritadesa.php">Berita</a></li>
-                                    <li><a href="#">Pelayanan Surat</a>
-                                        <ul class="dropdown">
-                                            <li><a href="#">SK Domisili</a>
-                                                <ul class="dropdown">
-                                                <?php
-                                                if($_SESSION['levelad']=='Penduduk'){
-                                                    echo "<li><a href='formdomisili.php'>Pribadi</a></li>
-                                                    <li><a href='fdom.php'>Perwakilan</a></li>";
-                                                }else{
-                                                    echo "<li><a href='fdom.php'>Perwakilan</a></li>";
-                                                }
-                                                ?>     
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">SK SKCK</a>
-                                                <ul class="dropdown">
-                                                <?php
-                                                if($_SESSION['levelad']=='Penduduk'){
-                                                    echo "<li><a href='formskck.php'>Pribadi</a></li>
-                                                    <li><a href='fskck.php'>Perwakilan</a></li>";
-                                                }else{
-                                                    echo "<li><a href='fskck.php'>Perwakilan</a></li>";
-                                                }
-                                                ?> 
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">SK Belum Nikah</a>
-                                                <ul class="dropdown">
-                                                <?php
-                                                if($_SESSION['levelad']=='Penduduk'){
-                                                    echo "<li><a href='formbnikah.php'>Pribadi</a></li>
-                                                    <li><a href='fbnikah.php'>Perwakilan</a></li>";
-                                                }else{
-                                                    echo "<li><a href='fbnikah.php'>Perwakilan</a></li>";
-                                                }
-                                                ?> 
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">SK Tempat Usaha</a>
-                                                <ul class="dropdown">
-                                                <?php
-                                                if($_SESSION['levelad']=='Penduduk'){
-                                                    echo "<li><a href='formtusaha.php'>Pribadi</a></li>
-                                                    <li><a href='ftusaha.php'>Perwakilan</a></li>";
-                                                }else{
-                                                    echo "<li><a href='ftusaha.php'>Perwakilan</a></li>";
-                                                }
-                                                ?> 
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="tentangdesa.php">Tentang Kami</a></li>
-                                </ul>
-                                </div>
-                                <!-- Nav End -->
-                            </div>
-                        </nav>
-                    </div>
-                    
+                
                     <!-- Footer Social Area -->
                     <div class="footer-social-area mt-30">
                         <a href="#" data-toggle="tooltip" data-placement="top" title="Pinterest"><i class="fa fa-pinterest" aria-hidden="true"></i></a>

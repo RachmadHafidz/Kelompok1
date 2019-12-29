@@ -375,13 +375,13 @@ include 'koneksi.php';
     </div>
     <!-- ##### Blog Wrapper End ##### -->
 
-    <!-- ##### Instagram Feed Area Start ##### -->
-    <div class="instagram-feed-area">
+       <!-- ##### Instagram Feed Area Start ##### -->
+       <div class="instagram-feed-area">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="insta-title">
-                        <h5>Follow us @ Instagram</h5>
+                        <h5>About us @ Instagram</h5>
                     </div>
                 </div>
             </div>
@@ -390,7 +390,7 @@ include 'koneksi.php';
         <div class="instagram-slides owl-carousel">
             <!-- Single Insta Feed -->
             <div class="single-insta-feed">
-                <img src="1.jpg" style="height: 269px;width: 268px;" alt="">
+                <img src="img/instagram-img/1.jpg" style="height: 269px;width: 268px;" alt="">
                 <!-- Hover Effects -->
                 <div class="hover-effects">
                     <a href="https://www.instagram.com/explore/locations/341653129888924/sabrang-ambulu/?hl=id" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
@@ -398,7 +398,7 @@ include 'koneksi.php';
             </div>
             <!-- Single Insta Feed -->
             <div class="single-insta-feed">
-                <img src="2.jpg" style="height: 269px;width: 268px;"alt="">
+                <img src="img/instagram-img/2.jpg" style="height: 269px;width: 268px;"alt="">
                 <!-- Hover Effects -->
                 <div class="hover-effects">
                     <a href="https://www.instagram.com/explore/locations/341653129888924/sabrang-ambulu/?hl=id" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
@@ -406,7 +406,7 @@ include 'koneksi.php';
             </div>
             <!-- Single Insta Feed -->
             <div class="single-insta-feed">
-                <img src="3.jpg" style="height: 269px;width: 268px;" alt="">
+                <img src="img/instagram-img/3.jpg" style="height: 269px;width: 268px;" alt="">
                 <!-- Hover Effects -->
                 <div class="hover-effects">
                     <a href="https://www.instagram.com/explore/locations/341653129888924/sabrang-ambulu/?hl=id" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
@@ -414,7 +414,7 @@ include 'koneksi.php';
             </div>
             <!-- Single Insta Feed -->
             <div class="single-insta-feed">
-                <img src="4.jpg"style="height: 269px;width: 268px;" alt="">
+                <img src="img/instagram-img/4.jpg" style="height: 269px;width: 268px;" alt="">
                 <!-- Hover Effects -->
                 <div class="hover-effects">
                     <a href="https://www.instagram.com/explore/locations/341653129888924/sabrang-ambulu/?hl=id" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
@@ -422,7 +422,7 @@ include 'koneksi.php';
             </div>
             <!-- Single Insta Feed -->
             <div class="single-insta-feed">
-                <img src="5.jpg" style="height: 269px;width: 268px;"alt="">
+                <img src="img/instagram-img/5.jpg" style="height: 269px;width: 268px;"alt="">
                 <!-- Hover Effects -->
                 <div class="hover-effects">
                     <a href="https://www.instagram.com/explore/locations/341653129888924/sabrang-ambulu/?hl=id" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
@@ -430,7 +430,7 @@ include 'koneksi.php';
             </div>
             <!-- Single Insta Feed -->
             <div class="single-insta-feed">
-                <img src="6.jpg" style="height: 269px;width: 268px;"alt="">
+                <img src="img/instagram-img/6.jpg" style="height: 269px;width: 268px;"alt="">
                 <!-- Hover Effects -->
                 <div class="hover-effects">
                     <a href="https://www.instagram.com/explore/locations/341653129888924/sabrang-ambulu/?hl=id" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
@@ -438,7 +438,7 @@ include 'koneksi.php';
             </div>
             <!-- Single Insta Feed -->
             <div class="single-insta-feed">
-                <img src="7.jpg" style="height: 269px;width: 268px;"alt="">
+                <img src="img/instagram-img/7.jpg" style="height: 269px;width: 268px;"alt="">
                 <!-- Hover Effects -->
                 <div class="hover-effects">
                     <a href="https://www.instagram.com/explore/locations/341653129888924/sabrang-ambulu/?hl=id" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
@@ -453,31 +453,6 @@ include 'koneksi.php';
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                   
-                    <!-- Footer Nav Area -->
-                    <div class="classy-nav-container breakpoint-off">
-                        <!-- Classy Menu -->
-                        <nav class="classy-navbar justify-content-center">
-
-                            <!-- Navbar Toggler -->
-                            <div class="classy-navbar-toggler">
-                                <span class="navbarToggler"><span></span><span></span><span></span></span>
-                            </div>
-
-                            <!-- Menu -->
-                            <div class="classy-menu">
-
-                                <!-- close btn -->
-                                <div class="classycloseIcon">
-                                    <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-                                </div>
-
-                                <!-- Nav Start -->
-                                
-                                <!-- Nav End -->
-                            </div>
-                        </nav>
-                    </div>
                     
                     <!-- Footer Social Area -->
                     <div class="footer-social-area mt-30">

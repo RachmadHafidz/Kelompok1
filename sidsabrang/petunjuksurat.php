@@ -237,7 +237,7 @@ if(isset($_GET["login_error"])){
                             <div class="line"></div>
                             <a href="#" class="post-tag">About</a>
                             <h4><a href="#" class="post-headline">PETUNJUK PEMBUATAN SURAT</a></h4>
-                            <p class="mb-3"><img src="http://localhost/Kelompok1/sidsabrang/img/Petunjuk/petunjuksurat.PNG"></p>
+                            <p class="mb-3"><img src="img/Petunjuk/petunjuksurat.PNG"></p>
                         </div>
                     </div>
                 </div>
@@ -443,13 +443,13 @@ if(isset($_GET["login_error"])){
     <!-- ##### Cool Facts Area End ##### -->
 
 
-    <!-- ##### Instagram Feed Area Start ##### -->
-    <div class="instagram-feed-area">
+       <!-- ##### Instagram Feed Area Start ##### -->
+       <div class="instagram-feed-area">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="insta-title">
-                        <h5>Follow us @ Instagram</h5>
+                        <h5>About us @ Instagram</h5>
                     </div>
                 </div>
             </div>
@@ -482,7 +482,7 @@ if(isset($_GET["login_error"])){
             </div>
             <!-- Single Insta Feed -->
             <div class="single-insta-feed">
-                <img src="img/instagram-img/4.jpg"style="height: 269px;width: 268px;" alt="">
+                <img src="img/instagram-img/4.jpg" style="height: 269px;width: 268px;" alt="">
                 <!-- Hover Effects -->
                 <div class="hover-effects">
                     <a href="https://www.instagram.com/explore/locations/341653129888924/sabrang-ambulu/?hl=id" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
@@ -521,32 +521,6 @@ if(isset($_GET["login_error"])){
         <div class="container">
             <div class="row">
                 <div class="col-12">
-
-                    <!-- Footer Nav Area -->
-                    <div class="classy-nav-container breakpoint-off">
-                        <!-- Classy Menu -->
-                        <nav class="classy-navbar justify-content-center">
-
-                            <!-- Navbar Toggler -->
-                            <div class="classy-navbar-toggler">
-                                <span class="navbarToggler"><span></span><span></span><span></span></span>
-                            </div>
-
-                            <!-- Menu -->
-                            <div class="classy-menu">
-
-                                <!-- close btn -->
-                                <div class="classycloseIcon">
-                                    <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-                                </div>
-
-                                <!-- Nav Start -->
-                                
-                                <!-- Nav End -->
-                            </div>
-                        </nav>
-                    </div>
-
                     <!-- Footer Social Area -->
                     <div class="footer-social-area mt-30">
                         <a href="#" data-toggle="tooltip" data-placement="top" title="Pinterest"><i class="fa fa-pinterest" aria-hidden="true"></i></a>

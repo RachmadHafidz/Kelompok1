@@ -344,88 +344,13 @@ if(isset($_GET["login_error"])){
     </div>
     <!-- ##### Cool Facts Area End ##### -->
 
-    <!-- ##### Blog Wrapper Start ##### -->
-    <div class="blog-wrapper section-padding-100-0 clearfix">
-        <div class="container">
-            <div class="row">
-                <!-- Single Blog Area  -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-blog-area blog-style-2 mb-100">
-                        <div class="single-blog-thumbnail">
-                            <img src="img/blog-img/4.jpg" alt="">
-                            <div class="post-date">
-                                <a href="#">10 <span>march</span></a>
-                            </div>
-                        </div>
-                        <!-- Blog Content -->
-                        <div class="single-blog-content mt-50">
-                            <div class="line"></div>
-                            <a href="#" class="post-tag">Lifestyle</a>
-                            <h4><a href="#" class="post-headline">We love colors in 2018</a></h4>
-                            <p>Curabitur venenatis efficitur lorem sed tempor. Integer aliquet tempor cursus. Nullam vestibulum convallis risus vel condimentum. Nullam auctor lorem in libero luctus, vel volutpat quam tincidunt.</p>
-                            <div class="post-meta">
-                                <p>By <a href="#">james smith</a></p>
-                                <p>3 comments</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Blog Area  -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-blog-area blog-style-2 mb-100">
-                        <div class="single-blog-thumbnail">
-                            <img src="img/blog-img/5.jpg" alt="">
-                            <div class="post-date">
-                                <a href="#">10 <span>march</span></a>
-                            </div>
-                        </div>
-                        <!-- Blog Content -->
-                        <div class="single-blog-content mt-50">
-                            <div class="line"></div>
-                            <a href="#" class="post-tag">Lifestyle</a>
-                            <h4><a href="#" class="post-headline">Party people in the house</a></h4>
-                            <p>Curabitur venenatis efficitur lorem sed tempor. Integer aliquet tempor cursus. Nullam vestibulum convallis risus vel condimentum. Nullam auctor lorem in libero luctus, vel volutpat quam tincidunt.</p>
-                            <div class="post-meta">
-                                <p>By <a href="#">james smith</a></p>
-                                <p>3 comments</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Blog Area  -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-blog-area blog-style-2 mb-100">
-                        <div class="single-blog-thumbnail">
-                            <img src="img/blog-img/6.jpg" alt="">
-                            <div class="post-date">
-                                <a href="#">10 <span>march</span></a>
-                            </div>
-                        </div>
-                        <!-- Blog Content -->
-                        <div class="single-blog-content mt-50">
-                            <div class="line"></div>
-                            <a href="#" class="post-tag">Lifestyle</a>
-                            <h4><a href="#" class="post-headline">We love colors in 2018</a></h4>
-                            <p>Curabitur venenatis efficitur lorem sed tempor. Integer aliquet tempor cursus. Nullam vestibulum convallis risus vel condimentum. Nullam auctor lorem in libero luctus, vel volutpat quam tincidunt.</p>
-                            <div class="post-meta">
-                                <p>By <a href="#">james smith</a></p>
-                                <p>3 comments</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ##### Blog Wrapper End ##### -->
-
     <!-- ##### Instagram Feed Area Start ##### -->
     <div class="instagram-feed-area">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="insta-title">
-                        <h5>Follow us @ Instagram</h5>
+                        <h5>About us @ Instagram</h5>
                     </div>
                 </div>
             </div>
@@ -434,7 +359,7 @@ if(isset($_GET["login_error"])){
         <div class="instagram-slides owl-carousel">
             <!-- Single Insta Feed -->
             <div class="single-insta-feed">
-                <img src="1.jpg" style="height: 269px;width: 268px;" alt="">
+                <img src="img/instagram-img/1.jpg" style="height: 269px;width: 268px;" alt="">
                 <!-- Hover Effects -->
                 <div class="hover-effects">
                     <a href="https://www.instagram.com/explore/locations/341653129888924/sabrang-ambulu/?hl=id" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
@@ -442,7 +367,7 @@ if(isset($_GET["login_error"])){
             </div>
             <!-- Single Insta Feed -->
             <div class="single-insta-feed">
-                <img src="2.jpg" style="height: 269px;width: 268px;"alt="">
+                <img src="img/instagram-img/2.jpg" style="height: 269px;width: 268px;"alt="">
                 <!-- Hover Effects -->
                 <div class="hover-effects">
                     <a href="https://www.instagram.com/explore/locations/341653129888924/sabrang-ambulu/?hl=id" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
@@ -450,7 +375,7 @@ if(isset($_GET["login_error"])){
             </div>
             <!-- Single Insta Feed -->
             <div class="single-insta-feed">
-                <img src="3.jpg" style="height: 269px;width: 268px;" alt="">
+                <img src="img/instagram-img/3.jpg" style="height: 269px;width: 268px;" alt="">
                 <!-- Hover Effects -->
                 <div class="hover-effects">
                     <a href="https://www.instagram.com/explore/locations/341653129888924/sabrang-ambulu/?hl=id" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
@@ -458,7 +383,7 @@ if(isset($_GET["login_error"])){
             </div>
             <!-- Single Insta Feed -->
             <div class="single-insta-feed">
-                <img src="4.jpg"style="height: 269px;width: 268px;" alt="">
+                <img src="img/instagram-img/4.jpg" style="height: 269px;width: 268px;" alt="">
                 <!-- Hover Effects -->
                 <div class="hover-effects">
                     <a href="https://www.instagram.com/explore/locations/341653129888924/sabrang-ambulu/?hl=id" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
@@ -466,7 +391,7 @@ if(isset($_GET["login_error"])){
             </div>
             <!-- Single Insta Feed -->
             <div class="single-insta-feed">
-                <img src="5.jpg" style="height: 269px;width: 268px;"alt="">
+                <img src="img/instagram-img/5.jpg" style="height: 269px;width: 268px;"alt="">
                 <!-- Hover Effects -->
                 <div class="hover-effects">
                     <a href="https://www.instagram.com/explore/locations/341653129888924/sabrang-ambulu/?hl=id" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
@@ -474,7 +399,7 @@ if(isset($_GET["login_error"])){
             </div>
             <!-- Single Insta Feed -->
             <div class="single-insta-feed">
-                <img src="6.jpg" style="height: 269px;width: 268px;"alt="">
+                <img src="img/instagram-img/6.jpg" style="height: 269px;width: 268px;"alt="">
                 <!-- Hover Effects -->
                 <div class="hover-effects">
                     <a href="https://www.instagram.com/explore/locations/341653129888924/sabrang-ambulu/?hl=id" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
@@ -482,7 +407,7 @@ if(isset($_GET["login_error"])){
             </div>
             <!-- Single Insta Feed -->
             <div class="single-insta-feed">
-                <img src="7.jpg" style="height: 269px;width: 268px;"alt="">
+                <img src="img/instagram-img/7.jpg" style="height: 269px;width: 268px;"alt="">
                 <!-- Hover Effects -->
                 <div class="hover-effects">
                     <a href="https://www.instagram.com/explore/locations/341653129888924/sabrang-ambulu/?hl=id" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
@@ -497,32 +422,6 @@ if(isset($_GET["login_error"])){
         <div class="container">
             <div class="row">
                 <div class="col-12">
-
-                    <!-- Footer Nav Area -->
-                    <div class="classy-nav-container breakpoint-off">
-                        <!-- Classy Menu -->
-                        <nav class="classy-navbar justify-content-center">
-
-                            <!-- Navbar Toggler -->
-                            <div class="classy-navbar-toggler">
-                                <span class="navbarToggler"><span></span><span></span><span></span></span>
-                            </div>
-
-                            <!-- Menu -->
-                            <div class="classy-menu">
-
-                                <!-- close btn -->
-                                <div class="classycloseIcon">
-                                    <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-                                </div>
-
-                                <!-- Nav Start -->
-                                
-                                <!-- Nav End -->
-                            </div>
-                        </nav>
-                    </div>
-
                     <!-- Footer Social Area -->
                     <div class="footer-social-area mt-30">
                         <a href="#" data-toggle="tooltip" data-placement="top" title="Pinterest"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
