@@ -300,15 +300,6 @@ function tgl_indo($tanggal){
                                     </li>
                                     <li><a href="tentangdesa.php">Tentang Kami</a></li>
                                 </ul>
-
-                                <!-- Search Form  -->
-                                <div id="search-wrapper">
-                                    <form action="#">
-                                        <input type="text" id="search" placeholder="Search something..." value="Search Our Website&hellip;"  onfocus="this.value=(this.value=='Search Our Website&hellip;')? '' : this.value ;" />
-                                        <div id="close-icon"></div>
-                                        <input class="d-none" type="submit" value="">
-                                    </form>
-                                </div>
                             </div>
                             <!-- Nav End -->
                         </div>

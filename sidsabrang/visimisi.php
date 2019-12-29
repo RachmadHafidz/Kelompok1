@@ -191,15 +191,6 @@ if(isset($_GET["login_error"])){
                                     </li>
                                     <li><a href="tentang.php">Tentang Kami</a></li>
                                 </ul>
-
-                                <!-- Search Form  -->
-                                <div id="search-wrapper">
-                                    <form action="#">
-                                        <input type="text" id="search" placeholder="Search something...">
-                                        <div id="close-icon"></div>
-                                        <input class="d-none" type="submit" value="">
-                                    </form>
-                                </div>
                             </div>
                             <!-- Nav End -->
                         </div>
@@ -232,168 +223,11 @@ if(isset($_GET["login_error"])){
                 <div class="col-12 col-lg-12">
                     <div class="single-blog-area clearfix mb-50">
                         <!-- Blog Content -->
-                        <div class="single-blog-content">
+                        <div class="single-blog-content"  align="center">
                             <div class="line"></div>
                             <a href="#" class="post-tag">About</a>
-                            <h4><a href="#" class="post-headline">Pendahuluan</a></h4>
-                            <p class="mb-3" align="justify">Dengan memanjatkan Puji Syukur kehadirat Tuhan Yang Maha Esa, atas limpahan Rahmat dan Hidayah-Nya, sehingga kami dapat menyelesaikan penyusunan selanyang pandang tentang Potensi Desa Sabrang Kecamatan Ambulu Kabupaten Jember dalam rangka perlombaan Desa dan  di Kabupaten Jember Tahun 2014. Penyelenggaraan pemerintahan dan pelaksanaan pembangunan yang selama ini dilaksanakan di desa Sabrang, telah memberikan hasil-hasil nyata yang cukup menggembirakan, walaupun disana-sini masih ditemui adanya kekurangan yang perlu mendapat koreksi serta upaya untuk mengatasi keberhasilan tersebut dapat dicapai berkat kerjasama yang baik antara Kepala Desa, Perangkat Desa, BPD, LPM dan intansi terkait serta partisipasi langsung dari masyarakat Desa Sabrang.<br><br> Demikian selayang pandang ini disusun dalam rangka untuk memberikan gambaran Potensi Desa Sabrang dan Pelaksanaan kegiatan yang telah dilakukan di Desa Sabrang.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ##### Blog Wrapper End ##### -->
-
-    <!-- ##### Blog Wrapper Start ##### -->
-    <div class="blog-wrapper clearfix">
-        <div class="container">
-            <div class="row align-items-end">
-                <!-- Single Blog Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-catagory-area clearfix">
-                        <img src="img/blog-img/1.jpg" alt="">
-                        <!-- Catagory Title -->
-                        <div class="catagory-title">
-                            <a href="#">Lifestyle posts</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Blog Area -->
-                <div class="col-12 col-lg-8">
-                    <div class="single-blog-area clearfix">
-                        <!-- Blog Content -->
-                        <div class="single-blog-content">
-                            <div class="line"></div>
-                            <a href="#" class="post-tag">Gambaran Umum Desa (1)</a>
-                            <h4><a href="#" class="post-headline">Kondisi Geografis</a></h4>
-                            <p class="mb-3" align="justify"> Desa Sabrang adalah desa yang termasuk kategori desa swasembada, swakarya, swamadya di wilayah kecamatan Ambulu Kabupaten Jember. Swasembada dapat diartikan desa yang kondisinya lebih baik dari beberapa desa yang lain. Swakarya  sering juga disebut desa peralihan antara desa swadaya dan dan desa swasembada.
-                            Desa Swakarya memiliki ciri seperti adat-istiadatnya masih dijalankan tetapi sudah tidak mengikat lagi, sudah mulai beradaptasi dengan teknologi dan peralatan canggih dan tidak tersiolasi seperti halnya desa swadaya.
-                            Swadaya sendiri artinya desa yang masih memiliki berbagai situasi yang terbatas seperti eduduk yang jarang, peri kehidupan yang masih terikat dengan adat-istiadat, lembaga-lembaga masyarakatnya masih sangat sederhana dan tingkat pendidikan warganya masih sangat rendah. 
-                            Kegiatan ekonomi penduduknya masih bergantung dengan alam seperti bertani. 
-                            dan terletak ke arah selatan + 5 Km dari ibu kota kecamatan yang memiliki luasn desa + 1.120,208 Ha. </p> 
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-12">
-                    <div class="single-blog-area clearfix mb-50">
-                        <!-- Blog Content -->
-                        <div class="single-blog-content">
-                            <p class="mb-3" align="justify">Dengan struktur tanah yang subur dengan  ketinggian 15 m dari permukaan air laut. yang terdiri dari lima dusun  yakni : Dusun Kebonsari ,Dusun Krajan , Dusun Tegalrejo, Dusun Jatirejo Dan Dusun Ungkalan. Dengan luas dan batas wilayah ; 1.120,208 Ha.  
-                            Dengan batas-batas yang tertera dibawah ini:
-                            <br>a. sebelah selatan berbatasan dengan desa sumberrejo kec. Ambulu
-                            <br>b. sebelah barat berbatasan dengan desa lojejer Kec. Wuluhan
-                            <br>c. sebelah utara berbatasan dengan desa desa Tegal sari kec. Ambulu  dan desa kesilir kec. Wuluhan.
-                            <br>d. sebelah timur berbatasan dengan desa Andongsari Kec. Ambulu
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ##### Blog Wrapper End ##### -->
-    <!-- ##### Blog Wrapper Start ##### -->
-    <div class="blog-wrapper clearfix">
-        <div class="container">
-            <div class="row align-items-end">
-                <!-- Single Blog Area -->
-                <div class="col-12 col-lg-12">
-                    <div class="single-blog-area clearfix mb-50">
-                        <!-- Blog Content -->
-                        <div class="single-blog-content">
-                            <div class="line"></div>
-                            <a href="#" class="post-tag">Gambaran Umum Desa (2)</a>
-                            <h4><a href="#" class="post-headline">Potensi Sumberdaya Manusia</a></h4>
-                            <p class="mb-3" align="justify">Sebagaimana kita ketahui pertumbuhan penduduk adalah merupakan persoalan yang tidak kalah pentingnya dari masalah yang lain. Dimana pertumbuhannya sangat cepat dan pesat. Di Desa Sabrang hal ini dilihat dari jumlah penduduk Desa seluruhnya 14.577 Jiwa, dimana mayoritas suku Jawa.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ##### Blog Wrapper End ##### -->
-    <!-- ##### Blog Wrapper Start ##### -->
-    <div class="blog-wrapper clearfix">
-        <div class="container">
-            <div class="row align-items-end">
-                <!-- Single Blog Area -->
-                <div class="col-12 col-lg-12">
-                    <div class="single-blog-area clearfix">
-                        <!-- Blog Content -->
-                        <div class="single-blog-content">
-                            <div class="line"></div>
-                            <a href="#" class="post-tag">Beberapa Indikator Potensi Desa Sabrang (1)</a>
-                            <h4><a href="#" class="post-headline">Indikator Pendidikan</a></h4>
-                            <h3><a href="#" class="post-headline">A. Komposisi penduduk menurut pendidikan</a></h3>
-                            <p class="mb-3" align="justify">Sebagaimana kita ketahui pertumbuhan penduduk adalah merupakan persoalan yang tidak kalah pentingnya dari masalah yang lain. Dimana pertumbuhannya sangat cepat dan pesat. Di Desa Sabrang hal ini dilihat dari jumlah penduduk Desa seluruhnya 14.577 Jiwa, dimana mayoritas suku Jawa.
-                                <br>a. Buta Huruf 0 Jiwa
-                                <br>b. Belum Sekolah 2345 Jiwa
-                                <br>c. Tidak Tamat SD 0 Jiwa
-                                <br>d. Tamat SD/Sederajat 1290 Jiwa
-                                <br>e. Tamat SMP/Sederajat 2157 Jiwa
-                                <br>f. Tamat SLTA/Sederajat 3146 Jiwa
-                                <br>g. Tamat Perguruan Tinggi SI 68 Jiwa
-                                <br>h. Tamat Pasca Sarjana
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Blog Area -->
-                <div class="col-12 col-lg-12">
-                    <div class="single-blog-area clearfix">
-                        <!-- Blog Content -->
-                        <div class="single-blog-content">
-                            <h3><a href="#" class="post-headline">B. Perkembangan Pendidikan</a></h3>
-                            <p class="mb-3" align="justify">Pendidikan baik formal maupun non formal sudah cukup maju didesa Sabrang hal ini dapat dilihat dari jumlah siswa mulai dari SD/MI, SMP/MTs, SMA/MA sampai dengan Perguruan Tinggi setiap tahunnya mengalami peningkatan baik kualitas maupun kuantitas. Terbukti ada beberapa siswa baik tingkat SD/MI sampai dengan SMA/MA yang meraih prestasi dibidang akademis maupun ekstrakurikuler ditingkat kabupaten maupun provinsi yang berasal dari desa Sabrang.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-12">
-                    <div class="single-blog-area clearfix">
-                        <!-- Blog Content -->
-                        <div class="single-blog-content">
-                            <h3><a href="#" class="post-headline">C. Sarana Pendidikan</a></h3>
-                            <p class="mb-3" align="justify">Pendidikan Anak Usia dini / PAUD di Desa Sabrang sudah terbentuk dibeberapa Dusun, yaitu :
-                                <br>a. Kebonsari 1 (satu) tempat (Nusa Indah 36)
-                                <br>b. Jatirejo 1 (satu) tempat (Nusa Indah 53)
-                                <br>c. Kemudian Sarana pendidikan Taman Kanak-Kanak (TK) dan Sekolah Dasar (SD) cukup memadai baik sarana maupun prasarana.
-                                <br>d. Sarana pendidikan SMP/MTs maupun SMA/MA swasta yang rata-rata cukup baik dan memadai.
-                                <br>e. Adapun pendidikan Non Formal yang bertujuan meningkatkan Iman dan Taqwa antara lain, TPQ 13 Lembaga dan Pondok Pesantren 6 Lembaga.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-12">
-                    <div class="single-blog-area clearfix">
-                        <!-- Blog Content -->
-                        <div class="single-blog-content">
-                            <h3><a href="#" class="post-headline">D. Olahraga</a></h3>
-                            <p class="mb-3" align="justify">Bidang olahraga di Desa Sabrang sangat potensial, hal ini dapat kami laporkan bahwa :  
-                                    <br>a. Sepak Bola
-                                    <br>b. Bola Voly
-                                    <br>c. Pencak Silat
-                                    <br>d. Bulu Tangkis
-                                    <br>e. Tenis Meja</p>
-                            <p class="mb-3" align="justify">Namun dari potensi yang ada, sampai saat ini masih belum diadakan pembinaan secara rutin sehingga masing-masing jenis olahraga yang ada masih belum menunjukkan potensinya secara maksimal. Langkah-langkah yang akan dan telah dilakukan pemerintah desa antara lain :
-                                <br>1. Mengadakan pembinaan kepada pengurus cabang olahraga.
-                                <br>2. Membangun/ memperbaiki sarana dan prasarana olahraga.
-                                <br>3. Membantu dana untuk kegiatan latih tanding.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-12">
-                    <div class="single-blog-area clearfix mb-100">
-                        <!-- Blog Content -->
-                        <div class="single-blog-content">
-                            <h3><a href="#" class="post-headline">E. Karang Taruna</a></h3>
-                            <p class="mb-3" align="justify">Pendidikan Anak Usia dini / PAUD di Desa Sabrang sudah terbentuk dibeberapa Dusun, yaitu :
-                                <br>a. Kebonsari 1 (satu) tempat (Nusa Indah 36)
-                                <br>b. Jatirejo 1 (satu) tempat (Nusa Indah 53)
-                                <br>c. Kemudian Sarana pendidikan Taman Kanak-Kanak (TK) dan Sekolah Dasar (SD) cukup memadai baik sarana maupun prasarana.
-                                <br>d. Sarana pendidikan SMP/MTs maupun SMA/MA swasta yang rata-rata cukup baik dan memadai.
-                                <br>e. Adapun pendidikan Non Formal yang bertujuan meningkatkan Iman dan Taqwa antara lain, TPQ 13 Lembaga dan Pondok Pesantren 6 Lembaga.
-                            </p>
+                            <h4><a href="#" class="post-headline">VISI & MISI</a></h4>
+                            <p class="mb-3">"Jemput yang tertinggal, rangkul yang tercecer, satukan langkah untuk perubahan Desa Sabrang yang lebih baik dan bermartabat."</p>
                         </div>
                     </div>
                 </div>

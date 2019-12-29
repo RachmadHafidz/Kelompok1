@@ -244,15 +244,6 @@ if(isset($_GET["simpam_error"])){
                                     </li>
                                     <li><a href="tentangdesa.php">Tentang Kami</a></li>
                                 </ul>
-
-                                <!-- Search Form  -->
-                                <div id="search-wrapper">
-                                    <form action="#">
-                                        <input type="text" id="search" placeholder="Search something...">
-                                        <div id="close-icon"></div>
-                                        <input class="d-none" type="submit" value="">
-                                    </form>
-                                </div>
                             </div>
                             <!-- Nav End -->
                         </div>
