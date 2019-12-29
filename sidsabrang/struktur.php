@@ -226,66 +226,53 @@ if(isset($_GET["login_error"])){
     <!-- ##### Breadcumb Area End ##### -->
 
     <!-- ##### Blog Wrapper Start ##### -->
-   
-<div class="container-float">
-
- 
-  
-                                         
-  <table class="table table-striped">
-
-  <tr class="table-success">
-        <th>Foto</th>
-      
-		<th>NIK</th>
-		<th>Nama</th>
-		<th>Jenis Kelamin</th>
-		<th>Jabatan</th>
-      <th>Tahun Jabatan</th>
-      <th>Jenis Kelamin</th>
-      <th>Berakhir Jabatan</th>
-      
-      <th>Status Akun</th>
-      <th>No Telp</th>
-     
-     
-  
-
-	
-		
-	</tr>
-	<?php
-	// Load file koneksi.php
-	include "koneksi.php";
-	
-	$query = "SELECT * FROM admin"; // Query untuk menampilkan semua data siswa
-	$sql = mysqli_query($koneksi, $query); // Eksekusi/Jalankan query dari variabel $query
-	
-	while($data = mysqli_fetch_array($sql)){ // Ambil semua data dari hasil eksekusi $sql
-        echo "<tr>";
-        echo "<td><img src='homeadmin\images/".$data['FOTO']."' width='100' height='100'></td>";
-     //   C:\xampp\htdocs\Kelompok1\S.I.D\homeadmin\images
-     //S.I.D\homeadmin\images
-		echo "<td>".$data['NIK_NIPADMIN']."</td>";
-		echo "<td>".$data['NAMAADMIN']."</td>";
-      echo "<td>".$data['JENIS_KELAMIN']."</td>";
-      echo "<td>".$data['JABATAN']."</td>";
-      echo "<td>".$data['TAHUN_JABATAN']."</td>";
-      echo "<td>".$data['JENIS_KELAMIN']."</td>";
-      echo "<td>".$data['BERAKHIR_JABATAN']."</td>";
- 
-      echo "<td>".$data['STATUS_AKUN']."</td>";
-      echo "<td>".$data['NOTELP']."</td>";      
-     
-
-      
-      
-
-		echo "</tr>";
-	}
-	?>
-    </table>
+    <div class="blog-wrapper section-padding-50-0 clearfix">
+        <div class="container">
+            <div class="row align-items-end">
+                <!-- Single Blog Area -->
+                <div class="col-12 col-lg-12">
+                    <div class="single-blog-area clearfix mb-50">
+                        <!-- Blog Content -->
+                        <div class="single-blog-content" align="center">
+                            <div class="line"></div>
+                            <a href="#" class="post-tag">About</a>
+                            <h4><a href="#" class="post-headline">STRUKTUR DESA</a></h4>
+                            <p class="mb-3"><table class="table table-bordered" id="dataTable" border="1" width="100%" >
+                                    <tr class="table-success">
+                                        <th>Foto</th>
+                                        <th>NIK</th>
+                                        <th>Nama</th>
+                                        <th>Jenis Kelamin</th>
+                                        <th>Jabatan</th>
+                                        <th>No Telp</th>
+                                    </tr>
+                                    <?php
+                                    // Load file koneksi.php
+                                    include "koneksi.php";
+                                    
+                                    $query = "SELECT * FROM admin where LEVEL='Perangkat Desa'"; // Query untuk menampilkan semua data siswa
+                                    $sql = mysqli_query($koneksi, $query); // Eksekusi/Jalankan query dari variabel $query
+                                    
+                                    while($data = mysqli_fetch_array($sql)){ // Ambil semua data dari hasil eksekusi $sql
+                                        echo "<tr>";
+                                        echo "<td><img src='homeadmin\images/".$data['FOTO']."' width='100' height='100'></td>";
+                                        echo "<td>".$data['NIK_NIPADMIN']."</td>";
+                                        echo "<td>".$data['NAMAADMIN']."</td>";
+                                        echo "<td>".$data['JENIS_KELAMIN']."</td>";
+                                        echo "<td>".$data['JABATAN']."</td>";
+                                        echo "<td>".$data['NOTELP']."</td>";  
+                                        echo "</tr>";
+                                }
+                                ?>
+                            </table>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    <!-- ##### Blog Wrapper End ##### -->
 
     
 
@@ -388,81 +375,6 @@ if(isset($_GET["login_error"])){
         </div>
     </div>
     <!-- ##### Cool Facts Area End ##### -->
-
-    <!-- ##### Blog Wrapper Start ##### -->
-    <div class="blog-wrapper section-padding-100-0 clearfix">
-        <div class="container">
-            <div class="row">
-                <!-- Single Blog Area  -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-blog-area blog-style-2 mb-100">
-                        <div class="single-blog-thumbnail">
-                            <img src="img/blog-img/4.jpg" alt="">
-                            <div class="post-date">
-                                <a href="#">10 <span>march</span></a>
-                            </div>
-                        </div>
-                        <!-- Blog Content -->
-                        <div class="single-blog-content mt-50">
-                            <div class="line"></div>
-                            <a href="#" class="post-tag">Lifestyle</a>
-                            <h4><a href="#" class="post-headline">We love colors in 2018</a></h4>
-                            <p>Curabitur venenatis efficitur lorem sed tempor. Integer aliquet tempor cursus. Nullam vestibulum convallis risus vel condimentum. Nullam auctor lorem in libero luctus, vel volutpat quam tincidunt.</p>
-                            <div class="post-meta">
-                                <p>By <a href="#">james smith</a></p>
-                                <p>3 comments</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Blog Area  -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-blog-area blog-style-2 mb-100">
-                        <div class="single-blog-thumbnail">
-                            <img src="img/blog-img/5.jpg" alt="">
-                            <div class="post-date">
-                                <a href="#">10 <span>march</span></a>
-                            </div>
-                        </div>
-                        <!-- Blog Content -->
-                        <div class="single-blog-content mt-50">
-                            <div class="line"></div>
-                            <a href="#" class="post-tag">Lifestyle</a>
-                            <h4><a href="#" class="post-headline">Party people in the house</a></h4>
-                            <p>Curabitur venenatis efficitur lorem sed tempor. Integer aliquet tempor cursus. Nullam vestibulum convallis risus vel condimentum. Nullam auctor lorem in libero luctus, vel volutpat quam tincidunt.</p>
-                            <div class="post-meta">
-                                <p>By <a href="#">james smith</a></p>
-                                <p>3 comments</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Blog Area  -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-blog-area blog-style-2 mb-100">
-                        <div class="single-blog-thumbnail">
-                            <img src="img/blog-img/6.jpg" alt="">
-                            <div class="post-date">
-                                <a href="#">10 <span>march</span></a>
-                            </div>
-                        </div>
-                        <!-- Blog Content -->
-                        <div class="single-blog-content mt-50">
-                            <div class="line"></div>
-                            <a href="#" class="post-tag">Lifestyle</a>
-                            <h4><a href="#" class="post-headline">We love colors in 2018</a></h4>
-                            <p>Curabitur venenatis efficitur lorem sed tempor. Integer aliquet tempor cursus. Nullam vestibulum convallis risus vel condimentum. Nullam auctor lorem in libero luctus, vel volutpat quam tincidunt.</p>
-                            <div class="post-meta">
-                                <p>By <a href="#">james smith</a></p>
-                                <p>3 comments</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ##### Blog Wrapper End ##### -->
 
     <!-- ##### Instagram Feed Area Start ##### -->
     <div class="instagram-feed-area">
