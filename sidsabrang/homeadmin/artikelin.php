@@ -201,7 +201,7 @@ if($_SESSION['status']==""){
 			</div><hr>
 			<input class="btn btn-primary" type="submit" name="btnsimpan" value="Simpan">
       <a href="artikel.php">
-			<button class="btn btn-primary">Kembali</button>
+			<a href="artikel.php"button class="btn btn-primary">Kembali</button>
 		</a>
 		</form>
 		<hr>
