@@ -10,8 +10,8 @@ if(isset($_GET["simpam_error"])){
     echo "<script>alert('Data Tidak Boleh Kosong!!');history.go(-1);</script>";
 }else if(isset($_GET["sukses"])){
     echo "<script>alert('Berhasil Mangubah Password!!');history.go(-1);</script>";
-}else if(isset($_GET["minim"])){
-    echo "<script>alert('Minimal Password 5 karakter!!');history.go(-1);</script>";
+}else if(isset($_GET["gagal"])){
+    echo "<script>alert('Konfirmasi Password Harus Sama!!');history.go(-1);</script>";
 }
 
 function bulan_indo($tanggal){
