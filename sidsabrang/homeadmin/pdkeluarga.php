@@ -265,10 +265,10 @@ function tambah_data($koneksi){
           <div class="card-body">
           <form method="post" action="" enctype="multipart/form-data">
             <table cellpadding="8">
-            <tr><td>TANGGAL DIBUAT</td><td><input type="date" name="tgl"></td>
+            <tr><td>TANGGAL DIBUAT</td><td><input type="date" name="tgl" required></td>
                 <td>ID ADMIN</td><td><input type="text" name="admin" readonly value="<?php echo $_SESSION['nik/id']; ?>"></td></tr>
             
-            <tr><td>NO KK</td><td><input type="text" name="no"
+            <tr><td>NO KK</td><td><input required onkeypress="return hanyaAngka(event)" type="text" maxlength=16 name="no"
             <?php if(isset($_GET['no_kk'])){
               include 'koneksi.php';
               $data = mysqli_query($koneksi, "select * from keluarga where NO_KK = '" . $_GET['no_kk'] . "'");
@@ -282,14 +282,14 @@ function tambah_data($koneksi){
             ?>
              >
             </td>
-                <td>RT/RW</td><td><input type="text" name="rt"></td>
+                <td>RT/RW</td><td><input required type="text" placeholder="xxx/xxx" maxlength=7 name="rt"></td>
                 <td>KAB/KOTA</td><td><input type="text" value="Jember" name="kab" readonly></td>
             </tr>
-            <tr><td>KEPALA KELUARGA</td><td><input type="text" name="kepala"></td>
+            <tr><td>KEPALA KELUARGA</td><td><input required onkeypress="return event.charCode < 48 || event.charCode  >57" maxlength=50 type="text" name="kepala"></td>
                 <td>DESA/KELURAHAN</td><td><input type="text" name="desa" value="Sabrang" readonly></td>
                 <td>KODE POS</td><td><input type="text" name="kdpos" value="68172" readonly></td>
             </tr>
-            <tr><td>ALAMAT</td><td><input type="text" name="alamat"></td>
+            <tr><td>ALAMAT</td><td><input required maxlength=20 onkeypress="return event.charCode < 48 || event.charCode  >57" type="text" name="alamat"></td>
                 <td>KECAMATAN</td><td><input type="text" name="kec" value="Ambulu" readonly></td>
                 <td>PROVINSI</td><td><input type="text" name="prov" value="Jawa Timur" readonly ></td>
             </tr>
@@ -361,18 +361,18 @@ function tambah_data($koneksi){
           <a href="pdkeluarga.php"><input type="button" value="Tambah Data"></a>
           <hr>
             <table cellpadding="8">
-            <tr><td>TANGGAL DIBUAT</td><td><input type="date" name="TGL_DIBUAT" value="<?php echo $data['TGL_DIBUAT']; ?>"></td>
+            <tr><td>TANGGAL DIBUAT</td><td><input required type="date" name="TGL_DIBUAT" value="<?php echo $data['TGL_DIBUAT']; ?>"></td>
                 <td>ID ADMIN</td><td><input type="number" name="ID_ADMIN" readonly value="<?php echo $_SESSION['nik/id']; ?>"></td></tr>
             
             <tr><td>NO KK</td><td><input type="text" name="NO_KK" value="<?php echo $data['NO_KK']; ?>" readonly></td>
-                <td>RT/RW</td><td><input type="text" name="RT_RW" value="<?php echo $data['RT_RW']; ?>"></td>
+                <td>RT/RW</td><td><input type="text" required name="RT_RW" maxlength=7 value="<?php echo $data['RT_RW']; ?>"></td>
                 <td>KAB/KOTA</td><td><input type="text" value="<?php echo $data['KAB_KOTA']; ?>" name="KAB_KOTA" readonly></td>
             </tr>
-            <tr><td>KEPALA KELUARGA</td><td><input type="text" name="KEPALA" value="<?php echo $data['KEPALA']; ?>"></td>
+            <tr><td>KEPALA KELUARGA</td><td><input required maxlength=50 type="text" name="KEPALA" value="<?php echo $data['KEPALA']; ?>"></td>
                 <td>DESA/KELURAHAN</td><td><input type="text" name="DESA" value="<?php echo $data['DESA']; ?>" readonly></td>
                 <td>KODE POS</td><td><input type="text" name="KDPOS" value="<?php echo $data['KDPOS']; ?>" readonly></td>
             </tr>
-            <tr><td>ALAMAT</td><td><input type="text" name="ALAMAT" value="<?php echo $data['ALAMAT']; ?>"></td>
+            <tr><td>ALAMAT</td><td><input required type="text" maxlength=20 name="ALAMAT" value="<?php echo $data['ALAMAT']; ?>"></td>
                 <td>KECAMATAN</td><td><input type="text" name="KEC" value="<?php echo $data['KEC']; ?>" readonly></td>
                 <td>PROVINSI</td><td><input type="text" name="PROV" value="<?php echo $data['PROV']; ?>" readonly ></td>
             </tr>
@@ -564,6 +564,15 @@ function tambah_data($koneksi){
 
   <!-- Demo scripts for this page-->
   <script src="js/demo/datatables-demo.js"></script>
+  <script>
+		function hanyaAngka(evt) {
+		  var charCode = (evt.which) ? evt.which : event.keyCode
+		   if (charCode > 31 && (charCode < 48 || charCode > 57))
+ 
+		    return false;
+		  return true;
+		}
+	</script>
 
 </body>
 

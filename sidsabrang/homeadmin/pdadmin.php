@@ -334,14 +334,14 @@ function tambah_data($koneksi){
                   </td>
                 
             </tr>
-            <tr><td>NIK/NIP</td><td><input type="text" name="NIK_NIPADMIN"></td>
+            <tr><td>NIK/NIP</td><td><input onkeypress="return hanyaAngka(event)" type="text" maxlength=16 name="NIK_NIPADMIN"></td>
                 <td>TAHUN JABATAN</td><td><input type="date" name="TAHUN_JABATAN"></td>
-                <td>USERNAME</td><td><input type="text" name="USERNAME"></td>
+                <td>USERNAME</td><td><input type="text" required maxlength=15 name="USERNAME"></td>
                 <td>FOTO</td><td><input type="file" name="FOTO"></td>
             </tr>
-            <tr><td>NAMA</td><td><input type="text" name="NAMAADMIN"></td>
+            <tr><td>NAMA</td><td><input required onkeypress="return event.charCode < 48 || event.charCode  >57" maxlength=100 type="text" name="NAMAADMIN"></td>
                 <td>BERAKHIR JABATAN</td><td><input type="date" name="BERAKHIR_JABATAN"></td>
-                <td>PASSWORD</td><td><input type="password" name="PASSWORD"></td>
+                <td>PASSWORD</td><td><input type="password" required maxlength=15 name="PASSWORD"></td>
                 
             </tr>
             <tr><td>JENIS KELAMIN</td><td>
@@ -349,7 +349,7 @@ function tambah_data($koneksi){
                             <option>Laki-Laki</option>
                             <option >Perempuan</option>
                         </select></td>
-                <td>NO TELEPON</td><td><input type="text" name="NOTELP"></td>
+                <td>NO TELEPON</td><td><input onkeypress="return hanyaAngka(event)" type="text" maxlength=13 name="NOTELP"></td>
                 
                 <td>STATUS AKUN</td><td>
                         <select name="STATUS_AKUN">
@@ -455,18 +455,18 @@ function tambah_data($koneksi){
           <a href="pdadmin.php"><input type="button" value="Tambah Data"></a>
           <hr>
           <table cellpadding="8">
-            <tr><td>ID ADMIN</td><td><input name="ID_ADMIN1" value="<?php echo $data['ID_ADMIN']; ?>" readonly></td>
+            <tr><td>ID ADMIN</td><td><input type="text" name="ID_ADMIN1" value="<?php echo $data['ID_ADMIN']; ?>" readonly></td>
                 <td>JABATAN</td><td><input type="text" name="JABATAN1" value="<?php echo $data['JABATAN']; ?>"></td>
             </tr>
-            <tr><td>NIK/NIP</td><td><input type="text" name="NIK_NIPADMIN1" value="<?php echo $data['NIK_NIPADMIN']; ?>"></td>
+            <tr><td>NIK/NIP</td><td><input onkeypress="return hanyaAngka(event)" type="text" maxlength=16 name="NIK_NIPADMIN1" value="<?php echo $data['NIK_NIPADMIN']; ?>"></td>
                 <td>TAHUN JABATAN</td><td><input type="date" name="TAHUN_JABATAN1" value="<?php echo $data['TAHUN_JABATAN']; ?>"></td>
-                <td>USERNAME</td><td><input type="text" name="USERNAME1" value="<?php echo $data['USERNAME']; ?>"></td>
+                <td>USERNAME</td><td><input type="text" maxlength=15 name="USERNAME1" value="<?php echo $data['USERNAME']; ?>"></td>
                 <td>FOTO</td><td><td>
                                   <input type="file" name="FOTO1"><br>
                                   <input type="checkbox" name="ubah_foto" value="true"> Ubah Foto
 			                            </td>
             </tr>
-            <tr><td>NAMA</td><td><input type="text" name="NAMAADMIN1" value="<?php echo $data['NAMAADMIN']; ?>"></td>
+            <tr><td>NAMA</td><td><input onkeypress="return event.charCode < 48 || event.charCode  >57" maxlength=100 type="text" name="NAMAADMIN1" value="<?php echo $data['NAMAADMIN']; ?>"></td>
                 <td>BERAKHIR JABATAN</td><td><input type="date" name="BERAKHIR_JABATAN1" value="<?php echo $data['BERAKHIR_JABATAN']; ?>"></td>
                 <td>LEVEL</td><td><input type="text" name="LEVEL1" value="<?php echo $data['LEVEL']; ?>" readonly>
                   </td>
@@ -478,7 +478,7 @@ function tambah_data($koneksi){
                             <option>Laki-Laki</option>
                             <option >Perempuan</option>
                         </select></td>
-                <td>NO TELEPON</td><td><input type="text" name="NOTELP1" value="<?php echo $data['NOTELP']; ?>"></td>
+                <td>NO TELEPON</td><td><input onkeypress="return hanyaAngka(event)" type="text" maxlength=13 name="NOTELP1" value="<?php echo $data['NOTELP']; ?>"></td>
                 
                 <td>STATUS AKUN</td><td>
                         <select name="STATUS_AKUN1">
@@ -684,6 +684,16 @@ function tambah_data($koneksi){
 
   <!-- Demo scripts for this page-->
   <script src="js/demo/datatables-demo.js"></script>
+
+  <script>
+		function hanyaAngka(evt) {
+		  var charCode = (evt.which) ? evt.which : event.keyCode
+		   if (charCode > 31 && (charCode < 48 || charCode > 57))
+ 
+		    return false;
+		  return true;
+		}
+	</script>
 
 </body>
 

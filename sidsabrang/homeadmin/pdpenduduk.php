@@ -317,7 +317,7 @@ function tambah_data($koneksi){
                             <option >Hindu</option>
                             <option >Konghuchu</option>
                         </select>
-            <td>NO TELEPON</td><td><input type="text" name="NOTELP"></td>
+            <td>NO TELEPON</td><td><input type="text" maxlength=13 onkeypress="return hanyaAngka(event)" name="NOTELP"></td>
             </tr>
             <tr><td>NO KK</td><td>
             <select name='NO_KK'>
@@ -351,7 +351,7 @@ function tambah_data($koneksi){
                             <option >Belum Kawin</option>
                         </select>
             </tr>
-            <tr><td>NIK</td><td><input type="text" name="NIK"></td>
+            <tr><td>NIK</td><td><input maxlength=16 onkeypress="return hanyaAngka(event)" required type="text" name="NIK"></td>
             <td>PENDIDIKAN</td><td>
                         <select name="PENDIDIKAN">
                             <option>-</option>
@@ -367,11 +367,11 @@ function tambah_data($koneksi){
                             <option>Strata III</option>   
                         </select></td>
             </tr>
-            <tr><td>NAMA</td><td><input type="text" name="NAMA"></td>
-            <td>PEKERJAAN</td><td><input type="text"  name="PEKERJAAN"></td>
-            <td>PASSWORD</td><td><input type="password" name="PASSWORD"></td>
+            <tr><td>NAMA</td><td><input required onkeypress="return event.charCode < 48 || event.charCode  >57" maxlength=100 type="text" name="NAMA"></td>
+            <td>PEKERJAAN</td><td><input required onkeypress="return event.charCode < 48 || event.charCode  >57" maxlength=30 type="text"  name="PEKERJAAN"></td>
+            <td>PASSWORD</td><td><input required maxlength=15 type="password" name="PASSWORD"></td>
             </tr>
-            <tr></tr><td>TEMPAT LAHIR</td><td><input type="text" name="TEMPAT" ></td>
+            <tr></tr><td>TEMPAT LAHIR</td><td><input type="text" required onkeypress="return event.charCode < 48 || event.charCode  >57" maxlength=20 name="TEMPAT" ></td>
             <td>KEWARGANEGARAAN</td><td><input type="text"  name="KWN" value="WNI" readonly></td>
             </tr>
             <tr><td>TANGGAL LAHIR<td><input type="date" name="TANGGAL"></td>
@@ -478,7 +478,7 @@ function tambah_data($koneksi){
                             <option >Hindu</option>
                             <option >Konghuchu</option>
                         </select></td>
-            <td>NO TELEPON</td><td><input type="text" name="NOTELPEN" value="<?php echo $dataa['NOTELPEN']; ?>"></td>
+            <td>NO TELEPON</td><td><input type="text" maxlength=13 onkeypress="return hanyaAngka(event)" name="NOTELPEN" value="<?php echo $dataa['NOTELPEN']; ?>"></td>
             </tr>
             <tr><td>NO KK</td><td>
             <select name='NO_KK'>
@@ -505,7 +505,7 @@ function tambah_data($koneksi){
                             <option>Belum Kawin</option> 
                         </select></td>
             </tr>
-            <tr><td>NIK</td><td><input readonly type="text" name="NIK_PENDUDUK" value="<?php echo $dataa['NIK_PENDUDUK']; ?>"></td>
+            <tr><td>NIK</td><td><input readonly type="text" maxlength=16 onkeypress="return hanyaAngka(event)" required name="NIK_PENDUDUK" value="<?php echo $dataa['NIK_PENDUDUK']; ?>"></td>
             <td>PENDIDIKAN</td><td>
                         <select name="PENDIDIKANPEN">
                         <option><?php echo $dataa['PENDIDIKANPEN']; ?></option>
@@ -522,13 +522,13 @@ function tambah_data($koneksi){
                             <option>Strata III</option>   
                         </select></td>
             </tr>
-            <tr><td>NAMA</td><td><input type="text" name="NAMAPEN" value="<?php echo $dataa['NAMAPEN']; ?>"></td>
-            <td>PEKERJAAN</td><td><input type="text"  name="PEKERJAANPEN" value="<?php echo $dataa['PEKERJAANPEN']; ?>"></td>
+            <tr><td>NAMA</td><td><input type="text" required onkeypress="return event.charCode < 48 || event.charCode  >57" maxlength=100 name="NAMAPEN" value="<?php echo $dataa['NAMAPEN']; ?>"></td>
+            <td>PEKERJAAN</td><td><input type="text" required onkeypress="return event.charCode < 48 || event.charCode  >57" maxlength=30 name="PEKERJAANPEN" value="<?php echo $dataa['PEKERJAANPEN']; ?>"></td>
             </tr>
-            <tr></tr><td>TEMPAT LAHIR</td><td><input type="text" name="TEMPATLHR" value="<?php echo $dataa['TEMPATLHR']; ?>" ></td>
+            <tr></tr><td>TEMPAT LAHIR</td><td><input required required onkeypress="return event.charCode < 48 || event.charCode  >57" maxlength=20 type="text" name="TEMPATLHR" value="<?php echo $dataa['TEMPATLHR']; ?>" ></td>
             <td>KEWARGANEGARAAN</td><td><input readonly type="text"  name="KWNPEN" value="<?php echo $dataa['KWNPEN']; ?>"></td>
             </tr>
-            <tr><td>TANGGAL LAHIR<td><input type="date" name="TANGGALHR" value="<?php echo $dataa['TANGGALHR']; ?>"></td>
+            <tr><td>TANGGAL LAHIR<td><input required type="date" name="TANGGALHR" value="<?php echo $dataa['TANGGALHR']; ?>"></td>
             <td>KETERANGAN</td><td>
                         <select name="KET_HIDUP">
                         <option><?php echo $dataa['KET_HIDUP']; ?></option>
@@ -751,7 +751,15 @@ function tambah_data($koneksi){
 
   <!-- Demo scripts for this page-->
   <script src="js/demo/datatables-demo.js"></script>
-
+  <script>
+		function hanyaAngka(evt) {
+		  var charCode = (evt.which) ? evt.which : event.keyCode
+		   if (charCode > 31 && (charCode < 48 || charCode > 57))
+ 
+		    return false;
+		  return true;
+		}
+	</script>
 </body>
 
 </html>
