@@ -138,7 +138,7 @@ if(isset($_GET["login_error"])){
             <div class="container h-100">
                 <div class="row h-100 align-items-center">
                     <div class="col-12" align="center">
-                        <a align="center" href="index.php" class="original-logo"><img align="center" width="12%" src="img/core-img/Jember.png" alt=""><h4 class="original-logo"><strong>Sistem Informasi Desa Sabrang</strong></h4><h6 class="original-logo">Jl. Watu Ulo No. 1, Desa Sabrang, Kec. Ambulu, Kab. Jember, Jawa Timur, 68172</h6></a>
+                        <a align="center" href="index.php" class="original-logo"><img align="center" width="12%" src="img/core-img/Jember.png" alt=""><h4 class="original-logo"><strong>Sistem Informasi Desa Sabrang</strong></h4><h6 class="original-logo">Jalan Watu Ulo No. 1, Desa Sabrang, Kecamatan Ambulu, Kabupaten Jember, Provinsi Jawa Timur, Kode Pos 68172</h6></a>
                     </div>
                 </div>
             </div>
@@ -183,6 +183,15 @@ if(isset($_GET["login_error"])){
                                         </ul>
                                     </li>
                                     <li><a href="berita.php">Berita</a></li>
+                                    <li><a href="#">Status Surat</a>
+                                        <ul class="dropdown">
+                                            <li><a href="psdom.php">SK Domisili</a></li>
+                                            <li><a href="pskck.php">SK SKCK</a></li>
+                                            <li><a href="psnik.php">SK Belum Nikah</a></li>
+                                            <li><a href="pstusaha.php">SK Tempat Usaha</a></li>
+
+                                        </ul>
+                                    </li>
                                     <li><a href="#">Petunjuk</a>
                                         <ul class="dropdown">
                                             <li><a href="petunjukwarga.php">Petunjuk Website</a></li>
@@ -203,15 +212,6 @@ if(isset($_GET["login_error"])){
 
     <!-- ##### Breadcumb Area Start ##### -->
     <div class="breadcumb-area bg-img" style="background-image: url(img/bg-img/sabrang.jpg);">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12">
-                    <div class="breadcumb-content text-center">
-                        <h2>visi & misi</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
     <!-- ##### Breadcumb Area End ##### -->
 
@@ -227,40 +227,24 @@ if(isset($_GET["login_error"])){
                             <div class="line"></div>
                             <a href="#" class="post-tag">About</a>
                             <h4><a href="#" class="post-headline">VISI & MISI</a></h4>
-                            <p class="mb-3"><table width="80%" border="0" align="center" cellspacing="1" cellpadding="2">
-<tr>
-    <th>VISI</th>
-</tr>
-<tr> <td>&nbsp;</td> </tr>
-<td>Terciptanya pelayanan dibidang prmerintahan yang kreatif,  inovatif,  guna mewujudkan masyarakat Desa Sabrang yang sejahtera lahir dan batin.</td>
-    </tr>
-    
-<tr>
-<tr> <td>&nbsp;</td> </tr>
-    <th>MISI</th>
-</tr>
-<tr> <td>&nbsp;</td> </tr>
-    <tr>
-      <td>Misi yang diemban dalam mewujudkan visi tersebut adalah :</td>
-    </tr>
-    <tr>
-      <td>1. Meningkatkan kualitas pelayanan masyarakat. </td>
-    </tr>
-    <tr>
-      <td>2. Menggali potensi unggulan desa.</td>
-    </tr>
-    <tr>
-      <td>3. Pembangunan sarana dan prasarana yang memadai. </td>
-    </tr>
-    <tr>
-      <td>4. Pemberdayaan masyarakat, utamanya usaha kecil,  menengah untuk menjadi sumber daya manusia yang mandiri. </td>
-    </tr>
-    <tr>
-      <td>5. Mewujudkan aparatur pemerintahan Desa yang berfungsi melayani masyarakat secara profesional,  efisien,  transparan,  dan produktif dalam menyelenggarakan pemerintahan dan pembangunan desa.</td>
-    </tr>
-<tr> <td>&nbsp;</td> </tr>
-    </table>
-</p>
+                            <p class="mb-3">
+                                <b>VISI</b><br>
+                                Terciptanya pelayanan dibidang prmerintahan yang kreatif,  inovatif,  guna mewujudkan masyarakat Desa Sabrang yang sejahtera lahir dan batin.
+                                <br><br>
+                                <b>MISI</b><br>
+                                Misi yang diemban dalam mewujudkan visi tersebut adalah :
+                                <br><br>
+                                1. Meningkatkan kualitas pelayanan masyarakat.
+                                <br>
+                                2. Menggali potensi unggulan desa.
+                                <br>
+                                3. Pembangunan sarana dan prasarana yang memadai.
+                                <br>
+                                4. Pemberdayaan masyarakat, utamanya usaha kecil,  menengah untuk menjadi sumber daya manusia yang mandiri.
+                                <br>
+                                5. Mewujudkan aparatur pemerintahan Desa yang berfungsi melayani masyarakat secara profesional,  efisien,  transparan,  dan produktif dalam menyelenggarakan pemerintahan dan pembangunan desa.
+                                <br>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -460,7 +444,7 @@ if(isset($_GET["login_error"])){
         </div>
 
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Polije  by <a href="#" target="_blank">Kelompok 1</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 
     </footer>

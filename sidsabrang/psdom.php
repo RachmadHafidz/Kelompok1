@@ -15,12 +15,6 @@ if(isset($_GET["login_error"])){
     echo "<script>alert('Anda belum Login, Silahkan Login Terlebih Dahulu!!');history.go(-1);</script>";
 }
         ?>
-<?php
-
-if(isset($_GET["gagal"])){
-    echo "<script>alert('Tidak Dapat Menambahkan Komentar!!');history.go(-1);</script>";
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,7 +37,12 @@ if(isset($_GET["gagal"])){
 </head>
 
 <body>
-    
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preload-content">
+            <div id="original-load"></div>
+        </div>
+    </div>
 
      <!-- Subscribe Modal -->
      <div class="subscribe-newsletter-area">
@@ -211,54 +210,84 @@ if(isset($_GET["gagal"])){
     </header>
     <!-- ##### Header Area End ##### -->
 
-    <!-- ##### Google Map ##### -->
-    <div class="map-area">
-        <iframe class="googleMap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63151.28001653562!2d113.5569547719641!3d-8.406080534825929!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd69d3c69bb5e09%3A0xa99f72fcbbce8000!2sSabrang%2C%20Ambulu%2C%20Jember%20Regency%2C%20East%20Java!5e0!3m2!1sen!2sid!4v1572019975063!5m2!1sen!2sid" width="100%" height="500" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-       
+
+    <!-- ##### Breadcumb Area Start ##### -->
+    <div class="breadcumb-area bg-img" style="background-image: url(img/bg-img/sabrang.jpg);">
     </div>
+    <!-- ##### Breadcumb Area End ##### -->
 
-    <!-- ##### Contact Area Start ##### -->
-    <section class="contact-area section-padding-100">
+    <!-- ##### Blog Wrapper Start ##### -->
+    <div class="blog-wrapper section-padding-50-0 clearfix">
         <div class="container">
-            <div class="row justify-content-center">
-                <!-- Contact Form Area -->
-                <div class="col-12 col-md-10 col-lg-9">
-                    <div class="contact-form">
-                        <h5>Tentang Kami</h5>
-                        <!-- Contact Form -->
-                        
-                    </div>
-                </div>
+            <div class="row align-items-end">
+                <!-- Single Blog Area -->
+                <div class="col-12 col-lg-12">
+                    <div class="single-blog-area clearfix mb-50">
+                        <!-- Blog Content -->
+                        <div class="single-blog-content" align="center">
+                            <div class="line"></div>
+                            <h4><a href="#" class="post-headline">Status Surat Domisili</a></h4>
+                            <p class="mb-3">
+                                    <!-- Widget Area -->
+                                <div class="sidebar-widget-area">
+                                    <form action="psdom.php" class="search-form">
+                                        <input type="search" name="search" id="searchForm" placeholder="Search...">
+                                        <input type="submit" value="submit">
+                                    </form>
+                                </div>
+                                <?php
+                                if(isset($_GET['search'])){
+                                    $cari=$_GET['search'];
+                                    $query1 = "SELECT * FROM sk_domisili where NO_DOMISILI like '%".$cari."%' or KETERANGANAJU like '%".$cari."%'"; // Query untuk menampilkan semua data siswa
+                                    $sql1 = mysqli_query($koneksi, $query1);
+                                    $prosescek=mysqli_num_rows($sql1);
+                                    if($prosescek>0){
+                                        $pesan="Hasil Pencarian : ".$cari."";
+                                    }else{
+                                        $pesan="Hasil Pencarian : Tidak ada data dari ".$cari."";
+                                    }   
+                                }
+                                ?>
+                                <b><?php echo isset($pesan) ? $pesan : "" ?></b>
+                            <table class="table table-bordered" id="dataTable" border="1" width="100%" >
+                                    <tr class="table-success">
+                                        <th>No</th>
+                                        <th>Nomor Surat</th>
+                                        <th>Proses Surat</th>
+                                    </tr>
+                                    <?php
+                                    // Load file koneksi.php
+                                    if(isset($_GET['search'])){
+                                        $cari=$_GET['search'];
+                                        $query = "SELECT * FROM sk_domisili where NO_DOMISILI like '%".$cari."%' or KETERANGANAJU like '%".$cari."%'";
+                                        $sql = mysqli_query($koneksi, $query);
 
-                <div class="col-12 col-md-10 col-lg-3">
-                    <div class="post-sidebar-area">
-
-                        <!-- Widget Area -->
-                        <div class="sidebar-widget-area">
-                            <form action="#" class="search-form">
-                                <input type="search" name="search" id="searchForm" placeholder="Search">
-                                <input type="submit" value="submit">
-                            </form>
+                                    }else{
+                                        $query = "SELECT * FROM sk_domisili"; // Query untuk menampilkan semua data siswa
+                                        $sql = mysqli_query($koneksi, $query); // Eksekusi/Jalankan query dari variabel $query
+                                    }
+                                    $n=1;
+                                    while($data = mysqli_fetch_array($sql)){ // Ambil semua data dari hasil eksekusi $sql
+                                        echo "<tr>";
+                                        echo "<td>".$n."</td>";
+                                        echo "<td>".$data['NO_DOMISILI']."</td>";
+                                        echo "<td>".$data['KETERANGANAJU']."</td>";  
+                                        echo "</tr>";
+                                    $n++;    
+                                }
+                                ?>
+                            </table>
+                            </p>
                         </div>
-
-                        <!-- Widget Area -->
-                        <div class="sidebar-widget-area">
-                            <div class="widget-content social-widget d-flex justify-content-between">
-                                <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-                                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
-                                <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
-                                <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- ##### Contact Area End ##### -->
+    </div>
+    <!-- ##### Blog Wrapper End ##### -->
+
+    
+
 
     <!-- ##### Instagram Feed Area Start ##### -->
     <div class="instagram-feed-area">
@@ -351,13 +380,11 @@ if(isset($_GET["gagal"])){
             </div>
         </div>
 
-   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-   Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 
     </footer>
-
-
     <!-- ##### Footer Area End ##### -->
 
     <!-- jQuery (Necessary for All JavaScript Plugins) -->
@@ -370,9 +397,6 @@ if(isset($_GET["gagal"])){
     <script src="js/plugins.js"></script>
     <!-- Active js -->
     <script src="js/active.js"></script>
-    <!-- Google Map js -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwuyLRa1uKNtbgx6xAJVmWy-zADgegA2s"></script>
-    <script src="js/map-active.js"></script>
 
 </body>
 

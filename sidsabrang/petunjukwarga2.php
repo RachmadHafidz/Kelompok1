@@ -122,7 +122,7 @@ if(isset($_GET["simpam_error"])){
             <div class="container h-100">
                 <div class="row h-100 align-items-center">
                     <div class="col-12" align="center">
-                        <a align="center" href="indexlogin.php" class="original-logo"><img align="center" width="12%" src="img/core-img/Jember.png" alt=""><h4><strong>Sistem Informasi Desa Sabrang</strong></h4><h6>Jl. Watu Ulo No. 5a, Krajan, Sabrang, Ambulu, Kabupaten Jember, Jawa Timur, 68172</h6></a>
+                        <a align="center" href="indexlogin.php" class="original-logo"><img align="center" width="12%" src="img/core-img/Jember.png" alt=""><h4 class="original-logo"><strong>Sistem Informasi Desa Sabrang</strong></h4><h6 class="original-logo">Jalan Watu Ulo No. 1, Desa Sabrang, Kecamatan Ambulu, Kabupaten Jember, Provinsi Jawa Timur, Kode Pos 68172</h6></a>
                     </div>
                 </div>
             </div>
@@ -257,20 +257,11 @@ if(isset($_GET["simpam_error"])){
 
     <!-- ##### Breadcumb Area Start ##### -->
     <div class="breadcumb-area bg-img" style="background-image: url(img/surat/web.png);">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12">
-                    <div class="breadcumb-content text-center">
-                        <h2>petunjuk website</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
     <!-- ##### Breadcumb Area End ##### -->
 
   <!-- ##### Blog Wrapper Start ##### -->
-  <div class="blog-wrapper section-padding-100-0 clearfix">
+  <div class="blog-wrapper section-padding-50-0 clearfix">
         <div class="container">
             <div class="row align-items-end">
                 <!-- Single Blog Area -->

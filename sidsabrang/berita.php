@@ -194,7 +194,7 @@ include 'koneksi.php';
             <div class="container h-100">
                 <div class="row h-100 align-items-center">
                     <div class="col-12" align="center">
-                        <a align="center" href="index.php" class="original-logo"><img align="center" width="12%" src="img/core-img/Jember.png" alt=""><h4 class="original-logo"><strong>Sistem Informasi Desa Sabrang</strong></h4><h6 class="original-logo">Jl. Watu Ulo No. 1, Desa Sabrang, Kec. Ambulu, Kab. Jember, Jawa Timur, 68172</h6></a>
+                        <a align="center" href="index.php" class="original-logo"><img align="center" width="12%" src="img/core-img/Jember.png" alt=""><h4 class="original-logo"><strong>Sistem Informasi Desa Sabrang</strong></h4><h6 class="original-logo">Jalan Watu Ulo No. 1, Desa Sabrang, Kecamatan Ambulu, Kabupaten Jember, Provinsi Jawa Timur, Kode Pos 68172</h6></a>
                     </div>
                 </div>
             </div>
@@ -239,6 +239,15 @@ include 'koneksi.php';
                                         </ul>
                                     </li>
                                     <li><a href="berita.php">Berita</a></li>
+                                    <li><a href="#">Status Surat</a>
+                                        <ul class="dropdown">
+                                            <li><a href="psdom.php">SK Domisili</a></li>
+                                            <li><a href="pskck.php">SK SKCK</a></li>
+                                            <li><a href="psnik.php">SK Belum Nikah</a></li>
+                                            <li><a href="pstusaha.php">SK Tempat Usaha</a></li>
+
+                                        </ul>
+                                    </li>
                                     <li><a href="#">Petunjuk</a>
                                         <ul class="dropdown">
                                             <li><a href="petunjukwarga.php">Petunjuk Website</a></li>
@@ -459,8 +468,8 @@ include 'koneksi.php';
         </div>
 
    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-   Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Polije  by <a href="#" target="_blank">Kelompok 1</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 
     </footer>
     <!-- ##### Footer Area End ##### -->

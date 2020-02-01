@@ -122,7 +122,7 @@ if(isset($_GET["simpam_error"])){
             <div class="container h-100">
                 <div class="row h-100 align-items-center">
                     <div class="col-12" align="center">
-                        <a align="center" href="indexlogin.php" class="original-logo"><img align="center" width="12%" src="img/core-img/Jember.png" alt=""><h4><strong>Sistem Informasi Desa Sabrang</strong></h4><h6>Jl. Watu Ulo No. 5a, Krajan, Sabrang, Ambulu, Kabupaten Jember, Jawa Timur, 68172</h6></a>
+                        <a align="center" href="indexlogin.php" class="original-logo"><img align="center" width="12%" src="img/core-img/Jember.png" alt=""><h4 class="original-logo"><strong>Sistem Informasi Desa Sabrang</strong></h4><h6 class="original-logo">Jalan Watu Ulo No. 1, Desa Sabrang, Kecamatan Ambulu, Kabupaten Jember, Provinsi Jawa Timur, Kode Pos 68172</h6></a>
                     </div>
                 </div>
             </div>
@@ -257,20 +257,11 @@ if(isset($_GET["simpam_error"])){
 
     <!-- ##### Breadcumb Area Start ##### -->
     <div class="breadcumb-area bg-img" style="background-image: url(img/surat/surat.jpg);">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12">
-                    <div class="breadcumb-content text-center">
-                        <h2>petunjuk surat</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
     <!-- ##### Breadcumb Area End ##### -->
 
     <!-- ##### Blog Wrapper Start ##### -->
-    <div class="blog-wrapper section-padding-100-0 clearfix">
+    <div class="blog-wrapper section-padding-50-0 clearfix">
         <div class="container">
             <div class="row align-items-end">
                 <!-- Single Blog Area -->
@@ -290,7 +281,7 @@ if(isset($_GET["simpam_error"])){
     </div>
     <!-- ##### Blog Wrapper End ##### -->
         <!-- ##### Blog Wrapper Start ##### -->
-        <div class="blog-wrapper section-padding-100-0 clearfix">
+        <div class="blog-wrapper section-padding-25-0 clearfix">
         <div class="container">
             <div class="row align-items-end">
                 <!-- Single Blog Area -->
@@ -302,84 +293,84 @@ if(isset($_GET["simpam_error"])){
                             <a href="#" class="post-tag">About</a>
                             <h4><a href="#" class="post-headline">PERSYARATAN PEMBUATAN SURAT</a></h4>
                             <p class="mb-3"><table width="80%" border="0" align="center" cellspacing="1" cellpadding="2">
-<tr>
-    <th>Persyaratan SKCK</th>
-</tr>
-<tr> <td>&nbsp;</td> </tr>
-<td>1. Membawa Fotokopi Kartu Tanda Penduduk (KTP) atau Surat Izin Mengemudi (SIM).</td>
-    </tr>
-    <tr>
-      <td>2. Memembawa Fotokopi Kartu Keluarga (KK).</td>
-    </tr>
-    <tr>
-      <td>3. Membawa Fotokopi Akta Kelahiran/Surat Kenal Lahir/Ijazah Terakhir.</td>
-    </tr>
-    <tr>
-      <td>4. Membawa Pas foto 4x6 berlatar/background merah sebanyak 6 lembar.</td>
-    </tr>
-    <tr>
-      <td>5. Memembawa Surat pengantar RT/RW.</td>
-    </tr>
-    <tr>
-      <td>6. Membawa Surat Keterangan SKCK yang telah di cetak. untuk mendapatkan tanda tangan Kepala desa.</td>
-    </tr>
-<tr> <td>&nbsp;</td> </tr>
-<tr>
-    <th>Persyaratan Surat Domisili</th>
-</tr>
-<tr> <td>&nbsp;</td> </tr>
-    <tr>
-      <td>1. Membawa Fotokopi Kartu Tanda Penduduk (KTP) atau Surat Izin Mengemudi (SIM).</td>
-    </tr>
-    <tr>
-      <td>2. Memembawa Fotokopi Kartu Keluarga (KK).</td>
-    </tr>
-    <tr>
-      <td>3. Membawa Fotokopi Akta Kelahiran/Surat Kenal Lahir/Ijazah Terakhir.</td>
-    </tr>
-    <tr>
-      <td>4. Memembawa Surat pengantar RT/RW.</td>
-    </tr>
-    <tr>
-      <td>5. Membawa Surat Keterangan DOMISILI yang telah di cetak. untuk mendapatkan tanda tangan Kepala desa.</td>
-    </tr>
-<tr> <td>&nbsp;</td> </tr>
-<tr>
-    <th>Persyaratan Surat Belum Menikah</th>
-</tr>
-<tr> <td>&nbsp;</td> </tr>
-    <tr>
-      <td>1. Membawa Fotokopi Kartu Tanda Penduduk (KTP) atau Surat Izin Mengemudi (SIM).</td>
-    </tr>
-    <tr>
-      <td>2. Memembawa Fotokopi Kartu Keluarga (KK).</td>
-    </tr>
-    <tr>
-      <td>3. Memembawa Surat pengantar RT/RW.</td>
-    </tr>
-    <tr>
-      <td>4. Membawa Surat Keterangan Belum menikah yang telah di cetak. untuk mendapatkan tanda tangan Kepala desa.</td>
-    </tr>
+                            <tr>
+                                <th>Persyaratan SKCK</th>
+                            </tr>
+                            <tr> <td>&nbsp;</td> </tr>
+                            <td>1. Membawa Fotokopi Kartu Tanda Penduduk (KTP) atau Surat Izin Mengemudi (SIM).</td>
+                                </tr>
+                                <tr>
+                                <td>2. Memembawa Fotokopi Kartu Keluarga (KK).</td>
+                                </tr>
+                                <tr>
+                                <td>3. Membawa Fotokopi Akta Kelahiran/Surat Kenal Lahir/Ijazah Terakhir.</td>
+                                </tr>
+                                <tr>
+                                <td>4. Membawa Pas foto 4x6 berlatar/background merah sebanyak 6 lembar.</td>
+                                </tr>
+                                <tr>
+                                <td>5. Memembawa Surat pengantar RT/RW.</td>
+                                </tr>
+                                <tr>
+                                <td>6. Membawa Surat Keterangan SKCK yang telah di cetak. untuk mendapatkan tanda tangan Kepala desa.</td>
+                                </tr>
+                            <tr> <td>&nbsp;</td> </tr>
+                            <tr>
+                                <th>Persyaratan Surat Domisili</th>
+                            </tr>
+                            <tr> <td>&nbsp;</td> </tr>
+                                <tr>
+                                <td>1. Membawa Fotokopi Kartu Tanda Penduduk (KTP) atau Surat Izin Mengemudi (SIM).</td>
+                                </tr>
+                                <tr>
+                                <td>2. Memembawa Fotokopi Kartu Keluarga (KK).</td>
+                                </tr>
+                                <tr>
+                                <td>3. Membawa Fotokopi Akta Kelahiran/Surat Kenal Lahir/Ijazah Terakhir.</td>
+                                </tr>
+                                <tr>
+                                <td>4. Memembawa Surat pengantar RT/RW.</td>
+                                </tr>
+                                <tr>
+                                <td>5. Membawa Surat Keterangan DOMISILI yang telah di cetak. untuk mendapatkan tanda tangan Kepala desa.</td>
+                                </tr>
+                            <tr> <td>&nbsp;</td> </tr>
+                            <tr>
+                                <th>Persyaratan Surat Belum Menikah</th>
+                            </tr>
+                            <tr> <td>&nbsp;</td> </tr>
+                                <tr>
+                                <td>1. Membawa Fotokopi Kartu Tanda Penduduk (KTP) atau Surat Izin Mengemudi (SIM).</td>
+                                </tr>
+                                <tr>
+                                <td>2. Memembawa Fotokopi Kartu Keluarga (KK).</td>
+                                </tr>
+                                <tr>
+                                <td>3. Memembawa Surat pengantar RT/RW.</td>
+                                </tr>
+                                <tr>
+                                <td>4. Membawa Surat Keterangan Belum menikah yang telah di cetak. untuk mendapatkan tanda tangan Kepala desa.</td>
+                                </tr>
 
-<tr> <td>&nbsp;</td> </tr>
-<tr>
-    <th>Persyaratan Surat Tempat Usaha</th>
-</tr>
-<tr> <td>&nbsp;</td> </tr>
-    <tr>
-      <td>1. Membawa Fotokopi Kartu Tanda Penduduk (KTP) atau Surat Izin Mengemudi (SIM).</td>
-    </tr>
-    <tr>
-      <td>2. Memembawa Fotokopi Kartu Keluarga (KK).</td>
-    </tr>
-    <tr>
-      <td>3. Memembawa Surat pengantar RT/RW.</td>
-    </tr>
-    <tr>
-      <td>4. Membawa Surat Keterangan Tempat Usaha yang telah di cetak. untuk mendapatkan tanda tangan Kepala desa.</td>
-    </tr>
-    </table>
-</p>
+                            <tr> <td>&nbsp;</td> </tr>
+                            <tr>
+                                <th>Persyaratan Surat Tempat Usaha</th>
+                            </tr>
+                            <tr> <td>&nbsp;</td> </tr>
+                                <tr>
+                                <td>1. Membawa Fotokopi Kartu Tanda Penduduk (KTP) atau Surat Izin Mengemudi (SIM).</td>
+                                </tr>
+                                <tr>
+                                <td>2. Memembawa Fotokopi Kartu Keluarga (KK).</td>
+                                </tr>
+                                <tr>
+                                <td>3. Memembawa Surat pengantar RT/RW.</td>
+                                </tr>
+                                <tr>
+                                <td>4. Membawa Surat Keterangan Tempat Usaha yang telah di cetak. untuk mendapatkan tanda tangan Kepala desa.</td>
+                                </tr>
+                                </table>
+                            </p>
                         </div>
                     </div>
                 </div>
