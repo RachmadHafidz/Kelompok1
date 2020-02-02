@@ -123,7 +123,7 @@ if(isset($_GET["simpam_error"])){
             <div class="container h-100">
                 <div class="row h-100 align-items-center">
                     <div class="col-12" align="center">
-                        <a align="center" href="indexlogin.php" class="original-logo"><img align="center" width="12%" src="img/core-img/Jember.png" alt=""><h4><strong>Sistem Informasi Desa Sabrang</strong></h4><h6>Jl. Watu Ulo No. 5a, Krajan, Sabrang, Ambulu, Kabupaten Jember, Jawa Timur, 68172</h6></a>
+                        <a align="center" href="indexlogin.php" class="original-logo"><img align="center" width="12%" src="img/core-img/Jember.png" alt=""><h4 class="original-logo"><strong>Sistem Informasi Desa Sabrang</strong></h4><h6 class="original-logo">Jalan Watu Ulo No. 1, Desa Sabrang, Kecamatan Ambulu, Kabupaten Jember, Provinsi Jawa Timur, Kode Pos 68172</h6></a>
                     </div>
                 </div>
             </div>
@@ -330,31 +330,22 @@ if(isset($_GET["simpam_error"])){
                                     echo "<td>".$data['TGLSURATAJU']."</td>";
                                     echo "<td>".$data['TUJUANAJU']."</td>";
                                     echo "<td>".$data['KETERANGANAJU']."</td>";
-                                    
-                                ?>
                                 
+                                ?>
+                                <?php
+                                if($data['KETERANGANAJU']=="Tidak Valid"){
+                                ?>
+                                <td><a disabled class="btn btn-danger" href="#"><?php echo $data['KETERANGANAJU']?></a></td></tr>
+                                <?php
+                                }else if($data['KETERANGANAJU']=="Selesai"){
+                                ?>
+                                <td><a disabled class="btn btn-success" href="#"><?php echo $data['KETERANGANAJU']?></a></td></tr>
+                                <?php
+                                }else{
+                                ?>
                                 <td><a class="btn btn-primary" onclick="return confirm('Apakah Anda Ingin Mencetak Surat?')" href="reportdomisili.php?nosur=<?php echo $data['NO_DOMISILI']?>&nik=<?php echo $data['NIK_PENDUDUK']?>">Cetak</a> </tr>
-                                
                                 <?php
-                                }	
-                                ?>
-                                <tr>
-                                    <td colspan = "8" > <b>Riwayat Surat Belum Nikah untuk Pribadi</b> </td>	
-                                </tr>
-                                    <?php
-                                while($show = mysqli_fetch_array($play1)){
-                                    echo "<tr>";
-                                    echo "<td>".$show['NO_BNIKAH']."</td>";
-                                    echo "<td>".$show['NAMAPEN']."</td>";
-                                    echo "<td>".$show['NIK_PENDUDUK']."</td>";
-                                    echo "<td>".$show['TGLSURATBN']."</td>";
-                                    echo "<td>".$show['TUJUANBN']."</td>";
-                                    echo "<td>".$show['KETERANGANBN']."</td>";
-                                    ?>
-                                
-                                    <td><a class="btn btn-primary" onclick="return confirm('Apakah Anda Ingin Mencetak Surat?')" href="reportbnikah.php?nosur=<?php echo $show['NO_BNIKAH']?>&nik=<?php echo $show['NIK_PENDUDUK']?>">Cetak</a> </tr>
-                                
-                                <?php
+                                }
                                 }	
                                 ?>
 
@@ -372,11 +363,54 @@ if(isset($_GET["simpam_error"])){
                                     echo "<td>".$show1['KETERANGAN_AJU']."</td>";
                                     
                                 ?>
-                                
+                                <?php
+                                if($show1['KETERANGAN_AJU']=="Tidak Valid"){
+                                ?>
+                                <td><a disabled class="btn btn-danger" href="#"><?php echo $show1['KETERANGAN_AJU']?></a></td></tr>
+                                <?php
+                                }else if($show1['KETERANGAN_AJU']=="Selesai"){
+                                ?>
+                                <td><a disabled class="btn btn-success" href="#"><?php echo $show1['KETERANGAN_AJU']?></a></td></tr>
+                                <?php
+                                }else{
+                                ?>
                                     <td><a class="btn btn-primary" onclick="return confirm('Apakah Anda Ingin Mencetak Surat?')" href="reportskck.php?nosur=<?php echo $show1['NO_SKCK']?>&nik=<?php echo $show1['NIK_PENDUDUK']?>">Cetak</a> </tr>
                                 
                                 <?php
+                                }
                                 }	
+                                ?>
+
+                                <tr>
+                                    <td colspan = "8" > <b>Riwayat Surat Belum Nikah untuk Pribadi</b> </td>	
+                                </tr>
+                                    <?php
+                                while($show = mysqli_fetch_array($play1)){
+                                    echo "<tr>";
+                                    echo "<td>".$show['NO_BNIKAH']."</td>";
+                                    echo "<td>".$show['NAMAPEN']."</td>";
+                                    echo "<td>".$show['NIK_PENDUDUK']."</td>";
+                                    echo "<td>".$show['TGLSURATBN']."</td>";
+                                    echo "<td>".$show['TUJUANBN']."</td>";
+                                    echo "<td>".$show['KETERANGANBN']."</td>";
+                                    ?>
+
+                                <?php
+                                if($show['KETERANGANBN']=="Tidak Valid"){
+                                ?>
+                                <td><a disabled class="btn btn-danger" href="#"><?php echo $show['KETERANGANBN']?></a></td></tr>
+                                <?php
+                                }else if($show['KETERANGANBN']=="Selesai"){
+                                ?>
+                                <td><a disabled class="btn btn-success" href="#"><?php echo $show['KETERANGANBN']?></a></td></tr>
+                                <?php
+                                }else{
+                                ?>
+                                    <td><a class="btn btn-primary" onclick="return confirm('Apakah Anda Ingin Mencetak Surat?')" href="reportbnikah.php?nosur=<?php echo $show['NO_BNIKAH']?>&nik=<?php echo $show['NIK_PENDUDUK']?>">Cetak</a> </tr>
+                                
+                                <?php
+                                }	
+                                }
                                 ?>
 
                                 <tr>
@@ -392,10 +426,21 @@ if(isset($_GET["simpam_error"])){
                                     echo "<td>".$show2['TUJUANTU']."</td>";
                                     echo "<td>".$show2['KETERANGAN']."</td>";
                                     ?>
-                                
+                                <?php
+                                if($show2['KETERANGAN']=="Tidak Valid"){
+                                ?>
+                                <td><a disabled class="btn btn-danger" href="#"><?php echo $show2['KETERANGAN']?></a></td></tr>
+                                <?php
+                                }else if($show2['KETERANGAN']=="Selesai"){
+                                ?>
+                                <td><a disabled class="btn btn-success" href="#"><?php echo $show2['KETERANGAN']?></a></td></tr>
+                                <?php
+                                }else{
+                                ?>
                                     <td><a class="btn btn-primary" onclick="return confirm('Apakah Anda Ingin Mencetak Surat?')" href="reportusaha.php?nosur=<?php echo $show2['NO_TUSAHA']?>&nik=<?php echo $show2['NIK_PENDUDUK']?>">Cetak</a> </tr>
                                 
                                 <?php
+                                }
                                 }	
                                 ?>
                             </table>
@@ -449,7 +494,7 @@ if(isset($_GET["simpam_error"])){
                                     <tfoot>
                                
                                 <tr>
-                                <td colspan = "8" > <b>Riwayat Surat Domisili untuk Perwakilan</b> </td>
+                                <td colspan = "9" > <b>Riwayat Surat Domisili untuk Perwakilan</b> </td>
                                 </tr>
 
                                 <?php
@@ -478,30 +523,20 @@ if(isset($_GET["simpam_error"])){
                                     echo "<td>".$ex['KETERANGANAJU']."</td>";
                                     
                                 ?>
+                                <?php
+                                if($ex['KETERANGANAJU']=="Tidak Valid"){
+                                ?>
+                                <td><a disabled class="btn btn-danger" href="#"><?php echo $ex['KETERANGANAJU']?></a></td></tr>
+                                <?php
+                                }else if($ex['KETERANGANAJU']=="Selesai"){
+                                ?>
+                                <td><a disabled class="btn btn-success" href="#"><?php echo $ex['KETERANGANAJU']?></a></td></tr>
+                                <?php
+                                }else{
+                                ?>
                                     <td><a class="btn btn-primary" onclick="return confirm('Apakah Anda Ingin Mencetak Surat?')" href="rdom.php?nosur=<?php echo $ex['NO_DOMISILI']?>&nik=<?php echo $ex['NIKAJU']?>">Cetak</a> </tr>
-                                
                                 <?php
-                                }	
-                                ?>
-
-                                <tr>
-                                <td colspan = "9" > <b>  Riwayat Surat Belum Nikah untuk Perwakilan </b></td>	
-                                </tr>
-                                <?php
-                                while($show = mysqli_fetch_array($run1)){
-                                    echo "<tr>";
-                                    echo "<td>".$show['NO_BNIKAH']."</td>";
-                                    echo "<td>".$show['NAMAPEN']."</td>";
-                                    echo "<td>".$show['NIK_PENDUDUK']."</td>";
-                                    echo "<td>".$show['TGLSURATBN']."</td>";
-                                    echo "<td>".$show['NIKBN']."</td>";
-                                    echo "<td>".$show['NAMABN']."</td>";
-                                    echo "<td>".$show['TUJUANBN']."</td>";
-                                    echo "<td>".$show['KETERANGANBN']."</td>";
-                                ?>
-                                    <td><a class="btn btn-primary" onclick="return confirm('Apakah Anda Ingin Mencetak Surat?')" href="rbnikah.php?nosur=<?php echo $show['NO_BNIKAH']?>&nik=<?php echo $show['NIKBN']?>">Cetak</a> </tr>
-                                
-                                <?php
+                                }
                                 }	
                                 ?>
 
@@ -520,11 +555,56 @@ if(isset($_GET["simpam_error"])){
                                     echo "<td>".$show1['TUJUAN_AJU']."</td>";
                                     echo "<td>".$show1['KETERANGAN_AJU']."</td>";
                                 ?>
+                                <?php
+                                if($show1['KETERANGAN_AJU']=="Tidak Valid"){
+                                ?>
+                                <td><a disabled class="btn btn-danger" href="#"><?php echo $show1['KETERANGAN_AJU']?></a></td></tr>
+                                <?php
+                                }else if($show1['KETERANGAN_AJU']=="Selesai"){
+                                ?>
+                                <td><a disabled class="btn btn-success" href="#"><?php echo $show1['KETERANGAN_AJU']?></a></td></tr>
+                                <?php
+                                }else{
+                                ?>
                                     <td><a class="btn btn-primary" onclick="return confirm('Apakah Anda Ingin Mencetak Surat?')" href="rskck.php?nosur=<?php echo $show1['NO_SKCK']?>&nik=<?php echo $show1['NIK_AJU']?>">Cetak</a> </tr>
                                 
                                 <?php
+                                }}	
+                                ?>
+
+                                <tr>
+                                <td colspan = "9" > <b>  Riwayat Surat Belum Nikah untuk Perwakilan </b></td>	
+                                </tr>
+                                <?php
+                                while($show = mysqli_fetch_array($run1)){
+                                    echo "<tr>";
+                                    echo "<td>".$show['NO_BNIKAH']."</td>";
+                                    echo "<td>".$show['NAMAPEN']."</td>";
+                                    echo "<td>".$show['NIK_PENDUDUK']."</td>";
+                                    echo "<td>".$show['TGLSURATBN']."</td>";
+                                    echo "<td>".$show['NIKBN']."</td>";
+                                    echo "<td>".$show['NAMABN']."</td>";
+                                    echo "<td>".$show['TUJUANBN']."</td>";
+                                    echo "<td>".$show['KETERANGANBN']."</td>";
+                                ?>
+                                <?php
+                                if($show['KETERANGANBN']=="Tidak Valid"){
+                                ?>
+                                <td><a disabled class="btn btn-danger" href="#"><?php echo $show['KETERANGANBN']?></a></td></tr>
+                                <?php
+                                }else if($show['KETERANGANBN']=="Selesai"){
+                                ?>
+                                <td><a disabled class="btn btn-success" href="#"><?php echo $show['KETERANGANBN']?></a></td></tr>
+                                <?php
+                                }else{
+                                ?>
+                                    <td><a class="btn btn-primary" onclick="return confirm('Apakah Anda Ingin Mencetak Surat?')" href="rbnikah.php?nosur=<?php echo $show['NO_BNIKAH']?>&nik=<?php echo $show['NIKBN']?>">Cetak</a> </tr>
+                                
+                                <?php
+                                }
                                 }	
                                 ?>
+                                
                             <tr>
                                 <td colspan = "9" > <b> Riwayat Surat Tempat Usaha untuk Perwakilan </b></td>	
                                 </tr>
@@ -541,10 +621,21 @@ if(isset($_GET["simpam_error"])){
                                     echo "<td>".$show2['KETERANGAN']."</td>";
                                 
                                 ?>
+                                <?php
+                                if($show2['KETERANGAN']=="Tidak Valid"){
+                                ?>
+                                <td><a disabled class="btn btn-danger" href="#"><?php echo $show2['KETERANGAN']?></a></td></tr>
+                                <?php
+                                }else if($show2['KETERANGAN']=="Selesai"){
+                                ?>
+                                <td><a disabled class="btn btn-success" href="#"><?php echo $show2['KETERANGAN']?></a></td></tr>
+                                <?php
+                                }else{
+                                ?>
                                     <td><a class="btn btn-primary" onclick="return confirm('Apakah Anda Ingin Mencetak Surat?')" href="rtusaha.php?nosur=<?php echo $show2['NO_TUSAHA']?>&nik=<?php echo $show2['NIKTU']?>">Cetak</a> </tr>
                                 
                                 <?php
-                                }	
+                                }}	
                                 ?>
  
                             </table>

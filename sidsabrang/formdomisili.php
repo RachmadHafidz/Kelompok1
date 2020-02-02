@@ -52,7 +52,6 @@ function tgl_indo($tanggal){
       return $pecahkan[2] . ' ' . $bulan[ (int)$pecahkan[1] ] . ' ' . $pecahkan[0];
     }
 
-            include 'koneksi.php';
               $kueri="SELECT max(NO_DOMISILI) as maxKode FROM sk_domisili";
               $hasil= mysqli_query($koneksi, $kueri);
               $tabel= mysqli_fetch_array($hasil);
@@ -63,9 +62,7 @@ function tgl_indo($tanggal){
 
               $char="SD";
               $nosurat= $char . sprintf("%05s", $noUrut);
-                                
 
-include 'koneksi.php';
 if(isset($_POST['btn_simpan'])) {
 $NO_DOMISILI = $_POST['NO_DOMISILI'];
 $NIK_PENDUDUK = $_SESSION['nik/id'];
@@ -77,16 +74,23 @@ $now=date('Y-m-d');
 $then=date('Y-m-d', strtotime('+7 days', strtotime($now)));
 
     if(!empty($TUJUANJU)){
-    $query = "INSERT INTO sk_domisili(NO_DOMISILI,NIK_PENDUDUK,TGLSURATAJU,BERLAKU,TUJUANAJU,KETERANGANAJU,JENIS_SURATAJU) VALUES('".$NO_DOMISILI."', '".$NIK_PENDUDUK."', '".$now."', '".$then."', '".$TUJUANJU."', '".$KETERANGANAJU."', '".$JENIS_SURATAJU."')";
-                $sql = mysqli_query($koneksi, $query); // Eksekusi/ Jalankan query dari variabel $query
-                  if($sql){// Cek jika proses simpan ke database sukses atau tidak
-                    header("location:reportdomisili.php?nosur=$NO_DOMISILI");
-                  }else{
-                    header("location:formdomisili.php?gagal_simpan");
-                  }
-                }else{
-                    header("location:formdomisili.php?kurang_lengkap");
-                }
+        $querycek="SELECT * FROM sk_domisili where NIK_PENDUDUK='".$NIK_PENDUDUK."' AND TUJUANAJU='".$TUJUANJU."' AND KETERANGANAJU='".$KETERANGANAJU."'";
+        $sqlcek= mysqli_query($koneksi, $querycek);
+        $prosescek= mysqli_num_rows($sqlcek);
+        if($prosescek>0){
+            header("location:formdomisili.php?data_sama");
+        }else{
+            $query = "INSERT INTO sk_domisili(NO_DOMISILI,NIK_PENDUDUK,TGLSURATAJU,BERLAKU,TUJUANAJU,KETERANGANAJU,JENIS_SURATAJU) VALUES('".$NO_DOMISILI."', '".$NIK_PENDUDUK."', '".$now."', '".$then."', '".$TUJUANJU."', '".$KETERANGANAJU."', '".$JENIS_SURATAJU."')";
+                        $sql = mysqli_query($koneksi, $query); // Eksekusi/ Jalankan query dari variabel $query
+                        if($sql){// Cek jika proses simpan ke database sukses atau tidak
+                            header("location:reportdomisili.php?nosur=$NO_DOMISILI");
+                        }else{
+                            header("location:formdomisili.php?gagal_simpan");
+                        }
+        }
+    }else{
+        header("location:formdomisili.php?kurang_lengkap");
+    }
 } 
 
         if(isset($_GET["gagal_simpan"])){
@@ -95,6 +99,8 @@ $then=date('Y-m-d', strtotime('+7 days', strtotime($now)));
 			echo "<script>alert('Silahkan Isi Data dengan Lengkap');history.go(-1);</script>";
 		}else if(isset($_GET["cancel"])){
 			echo "<script>alert('Cancel');history.go(-1);</script>";
+        }else if(isset($_GET["data_sama"])){
+			echo "<script>alert('Anda telah membuat surat yang sama persis, silahkan cek di riwayat surat!!');history.go(-1);</script>";
         }
         ?>
 
@@ -338,145 +344,145 @@ $then=date('Y-m-d', strtotime('+7 days', strtotime($now)));
 
     <!-- ##### Hero Area Start ##### -->
     <div class="" align="center">
-    <form class="" method="post" action="">
+        <form class="" method="post" action="">
     
-<table width="50%" border="0"  cellspacing="0" cellpadding="2">
-<br>
-	<tr>
-      <td colspan="2"><div align="center" class="post-headline"><strong><u>SURAT KETERANGAN DOMISILI</u></strong></div></td>
-    </tr>
-	<tr>
-      <td colspan="2"><div align="center">Nomor : 474 /<input readonly type="text" name="NO_DOMISILI" value="<?php echo $nosurat;?>">/35.09.12.2002/<?php echo $year;?></div></td>
-    </tr>					
-	<tr>
-      <td colspan="2">&nbsp;</td>
-    </tr>
-    <tr>
-    </tr>
-</table>
-<table width="50%" border="0" align="center" cellspacing="0" cellpadding="2">
-    <tr>
-      <td align="justify" colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;Yang  bertanda tangan dibawah ini Saya Kepala Desa Sabrang,Kecamatan Ambulu, Kabupaten Jember , menerangkan dengan sebenarnya bahwa :</td>
-    </tr>
-	<tr>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-    </tr>
-	<tr>
-      <td>&nbsp;</td>
-      <td>NIK</td>
-      <td>&nbsp;:&nbsp;<?php echo $nik;?></td>
-    
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td>Nama Lengkap</td>
-      <td>&nbsp;:&nbsp;<?php echo $dataa['NAMAPEN'];?></td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td>Dilahirkan</td>
-      <td>&nbsp;:&nbsp;<?php echo $dataa['TEMPATLHR'];?>, <?php echo tgl_indo($dataa['TANGGALHR']);?></td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td>Jenis Kelamin</td>
-      <td>&nbsp;:&nbsp;<?php echo $dataa['JK_PEN'];?>
-      </td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td>Status Perkawinan</td>
-      <td>&nbsp;:&nbsp;<?php echo $dataa['STATUSPEN'];?>
-      </td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td>Agama</td>
-      <td>&nbsp;:&nbsp;<?php echo $dataa['AGAMAPEN'];?>
-      </td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td>Pekerjaan</td>
-      <td>&nbsp;:&nbsp;<?php echo $dataa['PEKERJAANPEN'];?></td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td>Kewarganegaraan</td>
-      <td>&nbsp;:&nbsp;<?php echo $dataa['KWNPEN'];?></td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td>Alamat</td>
-      <td>&nbsp;:&nbsp;<?php echo $dataa['ALAMAT'];?> 
-      RT/RW <?php echo $dataa['RT_RW'];?> 
-      Desa <?php echo $dataa['DESA'];?> 
-      Kecamatan <?php echo $dataa['KEC'];?> 
-      Kabupaten <?php echo $dataa['KAB_KOTA'];?>
-      Provinsi <?php echo $dataa['PROV'];?> 
-      <?php echo $dataa['KDPOS'];?></td>
-    </tr> 
-    <tr>
-      <td>&nbsp;</td>
-      <td>Masa Berlaku</td>
-      <td>&nbsp;:&nbsp;<?php echo tgl_indo($now); ?> sd <?php echo tgl_indo($then); ?></td>
-    </tr>
-    
-    <tr>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td align="justify" colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;Orang tersebut diatas benar benar penduduk Desa Sabrang Kecamatan 
-				Ambulu, Kabupaten Jember, yang bersangkutan sampai saat ini masih berdomisili pada alamat tersebut diatas dan surat keterangan ini akan dipergunakan untuk persyaratan 
-				<input type="text" name="TUJUANJU">.</td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td align="justify" colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;Demikian surat keterangan ini saya buat dengan sebenarnya dan dapatnya dipergunakan sebagai mana mestinya dan selanjutnya untuk menjadikan periksa.
-		</td>
-    </tr>
-    <tr>
-      <td colspan="3">&nbsp;</td>
-    </tr>
-</table>
-<table width="50%" border="0" align="center" cellspacing="0" cellpadding="2">
-    <tr align="center">
-      <td width="60%">&nbsp;</td>
-      <td>Sabrang, <input type="date(d-m-Y)" readonly name="TGLSURATJU" value="<?php echo tgl_indo($tgl);?>"></td>	
-    </tr>
-    <tr align="center">
-      <td>&nbsp;</td>
-      <td><strong>KEPALA DESA SABRANG</strong></td>	
-    </tr>
-    
-    <tr>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>	
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr align="center">
-      <td>&nbsp;</td>
-      <td><strong><u>ZUBAERI LUTFI</u></strong></td>
-    </tr>
-    
-</table>
-<hr>
- <input type="submit" class="btn btn-primary" name="btn_simpan" value="Cetak" onclick="return confirm('Apakah Anda Ingin Mencetak Surat?')"></td>
- <input type="reset" class="btn btn-primary" name="reset" value="Reset"></td>
-</form>
-<br>
-</div>
+        <table width="50%" border="0"  cellspacing="0" cellpadding="2">
+        <br>
+            <tr>
+            <td colspan="2"><div align="center" class="post-headline"><strong><u>SURAT KETERANGAN DOMISILI</u></strong></div></td>
+            </tr>
+            <tr>
+            <td colspan="2"><div align="center">Nomor : 474 /<input readonly type="text" name="NO_DOMISILI" value="<?php echo $nosurat;?>">/35.09.12.2002/<?php echo $year;?></div></td>
+            </tr>					
+            <tr>
+            <td colspan="2">&nbsp;</td>
+            </tr>
+            <tr>
+            </tr>
+        </table>
+        <table width="50%" border="0" align="center" cellspacing="0" cellpadding="2">
+            <tr>
+            <td align="justify" colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;Yang  bertanda tangan dibawah ini Saya Kepala Desa Sabrang,Kecamatan Ambulu, Kabupaten Jember , menerangkan dengan sebenarnya bahwa :</td>
+            </tr>
+            <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            </tr>
+            <tr>
+            <td>&nbsp;</td>
+            <td>NIK</td>
+            <td>&nbsp;:&nbsp;<?php echo $nik;?></td>
+            
+            </tr>
+            <tr>
+            <td>&nbsp;</td>
+            <td>Nama Lengkap</td>
+            <td>&nbsp;:&nbsp;<?php echo $dataa['NAMAPEN'];?></td>
+            </tr>
+            <tr>
+            <td>&nbsp;</td>
+            <td>Dilahirkan</td>
+            <td>&nbsp;:&nbsp;<?php echo $dataa['TEMPATLHR'];?>, <?php echo tgl_indo($dataa['TANGGALHR']);?></td>
+            </tr>
+            <tr>
+            <td>&nbsp;</td>
+            <td>Jenis Kelamin</td>
+            <td>&nbsp;:&nbsp;<?php echo $dataa['JK_PEN'];?>
+            </td>
+            </tr>
+            <tr>
+            <td>&nbsp;</td>
+            <td>Status Perkawinan</td>
+            <td>&nbsp;:&nbsp;<?php echo $dataa['STATUSPEN'];?>
+            </td>
+            </tr>
+            <tr>
+            <td>&nbsp;</td>
+            <td>Agama</td>
+            <td>&nbsp;:&nbsp;<?php echo $dataa['AGAMAPEN'];?>
+            </td>
+            </tr>
+            <tr>
+            <td>&nbsp;</td>
+            <td>Pekerjaan</td>
+            <td>&nbsp;:&nbsp;<?php echo $dataa['PEKERJAANPEN'];?></td>
+            </tr>
+            <tr>
+            <td>&nbsp;</td>
+            <td>Kewarganegaraan</td>
+            <td>&nbsp;:&nbsp;<?php echo $dataa['KWNPEN'];?></td>
+            </tr>
+            <tr>
+            <td>&nbsp;</td>
+            <td>Alamat</td>
+            <td>&nbsp;:&nbsp;<?php echo $dataa['ALAMAT'];?> 
+            RT/RW <?php echo $dataa['RT_RW'];?> 
+            Desa <?php echo $dataa['DESA'];?> 
+            Kecamatan <?php echo $dataa['KEC'];?> 
+            Kabupaten <?php echo $dataa['KAB_KOTA'];?>
+            Provinsi <?php echo $dataa['PROV'];?> 
+            <?php echo $dataa['KDPOS'];?></td>
+            </tr> 
+            <tr>
+            <td>&nbsp;</td>
+            <td>Masa Berlaku</td>
+            <td>&nbsp;:&nbsp;<?php echo tgl_indo($now); ?> sd <?php echo tgl_indo($then); ?></td>
+            </tr>
+            
+            <tr>
+            <td>&nbsp;</td>
+            </tr>
+            <tr>
+            <td align="justify" colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;Orang tersebut diatas benar benar penduduk Desa Sabrang Kecamatan 
+                        Ambulu, Kabupaten Jember, yang bersangkutan sampai saat ini masih berdomisili pada alamat tersebut diatas dan surat keterangan ini akan dipergunakan untuk persyaratan 
+                        <input required type="text" name="TUJUANJU">.</td>
+            </tr>
+            <tr>
+            <td>&nbsp;</td>
+            </tr>
+            <tr>
+            <td align="justify" colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;Demikian surat keterangan ini saya buat dengan sebenarnya dan dapatnya dipergunakan sebagai mana mestinya dan selanjutnya untuk menjadikan periksa.
+                </td>
+            </tr>
+            <tr>
+            <td colspan="3">&nbsp;</td>
+            </tr>
+        </table>
+        <table width="50%" border="0" align="center" cellspacing="0" cellpadding="2">
+            <tr align="center">
+            <td width="60%">&nbsp;</td>
+            <td>Sabrang, <input type="date(d-m-Y)" readonly name="TGLSURATJU" value="<?php echo tgl_indo($tgl);?>"></td>	
+            </tr>
+            <tr align="center">
+            <td>&nbsp;</td>
+            <td><strong>KEPALA DESA SABRANG</strong></td>	
+            </tr>
+            
+            <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>	
+            </tr>
+            <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            </tr>
+            <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            </tr>
+            <tr align="center">
+            <td>&nbsp;</td>
+            <td><strong><u>ZUBAERI LUTFI</u></strong></td>
+            </tr>
+            
+        </table>
+        <hr>
+        <input type="submit" class="btn btn-primary" name="btn_simpan" value="Cetak" onclick="return confirm('Apakah Anda Ingin Mencetak Surat?')"></td>
+        <input type="reset" class="btn btn-primary" name="reset" value="Reset"></td>
+        </form>
+        <br>
+    </div>
 
     <!-- ##### Instagram Feed Area Start ##### -->
     <div class="instagram-feed-area">

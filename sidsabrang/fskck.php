@@ -82,16 +82,23 @@ function tgl_indo($tanggal){
         $then=date('Y-m-d', strtotime('+7 days', strtotime($now)));
         
             if(!empty($TUJUANJU) && !empty($NIKPENGAJU) && !empty($NAMAAJU) && !empty($JKAJU) && !empty($AGAMAAJU) && !empty($TMPLHRAJU) && !empty($TGLHRAJU) && !empty($STATUSAJU) && !empty($PEKERJAANAJU) && !empty($KWNAJU) && !empty($ALAMATAJU)){
-            $query = "INSERT INTO sk_skck VALUES('".$NO_SKCK."', '".$NIK_PENDUDUK."', '".$now."', '".$then."', '".$NAMAAJU."', '".$JKAJU."', '".$TMPLHRAJU."', '".$TGLHRAJU."', '".$NIKPENGAJU."',  '".$KWNAJU."',  '".$AGAMAAJU."', '".$STATUSAJU."', '".$PEKERJAANAJU."', '".$PENDIDIKANAJU."', '".$ALAMATAJU."', '".$TUJUANJU."', '".$KETERANGANAJU."', '".$JENIS_SURATAJU."')";
-                        $sql = mysqli_query($koneksi, $query); // Eksekusi/ Jalankan query dari variabel $query
-                          if($sql){ // Cek jika proses simpan ke database sukses atau tidak
-                            header("location:rskck.php?nosur=$NO_SKCK&nik=$NIKPENGAJU");
-                          }else{
-                            header("location:fskck.php?gagal_simpan");
-                          }
-                        }else{
-                            header("location:fskck.php?kurang_lengkap");
-                        }
+                $querycek="SELECT * FROM sk_skck where NIK_PENDUDUK='".$NIK_PENDUDUK."' AND NIK_AJU='".$NIKPENGAJU."' AND TUJUAN_AJU='".$TUJUANJU."' AND KETERANGAN_AJU='".$KETERANGANAJU."'";
+                $sqlcek= mysqli_query($koneksi, $querycek);
+                $prosescek= mysqli_num_rows($sqlcek);
+                if($prosescek>0){
+                    header("location:fskck.php?data_sama");
+                }else{
+                    $query = "INSERT INTO sk_skck VALUES('".$NO_SKCK."', '".$NIK_PENDUDUK."', '".$now."', '".$then."', '".$NAMAAJU."', '".$JKAJU."', '".$TMPLHRAJU."', '".$TGLHRAJU."', '".$NIKPENGAJU."',  '".$KWNAJU."',  '".$AGAMAAJU."', '".$STATUSAJU."', '".$PEKERJAANAJU."', '".$PENDIDIKANAJU."', '".$ALAMATAJU."', '".$TUJUANJU."', '".$KETERANGANAJU."', '".$JENIS_SURATAJU."')";
+                            $sql = mysqli_query($koneksi, $query); // Eksekusi/ Jalankan query dari variabel $query
+                            if($sql){ // Cek jika proses simpan ke database sukses atau tidak
+                                header("location:rskck.php?nosur=$NO_SKCK&nik=$NIKPENGAJU");
+                            }else{
+                                header("location:fskck.php?gagal_simpan");
+                            }
+                }
+            }else{
+                header("location:fskck.php?kurang_lengkap");
+            }
         } 
 
         if(isset($_GET["gagal_simpan"])){
@@ -100,6 +107,8 @@ function tgl_indo($tanggal){
 			echo "<script>alert('Silahkan Isi Data dengan Lengkap');history.go(-1);</script>";
 		}else if(isset($_GET["cancel"])){
 			echo "<script>alert('Cancel');history.go(-1);</script>";
+        }else if(isset($_GET["data_sama"])){
+			echo "<script>alert('Anda telah membuat surat yang sama persis, silahkan cek di riwayat surat!!');history.go(-1);</script>";
         }
         ?>
 

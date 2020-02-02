@@ -82,16 +82,23 @@ $now=date('Y-m-d');
 $then=date('Y-m-d', strtotime('+7 days', strtotime($now)));
 
     if(!empty($TUJUANJU) && !empty($NIKPENGAJU) && !empty($NAMAAJU) && !empty($JKAJU) && !empty($AGAMAAJU) && !empty($TMPLHRAJU) && !empty($TGLHRAJU) && !empty($STATUSAJU) && !empty($PEKERJAANAJU) && !empty($KWNAJU) && !empty($ALAMATAJU)){
-    $query = "INSERT INTO sk_domisili VALUES('".$NO_DOMISILI."', '".$NIK_PENDUDUK."', '".$now."', '".$then."', '".$NAMAAJU."', '".$JKAJU."', '".$AGAMAAJU."', '".$NIKPENGAJU."', '".$TMPLHRAJU."', '".$TGLHRAJU."', '".$STATUSAJU."', '".$PEKERJAANAJU."', '".$KWNAJU."', '".$ALAMATAJU."', '".$TUJUANJU."', '".$KETERANGANAJU."', '".$JENIS_SURATAJU."')";
-                $sql = mysqli_query($koneksi, $query); // Eksekusi/ Jalankan query dari variabel $query
-                  if($sql){// Cek jika proses simpan ke database sukses atau tidak
-                    header("location:rdom.php?nosur=$NO_DOMISILI&nik=$NIKPENGAJU");
-                  }else{
-                    header("location:fdom.php?gagal_simpan");
-                  }
-                }else{
-                    header("location:fdom.php?kurang_lengkap");
-                }
+        $querycek="SELECT * FROM sk_domisili where NIK_PENDUDUK='".$NIK_PENDUDUK."' AND NIKAJU='".$NIKPENGAJU."' AND TUJUANAJU='".$TUJUANJU."' AND KETERANGANAJU='".$KETERANGANAJU."'";
+        $sqlcek= mysqli_query($koneksi, $querycek);
+        $prosescek= mysqli_num_rows($sqlcek);
+        if($prosescek>0){
+            header("location:fdom.php?data_sama");
+        }else{
+            $query = "INSERT INTO sk_domisili VALUES('".$NO_DOMISILI."', '".$NIK_PENDUDUK."', '".$now."', '".$then."', '".$NAMAAJU."', '".$JKAJU."', '".$AGAMAAJU."', '".$NIKPENGAJU."', '".$TMPLHRAJU."', '".$TGLHRAJU."', '".$STATUSAJU."', '".$PEKERJAANAJU."', '".$KWNAJU."', '".$ALAMATAJU."', '".$TUJUANJU."', '".$KETERANGANAJU."', '".$JENIS_SURATAJU."')";
+                    $sql = mysqli_query($koneksi, $query); // Eksekusi/ Jalankan query dari variabel $query
+                    if($sql){// Cek jika proses simpan ke database sukses atau tidak
+                        header("location:rdom.php?nosur=$NO_DOMISILI&nik=$NIKPENGAJU");
+                    }else{
+                        header("location:fdom.php?gagal_simpan");
+                    }
+        }
+    }else{
+        header("location:fdom.php?kurang_lengkap");
+    }
 } 
 
         if(isset($_GET["gagal_simpan"])){
@@ -100,6 +107,8 @@ $then=date('Y-m-d', strtotime('+7 days', strtotime($now)));
 			echo "<script>alert('Silahkan Isi Data dengan Lengkap');history.go(-1);</script>";
 		}else if(isset($_GET["cancel"])){
 			echo "<script>alert('Cancel');history.go(-1);</script>";
+        }else if(isset($_GET["data_sama"])){
+			echo "<script>alert('Anda telah membuat surat yang sama persis, silahkan cek di riwayat surat!!');history.go(-1);</script>";
         }
         ?>
 
