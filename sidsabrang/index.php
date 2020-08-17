@@ -429,7 +429,7 @@ include 'koneksi.php';
         <div class="instagram-slides owl-carousel">
             <!-- Single Insta Feed -->
             <div class="single-insta-feed">
-                <img src="img/instagram-img/1.jpg" style="height: 269px;width: 268px;" alt="">
+                <img src="img/instagram-img/1.jpg" style="height: 250px;width: 300px;" alt="">
                 <!-- Hover Effects -->
                 <div class="hover-effects">
                     <a href="https://www.instagram.com/explore/locations/341653129888924/sabrang-ambulu/?hl=id" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
@@ -437,7 +437,7 @@ include 'koneksi.php';
             </div>
             <!-- Single Insta Feed -->
             <div class="single-insta-feed">
-                <img src="img/instagram-img/2.jpg" style="height: 269px;width: 268px;"alt="">
+                <img src="img/instagram-img/2.jpg" style="height: 250px;width: 300px;"alt="">
                 <!-- Hover Effects -->
                 <div class="hover-effects">
                     <a href="https://www.instagram.com/explore/locations/341653129888924/sabrang-ambulu/?hl=id" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
@@ -445,7 +445,7 @@ include 'koneksi.php';
             </div>
             <!-- Single Insta Feed -->
             <div class="single-insta-feed">
-                <img src="img/instagram-img/3.jpg" style="height: 269px;width: 268px;" alt="">
+                <img src="img/instagram-img/3.jpg" style="height: 250px;width: 300px;" alt="">
                 <!-- Hover Effects -->
                 <div class="hover-effects">
                     <a href="https://www.instagram.com/explore/locations/341653129888924/sabrang-ambulu/?hl=id" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
@@ -453,7 +453,7 @@ include 'koneksi.php';
             </div>
             <!-- Single Insta Feed -->
             <div class="single-insta-feed">
-                <img src="img/instagram-img/4.jpg" style="height: 269px;width: 268px;" alt="">
+                <img src="img/instagram-img/4.jpg" style="height: 250px;width: 300px;" alt="">
                 <!-- Hover Effects -->
                 <div class="hover-effects">
                     <a href="https://www.instagram.com/explore/locations/341653129888924/sabrang-ambulu/?hl=id" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
@@ -461,7 +461,7 @@ include 'koneksi.php';
             </div>
             <!-- Single Insta Feed -->
             <div class="single-insta-feed">
-                <img src="img/instagram-img/5.jpg" style="height: 269px;width: 268px;"alt="">
+                <img src="img/instagram-img/5.jpg" style="height: 250px;width: 300px;"alt="">
                 <!-- Hover Effects -->
                 <div class="hover-effects">
                     <a href="https://www.instagram.com/explore/locations/341653129888924/sabrang-ambulu/?hl=id" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
@@ -469,7 +469,7 @@ include 'koneksi.php';
             </div>
             <!-- Single Insta Feed -->
             <div class="single-insta-feed">
-                <img src="img/instagram-img/6.jpg" style="height: 269px;width: 268px;"alt="">
+                <img src="img/instagram-img/6.jpg" style="height: 250px;width: 300px;"alt="">
                 <!-- Hover Effects -->
                 <div class="hover-effects">
                     <a href="https://www.instagram.com/explore/locations/341653129888924/sabrang-ambulu/?hl=id" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
@@ -477,7 +477,7 @@ include 'koneksi.php';
             </div>
             <!-- Single Insta Feed -->
             <div class="single-insta-feed">
-                <img src="img/instagram-img/7.jpg" style="height: 269px;width: 268px;"alt="">
+                <img src="img/instagram-img/7.jpg" style="height: 250px;width: 300px;"alt="">
                 <!-- Hover Effects -->
                 <div class="hover-effects">
                     <a href="https://www.instagram.com/explore/locations/341653129888924/sabrang-ambulu/?hl=id" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
